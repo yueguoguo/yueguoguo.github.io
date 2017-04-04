@@ -1,9 +1,9 @@
 ---
 layout:     post
-title:      Pixyll has Pagination
-date:       2014-06-08 11:21:29
-summary:    This is an empty post to illustrate the pagination component with Pixyll.
-categories: jekyll pixyll
+title:      Hello world
+date:       2017-04-04 22:04:29
+summary:    Random thoughts about inauguration.
+categories: 
 ---
 
-This is an empty post to illustrate the pagination component with Pixyll.
+Hello world. This is created by Jekyll.
