@@ -20,6 +20,7 @@ University in the year of 2015.
 <br/>
 <hr/>
 <br/>
+
 <span class="contacticon center">
 	<a href="mailto:yueguoguo1024@gmail.com"><i class="fa fa-envelope-square"></i></a>
 	<a href="https://github.com/yueguoguo" target="_blank"><i class="fa fa-github-square"></i></a>
