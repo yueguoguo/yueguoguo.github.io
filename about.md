@@ -1,9 +1,11 @@
 ---
 layout: page
-title: about
+title: About Le
 permalink: /about/
+tags: about
 ---
 
+<<<<<<< HEAD
 <img class="col one right" src="/img/prof_pic_le.jpg">
 
 <br/>
@@ -27,4 +29,9 @@ University in the year of 2015.
 <div class="col three caption">
 # Reach out Le via email | github | linkedin | Twitter.
 </div>
+=======
+Le is Data Scientist at Microsoft, where he builds scalable data analytical tools and data-driven solution accelerators for business problems.
+>>>>>>> parent of 69ba38f... Use a folio jekyll template
 
+The website is created with template created by [John Otander](http://johnotander.com), which is available at [Github repository](https://github.com/johnotander/pixyll) 
+The template is open source and it is under [MIT](http://opensource.org/licenses/MIT) license.
