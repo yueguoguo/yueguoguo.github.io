@@ -3,7 +3,7 @@ title: *yueguoguo
 email: yueguoguo1024@gmail.com 
 description: > # this means to ignore newlines until "baseurl:"
   Explosions of random thoughts
-# baseurl: the subpath of your site, e.g. /blog/
+baseurl: the subpath of your site, e.g. /blog/
 url: yueguoguo.github.io
 twitter_username: yueguoguo 
 github_username: yueguoguo 
