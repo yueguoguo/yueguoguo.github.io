@@ -4,17 +4,17 @@ title: about
 permalink: /about/
 ---
 
-<img class="col one right" src="/img/prof_pic.jpg">
+<img class="col one right" src="/img/prof_pic_le.jpg">
 
 <br/>
 Le is Data Scientist at Microsoft. He builds scalable data analytical
 tools and data-driven accelerators for solving enterprise-level business
-problem.
+problem. 
 
-# Write your biography here. Tell the world about yourself. Link to your favorite <a href="http://reddit.com" target="blank">subreddit</a>. You can put a picture in, too. The code is already in, just name your picture "prof_pic.jpg" and put it in the img folder. 
-
-# Link to your social media connections, too. This theme is set up to use <a href="http://fortawesome.github.io/Font-Awesome/" target="blank">Font Awesome icons</a>, like the ones below. Add your facebook, twitter, linkedin, or just disable all of them. 
-
+Prior to joining Microsoft, he worked at Broadcom as a Product
+Engineer where he applied machine learning algorithms to sort out wafers
+by failure patterns. Le got his Ph. D. from Nanyang Technological
+University in 2015. 
 
 <br/>
 <hr/>
