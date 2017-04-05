@@ -22,8 +22,6 @@ University in the year of 2015.
 <span class="contacticon center">
 	<a href="mailto:yueguoguo1024@gmail.com"><i class="fa fa-envelope-square"></i></a>
 	<a href="https://github.com/yueguoguo" target="_blank"><i class="fa fa-github-square"></i></a>
-	<a href="https://www.linkedin.com/in/le-zhang-99416641/" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-	<a href="https://twitter.com/Le_Zhang_1024" target="_blank"><i class="fa fa-twitter-square"></i></a>
 </span>
 
 <div class="col three caption">
