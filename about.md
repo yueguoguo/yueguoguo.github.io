@@ -14,7 +14,7 @@ problems.</p>
 <p>Prior to joining Microsoft, he worked as a Product
 Engineer at Broadcom where he applied machine learning algorithms to sort out semiconductor wafers
 by their failure patterns. Le obtained his Ph. D. of Eletrical and Eletronic Engineering from Nanyang Technological
-University, Singapore, in the year of 2015.</p> 
+University, Singapore.</p> 
 
 <h2>The site</h2>
 
