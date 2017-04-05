@@ -5,7 +5,7 @@ permalink: /about/
 tags: about
 ---
 
-<img class="col one right" src="/img/prof_pic_le.jpg">
+<img class="col one right" src="/images/prof_pic_le.jpg">
 
 <br/>
 Le is Data Scientist at Microsoft. He builds scalable data analytical
