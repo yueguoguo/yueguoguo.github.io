@@ -13,8 +13,8 @@ problem.
 
 Prior to joining Microsoft, he worked at Broadcom as a Product
 Engineer where he applied machine learning algorithms to sort out wafers
-by failure patterns. Le got his Ph. D. from Nanyang Technological
-University in 2015. 
+by failure patterns. Le obtained his Ph. D. of Eletrical and Eletronic Engineering from Nanyang Technological
+University in the year of 2015. 
 
 <br/>
 <hr/>
