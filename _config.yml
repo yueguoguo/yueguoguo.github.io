@@ -1,14 +1,4 @@
 # Site settings
-<<<<<<< HEAD
-title: *yueguoguo
-email: yueguoguo1024@gmail.com 
-description: > # this means to ignore newlines until "baseurl:"
-  Explosions of random thoughts
-baseurl: the subpath of your site, e.g. /blog/
-url: yueguoguo.github.io
-twitter_username: yueguoguo 
-github_username: yueguoguo 
-=======
 title:       yueguoguo 
 email:       yueguoguo1024@gmail.com     
 author:      Le Zhang 
@@ -16,7 +6,6 @@ description: "Disrupting the world with technology."
 baseurl:     ""
 url:         "http://yueguoguo.github.io"
 date_format: "%b %-d, %Y"
->>>>>>> parent of 69ba38f... Use a folio jekyll template
 
 # Google services
 google_verification:
@@ -39,14 +28,10 @@ enable_anchorjs: false
 # Preview image for social media aka og:image and twitter:image
 post_preview_image: false
 
-<<<<<<< HEAD
-highlighter: rouge
-=======
 # Facebook Page integration
 # (for instant articles and other stuff)
 fb_page: false
 fb_page_id:
->>>>>>> parent of 69ba38f... Use a folio jekyll template
 
 # Disqus post comments
 # (leave blank to disable Disqus)
