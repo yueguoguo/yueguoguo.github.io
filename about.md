@@ -18,4 +18,4 @@ University in the year of 2015.
 
 <h2>The site</h2>
 
-This site is to share knowledge and resources about data science and machine learning. Please reach out via [Email](yueguoguo1024@gmail.com) if you are interested in any of the on-going projects listed in *Portfolios*.
+This site is to share knowledge and resources about data science and machine learning. 
