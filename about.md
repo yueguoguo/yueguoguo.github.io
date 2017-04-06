@@ -1,9 +1,10 @@
 ---
-layout: page
-title: About Le
+layout: about_page
 permalink: /about/
 tags: about
 ---
+
+<h2>About Le</h2>
 
 <p>Le is Data Scientist at Microsoft, where He builds scalable data analytical
 tools on Microsoft Azure cloud platform and data-driven accelerators for solving enterprise-level business
