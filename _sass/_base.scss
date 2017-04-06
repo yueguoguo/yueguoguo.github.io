@@ -48,3 +48,15 @@ figure > img {
 figcaption {
     font-size: $small-font-size;
 }
+
+/**
+ * Clearfix
+ */
+%clearfix {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
