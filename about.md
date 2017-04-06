@@ -6,7 +6,7 @@ tags: about
 
 <h2>About Le</h2>
 
-<p>Le is Data Scientist at Microsoft, where He builds scalable data analytical
+<p>Le is Data Scientist at Microsoft, where he builds scalable data analytical
 tools on Microsoft Azure cloud platform and data-driven accelerators for solving enterprise-level business
 problems.</p> 
 
