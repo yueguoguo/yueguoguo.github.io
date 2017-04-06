@@ -5,9 +5,7 @@ permalink: /about/
 tags: about
 ---
 
-<img class="col one right" src="/images/prof_pic_le.jpg" height="200" width="200">
-
-<p>Le is Data Scientist at Microsoft. He builds scalable data analytical
+<p>Le is Data Scientist at Microsoft, where He builds scalable data analytical
 tools on Microsoft Azure cloud platform and data-driven accelerators for solving enterprise-level business
 problems.</p> 
 
