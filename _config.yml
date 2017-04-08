@@ -1,8 +1,8 @@
 # Site settings
-title:       Thinkloud
+title:       Thinkloud 
 email:       yueguoguo1024@gmail.com     
 author:      Le Zhang 
-description: "Explosions of random thoughts."
+description: "Exploiting patterns from randomness."
 baseurl:     ""
 url:         "http://yueguoguo.github.io"
 date_format: "%b %-d, %Y"
