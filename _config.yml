@@ -1,5 +1,5 @@
 # Site settings
-title:       yueguoguo 
+title:       Thinkloud
 email:       yueguoguo1024@gmail.com     
 author:      Le Zhang 
 description: "Explosions of random thoughts."
@@ -117,5 +117,6 @@ sass:
 gems:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-relative-links
 # https://github.com/jekyll/jekyll/issues/2938
 exclude: [vendor]

@@ -1,94 +1,104 @@
-/** 
- * Portfolio grid **********************************************************
-*/
-// Nicolas Gallagher's micro clearfix hack
-// http://nicolasgallagher.com/micro-clearfix-hack/
-.clearfix:before,
-.clearfix:after {
-content: " ";
-display: table;
+
+#rig {
+    max-width:900px;
+    width:900px;
+    margin:0 auto; /*center aligned*/
+    padding:5px;
+    font-size:0; /* Remember to change it back to normal font size if have captions */
+    list-style:none;
+    background-color:white;
 }
-.clearfix:after {
-clear: both;
+#rig li {
+    display: inline-block;
+    *display:inline;/*for IE6 - IE7*/
+    width:25%;
+    vertical-align:middle;
+    box-sizing:border-box;
+    margin:0;
+    padding:5px;
 }
-.project {
-width: 33.33%;
-height: 250px;
-float: left;
-vertical-align: middle;
-box-sizing: border-box;
-padding: 10px;
+        
+/* The wrapper for each item */
+.rig-cell {
+    /*margin:12px;
+    box-shadow:0 0 6px rgba(0,0,0,0.3);*/
+    display:block;
+    position: relative;
+    overflow:hidden;
 }
-.thumbnail{
-width: 100%;
-height: 230px;
-overflow: hidden;
+        
+/* If have the image layer */
+.rig-img {
+    display:block;
+    width: 100%;
+    height: auto;
+    border:none;
+    transform:scale(1);
+    transition:all 1s;
 }
-.thumbnail img{
-width: 500px;
-height: auto;
-position: relative;
-left: -25%;
-top: -5%;
+
+#rig li:hover .rig-img {
+    transform:scale(1.05);
 }
-.thumbnail a{
-float: left;
-position: relative;
-width: 100%;
-height: 230px;
+        
+/* If have the overlay layer */
+.rig-overlay {
+    position: absolute;
+    display:block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background: #FFFFFF;
+    background-size:50px 50px;
+    opacity:0;
+    filter:alpha(opacity=0);/*For IE6 - IE8*/
+    transition:all 0.6s;
 }
-.thumbnail a span {
-display: none;
-position: absolute;
-top: 0;
-left: 0;
-bottom: 0;
-right: 0;
-background: rgba(0,0,0,0.4);
-color: $grey-color-light;
-padding: 40px;
-text-align: center;
+#rig li:hover .rig-overlay {
+    opacity:0.8;
 }
-.thumbnail a:hover span {
-display: block;
+
+/* If have captions */
+.rig-text {
+    display:block;
+    padding:0 30px;
+    box-sizing:border-box;
+    position:absolute;
+    left:0;
+    width:100%;
+    text-align:center;
+    text-transform:none;
+    font-size:18px;
+    font-family: 'Merriweather';
+    font-weight:normal!important;
+    top:0;
+    color:#333;
+    opacity:0;
+    filter:alpha(opacity=0);/*For older IE*/
+    transform:translateY(-20px);
+    transition:all .3s;
 }
-/** 
- * Portfolio pages **********************************************************
-*/
-.blankbox{
-background: $theme-color;
+#rig li:hover .rig-text {
+    transform:translateY(0px);
+    opacity:0.9;
 }
-.img_row{
-height: $img_height;
-width: 100%;
-overflow: hidden;
-box-sizing:border-box;
-padding: $img_spacing;
+
+@media (max-width: 9000px) {
+    #rig li {
+        width:50%;
+    }
 }
-.col{ 
-width: 100%;
-height: 100%;
-float: left;
-object-fit: cover;
-box-sizing:border-box;
-padding: $img_spacing;
+
+@media (max-width: 700px) {
+    #rig li {
+        width:33.33%;
+    }
 }
-.right{
-float: right;
-}
-.one {
-width:33.33%;
-}
-.two {
-width: 66.66%;
-}
-.three{
-width: 100%;
-}
-.caption{
-height: 100%;
-color: $caption_color;
-text-align: center;
-vertical-align: middle;
-font-size: $caption_font_size;
+
+@media (max-width: 550px) {
+    #rig li {
+        width:50%;
+    }
 }

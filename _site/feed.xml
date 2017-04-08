@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Thinkloud</title>
+    <description>Explosions of random thoughts.</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Hello world</title>
+        <description>&lt;p&gt;Hello world&lt;/p&gt;
+</description>
+        <pubDate>Wed, 05 Apr 2017 05:43:29 +0800</pubDate>
+        <link>http://localhost:4000/data/science/2017/04/05/hello-world/</link>
+        <guid isPermaLink="true">http://localhost:4000/data/science/2017/04/05/hello-world/</guid>
+      </item>
+    
+  </channel>
+</rss>

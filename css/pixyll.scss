@@ -18,6 +18,7 @@
 
 @import 'links';
 @import 'positions';
+@import 'portfolio';
 @import 'clearfix';
 @import 'code';
 @import 'forms';
@@ -33,4 +34,35 @@
 @import 'gists';
 @import 'measure';
 @import 'pagination';
-@import 'portfolio';
+
+.mcss {
+  .container {
+    width: 100%;
+  }
+
+  a {
+    background-image: none;
+  }
+
+  .card .card-content {
+    padding: 0.2rem;
+  }
+
+  .card .card-action {
+    padding: 0.2rem;
+  }
+
+  .card .card-title {
+    font-size: 1.3rem;
+  }
+
+  .card .card-reveal {
+    font-size: 1.05rem;
+  }
+
+  .card .card-reveal p {
+    font-size: 0.9em;
+    margin-bottom: 0.5rem;
+    margin-top: 0.8em;
+  }
+}
