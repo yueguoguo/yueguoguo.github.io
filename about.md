@@ -12,4 +12,4 @@ problems.</p>
 
 <h2>Thinkloud</h2>
 
-<p>Thinkloud is created and mainted by Le, to share knowledge and resources about R, data science, and machine learning. </p>
+<p>Thinkloud is a site created and maintained by Le, to share knowledge and resources about R, data science, and machine learning. </p>
