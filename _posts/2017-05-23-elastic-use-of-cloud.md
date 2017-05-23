@@ -43,7 +43,6 @@ preserved on cloud, and easily reproduced afterwards.
 The following diagram depicts an illustrative resource planning
 scenario of a heterogeneous set of DSVMs for flight delay prediction.
 
-![pipeline](yueguoguo.github.io/images/architecture.png)
 ![pipeline](../images/architecture.png)
 
 It is worth mentioning that __DSVMs in the piepline can be operationalized programmatically 
@@ -51,4 +50,6 @@ in R with minimal efforts in manual setup__.
 
 Step-by-step tutorial in details can be found at
 [GitHub
-repository](https://github.com/Microsoft/acceleratoRs/tree/master/flightDelayPredictionWithDSVM). Enjoy hacking!
+repository](https://github.com/Microsoft/acceleratoRs/tree/master/flightDelayPredictionWithDSVM). 
+
+Enjoy hacking!
