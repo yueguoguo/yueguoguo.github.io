@@ -13,16 +13,17 @@ The way of doing data science is dramatically impacted by cloud
 computing technology: 
 
 Years ago, to experiment with a random forest algorithm, researchers
-had to configure computing clusters by hand. Now it has become so easy
-that in 5 minutes a data scientist can deploy a Linux based virtual
+had to configure computing clusters by hand, which usually means weeks or months
+of system engineering and probably endless efforts in communication with IT department. 
+Now it has become so simple that in 5 minutes a data scientist can deploy a Linux based virtual
 machine on cloud, where mainstream data science tools and software are pre-installed.
 That is handy! It not merely saves the engineering efforts in setting up
 a working environment that data scientists are comfortable with, but
 also ecnonomizes the cost of administrating computing resources. 
 
 [Microsoft Azure Data Science Virtual Machine](http://aka.ms/dsvm) is
-such a virtual working space available on Azure cloud which by and large brings the following
-benefits:
+a virtual working space available on Azure cloud which by and large brings the following
+benefits for elastic data science on cloud:
 
 * Scalability. There are various options of machine
 sizes on Azure to scale up or down a DSVM. 
@@ -41,6 +42,6 @@ in R with minimal efforts in manual setup.
 
 ![pipeline](https://github.com/yueguoguo/yueguoguo.github.io/blob/master/images/architecture.png)
 
-Details can be found:
+Details can be found at
 [GitHub
-repository](https://github.com/Microsoft/acceleratoRs/flightDelayPredictionWithDSVM),
+repository](https://github.com/Microsoft/acceleratoRs/flightDelayPredictionWithDSVM)
