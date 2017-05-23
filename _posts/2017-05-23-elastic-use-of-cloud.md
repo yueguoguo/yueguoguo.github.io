@@ -2,7 +2,7 @@
 layout:     post
 title:      Cloud for elastic data science 
 date:       2017-05-23 16:43:29
-summary:    Operationalization with Azure Data Science Virtual Machine.
+summary:    Brief intro of Azure Data Science Virtual Machine.
 categories: data science, cloud, azure, data science virtual machine
 ---
 
