@@ -1,4 +1,4 @@
---
+---
 layout:     post
 title:      Cloud for elastic data science 
 date:       2017-05-23 21:43:29
