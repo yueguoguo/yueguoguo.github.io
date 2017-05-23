@@ -36,6 +36,11 @@ specific data science task to finish, DSVM greatly resolves the issue
 in allocating computing resources corresponding to requirement of each
 sub projects. DSVM is agile so that a machine does not have to be alive
 all the time. It is fired up on demand, and generates cost only being used. 
-To illustrate, the following depict a 
+
+To illustrate, the following diagram depict a DSVM resource planning
+scenario for flight delay prediction. While details can be found at the
+[GitHub
+repository](https://github.com/Microsoft/acceleratoRs/flightDelayPredictionWithDSVM), it is worth mentioning here
+that the 
 
 ![pipeline](https://github.com/yueguoguo/yueguoguo.github.io/blob/master/images/architecture.png)
