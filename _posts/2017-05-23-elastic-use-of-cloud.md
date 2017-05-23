@@ -44,6 +44,11 @@ The following diagram depicts an illustrative resource planning
 scenario on a heterogeneous set of DSVMs for flight delay prediction.
 
 ![pipeline](https://yueguoguo.github.io/images/architecture.png)
+*Figure - operationalized DSVMs for flight delay prediction scenario.
+The first DSVM is for local standalone Spark based data pre-processing,
+the second is for GPU accelerated deep neural network training, and the
+third is for model deployment as web services. The three VMs are
+featured with different sizes and are priced differently.* 
 
 It is worth mentioning that __DSVMs in the piepline can be operationalized programmatically 
 in R with minimal efforts in manual setup__, thanks to [Microsoft R
