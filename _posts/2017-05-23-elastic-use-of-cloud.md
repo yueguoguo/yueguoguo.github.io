@@ -7,10 +7,7 @@ categories: data science, cloud
 ---
 
 The way of doing data science is dramatically impacted by cloud
-computing technology. I may not be the right person to predicate but
-when I joined Microsoft and started to work with Graham Williams, a
-veteran of data science, I got to know how significant the revolution
-cloud has brought to data science community.
+computing technology: 
 
 Years ago, to experiment with a random forest algorithm, researchers
 had to configure computing clusters by hand. Now it has become so easy
@@ -41,4 +38,4 @@ sub projects. DSVM is agile so that a machine does not have to be alive
 all the time. It is fired up on demand, and generates cost only being used. 
 To illustrate, the following depict a 
 
-[pipeline](./images/architecture)
+![pipeline](https://github.com/yueguoguo/yueguoguo.github.io/blob/master/images/architecture.png)
