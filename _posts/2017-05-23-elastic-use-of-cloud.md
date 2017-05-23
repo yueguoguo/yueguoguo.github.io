@@ -6,16 +6,18 @@ summary:    Operationalization with Azure Data Science Virtual Machine.
 categories: data science, cloud, azure, data science virtual machine
 ---
 
-> "Everything Should Be Made as Simple as Possible, But Not Simpler." 
-> - Albert Einstein
+<blockquote>
+  <p>Everything Should Be Made as Simple as Possible, But Not Simpler.</p>
+  <footer><cite title="Albert Einstein">Albert Einstein</cite></footer>
+</blockquote>
 
 The way of doing data science is dramatically impacted by cloud
 computing technology: 
 
 Years ago, to experiment with a random forest algorithm, researchers
-had to configure computing clusters by hand, which usually means weeks or months
-of system engineering and probably endless efforts in communication with IT department. 
-Now it has become so simple that in 5 minutes a data scientist can deploy a Linux based virtual
+had to configure computing clusters by hand, which usually means __weeks or months__
+of system engineering and probably __endless__ communications with IT department. 
+Now it has become so simple that in __5 minutes__ a data scientist can deploy a Linux based virtual
 machine on cloud, where mainstream data science tools and software are pre-installed.
 That is handy! It not merely saves the engineering efforts in setting up
 a working environment that data scientists are comfortable with, but
@@ -37,8 +39,8 @@ and generates cost only being used.
 The following diagram depicts an illustrative resource planning
 scenario of a heterogeneous set of DSVMs for flight delay prediction.
 
-It is worth mentioning DSVMs in the piepline can be operationalized programmatically 
-in R with minimal efforts in manual setup. 
+It is worth mentioning that __DSVMs in the piepline can be operationalized programmatically 
+in R with minimal efforts in manual setup__. 
 
 ![pipeline](https://github.com/yueguoguo/yueguoguo.github.io/blob/master/images/architecture.png)
 
