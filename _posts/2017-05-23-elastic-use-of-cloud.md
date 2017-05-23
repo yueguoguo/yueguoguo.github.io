@@ -44,6 +44,7 @@ The following diagram depicts an illustrative resource planning
 scenario of a heterogeneous set of DSVMs for flight delay prediction.
 
 ![pipeline](yueguoguo.github.io/images/architecture.png)
+![pipeline](../images/architecture.png)
 
 It is worth mentioning that __DSVMs in the piepline can be operationalized programmatically 
 in R with minimal efforts in manual setup__. 
