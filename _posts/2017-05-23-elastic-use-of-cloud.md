@@ -6,6 +6,9 @@ summary:    Explosions of random thoughts.
 categories: data science, cloud
 ---
 
+> "Everything Should Be Made as Simple as Possible, But Not Simpler." 
+> - Albert Einstein
+
 The way of doing data science is dramatically impacted by cloud
 computing technology: 
 
@@ -18,29 +21,26 @@ a working environment that data scientists are comfortable with, but
 also ecnonomizes the cost of administrating computing resources. 
 
 [Microsoft Azure Data Science Virtual Machine](http://aka.ms/dsvm) is
-such a virtual working space available on Azure cloud. It avails an
-elastic use of cloud computing resources to do nearly anything about
-data science. It is scalable - there are various options of machine
-sizes that one can scale the deployed machine up or down with. The
-cutting-edge toolkits and frameworks for big data and deep learning,
-such as TensorFlow, Spark, etc., are available off-the-shelf. By
-deploying machine incorporated with application-specific processor such
-as GPU, data scientists can conveniently toy up with DSVMs for either
-experimenting or prototyping their ideas.
+such a virtual working space available on Azure cloud which by and large brings the following
+benefits:
 
-Azure DSVM is an excellent fit for doing elastic data science on cloud.
-It is charged in a "Pay-As-You-Go" scheme, meaning that one only gets
-charged when using the machine. Imagine the data science project which
-normally consists of several sub-sections, each of which there is a
-specific data science task to finish, DSVM greatly resolves the issue
-in allocating computing resources corresponding to requirement of each
-sub projects. DSVM is agile so that a machine does not have to be alive
-all the time. It is fired up on demand, and generates cost only being used. 
+* Scalability. There are various options of machine
+sizes on Azure to scale up or down a DSVM. 
+* Flexibility. The cutting-edge toolkits and frameworks for big data and deep learning,
+such as TensorFlow, Spark, etc., are available off-the-shelf on DSVMs for toying
+up machine learning experiments.
+* Cost effectiveness. DSVM is agile such that it does not have to be alive
+all the time in a data science project. It is charged in a "Pay-as-you-go" scheme, 
+and generates cost only being used. 
 
-To illustrate, the following diagram depict a DSVM resource planning
-scenario for flight delay prediction. While details can be found at the
-[GitHub
-repository](https://github.com/Microsoft/acceleratoRs/flightDelayPredictionWithDSVM), it is worth mentioning here
-that the 
+The following diagram depicts an illustrative resource planning
+scenario of a heterogeneous set of DSVMs for flight delay prediction.
+
+It is worth mentioning DSVMs in the piepline can be operationalized programmatically 
+in R with minimal efforts in manual setup. 
 
 ![pipeline](https://github.com/yueguoguo/yueguoguo.github.io/blob/master/images/architecture.png)
+
+Details can be found:
+[GitHub
+repository](https://github.com/Microsoft/acceleratoRs/flightDelayPredictionWithDSVM),
