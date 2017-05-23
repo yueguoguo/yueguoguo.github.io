@@ -1,9 +1,9 @@
 ---
 layout:     post
 title:      Cloud for elastic data science 
-date:       2017-05-23 21:43:29
-summary:    Explosions of random thoughts.
-categories: data science, cloud
+date:       2017-05-23 16:43:29
+summary:    Operationalization with Azure Data Science Virtual Machine.
+categories: data science, cloud, azure, data science virtual machine
 ---
 
 > "Everything Should Be Made as Simple as Possible, But Not Simpler." 
