@@ -35,15 +35,19 @@ up machine learning experiments.
 * Cost effectiveness. DSVM is agile such that it does not have to be alive
 all the time in a data science project. It is charged in a "Pay-as-you-go" scheme, 
 and generates cost only being used. 
+* Interoperability. More than one parties can access to and work on DSVMs provided
+authrority.
+* Reproducibility. Proof-of-concepts and experimentation results can be
+preserved on cloud, and easily reproduced afterwards.
 
 The following diagram depicts an illustrative resource planning
 scenario of a heterogeneous set of DSVMs for flight delay prediction.
 
+![pipeline](https://github.com/yueguoguo/yueguoguo.github.io/blob/master/images/architecture.png)
+
 It is worth mentioning that __DSVMs in the piepline can be operationalized programmatically 
 in R with minimal efforts in manual setup__. 
 
-![pipeline](https://github.com/yueguoguo/yueguoguo.github.io/blob/master/images/architecture.png)
-
-Details can be found at
+Step-by-step tutorial in details can be found at
 [GitHub
-repository](https://github.com/Microsoft/acceleratoRs/flightDelayPredictionWithDSVM)
+repository](https://github.com/Microsoft/acceleratoRs/flightDelayPredictionWithDSVM). Enjoy hacking!
