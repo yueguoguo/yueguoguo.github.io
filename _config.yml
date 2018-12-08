@@ -20,7 +20,7 @@ bing_verification:
 animated:             false
 show_related_posts:   false
 show_post_footers:    false
-show_social_icons:    false
+show_social_icons:    true 
 ajaxify_contact_form: false
 enable_mathjax: false
 extended_fonts: false
@@ -44,14 +44,14 @@ facebook_appid:
 facebook_comments_number: 10
 
 # Social icons
-github_username:
+github_username: yueguoguo
 bitbucket_username:
 stackoverflow_id:
 twitter_username:
 skype_username:
 steam_nickname:
 google_plus_id:
-linkedin_username:
+linkedin_username: yueguoguo1024
 angellist_username:
 medium_id:
 bitcoin_url:
