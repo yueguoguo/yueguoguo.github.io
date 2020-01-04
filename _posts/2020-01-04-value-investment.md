@@ -30,21 +30,22 @@ It is easy to get trapped in the mainstream ideas surrounding you and lose the p
 
 The same idea used in value investing can be applied to directing my research and development in the technology domain. One can easily find the similarities between the two fields. For example, a Ph.D student may ask the professor about which area to start with for his academic research; a technological firm manager may ask his advisors about which technology they should use for maximum profits. Corresponding to the strategies in value investing, the same methods can be used in solving the direction problems in the technology domain. Again, generally, one just needs to find the **true value** of a technology that is **currently underestimated** by the masses.
 
-To be more specific, there are a few 
+Based on my personal experience, I have summarized the following methods for value investing in the technology domain. These methods may work for technologists / researchers like me who work in a tech company or a research institute to invest time and efforts in the technologies with true value.
 
-* *Follow the research of well-known institute*
-Thanks to the training in Ph.D., I am still keeping the habit of reading academic research articles. 
+### Follow the research of well-known institutes
+
+Academic researchers work in the frontier of technology progression. It is commonly seen that tech firms put money in research and development to keep themselves competitive in the market. For example, Microsoft has been investing tremendously in academic research, and many of the research outcomes finally became Microsoft products for commercialization. With the proliferation of internet and mobile devices, tech companies that build web applications for consumers benefit greatly from the in-house research and the collaborative research with academia. Their work usually represent the state-of-the-arts which direct the development of a certain technology. Synchronizing frequently with the research publications give technologists view on the most cutting-edge technologies that may bring break-throughs outside academia. 
 
 ![pipeline](https://yueguoguo.github.io/images/pinsage.png)
 <font size="1">The diagram shows "PinSage", a graph neural network-based algorithm, that models both graph-like topology and graph node attributes, for social network applications like recommendation, personalization, etc. It is applied in Pinterest recommendation engine for recommending 3 billion nodes, representating "pins" (items shown in Pinterest site) to users <sup>[2]</sup>.</font>
 
-* *Keep an eye on the capital flow*
+### Keep an eye on the capital flow
 
-Sometimes, the profits from the technologies are not from the technologies themselves but the marketing trend which is influenced by other forces, like capital flow. Capitalists invest start-up companies with high value at low price. Studying the investing list of a VC gives you insight about which area is having the potential to become a unicorn in the near future - it compensates the self-learning on the academic research in a way that, compared to scholars, VCs care about whether the company can be commerciall successful. If the companies to be invested in are tech companies, it might imply that the technologies developed or used by the companies are promising. 
+Accept it or not, capital flow plays a key role in influencing the trend of technology. For example, Venture Capitalists invest start-up companies with high value at low price, and to some extent, the investing strategies of VCs overlap with value investing (it is not 100% because some VCs are rather speculative). Studying the investing lists of VCs gives you insight about which area is having the potential to become a unicorn in the near future - it compensates the self-learning in the academic research in a way that, compared to scholars, VCs care more about whether a technology can be commerciall successful.  
 
 I have learnt quite a lot from one of my favorite [podcasts from Andreessen Horowitz (A16Z)](https://a16z.com/2019/12/31/our-top-10-podcasts-of-2019/). Similar sources are [podcasts from YC Combinator](https://blog.ycombinator.com/category/podcast/), [newsletters from Sequoia](https://www.sequoiacap.com/newsletter), etc.
 
-* *Be persistent but not stubborn*
+### Be persistent but not stubborn
 
 It is important to be persistent on a technology until it becomes rewarding. For the first time Warren McCulloch and Walter Pitts created the subject of "neural network" with a computational model<sup>[3]</sup>. The technology has experienced several technological evolution till the year of 2019 when Geoffrey Hinton, Yan LeCun, and Yoshua Bengio were awarded with Turing Award for their contributions to the development and large-scale application of deep neural network, which to a large extent, recognized the success of the technology<sup>[4]</sup>. 
 
