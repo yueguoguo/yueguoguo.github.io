@@ -7,7 +7,7 @@ tags: about
 <h2>About Le</h2>
 
 <p>Le is Data Scientist at Microsoft, where he builds scalable data analytical and artificial intelligence
-tools on cloud platform and data-driven accelerators for solving enterprise-level business
+tools and solutions on cloud platform and data-driven accelerators for solving enterprise-level business
 problems.</p> 
 
 <h2>Thinkloud</h2>
