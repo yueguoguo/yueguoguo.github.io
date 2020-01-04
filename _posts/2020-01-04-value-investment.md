@@ -45,7 +45,7 @@ Accept it or not, capital flow plays a key role in influencing the trend of tech
 
 I have learnt quite a lot from one of my favorite [podcasts from Andreessen Horowitz (A16Z)](https://a16z.com/2019/12/31/our-top-10-podcasts-of-2019/). Similar sources are [podcasts from YC Combinator](https://blog.ycombinator.com/category/podcast/), [newsletters from Sequoia](https://www.sequoiacap.com/newsletter), etc.
 
-### Be persistent but not stubborn
+### Be persistent but ajustable
 
 It is important to be persistent on a technology until it becomes rewarding. For the first time Warren McCulloch and Walter Pitts created the subject of "neural network" with a computational model<sup>[3]</sup>. The technology has experienced several technological evolution till the year of 2019 when Geoffrey Hinton, Yan LeCun, and Yoshua Bengio were awarded with Turing Award for their contributions to the development and large-scale application of deep neural network, which to a large extent, recognized the success of the technology<sup>[4]</sup>. 
 
