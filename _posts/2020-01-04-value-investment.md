@@ -39,6 +39,12 @@ Academic researchers work in the frontier of technology progression. To make inn
 ![pipeline](https://yueguoguo.github.io/images/pinsage.png)
 <font size="1">The diagram shows "PinSage", a graph neural network-based algorithm, that models both graph-like topology and graph node attributes, for social network applications like recommendation, personalization, etc. It is applied in Pinterest recommendation engine for recommending 3 billion nodes, representating "pins" (items shown in Pinterest site) to users <sup>[2]</sup>.</font>
 
+Good resources for searching the state-of-the-arts research are
+
+* [arXiv.org](https://arxiv.org/)
+* [IEEE Xplore Digital Library](https://ieeexplore.ieee.org/Xplore/home.jsp)
+* [ACM Digital Library](https://dl.acm.org/)
+
 ### Keep an eye on the capital flow
 
 Accept it or not, capital flow plays a key role in influencing the trend of technology. For example, Venture Capitalists invest start-up companies with high value at low price, and to some extent, the investing strategies of VCs overlap with value investing (it is not 100% because some VCs are rather speculative). Studying the investing lists of VCs gives you insight about which area is having the potential to become a unicorn in the near future - it somehow compensates the insights obtained from the academic research in a way that, compared to scholars, VCs care more about whether a technology can be commerciall successful.  
