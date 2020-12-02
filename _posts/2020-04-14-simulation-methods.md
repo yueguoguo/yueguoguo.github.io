@@ -13,6 +13,8 @@ categories: technology, artificial intelligence, recommendation system
 
 ## Introduction
 
+In the recommendation systems today there is always an obvious gap between its offline and online performance. From the business owner's point of view, it becomes a hard problem to decide which model to use, when to upgrade a model, and how to effectively improve the business metrics, effectively, with recommendation technology. In the past a few years, research has been conducted on applying the reinforcement learning technique for resolving recommendation problem. The development process of a recommendation system, i.e., model building, on-line testing, and model retraining, is similar to the agent-based environment that is commonly used in reinforcement learning. By simulating a interactive environment where an agent (usually the recommender) recommends items to users for rewarding, business owners can validate the performance of the recommendation system in advance before its roll-out into production. Meanwhile, the gap between offline and online performance of the recommendation system against the evaluation metrics used respectively, can be minimized. In this reading group session, the recent academic research work around simulation methods for recommendation system will be reviewed. 
+
 ## Value Investment
 
 Value investing is one of the commonly used strategies in stock investment. I am not a professional in financial investment, so the article is not to share my investment strategy in the financial market. It is instead about how I borrow the philosophy in value investing to direct myself in the exploration of the technologies.
