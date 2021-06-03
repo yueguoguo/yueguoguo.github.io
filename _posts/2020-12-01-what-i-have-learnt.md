@@ -6,6 +6,11 @@ summary:    4 important learnings in the pandemic
 categories: psychology, technology, communication, workspace
 ---
 
+<blockquote>
+  <p>The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees Opportunity In Every Difficulty.</p>
+  <footer><cite title="Winston Churchill">Winston Churchill</cite></footer>
+</blockquote>
+
 2020 has been a special year to everyone. Despite losing opportunities to travel
 across the world, meeting people, and attending physical conferences, I was
 lucky to grow with tremendous learning through the challenging yet enjoyable
