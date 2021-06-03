@@ -2,7 +2,7 @@
 layout:     post
 title:      4 Things Learnt In The Pandemic 
 date:       2021-06-03 13:30
-summary:    Psychologically and technologically we should be prepared to embrace the changes.
+summary:    Psychologically and technologically we should be prepared to embrace changes.
 categories: psychology, technology, communication, workspace
 ---
 
