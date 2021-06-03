@@ -2,7 +2,7 @@
 layout:     post
 title:      4 Things Learnt In The Pandemic 
 date:       2021-06-03 13:30
-summary:    4 important learnings in the pandemic 
+summary:    Psychologically and technologically we should be prepared to embrace the changes.
 categories: psychology, technology, communication, workspace
 ---
 
