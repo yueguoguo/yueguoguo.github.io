@@ -24,15 +24,15 @@ mindset had occupied my head for quite some time. Inspired by the famous
 technology to make sure that I am always cutting the edge. I realized the
 importance of "implementing" the idea when I found it hard to find the value
 proposition of *just* innovating after I started to work more like a product
-developer than a scientist. Many times *implementation is more privotal than, or
+developer than a scientist. Many times *implementation is more pivotal than, or
 at least, equally important to, innovation*. Sparkling a new idea may cost
 research, dialectic, critics, etc., which can usually be achieved by an
 individual. Implementing a good idea, however, requires inspiration, execution,
-collaboration, operationalization, and maybe even more. All of these
+collaboration, operationalisation, and maybe even more. All of these
 constructively force the stuff that is being built move towards something that
 is really useful and meaningful to its audience. And, this can only be achieved
 by a team. From innovation to implementation, it is not just a switch of mindset
-and/or skillset, cognitively it is also a transfer from self-centerness to
+and/or skill set, cognitively it is also a transfer from self-centeredness to
 open-mindedness. Being a part of the team helps boost the process of
 implementation. 
 
@@ -43,11 +43,11 @@ chances of face to face meeting. The key to being collaboratively efficient is
 that whoever is involved in the work together should *keep the communication
 going*. One of the techniques for developers to keep good communication rolling
 is ["Pair Programming"](https://en.wikipedia.org/wiki/Pair_programming).
-Broadly, the communciation may refer to either the conversation in the pair
+Broadly, the communication may refer to either the conversation in the pair
 programming session, discussion offline in the GitHub issues tab, or messages in
 the communication platform. A pair programming session often involves at least
 two people joining into the same session, where one can take the drive of
-developement while the other can help review it. I can be fully productive with
+development while the other can help review it. I can be fully productive with
 the help of the tools like [Microsoft Teams](https://www.microsoft.com/en-sg/microsoft-teams/group-chat-software), [GitHub](https://github.com/), [Visual Studio Code](https://code.visualstudio.com/) with a
 remote connection to the server, etc., to conduct a pair programming session
 with my colleagues. The code assets can be either lively shared or synchronized
@@ -55,7 +55,7 @@ offline with the peer in the pair programming session conveniently. Pair
 programming keeps a proper level of tense and flexibility in the session. It
 catalysts the interaction between the developers in the same meeting and
 products positive feedback to each other. It helps spot and resolve challenging
-technical issues quickly even if people inolved in the session do not meet at
+technical issues quickly even if people involved in the session do not meet at
 person, and therefore it maintains the agility of software development
 practices.
 
@@ -67,7 +67,7 @@ times, without eye contact, the messages in a talk cannot be precisely conveyed.
 Therefore this leads to misleading and thus downgrade of efficiency. I always
 appreciate working with people who are willing to place themselves in others'
 situations. It's not easy but quite essential to behave considerate when
-collaborating with others under the contraints of a virtual workspace. I
+collaborating with others under the constraints of a virtual workspace. I
 personally suggest and apply the "AIM" principle that a personal should stick to
 for delivering the best communication efficiency, that is, *Adaptive*,
 *Inclusive*, and *Mindful* (taking the first letter of the three words it
@@ -115,10 +115,10 @@ do something to make a difference.
   prioritization.
 * Learn to say "no" to the meeting schedule at an irregular base - this greatly
   helps build the routine of work at home and thus improves the efficiency to
-  get things done with the timeframe as expected.
+  get things done with the time frame as expected.
 * Break the tasks into small ones so that time to spend on each of them can be
   easily managed. 
-* Build a strong willpower to stay resillient by "wasting" some time. Take on
+* Build a strong willpower to stay resilient by "wasting" some time. Take on
   some tasks that are easy to tackle with, pet your cats, gaze at nowhere for a
   few minutes - these all contribute to emotionally strengthen the will to stay
   focused when back to desk.
