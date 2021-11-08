@@ -11,27 +11,54 @@ categories: technology, data science, machine learning
   <footer><cite title="Winston Churchill">Winston Churchill</cite></footer>
 </blockquote>
 
-# How the story started
+# How I became a Data Scientist
 
-Unlike many data scientists you can find in the technology companies, I am from
-an computer engineering background. The reason for choosing to be a data
-scientist instead of a computer engineer at that time, was that I believed the
-role of data scientist could give me chances to apply technology for resolving
-realistic problems of various industries.  
+I joined Microsoft as a junior data scientist. At that time, I just graduated
+with my Ph.D. of Electrical and Electronic Engineering. Microsoft is my second
+company. My first one was Broadcom, where I worked as a product engineer to
+develop wafer failure pattern detection. In fact my title was not exactly a
+"Data Scientist" but my job scope was completely about data analytics and
+machine learning engineering. That was when I started to learn about industrial
+machine learning model development. 
 
-...
+Unlike many data scientists, I am from an computer engineering background. After
+two-year full-time experience, I realized that most data scientists, including
+myself, in the industry do the "cool" work that prototyped a well-fitted model
+with unrealistically high-quality data without even considering transforming the
+prototype into a production system. I suspect the reasons behind this phenomenon
+are two fold: users who "buy" the model do not want to invest too much before
+they can see some appealing results; the engineering platforms for applying data
+science into production is not standardized. Inspired by my then-manager who is
+a 30-year experienced software developer, I started to put my computer
+engineering skills into application in the data science work. 
 
-# Data Science v.s. Machine Learning
+I was lucky to work in a team of great talents where I soon found other peer
+colleagues who have the same idea with me. They helped me participate in or
+complete a few useful and impactful projects which benefited quite a number of
+Microsoft customers on their data science problems. Below I just summarize a
+selected list of such projects which are open sourced (yes we did open-source
+development even if Microsoft aquired GitHub!).
 
-Data science nowadays has a much more clear definition than 5 years before.
-
-...
+* [Azure/AzureSMR](https://github.com/microsoft/AzureSMR). An R package that
+  supports CRUD typed operations on Azure resources. This package is currently a
+  part of [Azure/AzureR](https://github.com/Azure/AzureR). I joined a
+  collaborative effort with other two colleagues from London and Melbourne on
+  this project. The package got a lot of attention of Microsoft customers whose
+  technology stack is on R and Azure. 
+* [Azure/AzureDSVM](https://github.com/Azure/AzureDSVM). Almost at the same time
+  as AzureSMR, I started an R package for operating Azure virtual machines that
+  can support large-scale parallel computing on cloud. This package greatly
+  supports the R language data scientist to run scalable analytical job on a
+  remote cluster of Azure data science virtual machines with limited effort on
+  upgront environment setup.
+* [Microsoft/acceleratoRs](https://github.com/microsoft/acceleratoRs). 
+* [Microsoft/Recommenders](https://github.com/microsoft/recommenders).
 
 # What's next
 
-## Productionizable system at scale
-
 ## Industry-specific applications
+
+## Productionizable system at scale
 
 ## Low-code development platform
 
