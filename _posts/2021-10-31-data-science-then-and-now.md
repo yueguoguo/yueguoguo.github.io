@@ -51,7 +51,10 @@ development even if Microsoft aquired GitHub!).
   supports the R language data scientist to run scalable analytical job on a
   remote cluster of Azure data science virtual machines with limited effort on
   upgront environment setup.
-* [Microsoft/acceleratoRs](https://github.com/microsoft/acceleratoRs). 
+* [Microsoft/acceleratoRs](https://github.com/microsoft/acceleratoRs). This is a
+  collection of R-based data science and machine learning solutions for various
+  applications. It was one of the first efforts from my team for reusable and
+  deployable end-to-end solution.
 * [Microsoft/Recommenders](https://github.com/microsoft/recommenders).
 
 # What's next
