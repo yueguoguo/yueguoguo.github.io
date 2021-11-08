@@ -58,10 +58,16 @@ development even if Microsoft aquired GitHub!).
 
 ## Industry-specific applications
 
+* Along with the digital transformation process, data science and machine learning start to exhibit tremendous power on reshaping the industrial applications.
+* Industrial application gives the data science and machine learning technology a well-defined scenario - data format, algorithms, deployment environment, etc.
+
 ## Productionizable system at scale
+
+* Productionization is the destination of doing data science and machine learning. 
+* Scalability, real-time, and low-latency is the key to productionizing a machine learning system.
 
 ## Low-code development platform
 
-# References
+* If there is a neater way of interpreting machine language, Python is no longer needed. 
 
-...
+# References
