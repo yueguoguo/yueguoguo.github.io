@@ -11,7 +11,7 @@ categories: technology, data science, machine learning
   <footer><cite title="François Chollet">François Chollet</cite></footer>
 </blockquote>
 
-# How the story began
+## How the story began
 
 November 12th, 2021 marked my last day with Microsoft. I joined Microsoft as a
 junior data scientist in the year of 2016. At that time, I just graduated with
@@ -105,7 +105,7 @@ bankers work in the finance domain). Realizing the gap between the pure
 technology and the real-world application initiated my thought about seeking for
 a new endeavour outside.
 
-# What's next
+## What's next
 
 As I planned to leave Microsoft I started to think about my next stage of
 career. I am very positive about the data science and machine learning
@@ -123,7 +123,7 @@ Personally, that directs me to consider the following aspects where I think the
 data science and machine learning technology will experience further development
 in the next a few years. 
 
-## Industry-specific applications
+### Industry-specific applications
 
 I have the strong belief in applicable data science, machine learning, and/or
 artificial intelligence technologies in transforming the contemporary
@@ -157,7 +157,7 @@ knowledge may be the most vital one for industrial appliations. This is because
 the domain knowledge is what provides the foundation for all the other build-up
 of a machine learning system. 
 
-## Productionizable system at scale
+### Productionizable system at scale
 
 Unlike years ago when a prototype of support vector machine classifier is
 already worth marketing, nowadays, productionization of an entire end-to-end
@@ -240,7 +240,7 @@ project.
 ![Tattooed Laptop - 2019](https://github.com/yueguoguo/yueguoguo.github.io/raw/master/images/laptop.JPG)
 <font size="1">My second last laptop with tons of "tattoos" sticked on the surface. The photo was taken in the brand new Microsoft office in Singapore. It was the year of 2019 when there was no COVID-19. I used the laptop to access virtual machines on Azure for development.</font>
 
-## Beyond the convention
+### Beyond the convention
 
 There is a group of technologies that I am keen on seeing their success
 application. I have either self studied or practiced these technologies during
@@ -297,7 +297,7 @@ the industries in the near future.
   impact. As developers the technolgies should be properly used and well
   regulated. 
 
-# Close
+## Close
 
 I find it hard to put ALL my learning during the last 5 years into a blog post.
 Working in such a great company is definitely one of the most memorable period
