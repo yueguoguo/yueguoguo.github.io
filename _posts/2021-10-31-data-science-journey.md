@@ -11,7 +11,7 @@ categories: technology, data science, machine learning
   <footer><cite title="Winston Churchill">Winston Churchill</cite></footer>
 </blockquote>
 
-# The Journey Get Started
+# How I Became A Data Scientist at Microsoft 
 
 I joined Microsoft as a junior data scientist in the year of 2016. At that time,
 I just graduated with my Ph.D. of Electrical and Electronic Engineering.
@@ -208,12 +208,22 @@ project.
   compression](https://medium.com/gsi-technology/an-overview-of-model-compression-techniques-for-deep-learning-in-space-3fd8d4ce84e5),
   etc., all of which contribute to improving the real-time capability of a
   machine learning system. 
-* **General MLOps for the machine learing system**. MLOps
-
-## Z-gen Opportunities
-
+* **MLOps for reliable and efficient machine learing system**. [Many of
+  my successful projects prove to me that MLOps is an important practice that
+  builds reliable and efficient machine learning
+  system](https://www.forbes.com/sites/forbestechcouncil/2019/04/03/why-machine-learning-models-crash-and-burn-in-production/?sh=2f30d8c82f43).
+  Maintaining a completed and proper MLOps system can be as complex as the
+  machine learning system itself. The core tasks can be data sanity check, data
+  governance, feature store and management, CI (continuous integration) / CT
+  (continuous train) / CD (continuous delivery), health monitoring,
+  unit/integration/smoke testing, etc. For example, in Microsoft Recommenders,
+  the team developed a robust build pipeline that assures the quality of the
+  committed changes in the source library codes and the example notebook codes.
+  The tests run against the example data to make sure the results generated are
+  within expectation before the codes are checked in. In the production system,
+  there may be more tasks for practicing MLOps in a machine learning pipeline. It was fortunate that I have been trained these days for applying the MLOps methodology in whatever machine learning project that I am involved in. MLOps will continue to be an important topic for my endeavor with any new roles in the machine learning area.
 
 # Acknowledgement
 
 I would like to thank all the amazing people that I have met or worked with
-during the 5 years at Microsoft. 
+during the 5 years at Microsoft. I truly appreciate all the learning from you.
