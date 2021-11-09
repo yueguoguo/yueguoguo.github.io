@@ -1,28 +1,29 @@
 ---
 layout:     post
-title:      Retrospective - Data Science Journey At Microsoft
+title:      Data Science Journey At Microsoft
 date:       2021-10-31 22:30
-summary:    A retrospective of the data science journey with Microsoft
+summary:    A recap of the 5-year data science career at Microsoft
 categories: technology, data science, machine learning
 ---
 
 <blockquote>
-  <p>The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees Opportunity In Every Difficulty.</p>
-  <footer><cite title="Winston Churchill">Winston Churchill</cite></footer>
+  <p>Always remember that when it comes to markets, past performance is not a good predictor of future returns—looking in the rear-view mirror is a bad way to drive. Machine learning, on the other hand, is applicable to datasets where the past is a good predictor of the future.</p>
+  <footer><cite title="François Chollet"><François Chollet/cite></footer>
 </blockquote>
 
-# How I Became A Data Scientist at Microsoft 
+# How the story began
 
-I joined Microsoft as a junior data scientist in the year of 2016. At that time,
-I just graduated with my Ph.D. of Electrical and Electronic Engineering.
-Microsoft is my second company. My first one was Broadcom, where I worked as a
-product engineer to develop wafer failure pattern detection. In fact my title
-was not exactly a "Data Scientist" but my job scope was completely about data
-analytics and machine learning engineering. That was when I started to learn
-about industrial machine learning model development. 
+November 12th, 2021 marked my last day with Microsoft. I joined Microsoft as a
+junior data scientist in the year of 2016. At that time, I just graduated with
+my Ph.D. of Electrical and Electronic Engineering. Microsoft is my second
+company. My first one was Broadcom, where I worked as a product engineer to
+develop wafer failure pattern detection. In fact my title was not exactly a
+"Data Scientist" but my job scope was completely about data analytics and
+machine learning engineering. That was when I started to learn about industrial
+machine learning model development. 
 
-![pipeline](https://yueguoguo.github.io/images/redmond_hq.JPG)
-<font size="1">The diagram shows "PinSage", a graph neural network-based algorithm, that models both graph-like topology and graph node attributes, for social network applications like recommendation, personalization, etc. It is applied in Pinterest recommendation engine for recommending 3 billion nodes, representating "pins" (items shown in Pinterest site) to users <sup>[2]</sup>.</font>
+![Redmond - 2017](https://yueguoguo.github.io/images/redmond_hq.JPG)
+<font size="1">This is the first time I went to Microsoft Redmond campus. It was in the spring of 2017, which was my second year at Microsoft. I was astonished by the view and working environment of Redmond campus. What I will always recommend is [In.gredients](https://dining.azurewebsites.net/34/) where you can have cheap but Michelin-quality food.</font>
 
 Unlike many data scientists, I am from an computer engineering background. After
 two-year full-time experience, I realized that most data scientists, including
@@ -80,6 +81,9 @@ aquired GitHub!).
   contemporary recommender system technology, and will continue to provide
   tremendous value to developers and researchers from different organizations
   all across the world. 
+
+!["Mini Le" - 2018](https://yueguoguo.github.io/images/minime.JPG)
+<font size="1">"Mini Le" printed by using a 3D printer at the Garage in Microsoft Cambridge office. It was in October of 2018. In the same week, the initial prototype of Microsoft Recommenders with a code name of "AirShip" was being developed. It was an enjoyable collaboration with team members coming from Cambridge, London, and Singapore.</font>
 
 There was much more interesting work done at Microsoft than what I have shared
 above but due to its confidentiality I have to keep it disclosed. It was in
@@ -153,7 +157,7 @@ knowledge may be the most vital one for industrial appliations. This is because
 the domain knowledge is what provides the foundation for all the other build-up
 of a machine learning system. 
 
-## Productionizable System at Scale
+## Productionizable system at scale
 
 Unlike years ago when a prototype of support vector machine classifier is
 already worth marketing, nowadays, productionization of an entire end-to-end
@@ -233,7 +237,72 @@ project.
   will continue to be an important topic for my endeavor with any new roles in
   the machine learning area.
 
-# Acknowledgement
+![Tattooed Laptop - 2019](https://yueguoguo.github.io/images/laptop.JPG)
+<font size="1">My second last laptop with tons of "tattoos" sticked on the surface. The photo was taken in the brand new Microsoft office in Singapore. It was the year of 2019 when there was no COVID-19. I used the laptop to access virtual machines on Azure for development.</font>
 
-I would like to thank all the amazing people that I have met or worked with
-during the 5 years at Microsoft. I truly appreciate all the learning from you.
+## Beyond the convention
+
+There is a group of technologies that I am keen on seeing their success
+application. I have either self studied or practiced these technologies during
+my work at Microsoft. These technologies may not fall into any sub-category of
+data science and machine learing but I do see their potential value in reshaping
+the industries in the near future.
+
+* **Reinforcement learning**. In many application scenarios like online
+  personalization, algorithmic trading, gaming, etc., reinforcement learning
+  exhibits the power to overcome the challenges that traditional machine
+  learning techniques cannot tackle with. I used to lead a project that uses the
+  OpenAI Gym framework for reinforcement learing based recommender system.
+  Compared to the conventional approach, the reinforcement learning-based has
+  less assumption on the static data samples for model training - it directly
+  gets input from user queries and dynamically produces outputs based on a
+  "rewarding" mechanism. The modeling philosophy of a reinforcment learning
+  framework is more close to the reality where responses are in time, so it is
+  useful for many different types of problems where fast and accurate responses
+  are required. There are already great attempts to apply reinforcement learning
+  technologies into real-world systems (e.g., [Azure
+  Personalizer](https://azure.microsoft.com/en-us/services/cognitive-services/personalizer/),
+  [Bonsai](https://www.microsoft.com/en-us/ai/autonomous-systems-project-bonsai?activetab=pivot%3aprimaryr7),
+  [automous data center
+  cooling](https://deepmind.com/blog/article/safety-first-ai-autonomous-data-centre-cooling-and-industrial-control),
+  etc.). It will surely enjoy an even larger scale of applications in the near
+  future when the computating efficiency issues can be well solved. 
+* **Generative artificial intelligence**. Synthetic data techniques become more
+  and more useful, given that raw data for building machine learning systems are
+  always difficult to acquire or cleanse due to various reasons (e.g.,
+  regulation, compliance, accessity to data, etc.). Generative AI resolves the
+  shortage problem of data, especially the labelled data, such that even if
+  without collecting large volume of data a model can still be reliably built.
+  [It is predicted that by 2030 most data used in AI will be artificially
+  generated](https://blogs.nvidia.com/blog/2021/06/08/what-is-synthetic-data/).
+  Often a data synthetic tool requires deep domain knowledge and rigorous
+  mathematical model. In addition, it needs iterations of validation against the
+  ground truth data to make sure the data quality from the synthetic tools is
+  within expectation.
+* **Ethical machine learning**. Ethics remain a problem for applicable machine
+  learning and AI models. Debiasing the prediction or classification results
+  generated from a model sometimes can be a severe moral affair. As a
+  consequence, it is important for not just the developers (this include data
+  scientists, algorithm engineers, researchers, etc.) but also the ordinary
+  people to understand how a model is created by certain algorithmic derivation
+  and how certain forms of data are used for such creation. [China has recently
+  started a new regulation that controls the abuse of AI algorithms for end
+  users](https://www.reuters.com/technology/china-issues-draft-guidelines-internet-recommendation-algorithms-2021-08-27/).
+  The aim of such regulation is that users should be given the options to
+  understand if they are surfaced with algorithms that push advertisements,
+  content, etc. [Earlier, American companies like Facebook (now Meta)
+  experienced the scandal that the user data were used for political
+  advertising](https://en.wikipedia.org/wiki/Facebook–Cambridge_Analytica_data_scandal).
+  There is no reason for blaming the technologies for the negative societal
+  impact. As developers the technolgies should be properly used and well
+  regulated. 
+
+# Close
+
+I find it hard to put ALL my learning during the last 5 years into a blog post.
+Working in such a great company is definitely one of the most memorable period
+of my life time (let me speak on behalf of the old me :)). 
+
+The last but not the least, my sincere thanks go to all the amazing people that
+I have met or worked with during the 5 years at Microsoft. I truly appreciate
+all the learning from you.
