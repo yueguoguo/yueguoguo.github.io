@@ -22,7 +22,7 @@ develop wafer failure pattern detection. In fact my title was not exactly a
 machine learning engineering. That was when I started to learn about industrial
 machine learning model development. 
 
-![Redmond - 2017](https://yueguoguo.github.io/images/redmond_hq.JPG)
+![Redmond - 2017](https://github.com/yueguoguo/yueguoguo.github.io/raw/master/images/redmond_hq.JPG)
 <font size="1">This is the first time I went to Microsoft Redmond campus. It was in the spring of 2017, which was my second year at Microsoft. I was astonished by the view and working environment of Redmond campus. What I will always recommend is [In.gredients](https://dining.azurewebsites.net/34/) where you can have cheap but Michelin-quality food.</font>
 
 Unlike many data scientists, I am from an computer engineering background. After
@@ -82,7 +82,7 @@ aquired GitHub!).
   tremendous value to developers and researchers from different organizations
   all across the world. 
 
-!["Mini Le" - 2018](https://yueguoguo.github.io/images/minime.JPG)
+!["Mini Le" - 2018](https://github.com/yueguoguo/yueguoguo.github.io/raw/master/images/minime.PNG)
 <font size="1">"Mini Le" printed by using a 3D printer at the Garage in Microsoft Cambridge office. It was in October of 2018. In the same week, the initial prototype of Microsoft Recommenders with a code name of "AirShip" was being developed. It was an enjoyable collaboration with team members coming from Cambridge, London, and Singapore.</font>
 
 There was much more interesting work done at Microsoft than what I have shared
@@ -237,7 +237,7 @@ project.
   will continue to be an important topic for my endeavor with any new roles in
   the machine learning area.
 
-![Tattooed Laptop - 2019](https://yueguoguo.github.io/images/laptop.JPG)
+![Tattooed Laptop - 2019](https://github.com/yueguoguo/yueguoguo.github.io/raw/master/images/laptop.JPG)
 <font size="1">My second last laptop with tons of "tattoos" sticked on the surface. The photo was taken in the brand new Microsoft office in Singapore. It was the year of 2019 when there was no COVID-19. I used the laptop to access virtual machines on Azure for development.</font>
 
 ## Beyond the convention
