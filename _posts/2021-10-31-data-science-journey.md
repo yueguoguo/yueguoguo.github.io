@@ -213,4 +213,7 @@ project.
 ## Z-gen Opportunities
 
 
-# References
+# Acknowledgement
+
+I would like to thank all the amazing people that I have met or worked with
+during the 5 years at Microsoft. 
