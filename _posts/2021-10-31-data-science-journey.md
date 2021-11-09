@@ -8,7 +8,7 @@ categories: technology, data science, machine learning
 
 <blockquote>
   <p>Always remember that when it comes to markets, past performance is not a good predictor of future returns—looking in the rear-view mirror is a bad way to drive. Machine learning, on the other hand, is applicable to datasets where the past is a good predictor of the future.</p>
-  <footer><cite title="François Chollet"><François Chollet/cite></footer>
+  <footer><cite title="François Chollet">François Chollet</cite></footer>
 </blockquote>
 
 # How the story began
