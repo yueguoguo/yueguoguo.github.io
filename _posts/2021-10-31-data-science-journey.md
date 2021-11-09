@@ -37,8 +37,8 @@ similarities with other peer colleagues in terms of ideation and execution. My
 colleagues helped me participate in or complete a few useful and impactful
 projects which benefited quite a number of Microsoft customers on their data
 science problems. Below I just summarize a selected list of such projects which
-are open sourced (yes we did open-source development even if Microsoft aquired
-GitHub!).
+are open sourced (yes we did open-source software development even if Microsoft
+aquired GitHub!).
 
 * [Azure/AzureDSVM](https://github.com/Azure/AzureDSVM). This was the first
   "product" I developed at Microsoft - it is an R package for operating Azure
@@ -208,10 +208,13 @@ project.
   compression](https://medium.com/gsi-technology/an-overview-of-model-compression-techniques-for-deep-learning-in-space-3fd8d4ce84e5),
   etc., all of which contribute to improving the real-time capability of a
   machine learning system. 
-* **MLOps for reliable and efficient machine learing system**. [Many of
-  my successful projects prove to me that MLOps is an important practice that
+* **MLOps for reliable and efficient machine learing system**. [Many of my
+  successful projects prove to me that MLOps is an important practice that
   builds reliable and efficient machine learning
   system](https://www.forbes.com/sites/forbestechcouncil/2019/04/03/why-machine-learning-models-crash-and-burn-in-production/?sh=2f30d8c82f43).
+  It is estimated that the market value of MLOps can be sized up to 125 billion
+  dollars according to [a recent
+  study](https://neu.ro/2021-mlops-platforms-vendor-analysis-report/).
   Maintaining a completed and proper MLOps system can be as complex as the
   machine learning system itself. The core tasks can be data sanity check, data
   governance, feature store and management, CI (continuous integration) / CT
@@ -221,7 +224,11 @@ project.
   committed changes in the source library codes and the example notebook codes.
   The tests run against the example data to make sure the results generated are
   within expectation before the codes are checked in. In the production system,
-  there may be more tasks for practicing MLOps in a machine learning pipeline. It was fortunate that I have been trained these days for applying the MLOps methodology in whatever machine learning project that I am involved in. MLOps will continue to be an important topic for my endeavor with any new roles in the machine learning area.
+  there may be more tasks for practicing MLOps in a machine learning pipeline.
+  It was fortunate that I have been trained these days for applying the MLOps
+  methodology in whatever machine learning project that I am involved in. MLOps
+  will continue to be an important topic for my endeavor with any new roles in
+  the machine learning area.
 
 # Acknowledgement
 
