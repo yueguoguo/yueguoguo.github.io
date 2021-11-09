@@ -21,6 +21,9 @@ was not exactly a "Data Scientist" but my job scope was completely about data
 analytics and machine learning engineering. That was when I started to learn
 about industrial machine learning model development. 
 
+![pipeline](https://yueguoguo.github.io/images/redmond_hq.JPG)
+<font size="1">The diagram shows "PinSage", a graph neural network-based algorithm, that models both graph-like topology and graph node attributes, for social network applications like recommendation, personalization, etc. It is applied in Pinterest recommendation engine for recommending 3 billion nodes, representating "pins" (items shown in Pinterest site) to users <sup>[2]</sup>.</font>
+
 Unlike many data scientists, I am from an computer engineering background. After
 two-year full-time experience, I realized that most data scientists, including
 myself, in the industry do the "cool" work that prototyped a well-fitted model
