@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      My Learning about Machine Learning 
+title:      Exploration And Exploitation 
 date:       2021-10-31 22:30
 summary:    A recap of the 5-year data scientist journey at Microsoft
 categories: technology, data science, machine learning, career development
@@ -17,40 +17,39 @@ categories: technology, data science, machine learning, career development
 ## How the story began
 
 **November 12th, 2021** marked my last day with Microsoft. I joined Microsoft as
-a junior Data and Applied Scientist in 2016. Microsoft is my second company
-after I graduated with the Ph.D. degree from Nanyang Technological University,
+a junior Data Scientist in 2016. Microsoft is my second company after I
+graduated with the Ph.D. degree from Nanyang Technological University,
 Singapore. My first company was Broadcom where I worked as a Product Engineer
 for [wafer failure pattern
 detection](https://ieeexplore.ieee.org/abstract/document/6932449). My job scope
-at Broadcome was about data analytics and machine learning. That was when I
-started to learn about industrial application of machine learning. Unlike many
-data scientists, I am from an computer engineering background. In the last year
-of my Ph.D. and the first several years of my industry career, I tried hard to
-develop the statistical and analytical theories by reviewing my university
-courses, reading books about data science and machine learning, attending
-conferences or meetups to learn from experts, etc. 
+was about data analytics and machine learning. That was when I started to
+practice machine learning in the real work. Unlike many data scientists, I am
+from an computer engineering background. In the last year of my Ph.D. and the
+first several years of my industry career, I tried hard to develop the
+statistical and analytical skills by reviewing the theories and attending
+conferences or meetups to learn from experts. 
 
 When I just joined Microsoft as a Data Scientist, I think modelling is the
 absolute core component of my job. After the first two years of various
-engagements in the customer projects, I gradually realized that most data
-scientists, including myself, in the industry do the "cool" work that prototyped
-a nicely fitted model with unrealistically high-quality data without even
-considering transforming the prototype into a production system. I suspect the
-reasons behind this phenomenon are two fold: **users who "buy" the model do not
-want to invest too much before they can see some appealing results; the
-engineering platforms for applying data science into production is not powerful
-nor standardized**. The observation forced me to rethink about the role of a
-data scientist - I recognized the importance of combining software and computer
-engineering with the machine learning to produce cool and, more importantly,
-useable solutions, for users. 
+engagements with customers, I gradually realized that most data scientists,
+including myself, in the industry do the "cool" work that prototyped a nicely
+fitted model with unrealistically high-quality data. What's worse, many times,
+the prototypes are never considered to be developed into a production system. I
+suspect the reasons behind this phenomenon are two fold: **users who "buy" the
+model do not want to invest too much in a full fledged system before seeing the
+"appealing" results; the technology platforms for converting data science
+proof-of-conecpt into production is not powerful nor standardized**. The
+observation forced me to rethink about the role of a data scientist - I
+recognized the importance of combining software and computer engineering skills
+with machine learning techniques to produce cool and, more importantly, useable
+solutions, for users. 
 
 At Microsoft, I was lucky to work with a team of talented people. I found a
-great amount of interest similarities with my colleagues and that lead to
-efficient ideation and execution. With their help, I participated in and
-contributed to many impactful projects that created commercial value for
-Microsoft customers. Below it is a selected list of such projects which
-are publicly shareable (**we started open-source software development even
-before Microsoft acquired GitHub!**).
+great amount of interest similarities with them, which led to efficient ideation
+and execution in work. With their help, I participated in and contributed to
+many impactful projects. Below it is a selected list of such projects which are
+publicly shareable (**we started open-source software development even before
+Microsoft acquired GitHub!**).
 
 * [Azure/AzureDSVM](https://github.com/Azure/AzureDSVM). This was the very first
   "product" I developed at Microsoft. It was under the guidance of my
@@ -60,60 +59,68 @@ before Microsoft acquired GitHub!**).
   that can support large-scale parallel computing on cloud. This package greatly
   supports the R-language data scientists to run scalable analytical job on a
   remote cluster of Azure data science virtual machines with limited effort on
-  upgront environment setup. I was thrilled to receive a lot of positive
-  feedback from our technical sales colleagues and their customers. The work
-  also helped me generate some "noise" in the R and data science community - I
-  published several blog posts ([AzureDSVM: a new R package for elastic use of
-  the Azure Data Science Virtual
+  upgront environment setup. After the release of AzureDSVM, I was thrilled to
+  receive a lot of positive feedback from our technical sales colleagues and
+  their customers. The work also built my reputation in the R and data science
+  community - I published several blog posts ([AzureDSVM: a new R package for
+  elastic use of the Azure Data Science Virtual
   Machine](https://blog.revolutionanalytics.com/2017/05/azuredsvm-a-new-r-package-for-elastic-use-of-the-azure-data-science-virtual-machine.html)
   and [Parallelizing Data Analytics on Azure with the R Interface
   Tool](https://blog.revolutionanalytics.com/2016/12/azure-r-interface-tool.html))
   and presented several times at different conferences like Strata+Data,
   Microsoft MLADS, etc. 
 * [Azure/AzureSMR](https://github.com/microsoft/AzureSMR). Around the same time
-  of AzureDSVM, I joined the collaborative effort with other two colleagues,
-  Alan Weaver and Hong Ooi from London and Melbourne, respectively, to develop
-  AzureSMR, which is an R package that supports CRUD operations on more Azure
+  of AzureDSVM, I joined the collaborative effort with Alan Weaver and Hong Ooi
+  from Microsoft London and Microsoft Melbourne, respectively, to develop
+  AzureSMR. It is an R package that supports CRUD operations on more Azure
   resources than just the virtual machines. The package got a lot of attention
-  of Microsoft customers whose technology stack is on R and Azure.
+  of Microsoft customers whose technology stack is on R and Azure. It is now a
+  part of AzureR and is maintained by Hong actively.
 * [Microsoft/acceleratoRs](https://github.com/microsoft/acceleratoRs). After a
   number of successful customer engagements, I started to open source the
   collection of R-based data science and machine learning solutions for some
-  commonly seen industrial problems. It was one of the first efforts from the
-  Microsoft Singapore data science team that provides reusable and deployable
-  end-to-end solution on cloud. It was the tipping point when my work is
-  focused more on operationalization of a data science and machine learning
-  system than just developing proof-of-concept.  
+  commonly seen industrial problems like [solar energy
+  forecasting](https://github.com/microsoft/acceleratoRs/tree/master/SolarPanelForecasting),
+  [employee attrition
+  prediction](https://github.com/microsoft/acceleratoRs/tree/master/EmployeeAttritionPrediction),
+  etc. "acceleratoRs" was one of the first efforts for reusable and deployable
+  end-to-end solution on cloud from Microsoft data science team. It was the
+  tipping point when my work got focused more on operationalization of a data
+  science and machine learning system than just development of a
+  proof-of-concept.
 * [Microsoft/Recommenders](https://github.com/microsoft/recommenders). Microsoft
   Recommenders is not just a huge success for me and the team that I worked
-  together with, it is also a big one for Microsoft that establishes the
-  technological strength and reputation for its recommender system technology.
-  The project started from almost nothing in 2018, and today it is **the most
-  popular recommended system project on GitHub** (starred about **12k** times).
-  Developing and leading the Microsoft Recommenders project was like start-up
-  experience to which I was fully devoted with true passion for realizing crazy
-  dreams. The impact of the project is definitely massive - with Microsoft
-  Recommenders, the team has
-  * **finished more than 10 commercial projects with Microsoft enterprise customers**, 
+  together with, it is also an influential project for Microsoft that
+  establishes the technological strength and reputation in the recommender
+  system technology realm. The project started from almost nothing in 2018, and
+  today it is **the most popular recommended system project on GitHub** (starred
+  about **12k** times). To me, developing and leading the Microsoft Recommenders
+  project was like start-up experience to which I was fully devoted with true
+  passion for realizing crazy dreams. The impact of the project is definitely
+  massive - with Microsoft Recommenders, the team has
+  * **worked with more than 30 customers on various recommendation problems**, 
   * **published 3 top-tiered academic papers, i.e., [WWW
     20](https://dl.acm.org/doi/abs/10.1145/3366424.3382692), [KDD
     19](https://github.com/microsoft/recommenders#reference-papers), and [RecSys
     19](https://dl.acm.org/doi/10.1145/3298689.3346967)**,
-  * **gave more than 10 tutorials at top-tiered industrial and academic conferences**,
+  * **gave more than 10 tutorials and talks at top-tiered industrial and
+    academic conferences like KDD, PAKDD, ICDM, O'Reilly AI Conference**,
   * **and collaborated with [75 contributors on
-    GitHub](https://github.com/microsoft/recommenders/blob/main/AUTHORS.md)**. 
+    GitHub](https://github.com/microsoft/recommenders/blob/main/AUTHORS.md) from
+    all over the world**. 
 
   Thanks to the continuous leadership of Tao Wu, Miguel Fierro, Andreas
   Argyriou, Scott Graham, and Jun Ki Kim, the Microsoft Recommenders project is
   still actively developed and well maintained. Collaborators from the Microsoft
   Research team led by Xing Xie, Jianxun Lian, and Fangzhao Wu, keep the
-  freshness of the project by contributing the novel inventions of recommender
-  system algorithms to it. The project keeps attractting contributions from
-  community as well, and in turn, it provides research and development value to
-  individuals and organizations from all across the world. 
+  freshness of the project by contributing the novel recommender system
+  algorithms to the Microsoft Recommenders repository. The project keeps
+  attractting contributions from community as well, and in turn, it provides
+  research and development value to individuals and organizations from all
+  across the world. 
 
 There was much more interesting work done at Microsoft than what I have shared
-above but due to the confidentiality I have to keep it disclosed. It was in
+above. Due to the confidentiality I have to keep it disclosed. It was in
 these projects where I grew my technical skills tremendously. Also from the
 projects I learnt how to be a productive, empathetic, and humble individual as
 well as a team lead. My perspective about data science and machine learning
@@ -121,31 +128,31 @@ became more practical than that in the years of Ph.D. **Doing "cool" stuff
 should not be merely for being cool - instead, innovation in whichever form
 should aim at providing value**. 
 
-With the 5-year pragmatic experience as a data scientist at Microsoft, I have
-built the confidence to create production-ready data science and machine
-learning system for almost any given scenarios. However, what I am still lack of
-is the **industry-specific domain knowledge** that can lower the barrier of
-applying machine learning for real-world business problems. Microsoft is a great
-company for learning and creating new technologies, but it might not be the
-perfect place for delving into a domain (e.g., retailers work in the retail
-domain and bankers work in the finance domain). Realizing the gap between the
-pure technology and the real-world application initiated my thought about
-seeking for a new endeavour outside.
+However, being an expert in data science and machine learning is not enough to
+develop valuable products and solutions. After 5 years at Microsoft, what I am
+still lack of is the **industry-specific domain knowledge**. Only by applying
+the technical skills and domain knowledge together can the data science and
+machine learning system be succesfully built. Microsoft is an ideal company for
+learning and creating new technologies, but it might not be the perfect place
+for being a domain expert (e.g., retailers work in the retail domain and bankers
+work in the finance domain). Realizing the gap between the pure technology and
+the real-world application initiated my thought about seeking for a new
+endeavour outside.
 
 !["Mini Le" - 2018](https://github.com/yueguoguo/yueguoguo.github.io/raw/master/images/minime.PNG)
 <font size="1">"Mini Le" printed by using a 3D printer at the Garage in Microsoft New England office. It was in October of 2018. In the same week, the initial prototype of Microsoft Recommenders with a code name of "AirShip" was being developed by a team of data scientists and software engineers from Cambridge, London, and Singapore.</font>
 
 ## What's next
 
-As I planned to leave Microsoft I started to think about my next stage of
+As I decided to leave Microsoft I started to carefully plan my next stage of
 career. I am very positive about the future of data science and machine
 learning. Apparently, the potential of the technology has not yet been fully
 exploited. This might be due to the lack of complete understanding of cerntain
 problems as well as the inmaturity of the underlying technology that supports
-the upper-level algorithmic implementations. **Maybe data scientist are no
-longer the "sexiest" job (well this depends on how it is defined :)) - instead
-of merely conceptualization and prototype development, data science and machine
-learning requires more hands-on dirty work to help tackle the real problems that
+the upper-level algorithmic implementations. **Maybe data scientist is no longer
+the "sexiest" job (well this depends on how it is defined :)) - instead of
+conceptualization and prototype development, data science and machine learning
+requires more hands-on dirty work to help tackle the real problems that
 companies care about**. 
 
 The anticipation of an even larger scale of applications of data science,
@@ -161,12 +168,11 @@ transforming the contemporary industries. Compared to the technology companies
 like Microsoft, Google, Facebook (now Meta), etc., who have already practiced
 data science and machine learning in the core business (advertisement, search
 engine, cloud computing, etc.) for ages, traditional corporations in the
-industry sectors other than software or internet has just got started and still
-suffer from building an productive system that can help boost the revenue or
-reduce the operational cost. It's commonly seen in enterprises tha constructing
-a data science and machine learning system incurs high-cost of both
-infrastructure and human resources without signifant return-of-investment due to
-the lack of the expertise and experience.
+industry sectors other than software or internet has just got started and suffer
+from efficiently building an productive system that can boost the revenue or
+reduce the operational cost. It's still commonly seen in the enterprises that
+constructing a data science and machine learning system incurs high-cost of both
+infrastructure and human resources without signifant return-of-investment.
 
 [Gartner predicts that 85% of the machine learning projects will
 fail](https://www.gartner.com/en/newsroom/press-releases/2018-02-13-gartner-says-nearly-half-of-cios-are-planning-to-deploy-artificial-intelligence).
@@ -174,28 +180,26 @@ I have experienced failure projects at Microsoft for quite a few times. Usually
 the failures are due to **unclear definition of machine learning and data
 science problems, incompleteness of data governance system, lack of proper use
 of MLOps, limited resonance between technology system and business requirement,
-bad design of human-machine interaction**. For industrial applications, it is
-pivotal to make a strategic plan and form up a team with diversified specialties
-(i.e., data scientists, machine learning engineers, cloud system architects,
-etc.) in the first place before going directly to development. As an experienced
-data scientist, I am looking forward to providng in-depth knowledge and
-expertise about building an effective data science and machine learning system
-from both a strategic and engineering perspective in the next role. Especially,
-it would be ideal that the domain knowledge in a particular sector is
-combinationally applied into the technological system that I build. While the
-technological progression is often abrupt and distructive, that of an industry
-domain may be slow. The knowledge that is useful to an industry domain is
-accumulative and it cannot be easily overthrown. 
+bad design of human-machine interaction, etc.**. For industrial applications,
+before going directly into the development, it is pivotal to make a strategic
+plan and form up a team with the right specialties which should be generally
+diversified, i.e., data scientists, machine learning engineers, cloud system
+architects, etc. Especially, it would be ideal that the domain experts in the
+business join the same team or have a frequent connection with the team if he is
+with an external organization. While the technological progression is often
+abrupt and distructive, that of an industry domain may be slow. The knowledge
+that is useful to an industry domain is accumulative and it cannot be easily
+overthrown. 
 
 ### Productionizable system at scale
 
-Unlike years ago when a prototype of support vector machine classifier could
+Unlike years ago when a prototype of the support vector machine classifier could
 generate buzz, nowadays, productionization of an entire end-to-end pipeline is
 required as a standard outcome of machine learning projects. I have not
-sufferred much from transferring my mind-set from algorithm-oriented approach to
-production-oriented one thanks to the training in computer engineering. At work,
-I always found it necessary to help customers to build a working system that has
-well-defined run-time topology and convenient APIs. 
+sufferred much from transferring my mind-set from the algorithm-oriented
+approach to the production-oriented one thanks to the training as a computer
+engineer. At work, I always found it necessary to help customers to build a
+working system that has well-defined run-time topology and convenient APIs. 
 
 In fact, building a scalable machine learning system for production is not that
 easy. It is truly a combination of arts from different disciplines. In the first
@@ -265,16 +269,15 @@ consideration for productionization.
   are usually **data sanity check, data governance, feature store and
   management, CI (continuous integration) / CT (continuous train) / CD
   (continuous delivery), health monitoring, unit/integration/smoke testing,
-  etc**. For example, in Microsoft Recommenders, the team developed a robust
-  build pipeline that assures the quality of the committed changes in the source
-  library codes and the example notebook codes. The tests run against the
-  example data to make sure the results generated are within expectation before
-  the codes are checked in. In the production system, there may be more tasks
-  for practicing MLOps in a machine learning pipeline. It was fortunate that I
-  have been trained in nearly all of my data science and machine learning
-  projects for applying the MLOps methodology. MLOps will continue to be an
-  important topic for my endeavor with any new roles in the machine learning
-  area.
+  etc**. For example, in Microsoft Recommenders, a robust build pipeline was
+  developed to assure the quality of the committed changes in the source library
+  codes and the example notebook codes. The tests run against the example data
+  to make sure the results generated are within expectation before the codes are
+  checked in. In the production system, there may be more tasks for practicing
+  MLOps in a machine learning pipeline. It was fortunate that I have been
+  trained in nearly all of my data science and machine learning projects for
+  applying the MLOps methodology. MLOps will continue to be an important topic
+  for my endeavor with any new roles in the machine learning area.
 
 ![Tattooed Laptop - 2019](https://github.com/yueguoguo/yueguoguo.github.io/raw/master/images/laptop.JPG)
 <font size="1">My second last laptop with tons of "tattoos" sticked on the surface. The photo was taken in the brand new Microsoft office in Singapore which was opened in 2019. I used the laptop to access virtual machines on Azure for development.</font>
@@ -284,9 +287,7 @@ consideration for productionization.
 There is a group of technologies that I am keen on seeing their success
 application. I have either self studied or practiced these technologies during
 my work at Microsoft but have limited chances to put them into a production
-system. These technologies may not strictly fall into any sub-category of data
-science and machine learing but I do see their potential value in the near
-future.
+system. However, I do see their potential value in the near future.
 
 * **Reinforcement learning**. [In many application scenarios like online
   personalization, algorithmic trading, gaming, etc., reinforcement learning
@@ -294,7 +295,7 @@ future.
   learning techniques cannot tackle
   with](https://towardsdatascience.com/applications-of-reinforcement-learning-in-real-world-1a94955bcd12).
   I used to lead a project that uses the [OpenAI Gym
-  framework](https://gym.openai.com) for reinforcement learing based recommender
+  framework](https://gym.openai.com) for reinforcement learing-based recommender
   system. Compared to the conventional approach, the reinforcement
   learning-based method has less restricted assumption on the static data
   samples for model training - it directly gets input from front-end queries and
@@ -345,24 +346,13 @@ future.
 I find it hard to put all my learning during the last 5 years and my
 expectations for the future into a blog post. Working in such a great company is
 definitely one of the most memorable periods of my life time (let me speak on
-behalf of the old me :)). I would like to close this article with a great
-analogy from Mu Li who is a researcher from Amazon - [he interpretes life as a
-stochastic gradient descent process where the aim is to find the optimal point
-gradually](https://zhuanlan.zhihu.com/p/414009313). Philosophically, this is a
-great summary of how I gradually approach the career pursuit step by step. The
-original post is in Chinese and below it is the translation on my own: 
+behalf of the old me :)). This post is closed here with an analogy of my career
+thus far - it is like the **"exploitation and exploration"** process that is
+often seen in a reinforcement learning system.  
+* Acquisition of new knowledge continues the journey.
+* Decision optimization is made with the old knowledge.
+* Exploration and exploitation is balanced for maximizing the overall gain.
 
-* Life needs a goal. 
-* The goal should be big enough.  
-* Walking towards the goal should be non-stop.
-* The process might be suffering.
-* Sometimes it is fine to relax.
-* It is also fine to look around.
-* The process can be either slow or fast, so there is no need to worry.
-* The initial point is important.
-* The goal is reachable even if it is far away.
-* Every process is unique.
-
-The last but not the least, my sincere thanks go to all the amazing people that
-I have met or worked with during the 5 years at Microsoft. I truly appreciate
-all the learning from you.
+Last but not the least, I would like to thank all the amazing people that I have
+met or worked with during the 5 years at Microsoft. I truly appreciate all the
+learning from you.
