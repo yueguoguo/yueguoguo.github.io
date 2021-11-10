@@ -12,7 +12,7 @@ categories: technology, data science, machine learning
 </blockquote>
 
 ![Redmond - 2017](https://github.com/yueguoguo/yueguoguo.github.io/raw/master/images/redmond_hq.JPG)
-<font size="1">This is the first time I went to Microsoft Redmond campus. It was in the spring of 2017, which was my second year at Microsoft. I was astonished by the view and working environment of Redmond campus. What I will always recommend is [In.gredients](https://dining.azurewebsites.net/34/) where you can have cheap but Michelin-quality food.</font>
+<font size="1">This is the first time I went to Microsoft Redmond campus. It was in the spring of 2017, which was my second year at Microsoft. I was astonished by the view and working environment of Redmond campus. What I will always recommend is <a href="https://dining.azurewebsites.net/34/">In.gredients</a> where you can have cheap but Michelin-quality food.</font>
 
 ## How the story began
 
