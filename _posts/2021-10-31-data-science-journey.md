@@ -356,9 +356,9 @@ original post is in Chinese and below it is the translation on my own:
 * Life needs a goal. 
 * The goal should be big enough.  
 * Walking towards the goal should be non-stop.
-* The process is suffering.
+* The process might be suffering.
 * Sometimes it is fine to relax.
-* It is also fine to look around "stocastically".
+* It is also fine to look around.
 * The process can be either slow or fast, so there is no need to worry.
 * The initial point is important.
 * The goal is reachable even if it is far away.
