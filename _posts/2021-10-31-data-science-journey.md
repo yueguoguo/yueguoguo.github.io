@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Data Science Journey At Microsoft
+title:      My Learning about Machine Learning 
 date:       2021-10-31 22:30
 summary:    A recap of the 5-year data scientist journey at Microsoft
 categories: technology, data science, machine learning, career development
@@ -17,19 +17,18 @@ categories: technology, data science, machine learning, career development
 ## How the story began
 
 **November 12th, 2021** marked my last day with Microsoft. I joined Microsoft as
-a junior data scientist in 2016. Microsoft is my second company after I
-graduated with the Ph.D. degree from Nanyang Technological University,
+a junior Data and Applied Scientist in 2016. Microsoft is my second company
+after I graduated with the Ph.D. degree from Nanyang Technological University,
 Singapore. My first company was Broadcom where I worked as a Product Engineer
 for [wafer failure pattern
-detection](https://ieeexplore.ieee.org/abstract/document/6932449). My title at
-Broadcom was not "Data Scientist" though my job scope was completely about data
-analytics and machine learning. That was when I started to learn about
-industrial application of machine learning. Unlike many data scientists, I am
-from an computer engineering background. In the last year of my Ph.D. and the
-first several years of my industry career, I tried hard to develop the
-statistical and analytical skills by reviewing my university courses, reading
-books about data science and machine learning, attending conferences or meetups
-to learn from experts, etc. 
+detection](https://ieeexplore.ieee.org/abstract/document/6932449). My job scope
+at Broadcome was about data analytics and machine learning. That was when I
+started to learn about industrial application of machine learning. Unlike many
+data scientists, I am from an computer engineering background. In the last year
+of my Ph.D. and the first several years of my industry career, I tried hard to
+develop the statistical and analytical theories by reviewing my university
+courses, reading books about data science and machine learning, attending
+conferences or meetups to learn from experts, etc. 
 
 When I just joined Microsoft as a Data Scientist, I think modelling is the
 absolute core component of my job. After the first two years of various
