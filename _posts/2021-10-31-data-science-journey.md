@@ -11,6 +11,9 @@ categories: technology, data science, machine learning
   <footer><cite title="François Chollet">François Chollet</cite></footer>
 </blockquote>
 
+![Redmond - 2017](https://github.com/yueguoguo/yueguoguo.github.io/raw/master/images/redmond_hq.JPG)
+<font size="1">This is the first time I went to Microsoft Redmond campus. It was in the spring of 2017, which was my second year at Microsoft. I was astonished by the view and working environment of Redmond campus. What I will always recommend is [In.gredients](https://dining.azurewebsites.net/34/) where you can have cheap but Michelin-quality food.</font>
+
 ## How the story began
 
 November 12th, 2021 marked my last day with Microsoft. I joined Microsoft as a
@@ -21,9 +24,6 @@ develop wafer failure pattern detection. In fact my title was not exactly a
 "Data Scientist" but my job scope was completely about data analytics and
 machine learning engineering. That was when I started to learn about industrial
 machine learning model development. 
-
-![Redmond - 2017](https://github.com/yueguoguo/yueguoguo.github.io/raw/master/images/redmond_hq.JPG)
-<font size="1">This is the first time I went to Microsoft Redmond campus. It was in the spring of 2017, which was my second year at Microsoft. I was astonished by the view and working environment of Redmond campus. What I will always recommend is [In.gredients](https://dining.azurewebsites.net/34/) where you can have cheap but Michelin-quality food.</font>
 
 Unlike many data scientists, I am from an computer engineering background. After
 two-year full-time experience, I realized that most data scientists, including
@@ -82,9 +82,6 @@ aquired GitHub!).
   tremendous value to developers and researchers from different organizations
   all across the world. 
 
-!["Mini Le" - 2018](https://github.com/yueguoguo/yueguoguo.github.io/raw/master/images/minime.PNG)
-<font size="1">"Mini Le" printed by using a 3D printer at the Garage in Microsoft Cambridge office. It was in October of 2018. In the same week, the initial prototype of Microsoft Recommenders with a code name of "AirShip" was being developed. It was an enjoyable collaboration with team members coming from Cambridge, London, and Singapore.</font>
-
 There was much more interesting work done at Microsoft than what I have shared
 above but due to its confidentiality I have to keep it disclosed. It was in
 these projects where I grew both my collaboration and development skills
@@ -104,6 +101,9 @@ place for delving into a domain (e.g., retailers work in the retail domain and
 bankers work in the finance domain). Realizing the gap between the pure
 technology and the real-world application initiated my thought about seeking for
 a new endeavour outside.
+
+!["Mini Le" - 2018](https://github.com/yueguoguo/yueguoguo.github.io/raw/master/images/minime.PNG)
+<font size="1">"Mini Le" printed by using a 3D printer at the Garage in Microsoft Cambridge office. It was in October of 2018. In the same week, the initial prototype of Microsoft Recommenders with a code name of "AirShip" was being developed. It was an enjoyable collaboration with team members coming from Cambridge, London, and Singapore.</font>
 
 ## What's next
 
