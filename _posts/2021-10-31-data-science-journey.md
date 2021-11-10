@@ -50,13 +50,12 @@ ideation and execution. With the help of the team members, I participated in and
 contributed to many impactful projects that created tremendous commercial value
 for Microsoft customers. Below I summarize a selected list of such projects
 which are publicly shareable (**yes we did open-source software development even
-before Microsoft acquired GitHub!** :blush:).
+before Microsoft acquired GitHub!**).
 
 * [Azure/AzureDSVM](https://github.com/Azure/AzureDSVM). This was the very first
   "product" I developed at Microsoft under the guidance of my then-manager,
-  [Graham Williams](https://togaware.com/graham.williams.html), who is one of
-  the most renowed R experts in the world. AzureDSVM is an R package for
-  operating [Azure Data Science Virtual
+  Graham Williams who is one of the most renowed R experts in the world.
+  AzureDSVM is an R package for operating [Azure Data Science Virtual
   Machines](https://azure.microsoft.com/en-us/services/virtual-machines/data-science-virtual-machines/)
   that can support large-scale parallel computing on cloud. This package greatly
   supports the R language data scientist to run scalable analytical job on a
