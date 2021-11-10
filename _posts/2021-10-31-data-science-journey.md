@@ -348,25 +348,26 @@ future.
 
 ## Close
 
-I find it hard to summarize all my learning during the last 5 years and my
+I find it hard to put all my learning during the last 5 years and my
 expectations for the future into a blog post. Working in such a great company is
-definitely one of the most memorable period of my life time (let me speak on
+definitely one of the most memorable periods of my life time (let me speak on
 behalf of the old me :)). I would like to close this article with a great
 analogy from Mu Li who is a researcher from Amazon - [he interpretes life as a
 stochastic gradient descent process where the aim is to find the optimal point
-gradually](https://zhuanlan.zhihu.com/p/414009313). The original post is in
-Chinese and below it is the translation on my own: <bold>
-* Life or career needs a goal. 
+gradually](https://zhuanlan.zhihu.com/p/414009313). Philosophically, this is a
+great summary of how I gradually approach the career pursuit step by step. The
+original post is in Chinese and below it is the translation on my own: 
+
+* Life needs a goal. 
 * The goal should be big enough.  
-* You should keep walking steps towards the goal.
-* The iteration is suffering.
+* Walking towards the goal should be non-stop.
+* The process is suffering.
 * Sometimes it is fine to relax.
-* You can look around "stocastically".
-* The process to the goal can be either slow or fast, so there is no need to worry.
+* It is also fine to look around "stocastically".
+* The process can be either slow or fast, so there is no need to worry.
 * The initial point is important.
 * The goal is reachable even if it is far away.
-* Every one is unique.
-</bold>
+* Every process is unique.
 
 The last but not the least, my sincere thanks go to all the amazing people that
 I have met or worked with during the 5 years at Microsoft. I truly appreciate
