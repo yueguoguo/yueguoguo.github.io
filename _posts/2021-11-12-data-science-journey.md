@@ -328,7 +328,7 @@ into a production.
 I find it hard to put all my thoughts about the past and the future into a blog
 post. Working in so great a company as Microsoft is definitely one of the most
 memorable periods of my life time (let me speak on behalf of the old me :)).
-This post will end here with an analogy of my career thus far - it is like a
+This post will end here with an analogy of my career thus far - it is like an
 *"exploitation and exploration"* process that is often seen in an agent-based
 intelligent system:
 * **acquisition of new knowledge continues the journey**,
