@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Exploration And Exploitation 
+title:      Exploration and exploitation 
 date:       2021-11-12 22:30
 summary:    A retrospect of the 5-year journey at Microsoft
 categories: technology, data science, machine learning, career development

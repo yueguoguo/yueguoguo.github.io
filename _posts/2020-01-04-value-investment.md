@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Value Investing in Technology
+title:      Value investing in technology
 date:       2020-01-04 16:43:29
 summary:    How to apply value investing in technology domain
 categories: technology, value investment
