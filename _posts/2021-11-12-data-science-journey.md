@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Exploration And Exploitation 
-date:       2021-10-31 22:30
+date:       2021-11-12 22:30
 summary:    A recap of the 5-year data scientist journey at Microsoft
 categories: technology, data science, machine learning, career development
 ---
