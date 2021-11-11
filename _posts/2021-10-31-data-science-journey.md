@@ -98,16 +98,16 @@ Microsoft acquired GitHub!**).
   project was like start-up experience to which I was fully devoted with true
   passion for realizing crazy dreams. The impact of the project is definitely
   massive - with Microsoft Recommenders, the team has
-  * **worked with more than 30 customers on various recommendation problems**, 
-  * **published 3 top-tiered academic papers, i.e., [WWW
+  * worked with more than 30 customers on various recommendation problems, 
+  * published 3 top-tiered academic papers, i.e., [WWW
     20](https://dl.acm.org/doi/abs/10.1145/3366424.3382692), [KDD
     19](https://github.com/microsoft/recommenders#reference-papers), and [RecSys
-    19](https://dl.acm.org/doi/10.1145/3298689.3346967)**,
-  * **gave more than 10 tutorials and talks at top-tiered industrial and
-    academic conferences like KDD, PAKDD, ICDM, O'Reilly AI Conference**,
-  * **and collaborated with [75 contributors on
+    19](https://dl.acm.org/doi/10.1145/3298689.3346967),
+  * gave more than 10 tutorials and talks at top-tiered industrial and
+    academic conferences like KDD, PAKDD, ICDM, O'Reilly AI Conference,
+  * and collaborated with [75 contributors on
     GitHub](https://github.com/microsoft/recommenders/blob/main/AUTHORS.md) from
-    all over the world**. 
+    all over the world. 
 
   Thanks to the continuous leadership of Tao Wu, Miguel Fierro, Andreas
   Argyriou, Scott Graham, and Jun Ki Kim, the Microsoft Recommenders project is
@@ -343,15 +343,15 @@ system. However, I do see their potential value in the near future.
 
 ## Close
 
-I find it hard to put all my learning during the last 5 years and my
-expectations for the future into a blog post. Working in such a great company is
-definitely one of the most memorable periods of my life time (let me speak on
-behalf of the old me :)). This post is closed here with an analogy of my career
-thus far - it is like the **"exploitation and exploration"** process that is
-often seen in a reinforcement learning system.  
-* Acquisition of new knowledge continues the journey.
-* Decision optimization is made with the old knowledge.
-* Exploration and exploitation is balanced for maximizing the overall gain.
+I find it hard to put all my thoughts about the past and the future into a blog
+post. Working in so great a company as Microsoft is definitely one of the most
+memorable periods of my life time (let me speak on behalf of the old me :)).
+This post will end here with an analogy of my career thus far - it is like a
+**"exploitation and exploration"** process that is often seen in an agent-based
+intelligent system:
+* acquisition of new knowledge continues the journey,
+* decision optimization is made with the old knowledge,
+* and, exploration and exploitation is balanced for maximizing the overall gain.
 
 Last but not the least, I would like to thank all the amazing people that I have
 met or worked with during the 5 years at Microsoft. I truly appreciate all the
