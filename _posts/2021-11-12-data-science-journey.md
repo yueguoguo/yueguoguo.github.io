@@ -45,8 +45,8 @@ At Microsoft, I was lucky enough to work with a group of talented people. I
 found a great amount of similarities with them. And this led to efficient ideation
 and execution in our work. With their help, I participated in and contributed to
 many impactful projects. Below it is a selected list of such projects which are
-publicly shareable (**we started open-source software development even before
-Microsoft acquired GitHub!**).
+publicly shareable (we started open-source software development even before
+Microsoft acquired GitHub!).
 
 * [Azure/AzureDSVM](https://github.com/Azure/AzureDSVM). This was the very first
   "product" I developed at Microsoft. It was under the guidance of my
@@ -89,8 +89,8 @@ Microsoft acquired GitHub!**).
   is also an influential project for Microsoft. It unprecedentedly established
   the technological strength and reputation of Microsoft in the recommender
   system technology realm. The project started from almost nothing in 2018, and
-  today it is **the most popular recommended system project on GitHub** (starred
-  about **12k** times). To me, developing and leading the Microsoft Recommenders
+  today it is *the most popular* recommended system project on GitHub (starred
+  about *12k* times). To me, developing and leading the Microsoft Recommenders
   project was like *start-up* experience to which I got fully devoted with true
   passion. **That was the period when I had the most meetings in the night and
   the highest frequency of GitHub commits - I do not see it a break of my
@@ -248,10 +248,10 @@ system. Among all of the technical considerationis for building a production-rea
   billion* dollars according to [a recent
   study](https://neu.ro/2021-mlops-platforms-vendor-analysis-report/). A
   functional MLOps system can be as complex as the machine learning system it
-  serves. The core tasks for MLOps are usually **data sanity check, data
+  serves. The core tasks for MLOps are usually *data sanity check, data
   governance, feature store and management, CI (continuous integration) / CT
   (continuous train) / CD (continuous delivery), health monitoring,
-  unit/integration/smoke testing, etc**. For example, in Microsoft Recommenders,
+  unit/integration/smoke testing, etc*. For example, in Microsoft Recommenders,
   a robust build pipeline was developed to assure the quality of the committed
   changes in the source codes and the example notebook codes. The tests run
   against the example data to make sure the results generated are within
@@ -329,11 +329,11 @@ I find it hard to put all my thoughts about the past and the future into a blog
 post. Working in so great a company as Microsoft is definitely one of the most
 memorable periods of my life time (let me speak on behalf of the old me :)).
 This post will end here with an analogy of my career thus far - it is like a
-**"exploitation and exploration"** process that is often seen in an agent-based
+*"exploitation and exploration"* process that is often seen in an agent-based
 intelligent system:
-* acquisition of new knowledge continues the journey,
-* decision optimization is made with the old knowledge,
-* and, exploration and exploitation is balanced for maximizing the overall gain.
+* **acquisition of new knowledge continues the journey**,
+* **decision optimization is made with the old knowledge**,
+* **and, exploration and exploitation is balanced for maximizing the overall gain**.
 
 Last but not the least, I would like to thank *all* the amazing people that I
 have met or worked with during the 5 years at Microsoft. I truly appreciate the
