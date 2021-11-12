@@ -28,7 +28,7 @@ University, Singapore. When I just got on board, I thought modelling is the
 *absolute core component* of my job. Unlike many data scientists, I am from a
 computer engineering background. So, in the first several months, I tried hard
 to develop the statistical and analytical skills by reviewing the theories,
-attending internal and external meetups, take online courses, and learning from
+attending internal and external meetups, taking online courses, and learning from
 experts. Soon I found that most data scientists, including myself, tended to
 work on the "cool" stuff that built a perfectly fitted model with
 unrealistically high-quality data. And, the model was rarely considered to be
@@ -118,7 +118,7 @@ Microsoft acquired GitHub!).
   and organizations from all across the world. 
 
 There was much more interesting work done at Microsoft than what I have shared
-above. Due to the confidentiality I have to keep it disclosed. It was in these
+above. Due to the confidentiality I have to keep it private. It was in these
 rewarding projects where I grew my technical skills. Also from the projects I
 learnt how to work as a productive, empathetic, and humble individual as well as
 a team lead. My perspective about data science and machine learning became more
