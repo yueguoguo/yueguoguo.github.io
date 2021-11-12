@@ -164,9 +164,9 @@ resources but results in limited return-of-investment.
 [Gartner predicts that 85% of the machine learning projects will
 fail](https://www.gartner.com/en/newsroom/press-releases/2018-02-13-gartner-says-nearly-half-of-cios-are-planning-to-deploy-artificial-intelligence).
 I have experienced failure projects at Microsoft for *many times*. Usually the
-failures are due to **unclear definition of problems, incompleteness of data
+failures are due to *unclear definition of problems, incompleteness of data
 governance, lack of MLOps, limited resonance between technical specs and
-business requirement, undesirable developer and/or user experience, etc.**. For
+business requirement, undesirable developer and/or user experience, etc.*. For
 industrial applications, before going directly into the development, it is
 *pivotal* to make a strategic plan and form up a team with the right
 specialties. Usually the specialties should be generally diversified, i.e., the
