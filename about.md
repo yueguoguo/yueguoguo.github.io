@@ -6,9 +6,8 @@ tags: about
 
 <h2>About Le</h2>
 
-<p>Le is Data Scientist at Microsoft, where he builds scalable data analytical and artificial intelligence
-tools and solutions on cloud platform and data-driven accelerators for solving enterprise-level business
-problems.</p> 
+<p>Le is Machine Learning Architect at Standard Chartered Bank, where he builds scalable machine learning and artificial intelligence
+tools and platforms for solving financial business problems.</p> 
 
 <h2>Thinkloud</h2>
 
