@@ -28,7 +28,7 @@ University, Singapore. When I just got on board, I thought modelling is the
 *absolute core component* of my job. Unlike many data scientists, I am from a
 computer engineering background. So, in the first several months, I tried hard
 to develop the statistical and analytical skills by reviewing the theories,
-attending internal and external meetups, take online courses, and learning from
+attending internal and external meetups, taking online courses, and learning from
 experts. Soon I found that most data scientists, including myself, tended to
 work on the "cool" stuff that built a perfectly fitted model with
 unrealistically high-quality data. And, the model was rarely considered to be
@@ -48,7 +48,7 @@ many impactful projects. Below it is a selected list of such projects which are
 publicly shareable (we started open-source software development even before
 Microsoft acquired GitHub!).
 
-* [Azure/AzureDSVM](https://github.com/Azure/AzureDSVM). This was the very first
+* [AzureDSVM](https://github.com/Azure/AzureDSVM). This was the very first
   "product" I developed at Microsoft. It was under the guidance of my
   then-manager Graham Williams who is one of the most renowed R experts in the
   world. AzureDSVM is an R package for operating [Azure Data Science Virtual
@@ -66,14 +66,14 @@ Microsoft acquired GitHub!).
   Tool](https://blog.revolutionanalytics.com/2016/12/azure-r-interface-tool.html))
   and presented several times at different conferences like Strata+Data,
   Microsoft MLADS, etc. 
-* [Azure/AzureSMR](https://github.com/microsoft/AzureSMR). Around the same time
+* [AzureSMR](https://github.com/microsoft/AzureSMR). Around the same time
   of AzureDSVM, I joined the collaborative effort with Alan Weaver and Hong Ooi
   from Microsoft London and Microsoft Melbourne, respectively, to develop
   AzureSMR. It is an R package that supports CRUD operations on more Azure
   resources than just the virtual machines. The package got a lot of attention
   of Microsoft customers whose technology stack is on R and Azure. It is now a
   part of AzureR and is maintained by Hong actively.
-* [Microsoft/acceleratoRs](https://github.com/microsoft/acceleratoRs). After a
+* [acceleratoRs](https://github.com/microsoft/acceleratoRs). After a
   number of successful customer engagements, I started to open source the
   collection of R-based data science and machine learning solutions for the
   commonly seen industrial problems like [solar energy
@@ -84,7 +84,7 @@ Microsoft acquired GitHub!).
   end-to-end solution on cloud from Microsoft data science team. It was the
   tipping point when my work got focused more on operationalization of a data
   science and machine learning system than just a proof-of-concept.
-* [Microsoft/Recommenders](https://github.com/microsoft/recommenders). Microsoft
+* [Microsoft Recommenders](https://github.com/microsoft/recommenders). Microsoft
   Recommenders is not just a huge success for me and the team that drives it, it
   is also an influential project for Microsoft. It unprecedentedly established
   the technological strength and reputation of Microsoft in the recommender
@@ -118,7 +118,7 @@ Microsoft acquired GitHub!).
   and organizations from all across the world. 
 
 There was much more interesting work done at Microsoft than what I have shared
-above. Due to the confidentiality I have to keep it disclosed. It was in these
+above. Due to the confidentiality I have to keep it private. It was in these
 rewarding projects where I grew my technical skills. Also from the projects I
 learnt how to work as a productive, empathetic, and humble individual as well as
 a team lead. My perspective about data science and machine learning became more
@@ -164,9 +164,9 @@ resources but results in limited return-of-investment.
 [Gartner predicts that 85% of the machine learning projects will
 fail](https://www.gartner.com/en/newsroom/press-releases/2018-02-13-gartner-says-nearly-half-of-cios-are-planning-to-deploy-artificial-intelligence).
 I have experienced failure projects at Microsoft for *many times*. Usually the
-failures are due to **unclear definition of problems, incompleteness of data
+failures are due to *unclear definition of problems, incompleteness of data
 governance, lack of MLOps, limited resonance between technical specs and
-business requirement, undesirable developer and/or user experience, etc.**. For
+business requirement, undesirable developer and/or user experience, etc.*. For
 industrial applications, before going directly into the development, it is
 *pivotal* to make a strategic plan and form up a team with the right
 specialties. Usually the specialties should be generally diversified, i.e., the
@@ -185,7 +185,7 @@ generate buzz, nowadays, productionization of an entire end-to-end pipeline is a
 transferring my mind-set from the theory-oriented approach to the
 production-oriented one thanks to the training as an engineer. At work, I always
 found it mandatory to build data science and machine learing systems that have
-well-defined run-time topology and convenient APIs. 
+well-defined run-time topology and user-friendly APIs. 
 
 In fact, building a scalable machine learning system for production is not that
 easy. It is truly a combinational practices from different disciplines. In the
@@ -194,7 +194,7 @@ scalability is the key ask because not many systems can survive with the rapid
 growth of data volume and velocity. That was when I started to learn [Apache
 Spark](https://spark.apache.org) and applied it to many of my projects. Today,
 Spark has already become a standard for building scalable machine learning
-system. Among all of the technical considerationis for building a production-ready machine learning system, the following are always on the top of my mind.
+system. Among all of the technical considerations for building a production-ready machine learning system, the following are always on the top of my mind.
 
 * **Scalability of data storage and computation**. For many industrial
   applications, the data size is significantly large. This requires the backbone
@@ -206,9 +206,9 @@ system. Among all of the technical considerationis for building a production-rea
   systems. In addition to the offline computing and data persisting, online
   computing needs to be scalable. Technologies like
   [Kubernetes](https://kubernetes.io),
-  [Swarm](https://docs.docker.com/engine/swarm/), etc., server to such demand.
+  [Swarm](https://docs.docker.com/engine/swarm/), etc., serve to such demand.
   Nowadays, with the help of the cloud platform, many of the distributed systems
-  can be deployed without efforts. Many tutorials can be found on internet
+  can be deployed without efforts. Many tutorials of such topic can be found on internet
   (e.g., [scalable machine learning on
   Azure](https://docs.microsoft.com/en-us/azure/architecture/data-guide/big-data/machine-learning-at-scale),
   [building scalable machine learning on
@@ -225,7 +225,7 @@ system. Among all of the technical considerationis for building a production-rea
   second](https://ai.facebook.com/blog/powered-by-ai-instagrams-explore-recommender-system/)).
   Real-time machine learning system implementation is often sophisticated. The
   state-of-the-arts approach relies on not just a low-latency front-end which is
-  developed with a compiled language (e.g., Go, C/C++, Java, etc.) for model
+  developed with a compiled language (e.g., C, C++, etc.) for model
   serving, but also a real-time data processing and feature engineering pipeline
   that guarantees fast operation of the entire pipeline. A good insight about
   real-time machine learning can be found
@@ -267,7 +267,7 @@ laptop to access virtual machines on Azure for development.</font>
 
 There is a group of technologies that I am keen on seeing their success
 application in the near future. I have either self studied or practiced these
-technologies during my work at Microsoft but have limited chances to put them
+technologies during my work at Microsoft but had limited chances to put them
 into a production. 
 
 * **Reinforcement learning**. [In many application scenarios like online
@@ -304,10 +304,10 @@ into a production.
   Often a data synthetic tool requires deep domain knowledge and rigorous
   mathematical techniques. In addition, it needs iterations of validation
   against the ground truth data to make sure that the data quality from the
-  synthetic tools is within expectation.
+  synthetic tools is good enough.
 * **Ethical machine learning**. Ethics remain a problem for applicable machine
   learning and AI models. Debiasing the prediction or classification results
-  generated from a model sometimes can be a severe moral affair. As a
+  sometimes can be a severe moral affair. As a
   consequence, it is important for not just the developers including data
   scientists, algorithm engineers, researchers, etc., but also the ordinary
   people to understand how a model is created by certain algorithmic derivation
@@ -320,8 +320,7 @@ into a production.
   experienced the scandal that the user data were used for political
   advertising](https://en.wikipedia.org/wiki/Facebook–Cambridge_Analytica_data_scandal).
   There is no reason for blaming the technologies for the negative societal
-  impact. As developers the technolgies should be properly used and well
-  regulated. 
+  impact. Technolgies should be responsibly used and well regulated. 
 
 ## Close
 
@@ -337,4 +336,4 @@ intelligent system:
 
 Last but not the least, I would like to thank *all* the amazing people that I
 have met or worked with during the 5 years at Microsoft. I truly appreciate the
-learning from you.
+learning from them.
