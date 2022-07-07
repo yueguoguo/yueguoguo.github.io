@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Implant engineering mindset into data science
-date:       2017-05-23 16:43:29
+date:       2022-07-07 23:14:29
 summary:    The contemporary data science work requires rigorous engineering activities for delivering value with efficiency.
 categories: data science, software engineering, machine learning, mindset
 ---
