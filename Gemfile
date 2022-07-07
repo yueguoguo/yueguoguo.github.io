@@ -7,7 +7,7 @@ gem 'github-pages'
 
 gem 'jekyll-relative-links'
 
-gem 'nokogiri', '>= 1.8.2'
+gem 'nokogiri', '>= 1.13.6'
 
 gem "ffi", ">= 1.9.24"
 
