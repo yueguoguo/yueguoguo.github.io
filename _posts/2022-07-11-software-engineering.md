@@ -1,30 +1,12 @@
 ---
 layout:     post
-<<<<<<< HEAD
-title:      Implant software engineering mindset into data science
-=======
 title:      Implant engineering mindset into data science
->>>>>>> le/2022_new_blog_post
 date:       2017-05-23 16:43:29
-summary:    The contemporary data science work requires more rigorous engineering mindset for delivering value with efficiency.
+summary:    The contemporary data science work requires rigorous engineering activities for delivering value with efficiency.
 categories: data science, software engineering, machine learning, mindset
 ---
 
 <blockquote>
-<<<<<<< HEAD
-  <p>Everything should be made as simple as possible, but not simpler.</p>
-  <footer><cite title="Albert Einstein">Albert Einstein</cite></footer>
-</blockquote>
-
-# Data science in 2022
-
-# Software engineering in data science
-
-## Principle and practice
-
-## Design pattern
-
-=======
   <p>An algorithm must be seen to be believed.</p>
   <footer><cite title="Donald Knuth">Donald Knuth</cite></footer>
 </blockquote>
@@ -284,4 +266,3 @@ connected to yield high-performance productionization with efficiency.
   Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley
 * Beck, Kent (2002-11-08). Test-Driven Development by Example. Vaseem: Addison
   Wesley.
->>>>>>> le/2022_new_blog_post
