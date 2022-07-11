@@ -11,7 +11,7 @@ categories: data science, software engineering, machine learning, mindset
   <footer><cite title="Donald Knuth">Donald Knuth</cite></footer>
 </blockquote>
 
-![augmentation](https://yueguoguo.github.io/images/brain_implant.png)
+![Brain implant](https://yueguoguo.github.io/images/brain_implant.jpg)
 <font size="1"> "Brain implant", commonly seen in many sci-fi films, 
 demonstrate the power of augmenting human's physical or mental capability with
 technological alteration. The image was taken from the article "Brain implant 
