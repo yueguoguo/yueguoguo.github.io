@@ -11,6 +11,12 @@ categories: data science, software engineering, machine learning, mindset
   <footer><cite title="Donald Knuth">Donald Knuth</cite></footer>
 </blockquote>
 
+![augmentation](https://yueguoguo.github.io/images/brain_implant.png)
+<font size="1"> "Brain implant", commonly seen in many sci-fi films, 
+demonstrate the power of augmenting human's physical or mental capability with
+technological alteration. The image was taken from the article "Brain implant 
+delivers drugs directly through head.<sup>[1]</sup> </font>
+
 # Background
 
 Nowadays it is recognized by the industrial practitioners that engineering plays
@@ -130,9 +136,9 @@ flexible to support various domains (e.g., conventional machine learning,
 natural language processing, image processing, etc.) with high quality and
 well-defined structure. 
 
-In general, keeping a library of useful patterns is important, especially when
+In general, **keeping a library of useful patterns is important, especially when
 these patterns are industry or domains specific such that they can be shared and
-reused as enables to other data scientists' work within the same organization.
+reused as enables to other data scientists' work within the same organization.**
 
 ## Performance enhancement
 
@@ -235,9 +241,9 @@ hardware, e.g., CPU, GPU, or TPU, for operations with high performance.
 ## MLOps
 
 MLOps is more of a philosophy and practice to properly manage the life cycle of
-the deployed machine learning models. Data scientists' participating into the
+the deployed machine learning models. **Data scientists' participating into the
 MLOps practices are significantly important though quite a lot of times the
-important is neglected.
+important is neglected.**
 
 Ideally, the hollistic platform or framework of MLOps is established by the
 machine learning architects or engineers, while the data scientists experiment
@@ -262,6 +268,10 @@ of exploration, experimentation, development, and deployment are organically
 connected to yield high-performance productionization with efficiency.
 
 # References
+* Engineering and Technology Editorial Staff, Brain implant delivers drugs
+  directly through head, url:
+  https://eandt.theiet.org/content/articles/2019/02/brain-implant-delivers-drugs-directly-through-head/,
+  2019.
 * Gamma, Erich; Helm, Richard; Johnson, Ralph; Vlissides, John (1995). Design
   Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley
 * Beck, Kent (2002-11-08). Test-Driven Development by Example. Vaseem: Addison
