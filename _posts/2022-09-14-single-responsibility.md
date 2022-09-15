@@ -49,8 +49,9 @@ which decides the output of `recall`. That is, if the measure is higher than a
 threshold, the item is considered to be relevant. The parameter of
 `item_per_user` determines how many items for each user need to be recalled. 
 
-The above detailed design leads to a possible implementation of the `recall`
-method as below.
+The above detailed design leads to a possible implementation of the `recall` in
+an actual `Recommender` class that inherits the abstract one. The codes can be
+found below
 
 ```python
 def recall(
@@ -88,6 +89,10 @@ def recall(
 
 def filter_items(relevant_items, item_per_user):
     ...
+
+
+class Algorithm():
+    ...
 ```
 
 It is obvious that the above implementation will break the single responsibility
@@ -106,10 +111,15 @@ class Recall():
     def __init__(self):
         self.model = None
 
-    def build_model(self, algorithm, user_item_interactions, **algorithm_parameters):
+    def build_model(
+        self,
+        algorithm,
+        user_item_interactions,
+        **algorithm_parameters
+    ):
         self.model = algorithm(**algorithm_parameters).fit(user_item_interactions)
 
-    def generate_recall_items(
+    def generate_items(
         self,
         users,
         items,
@@ -129,7 +139,34 @@ class Recall():
 ```
 
 Similarly, `Rerank` can be implemented as a different class with detailed
-attributes and methods that a specific to rerank stage. 
+attributes and methods that a specific to rerank stage. The `Recommender` class
+encapsulates the high-level steps of `recall` and `rerank` by adding the
+`Recall` and `Rerank` object to propagate the "responsibility" of each to an
+upper level, and then the `Recommender` object harness the run of recall stage
+or rerank stage. Any logic changes in either `recall` or `rerank` is not
+reflected in the code of `Recommender`.
+
+```python
+from typing import Union
+
+
+class Recommender():
+    def __init__(self, recall: Recall, rerank: Rerank):
+        self.recall = recall
+        self.rerank = stage
+```
+
+And the recall and rerank operations will be run as
+
+```python
+recall_stage = Recall()
+rerank_stage = Rerank()
+
+recommender = Recommender(recall_stage, rerank_stage)
+
+# Do recall
+recommender.recall.generate_recall_items(users, items, threshold, item_per_user)
+```
 
 ## Focus on one if there are multiple types of sub-problems to resolve.
 
