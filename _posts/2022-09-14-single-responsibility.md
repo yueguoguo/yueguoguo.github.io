@@ -35,12 +35,13 @@ example that develops a recommender system.
 A "problem" may be defined with different scopes, but in general, different
 problems need to be implemented in different objects however they are big or
 small. For example, in a recommender system, a commonly seen architecture
-pattern is "recall-rerank" - the former does large-scale retrieval of relevant
-items and the latter reranks the relevant items with detailed contextual
-information for recommending to users. A possible design of such system is a
-`Recommender` class, where the "recall" stage and the "rerank" stage are added
-as methods for performing respective tasks. The high-level code example is shown
-as below. 
+pattern is
+["recall-rerank"](https://developers.google.com/machine-learning/recommendation/dnn/re-ranking)
+- the former does large-scale retrieval of relevant items and the latter reranks
+the relevant items with detailed contextual information for recommending to
+users. A possible design of such system is a `Recommender` class, where the
+"recall" stage and the "rerank" stage are added as methods for performing
+respective tasks. The high-level code example is shown as below. 
 
 ```python
 class Recommender():
@@ -91,7 +92,7 @@ def recall(
     model = Algorithm(**algorithm_parameters).fit(user_item_interactions)
 
     # Generate the relevant items.
-    recalled_items = model(users, items, threshold, item_per_user)
+    recalled_items = model.predict(users, items, threshold, item_per_user)
 
     return recalled_items
 
@@ -99,7 +100,11 @@ def recall(
 class Algorithm():
     """Implementation of the algorithm that builds the recall model
     """
-    ...
+    def fit(self, data):
+        ...
+
+    def predict(self, data, *args, **kwargs):
+        ...
 ```
 
 It is obvious that the above implementation will break the single responsibility
@@ -137,10 +142,7 @@ class Recall():
         """
         if self.model is not None:
             # Generate the relevant items.
-            relevant_items = self.model(users, items, threshold)
-
-            # Filter out the recalled items.
-            recalled_items = filter_items(relevant_items, item_per_user)
+            recalled_items = self.model.predict(users, items, threshold, item_per_user)
         else:
             raise ValueError("The model should be built in the first place")
 
@@ -295,18 +297,28 @@ separated for single responsibilities.
 # Other examples
 
 Single responsibility principle can be seen in many machine learning and data
-science software. For example, `scikit-learn` applies single responsibility in
-implementing the base `Estimator` or `Transformer`. That is, these base classes
-have the standardized structure such as the methods of `fit`, `predict`,
-`score`, etc., which are the most relevant "roles" to an `Estimator` or
-`Transformer`. The classes or functions for other atomic operations are
-implemented as separate entities. 
+science software. For example, [`scikit-learn` applies single responsibility in
+implementing the base `Estimator` or
+`Transformer`](https://scikit-learn.org/stable/developers/develop.html). That
+is, these base classes have the standardized structure such as the methods of
+`fit`, `predict`, `score`, etc., which are the most relevant "roles" to an
+`Estimator` or `Transformer`. The classes or functions for other atomic
+operations are implemented as separate entities. 
 
-Similar idea can be seen in the deep learning packages like `torch`. The
+Similar idea can be seen in the deep learning packages like `torch`. [The
 `nn.Module` implements the neural network topology, but it does not incorporate
-the training component. This is because a separate module takes the
-"responsibility" for optimizing the loss of a model defined in the `nn.Module`.
+the training
+component](https://pytorch.org/docs/stable/generated/torch.nn.Module.html). This
+is because a separate module takes the "responsibility" for optimizing the loss
+of a model defined in the `nn.Module`.
+
+[Microsoft
+recommenders](https://github.com/microsoft/recommenders/wiki/Coding-Guidelines#single-responsibility)
+has applied the single responsibility principle to implement the modules in the
+package that makes the codes clean and regular. 
 
 # References
 
-[1] Martin, Robert C. (2005). "The Principles of OOD". butunclebob.com.
+[1] Martin, Robert C. (2005). "The Principles of OOD". butunclebob.com. 
+[2] Andreas Argyriou, Miguel Gonzalez-Fierro, and Le Zhang, "Microsoft Recommenders:
+Best Practices for Production-Ready Recommender Systems".
