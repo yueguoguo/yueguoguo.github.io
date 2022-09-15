@@ -108,8 +108,7 @@ implement them as single classes. That is
 
 ```python
 class Recall():
-    def __init__(self):
-        self.model = None
+    model = None
 
     def build_model(
         self,
@@ -117,6 +116,8 @@ class Recall():
         user_item_interactions,
         **algorithm_parameters
     ):
+        """Build the model to perform recall operation
+        """
         self.model = algorithm(**algorithm_parameters).fit(user_item_interactions)
 
     def generate_items(
@@ -126,6 +127,8 @@ class Recall():
         threshold,
         item_per_user,
     ):
+        """Use the pre-built model to generate the recalled items.
+        """
         if self.model is not None:
             # Generate the relevant items.
             relevant_items = self.model(users, items, threshold)
@@ -159,18 +162,89 @@ class Recommender():
 And the recall and rerank operations will be run as
 
 ```python
-recall_stage = Recall()
-rerank_stage = Rerank()
-
-recommender = Recommender(recall_stage, rerank_stage)
+# Initialize a recommender
+recommender = Recommender(Recall(), Rerank())
 
 # Do recall
-recommender.recall.generate_recall_items(users, items, threshold, item_per_user)
+recall_items = recommender.recall.generate_items(users, items, threshold, item_per_user)
 ```
 
 ## Focus on one if there are multiple types of sub-problems to resolve.
 
-## Group only the relevant operations into one object.
+It is common that the items generated from one of the stages are cached into a
+database for later reference. A tendency of implementing such is to add a method
+into the `Recall` or `Rerank` class for preserving data. 
+
+```python
+def write_items(self, items, connection_string: str):
+    """write the items to a database.
+
+    Args:
+        items: the items to write to the database.
+        connection_string: the connection string for the database to write results.
+    """
+    # build_db_connection is a function that returns the generator to perform
+    # write operation under the context managed by the connection.
+    with build_db_connection(connection_string) as conn:
+        write_data(items, conn)
+```
+
+After adding `write_items` method, the `Recall` class has multiple types of
+sub-problems, i.e., 1) builds a recall model and generates the recall items and
+2) save the items to the database. This breaks the single responsibility of the
+class in a way that the two types of problems have minimal overlap in terms of
+functionalities and implementation, but changing one of the two will lead to the
+change of the entire class. 
+
+A better choice is to have a separate class of `RecommenderDataManager` where 
+there are methods to support data read and write. The `RecommenderDataManager`
+may be used as a generic object at the `Recommender` class level, to handle the
+data read/write related operations.
+
+```python
+class RecommenderDatabaseManager:
+    def __init__(self, connection_string):
+        self.connection_string = connection_string
+    
+    def write_items(self, items):
+        """Write items to the database
+
+        Args:
+            items: the items to write.
+
+        Notes:
+            The items are assumed to be written to a default table
+        """
+        with build_db_connection(self.connection_string) as conn:
+            write_data(items, conn)
+
+    def read_items(self):
+        """Read items from the database
+
+        Notes:
+            The items are read from the default table
+        """
+        with build_db_connection(self.connection_string):
+            items = read_data(conn)
+```
+
+In actual use, it becomes
+
+```python
+data_manager = RecommenderDatabaseManager(connection_striing)
+
+# Write recall items
+data_manager.write_items(recall_items)
+
+# Read recall items
+data_manager.read_items()
+```
+
+To support the rerank data read/write operation, a parameter of table may be
+added in the methods of `RecommenderDatabaseManager` to filter the target tables
+in the database.
+
+## Add only the relevant method into the object.
 
 # Conclusion
 
