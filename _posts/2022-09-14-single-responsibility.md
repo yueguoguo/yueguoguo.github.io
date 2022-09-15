@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Single responsibility in machine learning
+title:      Single responsibility
 date:       2022-07-07 23:14:29
 summary:    Single responsibility principle keeps codes regular and clean
 categories: data science, software engineering, machine learning, design patter, principles
@@ -8,11 +8,29 @@ categories: data science, software engineering, machine learning, design patter,
 
 # Introduction
 
-**A class should have only one reason to change.**
+**Single responsibility** is a well-known principle used in developing computer
+software. The principle originates from [Robert
+Martin](https://en.wikipedia.org/wiki/Robert_C._Martin). It is a general
+principle that applies to any software design. The core idea of single
+responsibility is that *a module should be responsibility to one, and only one,
+actor.* There are a few ways to interpret this idea. For example, Martin
+explained the principle with "a class should have only one reason to change". 
 
-# Case study
+There are many benefits of following the single responsibility principle in 
+software development.
 
-## Different problems have different objects
+1. It enhances modularization.
+2. It favors unit test.
+3. It improves code readability.
+4. It mitigates ambiguity and confusion.
+
+Practicing the single responsibility principle is vital to developing data
+science and machine learning software. The following discussion tries to
+illustrate the single responsibility principle from three different angles. To
+make the discussions intuivie, the arguments are demonstrated with a real-world
+example that develops a recommender system. 
+
+## "Different problems have different objects"
 
 A "problem" may be defined with different scopes, but in general, different
 problems need to be implemented in different objects however they are big or
@@ -25,17 +43,12 @@ as methods for performing respective tasks. The high-level code example is shown
 as below. 
 
 ```python
-from abc import ABC, abstractmethod
-
-
-class Recommender(ABC):
-    @abstractmethod
+class Recommender():
     def recall(self):
-        pass
+        ...
     
-    @abstractmethod
     def rerank(self):
-        pass
+        ...
 ```
 
 Apparently, if there are details to add into the `Recommender` class, it will
@@ -58,7 +71,6 @@ def recall(
     self,
     users,
     items,
-    algorithm,
     user_item_interactions,
     threshold,
     item_per_user,
@@ -76,22 +88,17 @@ def recall(
         algorithm_parameters: parameters of the recall algorithm.
     """
     # Train the recall model.
-    model = algorithm(**algorithm_parameters).fit(user_item_interactions)
+    model = Algorithm(**algorithm_parameters).fit(user_item_interactions)
 
     # Generate the relevant items.
-    relevant_items = model(users, items, threshold)
-
-    # Filter out the recalled items.
-    recalled_items = filter_items(relevant_items, item_per_user)
+    recalled_items = model(users, items, threshold, item_per_user)
 
     return recalled_items
 
 
-def filter_items(relevant_items, item_per_user):
-    ...
-
-
 class Algorithm():
+    """Implementation of the algorithm that builds the recall model
+    """
     ...
 ```
 
@@ -112,13 +119,12 @@ class Recall():
 
     def build_model(
         self,
-        algorithm,
         user_item_interactions,
         **algorithm_parameters
     ):
         """Build the model to perform recall operation
         """
-        self.model = algorithm(**algorithm_parameters).fit(user_item_interactions)
+        self.model = Algorithm(**algorithm_parameters).fit(user_item_interactions)
 
     def generate_items(
         self,
@@ -165,11 +171,14 @@ And the recall and rerank operations will be run as
 # Initialize a recommender
 recommender = Recommender(Recall(), Rerank())
 
+# Build model
+recommender.recall.build_model(user_item_interactions, **algorithm_parameters)
+
 # Do recall
 recall_items = recommender.recall.generate_items(users, items, threshold, item_per_user)
 ```
 
-## Focus on one if there are multiple types of sub-problems to resolve.
+## "Focus on one if there are multiple types of sub-problems to resolve"
 
 It is common that the items generated from one of the stages are cached into a
 database for later reference. A tendency of implementing such is to add a method
@@ -244,8 +253,60 @@ To support the rerank data read/write operation, a parameter of table may be
 added in the methods of `RecommenderDatabaseManager` to filter the target tables
 in the database.
 
-## Add only the relevant method into the object.
+## "Add only the necessary method to the object"
 
-# Conclusion
+Usually, before either the recall or the rerank stage, possibly, there may be
+data pre-processing steps, e.g., feature engineering; after generating the
+results, sometimes the items need to be post-procssed, e.g., business rules may
+apply to the items before they are recommended. An anti-pattern approach is to
+add the `pre_process` and `post_process` methods to the `Recall` class, for
+preprocessing and post processing, respectively. 
+
+However, these two methods do not add help to the existing methods `build_model`
+and `generate_items` directly. This is because the methods in the `Recall` class
+are already self-consistent in terms of functionality provided the input data
+and parameters. In this case, the `pre-process` and `post-process` methods are
+not necessary to be added to the `Recall` class. A better choice is that the
+two methods can be implemented as standalone classes or functions to serve for
+the purposes of preprocessing and post-processing, respectively. 
+
+The following shows an example of the function implementation and its workflow
+in combination with the `Recall` class.
+
+```python
+def pre_process(user_item_interactions):
+    """Preprocess function for user-item interactions
+    """
+    # Do some preprocessing
+    return user_item_interactions
+
+
+# Preprocess data.
+user_item_interactions = pre_process(user_item_interactions)
+
+# Build recall model
+recall = Recall()
+recall.build_model(user_item_interactions, **parameters)
+```
+
+By doing this, the functionalities of preprocessing and the actual recall are
+separated for single responsibilities.
+
+# Other examples
+
+Single responsibility principle can be seen in many machine learning and data
+science software. For example, `scikit-learn` applies single responsibility in
+implementing the base `Estimator` or `Transformer`. That is, these base classes
+have the standardized structure such as the methods of `fit`, `predict`,
+`score`, etc., which are the most relevant "roles" to an `Estimator` or
+`Transformer`. The classes or functions for other atomic operations are
+implemented as separate entities. 
+
+Similar idea can be seen in the deep learning packages like `torch`. The
+`nn.Module` implements the neural network topology, but it does not incorporate
+the training component. This is because a separate module takes the
+"responsibility" for optimizing the loss of a model defined in the `nn.Module`.
 
 # References
+
+[1] Martin, Robert C. (2005). "The Principles of OOD". butunclebob.com.
