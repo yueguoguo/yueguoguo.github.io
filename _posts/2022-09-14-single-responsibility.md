@@ -46,10 +46,10 @@ respective tasks. The high-level code example is shown as below.
 ```python
 class Recommender():
     def recall(self):
-        ...
+        print("Do recall")
     
     def rerank(self):
-        ...
+        print("Do rerank)
 ```
 
 Apparently, if there are details to add into the `Recommender` class, it will
