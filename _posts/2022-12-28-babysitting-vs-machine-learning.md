@@ -52,3 +52,4 @@ categories: machine learning, fun stuff, babysitting
   the diaper!!!)
 * The crib/clothes/stroller that are used by the baby should be scalable and
   flexible (the baby grows so fast!)
+
