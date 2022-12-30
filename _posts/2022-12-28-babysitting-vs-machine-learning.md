@@ -11,7 +11,7 @@ categories: machine learning, technology, fun stuff
   <footer><cite title="Boss Baby">Boss Baby</cite></footer>
 </blockquote>
 
-# Machine learning va babysitting
+# Machine learning vs babysitting
 
 Babysitting can be formalized as an engineering problem which is similar to
 machine learning. The main task of the babysitting problem is to *take care of a
