@@ -51,7 +51,7 @@ size="1"> The pipeline in a babysitting system is similar to that in a machine
 learning system. It takes the raw input to feed the baby, and the feedback from
 the baby is continuously collected to "retrain" (reprocess) the baby. </font>
 
-Gladly, the engineering best practices helps my baby grow with health and
+Gladly, the engineering best practices helps my baby grow with healthiness and
 happiness - its growth data are above 90% quantile of the WHO child standard for
 its age. Hopefully with the continuous optimization performed by its parents,
 the babysitting system will help the baby's growth in the life-term run with
