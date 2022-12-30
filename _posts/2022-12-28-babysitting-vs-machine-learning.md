@@ -11,6 +11,11 @@ categories: machine learning, fun stuff, babysitting
   <footer><cite title="Albert Einstein">Albert Einstein</cite></footer>
 </blockquote>
 
+| Machine learning                                                                | Babysitting                                                                                                         |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| A model is built.                                                               | A baby is cared.                                                                                                    |
+| The model is built by using raw materials (data) generated from various sources | The baby is raised by using the raw materials (milk) generated from various sources (mommy and formula milk powder) |
+
 # How a machine learning engineering is performed
 
 * A model is built.
