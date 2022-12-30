@@ -42,16 +42,25 @@ There are many similarities between babysitting and machine learing.
 
 # System design and conclusion
 
-To illustrate, a simple babysitting system that I am practicing with my baby is
+To illustrate, a simple babysitting system that I am using for my baby is
 depicted as below.
 
 ![Babysitting system
 pipeline](https://yueguoguo.github.io/images/babysitting_pipeline.png) <font
 size="1"> The pipeline in a babysitting system is similar to that in a machine
-learning system. It takes the raw input to feed the baby, and the feedback from
-the baby is continuously collected to "retrain" (reprocess) the baby. </font>
+learning system. </font>
 
-Gladly, the engineering best practices helps my baby grow with health and
+* The pipeline takes the raw input to feed the baby, and the feedback from the
+  baby is continuously collected to "retrain" (reprocess) the baby. 
+* The core component is the *babysitting console* where there is an *auto milk
+  maker machine* and a *babysitting platform* which consists of the crib, the
+  stroller, Stokke Tripp Trap, etc. 
+* A set of *utilities* are used to practice the daily babysitting.
+* The mobile app collects real-time data and feedback from baby, with which the
+  decisions are made to fine tune the "parameters" used in the babysitting
+  console. 
+
+Gladly, the engineering best practices helps my baby grow with healthiness and
 happiness - its growth data are above 90% quantile of the WHO child standard for
 its age. Hopefully with the continuous optimization performed by its parents,
 the babysitting system will help the baby's growth in the life-term run with
