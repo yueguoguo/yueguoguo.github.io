@@ -42,15 +42,16 @@ There are many similarities between babysitting and machine learing.
 
 # System design
 
-To illustrate, a simple babysitting system that I am using for my baby is
-depicted as below.
+Knowing the commonalities between babysitting and machine learning, I am trying
+to leverage the idea of machine learining system into the design of a
+babysitting system. To illustrate, a simple system design that I am using
+pragmatically is depicted as below.
 
 ![Babysitting system
 pipeline](https://yueguoguo.github.io/images/babysitting_pipeline.png) <font
 size="1"> The pipeline in a babysitting system is similar to that in a machine
 learning system. </font>
 
-<<<<<<< HEAD
 * The pipeline takes the raw input to feed the baby, and the feedback from the
   baby is continuously collected to "retrain" (reprocess) the baby. 
 * The core component is the *babysitting console* where there is an *auto milk
@@ -61,8 +62,13 @@ learning system. </font>
   decisions are made to fine tune the "parameters" used in the babysitting
   console. 
 
-=======
->>>>>>> 9dd5a840b9e644571c687183c9674db1964b36e2
+The system pipeline is run in a batch mode with a frequency of about 3 hours.
+The front-end feedback is collected in real-time which is used as a supervisory
+signal. The parameters in the babysitting console and the utilities module are
+dynamically adjusted to optimize a local objective - reduce the times of cry -
+and overall, the hollistic system is aimed at making the growth data of the baby
+meet WHO standard. 
+
 Gladly, the engineering best practices helps my baby grow with healthiness and
 happiness - its growth data are above 90% quantile of the WHO child standard for
 its age. Hopefully with the continuous optimization performed by its parents,
