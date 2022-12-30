@@ -11,7 +11,7 @@ categories: machine learning, fun stuff, babysitting
   <footer><cite title="Boss Baby">Boss Baby</cite></footer>
 </blockquote>
 
-| Machine learning                                                                         | Babysitting                                                                                                                                                                                           |
+| Machine learning :innocent:                                                              | Babysitting : smiling_imp:                                                                                                                                                                            |
 | ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | A model is built.                                                                        | A baby is taken care of.                                                                                                                                                                              |
 | The model is built by using raw materials (data) generated from various sources.         | The baby is raised by using the raw materials (milk) generated from various sources (mommy and the formula milk powder).                                                                              |
