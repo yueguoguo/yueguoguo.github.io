@@ -53,25 +53,26 @@ pipeline](https://yueguoguo.github.io/images/babysitting_pipeline.png)
 <font size="1"> The pipeline in a babysitting system is similar to that in a
 machine learning system. </font>
 
-* The pipeline takes the raw input to feed the baby, and the feedback from the
-  baby is continuously collected to "retrain" (reprocess) the baby. 
+* The pipeline takes the raw input (formula milk powder) to feed the baby, and
+  they are preserved in the storage. 
 * The core component is the *babysitting console* where there is an *auto milk
-  maker machine* and a *babysitting platform* which consists of the crib, the
-  stroller, Stokke Tripp Trap, etc. 
+  maker machine* to "featurize" the milk powder and a *babysitting platform*
+  which consists of the crib, the stroller, Stokke Tripp Trap, etc., for the
+  baby to stay in. 
 * A set of *utilities* are used to practice the daily babysitting.
-* The mobile app collects real-time data and feedback from baby, with which the
-  decisions are made to fine tune the "parameters" used in the babysitting
-  console. 
+* I use a mobile app to collect the real-time data and feedback from baby, with
+  which the decisions are made to fine tune the "parameters" used in the
+  babysitting console. 
 
 The system pipeline is run in a batch mode with a frequency of about 3 hours.
-The front-end feedback is collected in real-time which is used as a supervisory
-signal. The parameters in the babysitting console and the utilities module are
-dynamically adjusted to optimize a local objective - reduce the times of cry -
-and overall, the hollistic system is aimed at making the growth data of the baby
-meet WHO standard. 
+The front-end feedback is collected in a real-time manner which is used as a
+supervisory signal. The parameters in the babysitting console and the utilities
+module are dynamically adjusted to optimize a local objective - **reduce the
+times of cry** - and overall, the hollistic system is aimed at making the growth
+data of the baby as close as the WHO standard. 
 
 Gladly, the engineering best practices helps my baby grow with healthiness and
-happiness - its growth data are above 90% quantile of the WHO child standard for
-its age. Hopefully with the continuous optimization performed by its parents,
-the babysitting system will help the baby's growth in the life-term run with
-high efficiency! 
+happiness - its growth data are slightly above 90% quantile of the WHO child
+standard for its age. Hopefully with the continuous optimization performed by
+its parents, the babysitting system will help the baby's growth in the life-term
+run with high efficiency! 
