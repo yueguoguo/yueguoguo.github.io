@@ -11,7 +11,7 @@ categories: machine learning, technology, fun stuff
   <footer><cite title="Boss Baby">Boss Baby</cite></footer>
 </blockquote>
 
-# Babysitting == engineering
+# Machine learning vs babysitting
 
 Babysitting can be formalized as an engineering problem which is similar to
 machine learning. The main task of the babysitting problem is to *take care of a
@@ -40,7 +40,7 @@ There are many similarities between babysitting and machine learing.
 | Sometimes a hot-fix is urgently required to resolve the model issue.                     | ~~Sometimes~~ **Many times** a hot-fix (e.g., soothie pacifier, change of diaper, toys, etc.) is urgently required to resolve the baby issues.                                                        |
 | The platforms that are used to host the model should be scalable and flexible.           | The crib/clothes/stroller that are used by the baby should be scalable and flexible (the baby grows so fast!)                                                                                         |
 
-# System design and conclusion
+# System design
 
 To illustrate, a simple babysitting system that I am using for my baby is
 depicted as below.
@@ -50,6 +50,7 @@ pipeline](https://yueguoguo.github.io/images/babysitting_pipeline.png) <font
 size="1"> The pipeline in a babysitting system is similar to that in a machine
 learning system. </font>
 
+<<<<<<< HEAD
 * The pipeline takes the raw input to feed the baby, and the feedback from the
   baby is continuously collected to "retrain" (reprocess) the baby. 
 * The core component is the *babysitting console* where there is an *auto milk
@@ -60,6 +61,8 @@ learning system. </font>
   decisions are made to fine tune the "parameters" used in the babysitting
   console. 
 
+=======
+>>>>>>> 9dd5a840b9e644571c687183c9674db1964b36e2
 Gladly, the engineering best practices helps my baby grow with healthiness and
 happiness - its growth data are above 90% quantile of the WHO child standard for
 its age. Hopefully with the continuous optimization performed by its parents,
