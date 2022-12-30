@@ -44,13 +44,14 @@ There are many similarities between babysitting and machine learing.
 
 Knowing the commonalities between babysitting and machine learning, I am trying
 to leverage the idea of machine learining system into the design of a
-babysitting system. To illustrate, a simple system design that I am using
-pragmatically is depicted as below.
+babysitting system. To illustrate, a simple system that I am using pragmatically
+for mine is depicted as below.
 
 ![Babysitting system
-pipeline](https://yueguoguo.github.io/images/babysitting_pipeline.png) <font
-size="1"> The pipeline in a babysitting system is similar to that in a machine
-learning system. </font>
+pipeline](https://yueguoguo.github.io/images/babysitting_pipeline.png) 
+
+<font size="1"> The pipeline in a babysitting system is similar to that in a
+machine learning system. </font>
 
 * The pipeline takes the raw input to feed the baby, and the feedback from the
   baby is continuously collected to "retrain" (reprocess) the baby. 
