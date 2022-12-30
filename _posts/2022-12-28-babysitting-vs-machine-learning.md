@@ -11,19 +11,13 @@ categories: machine learning, technology, fun stuff
   <footer><cite title="Boss Baby">Boss Baby</cite></footer>
 </blockquote>
 
-Babysitting is an engineering problem, similar to machine learning. The main
-task of the problem is to *take care of a baby to fulfil its needs as much as
-possible under the constraints that its life cycle has minimal impact on its
-parents.*. The success of babysitting can be quantitatively measured by, for
-example, the child growth standard proposed by WHO. And the objective is to
-minimize the deviation between the baby's data against the standard one.
-
-The engineering pipeline used in the babysitting activities is depicted below.
-
-![Babysitting pipeline](https://yueguoguo.github.io/images/babysitting_pipeline.png)
-<font size="1"> Similar to machine learning, babysitting can be
-formalized from an engineering perspective. The diagram depicts the workflow of
-a babysitting pipeline </font>
+Babysitting is an engineering problem which is similar to machine learning. The
+main task of the babysitting problem is to *take care of a baby to fulfil its
+needs as much as possible under the constraints that the baby's life pattern has
+minimal impact on its parents.*. The success of babysitting can be
+quantitatively measured by, for example, the child growth standard proposed by
+WHO. And the objective is to minimize the deviation between the baby's data
+against the standard one.
 
 There are many similarities between babysitting and machine learing.
 
@@ -33,6 +27,7 @@ There are many similarities between babysitting and machine learing.
 | The model is built by using raw materials (data) generated from various sources.         | The baby is raised by using the raw materials (milk) generated from various sources (mommy and the formula milk powder).                                                                              |
 | The raw data need to be featurized before it can be used for model building.             | The raw materials need to be featurized, e.g., heated, mixed with water, bottled, etc., before it can be used for baby feeding.                                                                       |
 | The model training process requires parameter tuning to optimize the training objective. | The babysitting process requires parents' technique tuning to optimize the feeding experience.                                                                                                        |
+| Regularization is usually applied to avoid overfitting.                                  | Regularization is usually applied to avoid overfeeding.                                                                                                                                               |
 | The model is evaluated against the pre-defined quantitaive metrics.                      | The baby's growth is evaluated by the pre-defined quantitative metrics, i.e., the [WHO child growth standard](https://www.who.int/tools/child-growth-standards).                                      |
 | The model needs to be repetitively retrained.                                            | The babysitting process needs to be repetitively conducted (feed-play-sleep in every 3 hours a day).                                                                                                  |
 | Data visualization is vital to building a reliable model.                                | The baby's activity visualization is vital to babysitting.                                                                                                                                            |
@@ -43,8 +38,15 @@ There are many similarities between babysitting and machine learing.
 | Sometimes a hot-fix is urgently required to resolve the model issue.                     | ~~Sometimes~~ **Many times** a hot-fix (e.g., soothie pacifier, change of diaper, toys, etc.) is urgently required to resolve the baby issues.                                                        |
 | The platforms that are used to host the model should be scalable and flexible.           | The crib/clothes/stroller that are used by the baby should be scalable and flexible (the baby grows so fast!)                                                                                         |
 
+The engineering pipeline used in the babysitting activities is depicted below.
+
+![Babysitting pipeline](https://yueguoguo.github.io/images/babysitting_pipeline.png)
+<font size="1"> Similar to machine learning, babysitting can be
+formalized from an engineering perspective. The diagram depicts the workflow of
+a babysitting pipeline </font>
+
 Gladly, by practicing the engineering tips above, my baby grows with health and
-happiness - its growth data are all above 90% quantile of the WHO child standard
-at the same age. Hopefully, with the continuous optimization performed by its
-parents, the babysitting system will help the baby's growth in the life-term run
-with high efficiency! 
+happiness - its growth data are above 90% quantile of the WHO child standard for
+its age. Hopefully with the continuous optimization performed by its parents,
+the babysitting system will help the baby's growth in the life-term run with
+high efficiency! 
