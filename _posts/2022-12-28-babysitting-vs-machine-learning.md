@@ -11,7 +11,7 @@ categories: machine learning, technology, fun stuff
   <footer><cite title="Boss Baby">Boss Baby</cite></footer>
 </blockquote>
 
-# Babysitting == engineering
+# Machine learning va babysitting
 
 Babysitting can be formalized as an engineering problem which is similar to
 machine learning. The main task of the babysitting problem is to *take care of a
@@ -40,7 +40,7 @@ There are many similarities between babysitting and machine learing.
 | Sometimes a hot-fix is urgently required to resolve the model issue.                     | ~~Sometimes~~ **Many times** a hot-fix (e.g., soothie pacifier, change of diaper, toys, etc.) is urgently required to resolve the baby issues.                                                        |
 | The platforms that are used to host the model should be scalable and flexible.           | The crib/clothes/stroller that are used by the baby should be scalable and flexible (the baby grows so fast!)                                                                                         |
 
-# System design and conclusion
+# System design
 
 To illustrate, a simple babysitting system that I am practicing with my baby is
 depicted as below.
