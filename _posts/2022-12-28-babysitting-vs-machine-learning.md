@@ -13,13 +13,14 @@ categories: machine learning, technology, fun stuff
 
 # Machine learning vs babysitting
 
-Babysitting can be formalized as an engineering problem which is similar to
-machine learning. The main task of the babysitting problem is to *take care of a
-baby by fulfiling its needs as much as possible under the constraints that the
-baby's life pattern has minimal impact on its parents.*. The success of
-babysitting can be quantitatively measured by, for example, the child growth
-standard proposed by WHO. And the objective is to minimize the deviation between
-the baby's data against the standard one.
+Having been a father for about two months, I found that babysitting can be
+formalized as an engineering problem which is similar to machine learning. The
+main task of the babysitting problem is to *take care of a baby by fulfiling its
+needs as much as possible under the constraints that the baby's life pattern has
+minimal impact on its parents*. The success of babysitting can be quantitatively
+measured by, for example, the [child growth standard proposed by
+WHO](https://www.who.int/tools/child-growth-standards). And the objective is to
+minimize the deviation between the baby's data against the standard one.
 
 There are many similarities between babysitting and machine learing.
 
@@ -29,13 +30,13 @@ There are many similarities between babysitting and machine learing.
 | The model is built by using raw materials (data) generated from various sources.         | The baby is raised by using the raw materials (milk) generated from various sources (mommy and the formula milk powder).                                                                              |
 | The raw data need to be featurized before it can be used for model building.             | The raw materials need to be featurized, e.g., heated, mixed with water, bottled, etc., before it can be used for baby feeding.                                                                       |
 | The model training process requires parameter tuning to optimize the training objective. | The babysitting process requires parents' technique tuning to optimize the feeding experience.                                                                                                        |
-| Regularization is usually applied to avoid overfitting.                                  | Regularization is usually applied to avoid overfeeding.                                                                                                                                               |
-| The model is evaluated against the pre-defined quantitaive metrics.                      | The baby's growth is evaluated by the pre-defined quantitative metrics, i.e., the [WHO child growth standard](https://www.who.int/tools/child-growth-standards).                                      |
+| Regularization is usually applied to avoid overfitting.                                  | Regularization is usually applied to avoid **overfeeding**.                                                                                                                                           |
+| The model is evaluated against the pre-defined quantitaive metrics.                      | The baby's growth is evaluated by the pre-defined quantitative metrics, i.e., the WHO child growth standard.                                                                                          |
 | The model needs to be repetitively retrained.                                            | The babysitting process needs to be repetitively conducted (feed-play-sleep in every 3 hours a day).                                                                                                  |
 | Data visualization is vital to building a reliable model.                                | The baby's activity visualization is vital to babysitting.                                                                                                                                            |
 | It is important yet challenging to explain the model's behavior.                         | It is important yet challenging to explain the baby's behavior.                                                                                                                                       |
 | A pipeline with engineering best practices is needed for efficiency enhancement.         | A pipeline with the engineering best practices (using the auto formula milk maker machine, the UV sterilizer, etc., applying the 5-min burping technique, etc.) is needed for efficiency enhancement. |
-| The pipeline is automated at large but it still requires human involvement.              | The pipeline can be automated at large but still it requires **A LOT OF** human involvement...                                                                                                        |
+| The pipeline is automated at most but it still requires human involvement.               | The pipeline can be automated at most but still it requires **A LOT OF** human involvement...                                                                                                         |
 | The model needs to be monitored when it is alive.                                        | The baby needs to be monitored **ALL THE TIME** regardless whether it is awake or asleep.                                                                                                             |
 | Sometimes a hot-fix is urgently required to resolve the model issue.                     | ~~Sometimes~~ **Many times** a hot-fix (e.g., soothie pacifier, change of diaper, toys, etc.) is urgently required to resolve the baby issues.                                                        |
 | The platforms that are used to host the model should be scalable and flexible.           | The crib/clothes/stroller that are used by the baby should be scalable and flexible (the baby grows so fast!)                                                                                         |
@@ -53,8 +54,9 @@ pipeline](https://yueguoguo.github.io/images/babysitting_pipeline.png)
 <font size="1"> The pipeline in a babysitting system is similar to that in a
 machine learning system. </font>
 
-* The pipeline takes the raw input (formula milk powder) to feed the baby, and
-  they are preserved in the storage. 
+* Considering the use case of formula milk feeding, the pipeline takes the raw
+  input (formula milk powder) to feed the baby, and they are preserved in the
+  storage. 
 * The core component is the *babysitting console* where there is an *auto milk
   maker machine* to "featurize" the milk powder and a *babysitting platform*
   which consists of the crib, the stroller, Stokke Tripp Trap, etc., for the
