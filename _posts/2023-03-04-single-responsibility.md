@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Single responsibility
+title:      "Single responsibility"
 date:       2023-03-04 23:14:29
 summary:    Single responsibility principle keeps codes regular and clean
 categories: data science, software engineering, machine learning, design patter, principles
