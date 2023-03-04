@@ -25,17 +25,17 @@ software development.
 4. It mitigates ambiguity and confusion.
 
 Practicing the single responsibility principle is vital to developing data
-science and machine learning software. The following discussion tries to
-illustrate the single responsibility principle from three different angles. 
+science and machine learning software. The single responsibility principle can
+be illustrated on three folds. 
 
 ## "Different problems have different objects" 
 
 A "problem" may be defined with different scopes, but in general, different
 problems need to be implemented in different objects however they are big or
-small. For example, an object can be created to deal with database related
+small. For example, an object can be created to deal with database-related
 operation, and another object can be created to handle model training and model
-scoring. "Database-related operations" and "machine learning model-related
-operations" are considered to be two different sets of problems so they require
+scoring. *"Database-related operations"* and *"machine learning model-related
+operations"* are considered to be two different sets of problems so they require
 different objects. 
 
 For example, [`scikit-learn` applies single responsibility in implementing the
@@ -58,32 +58,36 @@ of a model defined in the `nn.Module`.
 A lot of times the object can be made obscure when there are functionalities
 being added to it that may exceed its pre-defined scope. If there is an object
 that is supposed to handle multiple different sub-problems, it may be reasonable
-to split the scope of the object and make the the split ones applied to only the
-sub-problems, respectively.
+to split the scope of the object and apply the splits to only the sub-problems,
+respectively.
 
-A very representative example to illustrate this principle is the write function
-used for saving the `pandas` dataframe. Though the write operation can be
-considered as one problem, it may have the sub-problems that write the dataframe
+A very representative example to illustrate this principle is the *write*
+functions used for saving the `pandas` dataframe. Though the write operation can
+be considered as one problem, it may have sub-problems that write the dataframe
 to different types of output formats, i.e., `csv`, `parquet`, etc. And
 therefore, there are different dedicated methods of the `pandas.DataFrame`
-object to handle these 'sub-problems`. That is, for saving to `csv`, `to_csv` is
+object to handle these `sub-problems`. That is, for saving to `csv`, `to_csv` is
 used, and for saving to `parquet`, `to_parquet` is used.
 
 ## "Add only the necessary functionalities to the object"
 
 It happens frequently that unnecessary functionalities are added to an object,
 which makes the object less maintainable. Considering a class where the
-unnecessary emthods are added, the cost of doing this will be not just the
-implementation of the additional methods but also the unit tests and integration
-tests that may apply.
+unnecessary emthods are added, the cost will be not merely the implementation of
+the additional methods but also the unit tests and integration tests that may
+apply.
 
 Sometimes, it is indeed hard to tell whether the functionalities are required or
-not. The usual way of dealing with such situations is that the responsibility
-can be "propagated" to or "passed" from by using other auxiliary objects. This
-idea can be seen in many commonly used design pattern such as *"strategy"* - 
-it implements the *"context"* that controls the actual behavior of the object.
+not. The usual way of dealing with such situation is that the responsibility can
+be "propagated" to or "passed" from by using other auxiliary objects. This idea
+can be seen in many commonly used design pattern such as *"strategy"* - it
+implements the *"context"* that controls the actual behavior of the object. The
+unnessary components of a "strategy" can then be put into the "context" so that
+whenever there is a change of the context, the actual strategy is also affected.
+And as a result, the context and the strategies can be implemented and
+maintained separately.
 
-# A walk-through of building a recommendation system with single-responsibility rule
+# Case study: recommender system
 
 The following demonstrates the use of the "single-responsibility" principle in
 designing a recommender system.
