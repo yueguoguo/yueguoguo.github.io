@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Single responsibility
-date:       2022-07-07 23:14:29
+date:       2023-03-04 23:14:29
 summary:    Single responsibility principle keeps codes regular and clean
 categories: data science, software engineering, machine learning, design patter, principles
 ---
@@ -26,16 +26,71 @@ software development.
 
 Practicing the single responsibility principle is vital to developing data
 science and machine learning software. The following discussion tries to
-illustrate the single responsibility principle from three different angles. To
-make the discussions intuivie, the arguments are demonstrated with a real-world
-example that develops a recommender system. 
+illustrate the single responsibility principle from three different angles. 
 
-## "Different problems have different objects"
+## "Different problems have different objects" 
 
 A "problem" may be defined with different scopes, but in general, different
 problems need to be implemented in different objects however they are big or
-small. For example, in a recommender system, a commonly seen architecture
-pattern is
+small. For example, an object can be created to deal with database related
+operation, and another object can be created to handle model training and model
+scoring. "Database-related operations" and "machine learning model-related
+operations" are considered to be two different sets of problems so they require
+different objects. 
+
+For example, [`scikit-learn` applies single responsibility in implementing the
+base `Estimator` or
+`Transformer`](https://scikit-learn.org/stable/developers/develop.html). That
+is, these base classes have the standardized structure such as the methods of
+`fit`, `predict`, `score`, etc., which are the most relevant "roles" to an
+`Estimator` or `Transformer`. The classes or functions for other atomic
+operations are implemented as separate entities. 
+
+Similar idea can be seen in the deep learning packages like `torch`. [The
+`nn.Module` implements the neural network topology, but it does not incorporate
+the training
+component](https://pytorch.org/docs/stable/generated/torch.nn.Module.html). This
+is because a separate module takes the "responsibility" for optimizing the loss
+of a model defined in the `nn.Module`.
+
+## "Focus on one if there are multiple types of sub-problems to resolve"
+
+A lot of times the object can be made obscure when there are functionalities
+being added to it that may exceed its pre-defined scope. If there is an object
+that is supposed to handle multiple different sub-problems, it may be reasonable
+to split the scope of the object and make the the split ones applied to only the
+sub-problems, respectively.
+
+A very representative example to illustrate this principle is the write function
+used for saving the `pandas` dataframe. Though the write operation can be
+considered as one problem, it may have the sub-problems that write the dataframe
+to different types of output formats, i.e., `csv`, `parquet`, etc. And
+therefore, there are different dedicated methods of the `pandas.DataFrame`
+object to handle these 'sub-problems`. That is, for saving to `csv`, `to_csv` is
+used, and for saving to `parquet`, `to_parquet` is used.
+
+## "Add only the necessary functionalities to the object"
+
+It happens frequently that unnecessary functionalities are added to an object,
+which makes the object less maintainable. Considering a class where the
+unnecessary emthods are added, the cost of doing this will be not just the
+implementation of the additional methods but also the unit tests and integration
+tests that may apply.
+
+Sometimes, it is indeed hard to tell whether the functionalities are required or
+not. The usual way of dealing with such situations is that the responsibility
+can be "propagated" to or "passed" from by using other auxiliary objects. This
+idea can be seen in many commonly used design pattern such as *"strategy"* - 
+it implements the *"context"* that controls the actual behavior of the object.
+
+# A walk-through of building a recommendation system with single-responsibility rule
+
+The following demonstrates the use of the "single-responsibility" principle in
+designing a recommender system.
+
+## Recall and rerank
+
+In a recommender system, a commonly seen architecture pattern is
 ["recall-rerank"](https://developers.google.com/machine-learning/recommendation/dnn/re-ranking)
 - the former does large-scale retrieval of relevant items and the latter reranks
 the relevant items with detailed contextual information for recommending to
@@ -180,7 +235,7 @@ recommender.recall.build_model(user_item_interactions, **algorithm_parameters)
 recall_items = recommender.recall.generate_items(users, items, threshold, item_per_user)
 ```
 
-## "Focus on one if there are multiple types of sub-problems to resolve"
+## Data preservation
 
 It is common that the items generated from one of the stages are cached into a
 database for later reference. A tendency of implementing such is to add a method
@@ -255,7 +310,7 @@ To support the rerank data read/write operation, a parameter of table may be
 added in the methods of `RecommenderDatabaseManager` to filter the target tables
 in the database.
 
-## "Add only the necessary method to the object"
+## Making the hollistic pipeline
 
 Usually, before either the recall or the rerank stage, possibly, there may be
 data pre-processing steps, e.g., feature engineering; after generating the
@@ -294,31 +349,10 @@ recall.build_model(user_item_interactions, **parameters)
 By doing this, the functionalities of preprocessing and the actual recall are
 separated for single responsibilities.
 
-# Other examples
-
-Single responsibility principle can be seen in many machine learning and data
-science software. For example, [`scikit-learn` applies single responsibility in
-implementing the base `Estimator` or
-`Transformer`](https://scikit-learn.org/stable/developers/develop.html). That
-is, these base classes have the standardized structure such as the methods of
-`fit`, `predict`, `score`, etc., which are the most relevant "roles" to an
-`Estimator` or `Transformer`. The classes or functions for other atomic
-operations are implemented as separate entities. 
-
-Similar idea can be seen in the deep learning packages like `torch`. [The
-`nn.Module` implements the neural network topology, but it does not incorporate
-the training
-component](https://pytorch.org/docs/stable/generated/torch.nn.Module.html). This
-is because a separate module takes the "responsibility" for optimizing the loss
-of a model defined in the `nn.Module`.
-
-[Microsoft
-recommenders](https://github.com/microsoft/recommenders/wiki/Coding-Guidelines#single-responsibility)
-has applied the single responsibility principle to implement the modules in the
-package that makes the codes clean and regular. 
-
 # References
 
-[1] Martin, Robert C. (2005). "The Principles of OOD". butunclebob.com. 
-[2] Andreas Argyriou, Miguel Gonzalez-Fierro, and Le Zhang, "Microsoft Recommenders:
+1. Martin, Robert C. (2005). "The Principles of OOD". butunclebob.com. 
+1. Andreas Argyriou, Miguel Gonzalez-Fierro, and Le Zhang, "Microsoft Recommenders:
 Best Practices for Production-Ready Recommender Systems".
+1. Pandas Development Team, "Pandas", url: https://doi.org/10.5281/zenodo.3509134, Zenodo, 2020
+1. Refactoring guru, "Strategy in Python".
