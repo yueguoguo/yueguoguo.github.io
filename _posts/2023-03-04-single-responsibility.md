@@ -6,6 +6,11 @@ summary:    Single responsibility principle keeps codes regular and clean
 categories: data science, software engineering, machine learning, design patter, principles
 ---
 
+<blockquote>
+  <p>Gather together those things that change for the same reason, and separate those things that change for different reasons.</p>
+  <footer><cite title="Uncle Bob (Robert Martin)">"Uncle Bob (Robert Martin)"</cite></footer>
+</blockquote>
+
 # Introduction
 
 **Single responsibility** is a well-known principle used in developing computer
