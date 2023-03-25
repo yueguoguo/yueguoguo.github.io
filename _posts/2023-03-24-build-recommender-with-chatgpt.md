@@ -20,7 +20,7 @@ article](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://arxiv.org/p
 to debate on the impact of ChatGPT on the labor market. **Programming** and
 **writing** are identified as those skills that *may have positive association
 with exposures, implying the occupations that use these skills may be influenced
-by ChatGPT. 
+by ChatGPT*. 
 
 The work shared in this post conducts an experiment to learn how ChatGPT changes
 my way of developing a data science or machine learning project. I chose a topic
@@ -35,8 +35,7 @@ inputs are mostly my prompts to ChatGPT.
 ChatGPT is a chatbot developed by OpenAI, which uses the latest large language
 model of GPT-4 for generating human-like dialogues when it is given "prompts". I
 wrote a post that introduces the fundamentals about ChatGPT, and it can be found
-[here](https://yueguoguo.github.io/chatgpt,/machine/learning,/technology,/finance/2023/01/26/chatgpt/)
-- it may be a good reading material to understand ChatGPT. 
+[here](https://yueguoguo.github.io/chatgpt,/machine/learning,/technology,/finance/2023/01/26/chatgpt/) - it may be a good reading material to understand ChatGPT. 
 
 ## Recommender system
 
@@ -67,17 +66,17 @@ integration, documentation, etc., there may be extra hours required.
 The steps for developing the collaborative filtering recommender system are shown
 below. It is worth noting that **in addition to the core function codes of the
 recommender system, unit test development, system integration, document
-development, etc., are also considered into the scope of the project. 
+development, etc., are also considered into the scope of the project**. 
 
-* Develop the function codes for the major components in the recommender system.
+1. Develop the function codes for the major components in the recommender system.
   * Obtain the dataset.
   * Do the split of the dataset into train and test sets.
   * Build the model with the SAR algorithm.
   * Evaluate the model with recall@k and precision@k metrics.
-* Develop the unit tests.
-* Integrate the individual functions into a pipeline script.
-* Reorganize the repository.
-* Develop the documentation.
+1. Develop the unit tests.
+1. Integrate the individual functions into a pipeline script.
+1. Reorganize the repository.
+1. Develop the documentation.
 
 In this project, the above tasks are accomplished by using ChatGPT. The detailed
 prompts used for the above steps can be found in the prompts listed
