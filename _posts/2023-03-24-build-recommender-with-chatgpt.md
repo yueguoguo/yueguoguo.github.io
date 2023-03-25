@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Build a collaborative filtering recommender with ChatGPT"
-date:       2023-03-25 23:14:29
+date:       2023-03-24 23:14:29
 summary:    ChatGPT enhances productivity of data scientists and machine learning engineers.
 categories: data science, software engineering, machine learning, chatgpt
 ---
