@@ -7,8 +7,8 @@ categories: domain-driven development, software design, design pattern, artifici
 ---
 
 <blockquote>
-  <p>术业有专攻</p>
-  <footer><cite title="韩愈">韩愈</cite></footer>
+  <p>术业有专攻 (One might be a master in his own field.)</p>
+  <footer><cite title="韩愈 (Han Yu)">韩愈 (Han Yu)</cite></footer>
 </blockquote>
 
 # What is domain-driven development (DDD)
