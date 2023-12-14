@@ -223,9 +223,9 @@ and use case scenario, which is discussed at large
 
 ## Tech-to-tech (t2t) translation
 
-Within a hollistic system there may be cross-domain communications as well. For
-example, assuming that the entire system is designed to support both *payment*
-and *loan*. The two sub-domains of payment and loan may have the similar
+Within the system there may be cross-domain communications as well. For example,
+assuming that the entire system is designed to support both *payment* and
+*loan*. The two sub-domains of payment and loan may have the similar
 implementation patterns, but they differ in details. The interconnections
 between the sub-domains are tech-to-tech (t2t) and usually they are through
 programmatic interfaces. The main difference between *b2t* translation and *t2t*
