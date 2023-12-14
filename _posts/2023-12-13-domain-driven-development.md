@@ -32,24 +32,37 @@ implemented are important.
 a cross-domain ubiquitous language that servers to all purpose. By definition,
 *domain* in DDD refers to [a conceptual subject area about how users apply the
 software](https://en.wikipedia.org/wiki/Domain-driven_design#cite_note-evans2004-4).
-At the most coarse granularity, domains can be dichotomized into *business*
+At a coarse granularity, domains can be dichotomized into *business*
 domain and *technical* domain. The ubiquitous language for the inter and inner
-connections is vital to a useful DDD.
+connections among the technical and business domains are vital to a useful DDD.
 
 ## Business-to-tech (b2t) translation
 
 The biggest challenge usually lies in the translation from the business request
 to the technical problem. And it can be quite repetitive and iterative. A good
-translation usually requires practice with team in understanding the problem
+translation usually requires practice with the team in understanding the problem
 precisely - example techniques of [event
 storming](https://en.wikipedia.org/wiki/Event_storming), [requirement
 engineering](https://en.wikipedia.org/wiki/Requirements_engineering), [business
 process modelling](https://en.wikipedia.org/wiki/Business_process_modeling).
 
 Given the complexity of the modern applications, usually, the requirements of
-the entire system have to be broken into several components. For example, at the
-ETL layer, the queries may be suggested by the business to extract data
-insights. 
+the entire system have to be broken into several components. Consider a scenario
+where the business wants to implement a *transaction system that tracks the
+client's transactions on certain products that the company sells*. The business
+is seeking for a service that can be leveraged to produce insights about the
+transactions such that the corresponding business plans can be determined. 
+
+By following the conventional approach in DDD, a *data model* of the core
+*entities* in such system should be defined. In the modern software, this can be
+easily achieved by leverage the database technologies. On top of it, the
+business can then specify the *domain-specific logics* that retrieve the
+required information for the analysis. The following is an example of the
+"translation" that converts the business requirements for retrieving
+product-related information by using a pre-defined data model - without loss of
+generity, here the data model is assumed to the be simplest that describes the
+entities of *client*, *product*, and *transaction* in the business domain of
+interest. 
 
 **Business**: 
 
@@ -63,7 +76,13 @@ insights.
 ```
 
 At the application layer, the functionalities of the applications (APIs) may be
-advised by the business.
+advised by the business. Similar to above, the requirements of the API
+implementations in the software service can be translated from the business
+requirements and engineered into the form that can be used by the developers.
+The following example demonstrates the translation from the business requirement
+to the [OpenAPI specification](https://www.openapis.org/) of the
+[RESTful](https://en.wikipedia.org/wiki/REST) API that implements the
+functionality.
 
 **Business**:
 
@@ -121,16 +140,22 @@ paths:
 The nature of *business-to-tech* translation is to conver the plain language
 that describes a business problem into a technical prototype or implementation.
 Usually a program manager, product manager, or product owner severs as the
-middle-layer to translate such requirements. The [*intelligent
-agent*](https://en.wikipedia.org/wiki/Intelligent_agent) that is powered by the
-[large language model (LLM)](https://en.wikipedia.org/wiki/Large_language_model)
-technologies, may help enhance the efficiency and effectiveness, as most of the
-mapping between human descriptions and technical implemetnations can be
-"predicted" by the LLM. The ubiquitous language for b2t can be simply the
-**human language**!
+middle-layer to translate such requirements. From the above examples of the two
+basic software components in a domain-specific application, it can be observed
+that, *although the two components, data query and front-end API, are correlated
+in the same domain, but they require different process to translate the
+business-domain descriptions to the technical domain specifications, i.e., data
+model and OpenAPI specifications. Having a universal ubiquitous language is
+challenging - the process of involving the business and technical teams for
+iteratively completing and refining the translation is time-consuming.  
 
-The requirements (**NOTE** here the requirements refer to functional ones) can
-be given by prompts to the LLM via the pre-designed interface. The inputs are
+The [large language model
+(LLM)](https://en.wikipedia.org/wiki/Large_language_model) technologies may help
+enhance the efficiency and effectiveness, as most of the mapping between human
+descriptions and technical implemetnations can be "predicted" by the LLM. The
+ubiquitous language for b2t can be simply the **human language**! The
+requirements (**NOTE** here the requirements refer to functional ones) can be
+given by prompts to the LLM via the pre-designed interface. The inputs are
 prompts that templatize the requirements. [The prompts can be designed in a way
 that they can be adaptively used for different components where business need to
 raise their
@@ -165,16 +190,17 @@ To detail the above meta-prompt, the following is constructed.
 ```
 # Instructions
 − I want a data model that implements the client, product, and transaction
-with the specified attributes ... 
+with the the specified attributes like below.
+Examples:
+  - The client data model should minimally contain client ID, client name, and
+  optionally it can have client information like total revenue, total debt, etc.  
+  - ...
 - I want a service to allow retrieval of average purchases of all products
 between the specified starting year and ending year.
 - I want the backend implementation of database queries to achieve the above
 front-end API service that retrieve the average product purchases between the 
 specified starting-year and the ending-year.
 ```
-
-The level of the technical implementation, i.e., architecture-level, code-level,
-etc., can be determined by the meta-prompts.
 
 Another good start of domain-specific meta-prompt can be found in [this blog
 post](https://ryan-zheng.medium.com/prompt-engineering-metaprompting-6aa09127c122),
@@ -197,13 +223,19 @@ and use case scenario, which is discussed at large
 
 ## Tech-to-tech (t2t) translation
 
-The main difference between *b2t* translation and *t2t* translation is that,
-*the former can be ambigous at times and the translation helps iron out details
-before implementation; the latter needs to be deterministic and precise such
-that the system is robust and reliable.* Hence, it is convenient to leverage the
-LLM for b2t translation but it might not be easy to do so for t2t. 
+Within a hollistic system there may be cross-domain communications as well. For
+example, assuming that the entire system is designed to support both *payment*
+and *loan*. The two sub-domains of payment and loan may have the similar
+implementation patterns, but they differ in details. The interconnections
+between the sub-domains are tech-to-tech (t2t) and usually they are through
+programmatic interfaces. The main difference between *b2t* translation and *t2t*
+translation is that, *the former can be ambigous at times and the translation
+process helps iron out the details to be as close to the facts as possible; the
+latter needs to be 100% deterministic and precise.* Hence, it is convenient to
+leverage the LLM for b2t translation but it might not be easy to do the same for
+t2t. 
 
-Consider a system where the modules are designed to serve to *"clients"*,
+Consider the same system where the modules are designed to serve to *"clients"*,
 *"product"*, and *"transaction"*. Each of these modules may have its own ETL
 pipeline, data models, prediction capability, programming interface, etc., and
 altogether the sub-modules form the "domain", of the entire system. Obviously,
@@ -221,13 +253,14 @@ the connections or linkage among them. The graph-like scheme guarantees the
 universal representation of sub-domain behavior and state-description, as well
 as the synchronization and coordination among these domains. An advanced idea
 for the same is [data mesh](https://en.wikipedia.org/wiki/Data_mesh). A data
-mesh favours DDD by virtue of its architectural design where the domain-specific
-ownership is defined, and a federated approach to govern the data usage among
-different domains is applied. 
+mesh favours DDD by virtue of its architectural design where the
+[domain-specific ownership is defined, and a federated approach to govern the
+data usage among different domains is
+applied](https://www.mckinsey.com/capabilities/quantumblack/our-insights/demystifying-data-mesh). 
 
 The "ubiquitous language" that bridges the data pipeline to the front-end
 serving layer can be achieved by standardizing the schema design. For example,
-as for the Restful APIs, the [swagger specs](https://swagger.io/) of the API
+as for the RESTful APIs, the [swagger specs](https://swagger.io/) of the API
 endpoints should stick to the entities, objects, etc. of the domains. In terms
 of impelementations, it is worth considering the bidirectional conversion of
 swagger standard from/to the data schemas used in the data pipeline. For
