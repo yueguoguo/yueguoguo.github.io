@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      Ubiquitous language for domain-driven development of contemporary software application
+title:      Ubiquitous language for domain-driven development
 date:       2023-12-13 16:43:29
-summary:    Bridging domains with unity in engineering
+summary:    Productionize modern data-centric applications with efficiency
 categories: domain-driven development, software design, design pattern, artificial intelligence
 ---
 
