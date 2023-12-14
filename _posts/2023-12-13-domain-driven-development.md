@@ -1,9 +1,9 @@
 ---
 layout:     post
-title:      Ubiquitous language for domain-driven development of contemporary application development
-date:       2023-10-01 16:43:29
-summary:    some summary
-categories: software engineering, machine learning, design pattern
+title:      Ubiquitous language for domain-driven development of contemporary software application
+date:       2023-12-13 16:43:29
+summary:    Bridging domains with unity in engineering
+categories: domain-driven development, software design, design pattern, artificial intelligence
 ---
 
 <blockquote>
@@ -13,13 +13,18 @@ categories: software engineering, machine learning, design pattern
 
 # What is domain-driven development (DDD)
 
-With the proliferation of AI technology, lots of tasks that used to be
-significant challenges become easy to cope with. Nevertheless, despite the
-astonishing capability of generalization by leveraging the contemporary deep
-learning techniques, quite a portion of the problems in different industrial
-domains still require domain knowledge. DDD has been around for ages. It was
-coined by xxx in the book of. The book gave a clear definition of DDD and how
-the principle can be used in the modern software design and implementation.
+DDD has been around for ages. It was coined by *Eric Evans* in the book of
+[*"Domain-Driven Design: Tackling Complexity in the Heart of
+Software"*](http://dddcommunity.org/book/evans_2003/) published in 2003. The
+book gave a clear definition of DDD and how the principle can be used in the
+modern software design and implementation. In general, DDD asks for a principle
+to focus the design and development of software components by following the
+domain-specific characteristics. It requires the domain experts that delineate
+the problems at the logical level, with which the blueprints of the software
+design should be put together to map to the business logics. Given the
+hierarchical or aggregational structures of domain layers in a DDD application,
+communications of various components for deciding how they can be designed and
+implemented are important. 
 
 # Ubiquitous language
 
@@ -138,31 +143,35 @@ be useful to scaffold skeleton of domain modules with LLM. Based on the example
 provided by the paper, the meta-prompt that suffices business requirements to
 engineer transaction application can be given as below.
 
-> # Input:
-> {CONTEXT GOES HERE}
-> # System
-> You are a product owner that specify the requirements of a transaction
-> application. Propose five functional requirements such that {TASK DESCRIPTION
-> GOES HERE}.
-> # Instructions
-> − Write the commands in one sentence
-> − The commands should be short and concise
-> − Write five independent commands
-> # Examples
-> 1. {EXAMPLES GO HERE}
-> # Commands:
-> 1.
+```
+# Input:
+{CONTEXT GOES HERE}
+# System
+You are a product owner that specify the requirements of a transaction
+application. Propose five functional requirements such that {TASK DESCRIPTION
+GOES HERE}.
+# Instructions
+− Write the commands in one sentence
+− The commands should be short and concise
+− Write five independent commands
+# Examples
+1. {EXAMPLES GO HERE}
+# Commands:
+1.
+```
 
 To detail the above meta-prompt, the following is constructed. 
 
-> # Instructions
-> − I want a data model that implements the client, product, and transaction
-> with the specified attributes ... 
-> - I want a service to allow retrieval of average purchases of all products
-> between the specified starting year and ending year.
-> - I want the backend implementation of database queries to achieve the above
-> front-end API service that retrieve the average product purchases between the 
-> specified starting-year and the ending-year.
+```
+# Instructions
+− I want a data model that implements the client, product, and transaction
+with the specified attributes ... 
+- I want a service to allow retrieval of average purchases of all products
+between the specified starting year and ending year.
+- I want the backend implementation of database queries to achieve the above
+front-end API service that retrieve the average product purchases between the 
+specified starting-year and the ending-year.
+```
 
 The level of the technical implementation, i.e., architecture-level, code-level,
 etc., can be determined by the meta-prompts.
