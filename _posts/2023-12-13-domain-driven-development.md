@@ -171,16 +171,20 @@ engineer transaction application can be given as below.
 ```
 # Input:
 {CONTEXT GOES HERE}
+
 # System
 You are a product owner that specify the requirements of a transaction
 application. Propose five functional requirements such that {TASK DESCRIPTION
 GOES HERE}.
+
 # Instructions
 − Write the commands in one sentence
 − The commands should be short and concise
 − Write five independent commands
+
 # Examples
 1. {EXAMPLES GO HERE}
+
 # Commands:
 1.
 ```
@@ -191,10 +195,6 @@ To detail the above meta-prompt, the following is constructed.
 # Instructions
 − I want a data model that implements the client, product, and transaction
 with the the specified attributes like below.
-Examples:
-  - The client data model should minimally contain client ID, client name, and
-  optionally it can have client information like total revenue, total debt, etc.  
-  - ...
 - I want a service to allow retrieval of average purchases of all products
 between the specified starting year and ending year.
 - I want the backend implementation of database queries to achieve the above
