@@ -344,3 +344,12 @@ data-centric application can be
 |3|Iterate the above until the architectural design of the software or application is in a desirable shape.|**LLM**, **Program Manager**, **Tech Lead**| 
 |4|Choose one or multiple interchangeable format to describe the detailed specifications finalized in the above steps, which can then be applied across multiple domain-specific components.|**Tech Lead**|
 
+# References
+
+1.  Evans, Eric (August 22, 2003). Domain-Driven Design: Tackling Complexity in
+    the Heart of Software. Boston: Addison-Wesley. ISBN 978-032-112521-7.
+    Retrieved 2012-08-12
+1.  Greg Ball, The Importance of Ubiquitous Language, VMWare Tanzu Developer
+    Center, Jan 2023. 
+1.  Felipe de Freitas Batista, Develop the Ubiquitous Language, Domain Driven
+    Design, April 2019. 
