@@ -161,7 +161,7 @@ basic software components in a domain-specific application, it can be observed
 that, *although the two components, data query and front-end API, are correlated
 in the same domain, but they require different process to translate the
 business-domain descriptions to the technical domain specifications, i.e., data
-model and OpenAPI specifications. Having a universal ubiquitous language is
+model and OpenAPI specifications.* Having a universal ubiquitous language is
 challenging - the process of involving the business and technical teams for
 iteratively completing and refining the translation is time-consuming.  
 
