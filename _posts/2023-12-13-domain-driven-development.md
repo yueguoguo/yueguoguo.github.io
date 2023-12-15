@@ -272,7 +272,7 @@ and *loan*. The two sub-domains of payment and loan may have the similar
 implementation patterns, but they differ in details. The interconnections
 between the sub-domains are tech-to-tech (t2t) and usually they are through
 programmatic interfaces. The main difference between *b2t* translation and *t2t*
-translation is that, *the former can be ambiguous at times and the translation
+translation is that, *the former can be flexible at times and the translation
 process helps iron out the details to be as close to the facts as possible; the
 latter needs to be 100% deterministic and precise.* Hence, it is convenient to
 leverage the LLM for b2t translation but it might not be easy to do the same for
