@@ -77,7 +77,9 @@ storming](https://en.wikipedia.org/wiki/Event_storming), [requirement
 engineering](https://en.wikipedia.org/wiki/Requirements_engineering), [business
 process modelling](https://en.wikipedia.org/wiki/Business_process_modeling).
 
-Given the complexity of the modern applications, usually, the requirements of
+### The conventional approach
+
+Given the complexity of the data-intensive applications, usually, the requirements of
 the entire system have to be broken into several components. Consider a scenario
 where the business in a financial service organization wants to implement a
 *transaction system that tracks the client's transactions on certain products
@@ -188,6 +190,8 @@ describe these components that serve at different layers in different domains.
 However, finding a universal yet effective approach to translation is
 challenging - the process of involving the business and technical teams for
 iteratively completing and refining the translation is time-consuming.  
+
+### Can we leverage the advanced LLM technology? 
 
 The [large language model
 (LLM)](https://en.wikipedia.org/wiki/Large_language_model) technologies may help
