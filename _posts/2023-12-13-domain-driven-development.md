@@ -310,9 +310,9 @@ serving layer can be achieved by standardizing the schema design. For example,
 as for the RESTful APIs, the [Swagger specs](https://swagger.io/) of the API
 endpoints should stick to the entities, objects, etc. of the domains. In terms
 of implementations, it is worth considering the bidirectional conversion of
-swagger standard from/to the data schemas used in the data pipeline. For
+Swagger standard from/to the data schemas used in the data pipeline. For
 example, it's common to see various data representations, data types, and data
-schemas in different components of a data science or machine learning pipeline. 
+schemas in different components of an application. 
 
 |Stage|Data representation|Framework|
 |---|---|---|
@@ -322,13 +322,16 @@ schemas in different components of a data science or machine learning pipeline.
 |Front-end|`JSON`, `protobuf`, `Avro`, `XML`|RESTful API, static site files, etc.|
 |System config|`YAML`, system shell file|OS|
 
-The data that is used in the domain may appear in all of the places above. The
-"ubiquitous language" that can be applied to link all of them is therefore
-important. It is worth noting that most of the above technical specifications
-can also be conveniently implemented by leveraging LLM, the *copilot*-like
-applications. Whilst it can be quite effective to generate initial code-level
-implementations but to guarantee the 100% precision human developers are still
-needed to perform quality assurance.
+The domain-specific data may appear in all of the places above. The "ubiquitous
+language" that can be applied to link all of them is therefore important. It is
+worth noting that most of the above technical specifications can also be
+conveniently implemented by leveraging LLM, the *copilot*-like applications.
+Whilst it can be quite effective to generate initial code-level implementations
+but to guarantee the 100% precision human developers are still needed to perform
+quality assurance. It is very difficult to write effective prompts to generate
+specs across technical domains with the interchangeable format if it is not
+impossible, and very likely, the prompts may have to be very sophisticated to
+guarantee the precision and accuracy.
 
 # Final thoughts
 
