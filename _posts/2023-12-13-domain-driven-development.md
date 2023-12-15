@@ -17,12 +17,12 @@ DDD has been around for ages. It was coined by *Eric Evans* in the book of
 [*"Domain-Driven Design: Tackling Complexity in the Heart of
 Software"*](http://dddcommunity.org/book/evans_2003/) published in 2003. The
 book gave a clear definition of DDD and how the principle can be used in the
-modern software design and implementation. In general, DDD asks for a principle
-to *focus the design and development of software components by following the
-domain-specific characteristics*. It requires the domain experts that delineate
+modern software design and implementation. In general, DDD asks for *focus on
+the design and development of software components by following the
+domain-specific characteristics*. It requires the domain experts to delineate
 the problems at the logical level, with which the blueprints of the software
-design should be put together to map to the business logics. Given the
-hierarchical or aggregational structures of domain layers in a DDD application,
+design can be put together to map to the business logics. Given the hierarchical
+or aggregational structures of domain layers in a DDD application,
 communications of various components for deciding how they can be designed and
 implemented are important. 
 
@@ -38,6 +38,12 @@ Assuming the entire system is segmented into various sub-domains,
   context*, *entities*, etc.
 * Usually an *aggregation* happens on top of the domains to connect to the
   *services* that are commonly stateless.
+
+The modern data-intensive applications are featured by the complexity of
+functionalities, data characteristics, front-end user interfaces, etc. Designing
+and developing data-centric applications for domain-specific use is challenging
+due to the gap of knowledge in "translating" specifications from the
+perspectives in one domain to another. 
 
 # Ubiquitous language
 
@@ -64,21 +70,28 @@ process modelling](https://en.wikipedia.org/wiki/Business_process_modeling).
 
 Given the complexity of the modern applications, usually, the requirements of
 the entire system have to be broken into several components. Consider a scenario
-where the business wants to implement a *transaction system that tracks the
-client's transactions on certain products that the company sells*. The business
-is seeking for a service that can be leveraged to produce insights about the
-transactions such that the corresponding business plans can be determined. 
+where the business in a financial service organization wants to implement a
+*transaction system that tracks the client's transactions on certain products
+that the company sells*. The business is seeking for a service that can be
+leveraged to produce insights about the transactions such that the corresponding
+business plans can be determined. 
 
-By following the conventional approach in DDD, a *data model* of the core
-*entities* in such system should be defined. In the modern software, this can be
-easily achieved by leverage the database technologies. On top of it, the
-business can then specify the *domain-specific logics* that retrieve the
+By following the conventional approach in DDD, a *model* of the core *entities*
+in such system should be defined in the first place. In the modern software,
+this can be easily achieved by leverage the database technologies. On top of it,
+the business can then specify the *domain-specific logics* that retrieve the
 required information for the analysis. The following is an example of the
 "translation" that converts the business requirements for retrieving
 product-related information by using a pre-defined data model - without loss of
-generality, here the data model is assumed to the be simplest that describes the
+generality, here the model is assumed to the be simplest that describes the
 entities of *client*, *product*, and *transaction* in the business domain of
 interest. 
+
+With the predefined model, the business requirement can be translated to
+technical implementations. For example, assuming the existence of the attribute
+`purchase_amount` and `purchase_date` in the `transaction_table` of a database,
+the following statement specified by the business can be rearranged into an SQL
+query.
 
 **Business**: 
 
@@ -87,16 +100,17 @@ interest.
 **Data engineer**: 
 ```sql
   SELECT AVG(purchase_amount) AS average_purchases
-  FROM product_table
+  FROM transaction_table
   WHERE purchase_date BETWEEN '2022-01-01' AND '2023-12-31';
 ```
 
-At the application layer, the functionalities of the applications (APIs) may be
-advised by the business. Similar to above, the requirements of the API
-implementations in the software service can be translated from the business
-requirements and engineered into the form that can be used by the developers.
-The following example demonstrates the translation from the business requirement
-to the [OpenAPI specification](https://www.openapis.org/) of the
+In the same or different sub-domains, at the application layer, the
+functionalities of the applications (APIs) may be advised by the business, too.
+Similar to above, the requirements of the API implementations in the software
+service can be translated from the business requirements and engineered into the
+form that can be used by the developers. The following example demonstrates the
+translation from the business requirement to the [OpenAPI
+specification](https://www.openapis.org/) of the
 [RESTful](https://en.wikipedia.org/wiki/REST) API that implements the
 functionality.
 
@@ -108,7 +122,6 @@ functionality.
 **Data scientist**:
 
 ```
-openapi: 3.0.0
 info:
   title: Product Purchase API
   version: 1.0.0
@@ -117,8 +130,6 @@ info:
 paths:
   /average-purchase:
     get:
-      summary: Get Average Purchase for a Product
-      description: Retrieve the average purchase of a product between the starting and ending years.
       parameters:
         - name: productId
           in: query
@@ -155,17 +166,18 @@ paths:
 
 The nature of *business-to-tech* translation is to convert the plain language
 that describes a business problem into a technical prototype or implementation.
-Usually a program manager, product manager, or product owner severs as the
-middle-layer to translate such requirements. From the above examples of the two
-basic software components in a domain-specific application, it can be observed
-that, *although the two components, data query and front-end API, are correlated
-in the same domain, but they require different process to translate the
-business-domain descriptions to the technical domain specifications, i.e., data
-model and OpenAPI specifications.* One of the possible solutions is to implement
-an interface by using a generic programming language with the wrapped
-object-oriented classes to describe these components that serve at different
-layers in different domains. However, finding a universal yet effective approach
-is challenging - the process of involving the business and technical teams for
+Usually a **knowledgeable human expert** such as program manager, product
+manager, or product owner severs as the middle-layer to translate such
+requirements. From the above examples of the two basic software components in a
+domain-specific application, it can be observed that, *although the two
+components, data query and front-end API, are correlated in the same domain, but
+they require different process to translate the business-domain descriptions to
+the technical domain specifications, i.e., data model and OpenAPI
+specifications.* One of the possible solutions is to implement an interface by
+using a generic programming language with the wrapped object-oriented classes to
+describe these components that serve at different layers in different domains.
+However, finding a universal yet effective approach to translation is
+challenging - the process of involving the business and technical teams for
 iteratively completing and refining the translation is time-consuming.  
 
 The [large language model
@@ -183,7 +195,10 @@ For example, the above data queries and model building components can be yielded
 from LLMs with proper prompt engineering. There are a few good practices to
 draft the prompts. E.g., [meta-prompting](https://arxiv.org/pdf/2312.06562)
 helps creates reusable "templates" that generate that actual prompts - this can
-be useful to scaffold skeleton of domain modules with LLM. Based on the example
+be useful to scaffold skeleton of domain modules with LLM. In addition, the
+[zero-shot](https://en.wikipedia.org/wiki/Zero-shot_learning) or
+[few-shot](https://en.wikipedia.org/wiki/Few-shot_learning) examples can be
+leveraged to enhance the accuracy of the translation. Based on the example
 provided by the paper, the meta-prompt that suffices business requirements to
 engineer transaction application can be given as below.
 
@@ -242,9 +257,9 @@ and use case scenario, which is discussed at large
 
 ## Tech-to-tech (t2t) translation
 
-Within the system there may be cross-domain communications as well. For example,
-assuming that the entire system is designed to support both *payment* and
-*loan*. The two sub-domains of payment and loan may have the similar
+Within the system there may be cross-domain contextualization as well. For
+example, assuming that the entire system is designed to support both *payment*
+and *loan*. The two sub-domains of payment and loan may have the similar
 implementation patterns, but they differ in details. The interconnections
 between the sub-domains are tech-to-tech (t2t) and usually they are through
 programmatic interfaces. The main difference between *b2t* translation and *t2t*
@@ -256,7 +271,7 @@ t2t.
 
 Consider the same system where the modules are designed to serve to *"clients"*,
 *"product"*, and *"transaction"*. Each of these modules may have its own ETL
-pipeline, data models, prediction capability, programming interface, etc., and
+pipeline, data models, data analytical ability, programming interface, etc., and
 altogether the sub-modules form the "domain", of the entire system. Obviously,
 one domain may have interconnections with the others. If these connections are
 from a technical perspective, the "t2t" translation is required. 
@@ -308,4 +323,14 @@ many ways, it is a **learning model** that is essentially probabilistic such
 that it is limited to produces cross-domain communications that require 100%
 precision and correctness. As a result, the structural way of data
 representation to serve the *t2t* translation is still a must to the system. 
+
+Hence, in general, a recommended workflow that optimize both the efficiency and
+precision for conducting DDD of a complicated data-centric application can be 
+
+|#|Task|Key participants|
+|---|---|---|
+|1|Apply the LLM as a middle-layer to translate the strategic design of the system that corresponds to the business requirements.|**LLM**, **Domain Experts**, **Program Manager**|
+|2|Based on the high-level skeleton, use LLM to iron out the details for model, context, entities, and aggregation behaviors.|**LLM**, **Program Manager**, **Tech Lead**| 
+|3|Iterate the above until the architectural design of the software or application is in a desirable shape.|**LLM**, **Program Manager**, **Tech Lead**| 
+|4|Choose one or multiple interchangeable format to describe the detailed specifications finalized in the above steps, which can then be applied across multiple domain-specific components.|**Tech Lead**|
 
