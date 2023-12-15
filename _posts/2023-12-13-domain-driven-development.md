@@ -307,7 +307,7 @@ applied](https://www.mckinsey.com/capabilities/quantumblack/our-insights/demysti
 
 The "ubiquitous language" that bridges the data pipeline to the front-end
 serving layer can be achieved by standardizing the schema design. For example,
-as for the RESTful APIs, the [swagger specs](https://swagger.io/) of the API
+as for the RESTful APIs, the [Swagger specs](https://swagger.io/) of the API
 endpoints should stick to the entities, objects, etc. of the domains. In terms
 of implementations, it is worth considering the bidirectional conversion of
 swagger standard from/to the data schemas used in the data pipeline. For
@@ -319,7 +319,7 @@ schemas in different components of a data science or machine learning pipeline.
 |Data warehouse|raw file|data lake|
 |ETL|Distributed file (parquet, csv, etc.) system|`Spark`, `Hadoop`, etc.|
 |Data science|In-memory data objects|(In Python) `numpy`, `pandas`, `tensorflow`, etc.|
-|Front-end|`JSON`, `protobuf`, `avro`, `XML`|Restful API, static site files, etc.|
+|Front-end|`JSON`, `protobuf`, `Avro`, `XML`|RESTful API, static site files, etc.|
 |System config|`YAML`, system shell file|OS|
 
 The data that is used in the domain may appear in all of the places above. The
@@ -333,7 +333,7 @@ challenge. With the growth of complexity in the modern applications, building an
 efficient "translation" mechanism that passes requirements, specifications,
 etc., across domains becomes vital. Whilst the LLM technology seems to help in
 many ways, it is a **learning model** that is essentially probabilistic such
-that it is limited to produces cross-domain communications that require 100%
+that it is limited to producing cross-domain delineation that require 100%
 precision and correctness. As a result, the structural way of data
 representation to serve the *t2t* translation is still a must to the system. 
 
@@ -347,6 +347,10 @@ data-centric application can be
 |2|Based on the high-level skeleton, use LLM to iron out the details for model, context, entities, and aggregation behaviors.|**LLM**, **Program Manager**, **Tech Lead**| 
 |3|Iterate the above until the architectural design of the software or application is in a desirable shape.|**LLM**, **Program Manager**, **Tech Lead**| 
 |4|Choose one or multiple interchangeable format to describe the detailed specifications finalized in the above steps, which can then be applied across multiple domain-specific components.|**Tech Lead**|
+
+Finding and applying the ubiquitous language is still a collective efforts of
+multiple teams but hopefully with the progression of the AI technologies the
+whole process can be made much simpler than before. 
 
 # References
 
