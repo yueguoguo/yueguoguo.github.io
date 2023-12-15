@@ -2,7 +2,7 @@
 layout:     post
 title:      Ubiquitous language for domain-driven development
 date:       2023-12-13 16:43:29
-summary:    Productionizing modern data-centric applications with efficiency
+summary:    Productionizing domain-specific data-centric applications with efficiency
 categories: domain-driven development, software design, design pattern, artificial intelligence
 ---
 
