@@ -352,7 +352,7 @@ data-centric application can be
 |---|---|---|
 |1|Apply the LLM as a middle-layer to translate the strategic design of the system that corresponds to the business requirements.|**LLM**, **Domain Experts**, **Program Manager**|
 |2|Based on the high-level skeleton, use LLM to iron out the details for model, context, entities, and aggregation behaviors.|**LLM**, **Program Manager**, **Tech Lead**| 
-|3|Iterate the above until the architectural design of the software or application is in a desirable shape.|**LLM**, **Program Manager**, **Tech Lead**| 
+|3|Iterate the above until the architectural design of the software or application is in a desirable shape.|n/a| 
 |4|Choose one or multiple interchangeable format to describe the detailed specifications finalized in the above steps, which can then be applied across multiple domain-specific components.|**Tech Lead**|
 
 Finding and applying the ubiquitous language is still a collective efforts of
