@@ -324,7 +324,11 @@ schemas in different components of a data science or machine learning pipeline.
 
 The data that is used in the domain may appear in all of the places above. The
 "ubiquitous language" that can be applied to link all of them is therefore
-important.
+important. It is worth noting that most of the above technical specifications
+can also be conveniently implemented by leveraging LLM, the *copilot*-like
+applications. Whilst it can be quite effective to generate initial code-level
+implementations but to guarantee the 100% precision human developers are still
+needed to perform quality assurance.
 
 # Final thoughts
 
