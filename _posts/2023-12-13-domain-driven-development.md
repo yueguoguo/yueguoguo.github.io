@@ -368,3 +368,4 @@ whole process can be made much simpler than before.
     Center, Jan 2023. 
 1.  Felipe de Freitas Batista, Develop the Ubiquitous Language, Domain Driven
     Design, April 2019. 
+1.  Ryan Zheng, Prompt Engineering — MetaPrompting, Sep 2023.
