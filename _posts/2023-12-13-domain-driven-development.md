@@ -2,7 +2,7 @@
 layout:     post
 title:      Ubiquitous language for domain-driven development
 date:       2023-12-13 16:43:29
-summary:    Productionize modern data-centric applications with efficiency
+summary:    Productionizing modern data-centric applications with efficiency
 categories: domain-driven development, software design, design pattern, artificial intelligence
 ---
 
@@ -44,7 +44,7 @@ Assuming the entire system is segmented into various sub-domains,
 *Ubiquitous language* plays the core role in DDD. It's usually hard to synergize
 a cross-domain ubiquitous language that servers to all purpose. Taking a look at
 the above diagram, the descriptions of the domain-specific characteristics at
-differet layers should be depicted by using the consistent language. By
+different layers should be depicted by using the consistent language. By
 definition, *domain* in DDD refers to [a conceptual subject area about how users
 apply the
 software](https://en.wikipedia.org/wiki/Domain-driven_design#cite_note-evans2004-4).
@@ -76,7 +76,7 @@ business can then specify the *domain-specific logics* that retrieve the
 required information for the analysis. The following is an example of the
 "translation" that converts the business requirements for retrieving
 product-related information by using a pre-defined data model - without loss of
-generity, here the data model is assumed to the be simplest that describes the
+generality, here the data model is assumed to the be simplest that describes the
 entities of *client*, *product*, and *transaction* in the business domain of
 interest. 
 
@@ -153,7 +153,7 @@ paths:
           description: Internal server error
 ```
 
-The nature of *business-to-tech* translation is to conver the plain language
+The nature of *business-to-tech* translation is to convert the plain language
 that describes a business problem into a technical prototype or implementation.
 Usually a program manager, product manager, or product owner severs as the
 middle-layer to translate such requirements. From the above examples of the two
@@ -161,14 +161,17 @@ basic software components in a domain-specific application, it can be observed
 that, *although the two components, data query and front-end API, are correlated
 in the same domain, but they require different process to translate the
 business-domain descriptions to the technical domain specifications, i.e., data
-model and OpenAPI specifications.* Having a universal ubiquitous language is
-challenging - the process of involving the business and technical teams for
+model and OpenAPI specifications.* One of the possible solutions is to implement
+an interface by using a generic programming language with the wrapped
+object-oriented classes to describe these components that serve at different
+layers in different domains. However, finding a universal yet effective approach
+is challenging - the process of involving the business and technical teams for
 iteratively completing and refining the translation is time-consuming.  
 
 The [large language model
 (LLM)](https://en.wikipedia.org/wiki/Large_language_model) technologies may help
 enhance the efficiency and effectiveness, as most of the mapping between human
-descriptions and technical implemetnations can be "predicted" by the LLM. The
+descriptions and technical implementations can be "predicted" by the LLM. The
 ubiquitous language for b2t can be simply the **human language**! The
 requirements (**NOTE** here the requirements refer to functional ones) can be
 given by prompts to the LLM via the pre-designed interface. The inputs are
@@ -176,7 +179,7 @@ prompts that templatize the requirements. [The prompts can be designed in a way
 that they can be adaptively used for different components where business need to
 raise their
 needs](https://medium.com/inspiredbrilliance/enhancing-domain-driven-design-with-generative-ai-5447f909e1a7).
-For example, the above data queries and model building components can be yieled
+For example, the above data queries and model building components can be yielded
 from LLMs with proper prompt engineering. There are a few good practices to
 draft the prompts. E.g., [meta-prompting](https://arxiv.org/pdf/2312.06562)
 helps creates reusable "templates" that generate that actual prompts - this can
@@ -245,7 +248,7 @@ assuming that the entire system is designed to support both *payment* and
 implementation patterns, but they differ in details. The interconnections
 between the sub-domains are tech-to-tech (t2t) and usually they are through
 programmatic interfaces. The main difference between *b2t* translation and *t2t*
-translation is that, *the former can be ambigous at times and the translation
+translation is that, *the former can be ambiguous at times and the translation
 process helps iron out the details to be as close to the facts as possible; the
 latter needs to be 100% deterministic and precise.* Hence, it is convenient to
 leverage the LLM for b2t translation but it might not be easy to do the same for
@@ -261,7 +264,7 @@ from a technical perspective, the "t2t" translation is required.
 Consider a scenario, where some tables about product, client, and transaction
 need to be merged, some analytical models (e.g., forecasting of transaction
 volume) need to be built, and a serving end needs to be exposed (in the form of
-API). The "uniquitous language" that is used for synergizing the domains should
+API). The "ubiquitous language" that is used for synergizing the domains should
 be therefore deterministic for precise communications. To achieve, developers
 proposed [data model](https://en.wikipedia.org/wiki/Data_modeling) that
 formalizes the descriptions of entities or objects in each domain and then build
@@ -278,7 +281,7 @@ The "ubiquitous language" that bridges the data pipeline to the front-end
 serving layer can be achieved by standardizing the schema design. For example,
 as for the RESTful APIs, the [swagger specs](https://swagger.io/) of the API
 endpoints should stick to the entities, objects, etc. of the domains. In terms
-of impelementations, it is worth considering the bidirectional conversion of
+of implementations, it is worth considering the bidirectional conversion of
 swagger standard from/to the data schemas used in the data pipeline. For
 example, it's common to see various data representations, data types, and data
 schemas in different components of a data science or machine learning pipeline. 
@@ -297,7 +300,7 @@ important.
 
 # Final thoughts
 
-Finding the most effective ubiquitous language for enhacing DDD is always a
+Finding the most effective ubiquitous language for enhancing DDD is always a
 challenge. With the growth of complexity in the modern applications, building an
 efficient "translation" mechanism that passes requirements, specifications,
 etc., across domains becomes vital. Whilst the LLM technology seems to help in
