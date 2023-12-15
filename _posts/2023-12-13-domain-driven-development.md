@@ -306,7 +306,7 @@ schemas in different components of a data science or machine learning pipeline.
 |Data warehouse|raw file|data lake|
 |ETL|Distributed file (parquet, csv, etc.) system|`Spark`, `Hadoop`, etc.|
 |Data science|In-memory data objects|(In Python) `numpy`, `pandas`, `tensorflow`, etc.|
-|Front-end|`JSON`, `XML`|Restful API, static site files, etc.|
+|Front-end|`JSON`, `protobuf`, `avro`, `XML`|Restful API, static site files, etc.|
 |System config|`YAML`, system shell file|OS|
 
 The data that is used in the domain may appear in all of the places above. The
