@@ -18,23 +18,39 @@ DDD has been around for ages. It was coined by *Eric Evans* in the book of
 Software"*](http://dddcommunity.org/book/evans_2003/) published in 2003. The
 book gave a clear definition of DDD and how the principle can be used in the
 modern software design and implementation. In general, DDD asks for a principle
-to focus the design and development of software components by following the
-domain-specific characteristics. It requires the domain experts that delineate
+to *focus the design and development of software components by following the
+domain-specific characteristics*. It requires the domain experts that delineate
 the problems at the logical level, with which the blueprints of the software
 design should be put together to map to the business logics. Given the
 hierarchical or aggregational structures of domain layers in a DDD application,
 communications of various components for deciding how they can be designed and
 implemented are important. 
 
+The following demonstrates a tactical diagram of DDD.
+
+![DDD](https://yueguoguo.github.io/images/ddd.png) 
+
+Assuming the entire system is segmented into various sub-domains,
+* the strategic design starts from the domain experts who give the business
+  requirements to the implementation.
+* Each of the sub-domain is implemented by following the "model" logic given by
+  the domain experts. The model of the domain is usually detailed as *bounded
+  context*, *entities*, etc.
+* Usually an *aggregation* happens on top of the domains to connect to the
+  *services* that are commonly stateless.
+
 # Ubiquitous language
 
 *Ubiquitous language* plays the core role in DDD. It's usually hard to synergize
-a cross-domain ubiquitous language that servers to all purpose. By definition,
-*domain* in DDD refers to [a conceptual subject area about how users apply the
+a cross-domain ubiquitous language that servers to all purpose. Taking a look at
+the above diagram, the descriptions of the domain-specific characteristics at
+differet layers should be depicted by using the consistent language. By
+definition, *domain* in DDD refers to [a conceptual subject area about how users
+apply the
 software](https://en.wikipedia.org/wiki/Domain-driven_design#cite_note-evans2004-4).
-At a coarse granularity, domains can be dichotomized into *business*
-domain and *technical* domain. The ubiquitous language for the inter and inner
-connections among the technical and business domains are vital to a useful DDD.
+At a coarse granularity, domains can be dichotomized into *business* domain and
+*technical* domain. The ubiquitous language for the inter and inner connections
+among the technical and business domains are vital to a useful DDD.
 
 ## Business-to-tech (b2t) translation
 
