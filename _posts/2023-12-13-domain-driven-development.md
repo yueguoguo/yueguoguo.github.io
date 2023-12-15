@@ -50,13 +50,22 @@ perspectives in one domain to another.
 *Ubiquitous language* plays the core role in DDD. It's usually hard to synergize
 a cross-domain ubiquitous language that servers to all purpose. Taking a look at
 the above diagram, the descriptions of the domain-specific characteristics at
-different layers should be depicted by using the consistent language. By
-definition, *domain* in DDD refers to [a conceptual subject area about how users
-apply the
+different layers should be depicted by using the consistent language. A good
+ubiquitous language is featured by 
+
+* its *expressivity* of domain-specific traits. 
+* its *universally adaptivity* across domains.
+* its *understandability* by people from different domain backgrounds.
+* and its *clarity* in defining technical implementation details.
+
+By definition, *domain* in DDD refers to [a conceptual subject area about how
+users apply the
 software](https://en.wikipedia.org/wiki/Domain-driven_design#cite_note-evans2004-4).
 At a coarse granularity, domains can be dichotomized into *business* domain and
 *technical* domain. The ubiquitous language for the inter and inner connections
-among the technical and business domains are vital to a useful DDD.
+among the technical and business domains should hence be universal and
+consistent to drive the same conceptual definition and delineation of the
+domain-specific characteristics. 
 
 ## Business-to-tech (b2t) translation
 
@@ -324,8 +333,9 @@ that it is limited to produces cross-domain communications that require 100%
 precision and correctness. As a result, the structural way of data
 representation to serve the *t2t* translation is still a must to the system. 
 
-Hence, in general, a recommended workflow that optimize both the efficiency and
-precision for conducting DDD of a complicated data-centric application can be 
+Hence, in general, a recommended ubiquitous language-driven workflows that
+optimize both the efficiency and precision for conducting DDD of a complicated
+data-centric application can be 
 
 |#|Task|Key participants|
 |---|---|---|
