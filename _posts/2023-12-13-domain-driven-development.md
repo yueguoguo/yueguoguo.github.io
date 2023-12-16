@@ -14,14 +14,15 @@ categories: domain-driven development, software design, design pattern, artifici
 # What is domain-driven development (DDD)
 
 DDD was coined by *Eric Evans* in the book of [*"Domain-Driven Design: Tackling
-Complexity in the Heart of Software"*](http://dddcommunity.org/book/evans_2003/)
-published in 2003. The book gave a clear definition of DDD and how the principle
-can be used in the modern software design and implementation. In general, DDD
-asks for *focus on the design and development of software components by
-following the domain-specific characteristics*. It requires the domain experts
-to delineate the problems at the logical level, with which the blueprints of the
-software design can be put together to map to the business logics. Given the
-hierarchical or aggregational structures of domain layers in a DDD application,
+Complexity in the Heart of
+Software"*](http://dddcommunity.org/book/evans_2003/), published in 2003. The
+book gave a clear definition of DDD and how the principle can be used in the
+modern software design and implementation. In general, DDD asks for *focus on
+the design and development of software components by following the
+domain-specific characteristics*. It requires the domain experts to delineate
+the problems at the logical level, with which the blueprints of the software
+design can be put together to map to the business logics. Given the hierarchical
+or aggregational structures of domain layers in a DDD application,
 communications of various components for deciding how they can be designed and
 implemented are important. 
 
