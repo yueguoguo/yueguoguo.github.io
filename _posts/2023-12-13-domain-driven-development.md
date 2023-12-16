@@ -25,7 +25,7 @@ hierarchical or aggregational structures of domain layers in a DDD application,
 communications of various components for deciding how they can be designed and
 implemented are important. 
 
-The following demonstrates a tactical diagram of DDD.
+The following chart demonstrates a tactical diagram of DDD-based architecture.
 
 ![DDD](https://yueguoguo.github.io/images/ddd.png) 
 
