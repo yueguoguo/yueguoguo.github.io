@@ -287,16 +287,15 @@ Consider the same system where the modules are designed to serve to *"clients"*,
 pipeline, data models, data analytical ability, programming interface, etc., and
 altogether the sub-modules form the "domain", of the entire system. Obviously,
 one domain may have interconnections with the others. If these connections are
-from a technical perspective, the "t2t" translation is required. 
-
-Consider a scenario, where some tables about product, client, and transaction
-need to be merged, some analytical models (e.g., forecasting of transaction
-volume) need to be built, and a serving end needs to be exposed (in the form of
-API). The "ubiquitous language" that is used for synergizing the domains should
-be therefore deterministic for precise communications. To achieve, developers
-proposed [data model](https://en.wikipedia.org/wiki/Data_modeling) that
-formalizes the descriptions of entities or objects in each domain and then build
-the connections or linkage among them. The graph-like scheme guarantees the
+from a technical perspective, the "t2t" translation is required. In the above
+example, the tables of product, client, and transaction need to be merged, some
+analytical models (e.g., forecasting of transaction volume) need to be built,
+and a serving end needs to be exposed (in the form of API). The "ubiquitous
+language" that is used for synergizing the domains should be therefore
+deterministic for precise communications. To achieve, developers proposed [data
+model](https://en.wikipedia.org/wiki/Data_modeling) that formalizes the
+descriptions of entities or objects in each domain and then build the
+connections or linkage among them. The graph-like scheme guarantees the
 universal representation of sub-domain behavior and state-description, as well
 as the synchronization and coordination among these domains. An advanced idea
 for the same is [data mesh](https://en.wikipedia.org/wiki/Data_mesh). A data
@@ -306,13 +305,14 @@ data usage among different domains is
 applied](https://www.mckinsey.com/capabilities/quantumblack/our-insights/demystifying-data-mesh). 
 
 The "ubiquitous language" that bridges the data pipeline to the front-end
-serving layer can be achieved by standardizing the schema design. For example,
-as for the RESTful APIs, the [Swagger specs](https://swagger.io/) of the API
-endpoints should stick to the entities, objects, etc. of the domains. In terms
-of implementations, it is worth considering the bidirectional conversion of
-Swagger standard from/to the data schemas used in the data pipeline. For
-example, it's common to see various data representations, data types, and data
-schemas in different components of an application. 
+serving layer can be achieved by **standardizing the schema design by using an
+interchangeable format**. For example, as for the RESTful APIs, the [Swagger
+specs](https://swagger.io/) of the API endpoints should stick to the entities,
+objects, etc. of the domains. In terms of implementations, it is worth
+considering the bidirectional conversion of Swagger standard from/to the data
+schemas used in the data pipeline. For example, it's common to see various data
+representations, data types, and data schemas in different components of an
+application. 
 
 |Stage|Data representation|Framework|
 |---|---|---|
@@ -350,10 +350,10 @@ data-centric application can be
 
 |#|Task|Key participants|
 |---|---|---|
-|1|Apply the LLM as a middle-layer to translate the strategic design of the system that corresponds to the business requirements.|**LLM**, **Domain Experts**, **Program Manager**|
-|2|Based on the high-level skeleton, use LLM to iron out the details for model, context, entities, and aggregation behaviors.|**LLM**, **Program Manager**, **Tech Lead**| 
+|1|Have the domain experts to serve as a middle-layer to **translate** the strategic design of the system that corresponds to the business requirements.|**LLM**, **Domain Experts**, **Program Manager**|
+|2|Iron out the details for model, context, entities, and aggregation behaviors.|**LLM**, **Program Manager**, **Tech Lead**| 
 |3|Iterate the above until the architectural design of the software or application is in a desirable shape.|n/a| 
-|4|Choose one or multiple interchangeable format to describe the detailed specifications finalized in the above steps, which can then be applied across multiple domain-specific components.|**Tech Lead**|
+|4|Choose **one or multiple interchangeable format** to describe the detailed specifications finalized in the above steps, which can then be applied across multiple domain-specific components.|**Tech Lead**|
 
 Finding and applying the ubiquitous language is still a collective efforts of
 multiple teams but hopefully with the progression of the AI technologies the
