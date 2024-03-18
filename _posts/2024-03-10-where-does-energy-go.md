@@ -260,9 +260,9 @@ how the entire energy consumption process is for an AI model.
 It is nearly the same process for the model inferencing part so it's repeated
 here. 
 
-# What we can do?
+# Closing
 
-## Factors in software and hardware
+## Factors of energy consumption in software and hardware
 
 Knowing the underlying details, there are several key factors of the energy
 consumption of a model from both software and hardware's perspectives.
@@ -283,6 +283,18 @@ From the hardware's point of view, the energy consumption is mainly affected by
   of the 0-1 state within certain period of time), electrical config of the
   system (voltage), system voltage, etc. 
 * The device technology. i.e., the size of the transistor, # transistors, etc.
+
+## How do we mitigate the issue?
+
+It is obviously that energy efficiency of AI requires a collective effort from
+both the model developer, software engineer, and hardware engineer. 
+
+At the level of model algorithm and software program development, the engineers
+and scientists are required to properly choose the algorithm and implementation
+of an AI model to tackle the problem - for deep neural network-based algorithms
+it is advisable to apply pruning to make the model light-weight. Some of the
+tools for monitoring energy consumption or even carbon emission of AI program
+can be useful.  
 
 # References
 
