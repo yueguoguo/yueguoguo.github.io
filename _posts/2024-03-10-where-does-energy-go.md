@@ -248,7 +248,7 @@ which is equivalent to $$I^2\times R$$ or $$\frac{V^2}/R$$, where $$I$$, $$V$$,
 and $$R$$ refer to current, voltage, and resistance of the resistor,
 respectively. 
 
-![A MOSFET device. When the gate voltage (VGS) of an nMOSFET is below the
+![A MOSFET device. When the gate voltage (VGS) of the MOSFET is below the
 threshold, there's minimal or no conduction between the drain and source
 terminals, rendering the switch off. However, with a more positive gate voltage,
 electrons are drawn, creating an n-type conductive channel beneath the oxide
