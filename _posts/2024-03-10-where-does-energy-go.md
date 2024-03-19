@@ -7,8 +7,8 @@ categories: artificial intelligence, computer architecture, sustainability, ener
 ---
 
 <blockquote>
-  <p>术业有专攻 (One might be a master in his own field.)</p>
-  <footer><cite title="韩愈 (Han Yu)">韩愈 (Han Yu)</cite></footer>
+  <p>The future is a dark, desolate place. Only those who control the spice control the universe.</p>
+  <footer><cite title="Dune">Dune</cite></footer>
 </blockquote>
 
 # What's the concern
