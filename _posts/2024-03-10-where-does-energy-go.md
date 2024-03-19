@@ -264,7 +264,7 @@ the program, which is exactly the machine codes that run in the CPU or GPU.
 the inversion of the input, that is, if the input is "0" and then the output is
 "1"; if the input is "1" and then the output is "0". Inverter is the most
 fundamental component of the complex digital circuits and
-systems.](https://yueguoguo.github.io/images/inverter.jpg) 
+systems.](https://yueguoguo.github.io/images/inverter.png) 
 
 Modern CPU or GPU devices have millions or billions of transistors. When a
 program is sent to CPU or GPU devices, the machine codes that eventually execute
