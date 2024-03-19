@@ -56,6 +56,9 @@ usually, training is conducted on GPU devices at scale to parallelize the
 fitting steps, called "epochs" with the training data. 
 
 ```python
+"""
+This is the definition of a simplified version of the transformer model.
+"""
 class TransformerModel(nn.Module):
     def __init__(self, input_size, output_size):
         super(TransformerModel, self).__init__()
@@ -67,11 +70,18 @@ class TransformerModel(nn.Module):
 ```
 
 ```python
-# Define loss function and optimizer
+"""
+This is the definition of the loss function and the optimizer function for 
+training the transformer model.
+"""
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
-# Training loop
+
+"""
+The training loop iteratively find the parameter values which optimally yield
+the minimized loss with regard to the objective.
+"""
 for epoch in range(num_epochs):
     for batch in train_dataloader:
         # Get input and target from the batch
@@ -173,10 +183,13 @@ add esp, 12
 ```
 
 When processing the program, the data required for the computation are firstly
-loaded from the memory and then sent to the CPU for computation. After it, the
-result data is written back to the memory. If needed, the result is saved to the
-disk. As aforementioned, each of the step consumes energy at various places when
-the activities of relevant system components are conducted. 
+loaded from the memory and then sent to the CPU or GPU for computation. The
+CPU/GPU clock frequency usually determines "flops" of the instructions in the
+machine where the actual logic is processed - this will determine how fast the
+program can be executed in the computer. After it, the result data is written
+back to the memory. If needed, the result is saved to the disk. As
+aforementioned, each of the step consumes energy at various places when the
+activities of relevant system components are conducted. 
 
 ## Low-level physical device
 
@@ -281,7 +294,12 @@ From the hardware's point of view, the energy consumption is mainly affected by
 
 * The hardware configuration, i.e., clock frequency (this determines the # flops
   of the 0-1 state within certain period of time), electrical config of the
-  system (voltage), system voltage, etc. 
+  system (voltage), system voltage, etc. For example, [the most latest nvidia AI
+  chip, "Blackwell", achieves 20 petaflops in AI performance versus 4 petaflops
+  for the last generation,
+  H100](https://www.cnbc.com/2024/03/18/nvidia-announces-gb200-blackwell-ai-chip-launching-later-this-year.html).
+  And this throughput may incur higher power consumption compared to the
+  old-generation, too. 
 * The device technology. i.e., the size of the transistor, # transistors, etc.
 
 ## How do we mitigate the issue?
