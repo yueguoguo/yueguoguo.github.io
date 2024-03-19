@@ -2,7 +2,7 @@
 layout:     post
 title:      Where does the energy go?
 date:       2024-03-10 16:43:29
-summary:    Understanding energy dissipation in AI models
+summary:    Understanding energy consumption of AI models
 categories: artificial intelligence, computer architecture, sustainability, energy efficiency
 ---
 
@@ -14,17 +14,29 @@ categories: artificial intelligence, computer architecture, sustainability, ener
 # What's the concern
 
 It's known to all that the large pre-trained models consume tremendous energy
-for the sake of parameter fitting and model inferencing.
+for the sake of parameter fitting and model inferencing. For instance, the
+researchers from HuggingFace and Carnegie Mellon University tested 88 different
+AI models across various tasks, finding that most tasks consumed minimal energy,
+equivalent to watching nine seconds or 3.5 minutes of Netflix per 1,000
+repetitions (see [here](https://arxiv.org/pdf/2311.16863.pdf) for more details).
+However, image-generation models proved notably energy-intensive, using almost
+as much energy as charging a smartphone to produce a single image.
+
+In this blog post, I will explain how artificial intelligence models consume
+energy from multiple levels, ranging from the compilation and execution of
+computer system programs to underlying hardware and chips.
 
 # How AI model works 
 
-Though it's not scientifically correct to term the large language model (LLM) as
-the equivanlent to AI model, hereafter the "AI" model refers narrowly to the
-foundation model where the deep learning algorithm is used for building the
-model for predictive analysis. It might be worth mentioning that the following
-sub-section that describes the low-level computing system details apply to any
-type of AI models where the computation that is involved in the model itself is
-generally performed on the hardware that is made of silicon.
+While it may not be scientifically accurate to label the large language model
+(LLM) as equivalent to an AI model, hereafter the term "AI" model specifically
+refers to the foundational model utilizing deep learning algorithms for
+predictive analysis. It is important to note that the subsequent sub-section
+detailing low-level computing system specifics applies to all types of AI
+models, where the computations are typically executed on silicon-based hardware.
+We will analyze how artificial intelligence models consume energy at the
+computer hardware level through two distinct processes: *model training* and *model
+inferencing*.
 
 ## Training
 
@@ -32,9 +44,10 @@ The contemporary AI models were developed by using the programming languages
 like Python, C/C++, etc. At the high-level point of view, building an AI model
 requires programming the layer representations of deep neural network and
 fitting the parameters of each layer to maximize the likelihood of predicting
-the values as pre-defined. The most advanced AI model, i.e., xxxx, has yyyy
-parameters. Without loss of generality, the computations involved in
-pre-training an AI model are usually found in the steps of 
+the values as pre-defined. [GPT-4](https://en.wikipedia.org/wiki/GPT-4), the
+latest language model from OpenAI, consists of 1.76 trillion parameters. Without
+loss of generality, the computations involved in pre-training an AI model are
+usually found in the steps of 
 
 * Feed-forward calculation of the output of layers of the neural network.
 * Back-propagation of the gradient with respect to the objective function.
@@ -107,11 +120,13 @@ for epoch in range(num_epochs):
 
 $E = P\times T$
 
-where $E$, $T$ and $I$ refers to the total energy consumption, the power
-consumption of hardware, and the training time, respectively. In a number of
-studies, carbon emission due to the energy consumption is estimated by
-multiplying $E$ with another factor, $I$ which is the carbon intensity of the
-energy grid. 
+where $E$, $P$ and $T$ refers to the total energy consumption, the power
+consumption of hardware, and the training time required for optimizing the
+performance of the model at the desirable level, respectively. It is very clear
+that the unavoidable computational cost incurred by the multiple iterations
+required during the training of deep learning models is closely related to the
+execution time of each iteration during the iterative process, as well as the
+computational tasks required for each iteration.
 
 ## Inferencing
 
@@ -131,13 +146,13 @@ task.
 
 # Hardware
 
-As we go one level down inside the computer, we will see the instance where the
-program that either trains an AI model or uses a pre-trained AI model for
-inference is run upon. In spite of the unawareness by the researchers and/or
-practitioners, the "black box" of the computer hardware actually consumes the
-energy physically. Altogether, the massive utilization of CPU, GPU, memory, and
-maybe disk devices, contributes to the electricity burn-out when building a
-large AI model with billions of parameters!  
+As we delve deeper into the computer's architecture, we encounter the point
+where the program, responsible for either training an AI model or conducting
+inference with a pre-trained one, is executed. The energy consumption originates
+physically from the computer hardware. The extensive utilization of CPU, GPU,
+memory, and potentially disk devices collectively leads to significant
+electricity consumption when constructing a large AI model with billions or
+trillions of parameters! 
 
 ## Computer system
 
@@ -182,23 +197,36 @@ call _myFunc ; Call the function (assume C naming)
 add esp, 12
 ```
 
-When processing the program, the data required for the computation are firstly
-loaded from the memory and then sent to the CPU or GPU for computation. The
-CPU/GPU clock frequency usually determines "flops" of the instructions in the
-machine where the actual logic is processed - this will determine how fast the
-program can be executed in the computer. After it, the result data is written
-back to the memory. If needed, the result is saved to the disk. As
-aforementioned, each of the step consumes energy at various places when the
-activities of relevant system components are conducted. 
+When processing the program, the above assembly is further compiled into the
+binary code (for the sake of simplicity, the compiling process is not detailed).
+The following shows the disassembly machine codes (binary code presented as hex)
+that are converted from the above example. 
+
+```assembly
+0:  ff 35 00 00 00 00       push   DWORD PTR ds:0x0
+6:  68 d8 00 00 00          push   0xd8
+b:  50                      push   eax
+c:  e8 fc ff ff ff          call   d <_main+0xd>
+11: 83 c4 0c                add    esp,0xc
+```
+
+Before any actual computation happening in the CPU/GPU, the data required for
+the computation are firstly loaded from the memory and then sent to the CPU or
+GPU for computation. The CPU/GPU clock frequency usually determines "flops" of
+the instructions in the machine where the actual logic is processed - this will
+determine how fast the program can be executed in the computer. After it, the
+result data is written back to the memory. If needed, the result is saved to the
+disk. As aforementioned, each of the step consumes energy at various places when
+the activities of relevant system components are conducted. 
 
 ## Low-level physical device
 
-In fact, even an close look at the computer system still does not give us an
-answer to the origin of energy consumption that we learnt from Physics. If the
-Python program of building an AI model is translated into the low-level machine
-codes for processing on CPU/GPU and memory, how does this process consume
-electricity as power? The answer requires an even-further exploitation of the
-underlying structure of a computer. 
+Indeed, even a close examination of the computer system fails to provide us with
+an answer regarding the source of energy consumption as taught by physics. When
+the Python program for constructing an AI model is translated into low-level
+machine codes for processing on CPU/GPU and memory, how does this process
+consume electrical power? To find the answer, further exploration of the
+underlying structure of a computer is necessary.
 
 As we may know that the CPU and memory devices in the modern computer are made
 of [transistors](https://en.wikipedia.org/wiki/Transistor). The transistor is a
@@ -231,6 +259,13 @@ particular state. The on and off of the transistor is controlled completely by
 the input signal passed on to the gate terminal. That is, if the input is "1",
 it is on; if it is "0", it is off. The "1-0" signal sequence is determined by
 the program, which is exactly the machine codes that run in the CPU or GPU.
+
+![An inverter circuit made of two MOSFET devices, PMOS and NMOS. The output is
+the inversion of the input, that is, if the input is "0" and then the output is
+"1"; if the input is "1" and then the output is "0". Inverter is the most
+fundamental component of the complex digital circuits and
+systems.](https://yueguoguo.github.io/images/mosfet.jpg) 
+
 Modern CPU or GPU devices have millions or billions of transistors. When a
 program is sent to CPU or GPU devices, the machine codes that eventually execute
 the program switch on and off the transistors... This is where the power is
@@ -244,34 +279,26 @@ devices. And the volume of energy consumption depends on how many flips of the
 discussion is mainly about the computation unit of the system, the modern memory
 chips and even solid-state disk, are fabricated with the semiconductor
 technologies. And the energy in utilizing these device is dissipated in a
-similar to CPU or GPU devices.
-
-NOTE there are lots of device or circuit design and fabrication techniques to
-reduce the power consumption. E.g., dynamic voltage scaling (DVS) is a typical
-one to apply the adjustable voltage to the MOSFET circuits such that the only a
-group of the critical tasks are applied with high voltage while the others are
-applied with low one. At the device level, the new fabrication technique like
-3-D MOSFET or novel semiconductor material can lower the energy consumption for
-state-switch operations. 
+similar to CPU or GPU devices. 
 
 # Putting things together...
 
-Now let's get from the Physics world back to computer science, and think about
-how the entire energy consumption process is for an AI model. 
+Now, let's transition from the realm of physics back to computer science and
+contemplate the entire energy consumption process for an AI model. 
 
-* For the model training part, the training process which is written as computer
-  program, runs on a computer system.
-* To find the model with the optimal performance, the training is executed in
-  parallel to search for the best parameter combination.
-* Each of the training process, called "epoch", is translated into low-level
-  machine code by the compiler of the system.
-* The low-level machine code is executed inside the CPU/GPU devices as 0-1
-  sequence.
-* The 0-to-1 or 1-to-0 switch of the logic states conduct the underlying MOSFET
-  devices in the computer hardware, which then dissipate power of electricity. 
+* **For the model training part, the training process which is written as computer
+  program, runs on a computer system.**
+* **To find the model with the optimal performance, the training is executed in
+  parallel to search for the best parameter combination.**
+* **Each of the training process, called "epoch", is translated into low-level
+  machine code by the compiler of the system.**
+* **The low-level machine code is executed inside the CPU/GPU devices as 0-1
+  sequence.**
+* **The 0-to-1 or 1-to-0 switch of the logic states conduct the underlying MOSFET
+  devices in the computer hardware, which then dissipate power of electricity.**
 
-It is nearly the same process for the model inferencing part so it's repeated
-here. 
+It is nearly the same process for the model inferencing part so it's not
+repeated here. 
 
 # Closing
 
@@ -310,9 +337,54 @@ both the model developer, software engineer, and hardware engineer.
 At the level of model algorithm and software program development, the engineers
 and scientists are required to properly choose the algorithm and implementation
 of an AI model to tackle the problem - for deep neural network-based algorithms
-it is advisable to apply pruning to make the model light-weight. Some of the
-tools for monitoring energy consumption or even carbon emission of AI program
-can be useful.  
+it is advisable to apply pruning to make the model light-weight. One of the
+possible directions of developing the foundation model is to make it "small".
+The benefits of the small models are that, they have much smaller space of
+parameters but comparable performance against some large models (see
+[MobileBERT](https://huggingface.co/docs/transformers/model_doc/mobilebert),
+[DistilBERT](https://huggingface.co/docs/transformers/model_doc/distilbert),
+[Phi2](https://huggingface.co/docs/transformers/main/model_doc/phi),
+[BERTmini](https://huggingface.co/prajjwal1/bert-mini), etc.). Another category
+of efforts is put onto the training techniques where the optimization process
+for building a deep-learning model can be enhanced with computational
+efficiency. Tricks in such group include [neural architecture
+search](https://en.wikipedia.org/wiki/Neural_architecture_search), [neural
+network
+pruning](https://en.wikipedia.org/wiki/Pruning_(artificial_neural_network)),
+etc. At the inference stage, people have done research to enhance energy
+efficiency, too. It was found in the research by the HuggingFace team that, even
+for the same task, different model architectures may lead to different levels of
+energy consumption. And thus, at the design phase, choosing the appropriate
+architecture of model is a key design constraint.  
+
+At the low-level hardware design and development, researchers and practitioners
+are making efforts to introduce new device, circuit, or system technologies for
+low-power or low-energy implementation. Most of the modern computer system has
+the [dynamic voltage
+scaling](https://en.wikipedia.org/wiki/Dynamic_voltage_scaling) mechanism to
+control the voltage of CPU/GPU chip for the best use of electricity. [Clock
+gating](https://en.wikipedia.org/wiki/Clock_gating) and [power
+gating](https://en.wikipedia.org/wiki/Power_gating#:~:text=Power%20gating%20is%20a%20technique,benefit%20of%20enabling%20Iddq%20testing.)
+are the commonly used techniques in keeping transistors in circuits off at the
+time when they are not needed, such that the power consumption of these "off"
+circuits is minimized. Researchers are also investigating in novel semiconductor
+materials for fabricating AI chips with ultra-low-power capability. For example,
+[IBM developed the newest prototype chips use drastically less power to solve AI
+tasks, which yields 14 times more energy efficiency compared against the
+baseline](https://research.ibm.com/blog/analog-ai-chip-low-power). 
+
+It's not trivial to lower the energy consumption of AI workloads in general due
+to the factors at different hierarchies inside a computer system. Nevertheless,
+it is never too late to have a good sense of the criticality of the issue and
+take actions. It must be said that, many times, the focus on the energy
+efficiency of artificial intelligence models has been overshadowed by their
+'bright spots' in other aspects, which means that even when many scholars and
+experts are aware that energy efficiency could be a serious social and
+environmental issue, they still prioritize the commercialization and
+proceduralization of artificial intelligence models. The problems brought about
+by this approach may gradually become more apparent in the near future, and the
+failure to timely address the technological and ethical balance may further
+exacerbate the consequences of these problems.
 
 # References
 
@@ -334,3 +406,4 @@ can be useful.
     Learning Models. arXiv:2007.03051 
 1.  MLA. Rabaey, Jan. Digital Integrated Circuits : a Design Perspective.
     Englewood Cliffs, N.J. :Prentice Hall, 1996.
+1.  Kimberley Mok, The Rise Of Small Language Model, The News Stack, 2024.
