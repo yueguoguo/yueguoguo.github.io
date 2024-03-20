@@ -242,6 +242,10 @@ gate or logic amplifier. The equivalent circuit of the transistor is a complex
 of *resistors* where current is through when it is applied with voltage. As a
 fundamental Physics theory, the power dissipated by a resistor is 
 
+{% raw %}
+ $$a^2 + b^2 = c^2$$ --> note that all equations between these tags will not need escaping! 
+{% endraw %}
+
 $$P=I\times V$$
 
 which is equivalent to $$I^2\times R$$ or $$\frac{V^2}/R$$, where $$I$$, $$V$$,
