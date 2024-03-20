@@ -244,8 +244,8 @@ fundamental Physics theory, the power dissipated by a resistor is
 
 $$P=I\times V$$
 
-which is equivalent to $I^2\times R$ or $\frac{V^2}/R$, where $$I$$, $$V$$,
-and $$R$$ refer to current, voltage, and resistance of the resistor,
+which is equivalent to $I^2\times R$ or $\frac{V^2}/R$, where $I$, $V$,
+and $R$ refer to current, voltage, and resistance of the resistor,
 respectively. 
 
 ![A MOSFET device. When the gate voltage (VGS) of the MOSFET is below the
@@ -259,8 +259,8 @@ Given the complexity of the equivalent resistance of a MOSFET, in general, the
 power dissipation of a MOSFET is mainly due to its drain-source equivalent
 resistance. Imagine the transistor states are in either "1" or "0", depending on
 whether the current is through the drain-source route with the gate terminal
-being "on" or "off", the total power dissipation will be $$I\times V$$ where the
-$$I$$ and $$V$$ are the current and voltage applied to the transistor in the
+being "on" or "off", the total power dissipation will be $I\times V$ where the
+$I$ and $V$ are the current and voltage applied to the transistor in the
 particular state. The on and off of the transistor is controlled completely by
 the input signal passed on to the gate terminal. That is, if the input is "1",
 it is on; if it is "0", it is off. The "1-0" signal sequence is determined by
@@ -276,11 +276,11 @@ Modern CPU or GPU devices have millions or billions of transistors. When a
 program is sent to CPU or GPU devices, the machine codes that eventually execute
 the program switch on and off the transistors... This is where the power is
 dissipated, and in turn, during some period of time, the electrical energy is
-consumed as $$P\times t$$. 
+consumed as $P\times t$. 
 
 Thinking about the above process again, the ultimate source of energy
 consumption of an AI program that runs on a digital hardware is the transistor
-devices. And the volume of energy consumption depends on how many flips of the
+devices. And the volume of energy consumption depends on how many flops of the
 "0-to-1" or "1-to-0" process inside the hardware devices. NOTE, though the above
 discussion is mainly about the computation unit of the system, the modern memory
 chips and even solid-state disk, are fabricated with the semiconductor
