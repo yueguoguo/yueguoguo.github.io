@@ -35,8 +35,8 @@ predictive analysis. It is important to note that the subsequent sub-section
 detailing low-level computing system specifics applies to all types of AI
 models, where the computations are typically executed on silicon-based hardware.
 We will analyze how artificial intelligence models consume energy at the
-computer hardware level through two distinct processes: *model training* and *model
-inferencing*.
+computer hardware level through two distinct processes: *model training* and
+*model inferencing*.
 
 ## Training
 
