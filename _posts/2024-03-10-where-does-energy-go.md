@@ -63,10 +63,11 @@ number of hidden layers, etc.) or introduce complexity in the model structure
 (e.g., the quadratic increase of complexity due to pairwise token interactions
 in the self-attention).
 
-The training process is the iterations of parameter-fitting by using the initial
-state of the pre-defined neural network topology on the training samples. And
-usually, training is conducted on GPU devices at scale to parallelize the
-fitting steps, called "epochs" with the training data. 
+For example, in Python, a deep learning model can be built by using `torch` by
+"stacking" the `nn.Module` as the basic blocks in the codes. The following shows
+an illustrative version of the "transformer" model built with `torch`. Without
+loss of generality the detailed implementations of the layers are not shown in
+the illustrating codes. 
 
 ```python
 """
@@ -75,12 +76,19 @@ This is the definition of a simplified version of the transformer model.
 class TransformerModel(nn.Module):
     def __init__(self, input_size, output_size):
         super(TransformerModel, self).__init__()
-        # Define the layers of the transformer model
+        print("Define the layers of the transformer model.")
 
     def forward(self, x):
-        # Define the forward pass of the model
+        print("Define the forward pass of the model.")
         return x
 ```
+
+The training process is the iterations of parameter-fitting by using the initial
+state of the pre-defined neural network topology on the training samples. And
+usually, training is conducted on GPU devices at scale to parallelize the
+fitting steps, called "epochs" with the training data. With the above
+"transformer" example, the training process can be implemented as the code
+snippet below. 
 
 ```python
 """
@@ -89,7 +97,6 @@ training the transformer model.
 """
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)
-
 
 """
 The training loop iteratively find the parameter values which optimally yield
@@ -118,26 +125,26 @@ for epoch in range(num_epochs):
     # Print or log the training loss for this epoch
 ```
 
-$E = P\times T$
-
-where $E$, $P$ and $T$ refers to the total energy consumption, the power
-consumption of hardware, and the training time required for optimizing the
-performance of the model at the desirable level, respectively. It is very clear
-that the unavoidable computational cost incurred by the multiple iterations
-required during the training of deep learning models is closely related to the
-execution time of each iteration during the iterative process, as well as the
-computational tasks required for each iteration.
+It is intuitively obvious that the energy consumption of the above model
+building process is mainly determined by the energy consumption for each epoch
+and the total counts of epochs used by training the model. The unavoidable
+computational cost incurred by the multiple iterations required during the
+training of deep learning models is closely related to the execution time of
+each iteration during the iterative process, as well as the computational tasks
+required for each iteration. As will be discussed in the following parts, the
+exact amount of the energy is determined by the underlying hardware being used
+in the computer system. 
 
 ## Inferencing
 
 Compared to the model training process, inferencing is unidirectional in
 computing the output of each layer in the neural network representation of the
-model and eventually produce the prediction results. The energy consumption is
-highly attributed to the model topology, which in turn, is determined by the use
-case of the AI model. Compared to model training, model inferencing consumes
-less energy, because there is no repetitive steps for objective optimization.
-Still parallel computing can be applied because sometimes the inferencing part
-requires low latency. 
+model, because only feed-forward is needed. The energy consumption is highly
+attributed to the model topology, which in turn, is determined by the use case
+of the AI model. Compared to model training, model inferencing consumes less
+energy, because there is no repetitive steps for objective optimization. Still
+parallel computing can be applied because sometimes the inferencing part
+requires low latency.
 
 The same methodology can be applied to the energy consumption estimation for the
 model inferencing part, i.e., the total energy consumption is the multiplication
@@ -180,13 +187,18 @@ regardless of whether it is for AI model or not.
   consumption. The same applies to the data I/O with disk drives (either
   hard-drive disk or solid-state disk) or other storage medium. 
 
-For example, assuming an AI model is being trained iteratively in a program.
-When the for-loops are being executed to find the optimal parameter values for
-minimizing the loss, these commands are translated into the "instructions" which
-are then sent to the CPU device for processing. The following shows example (see
-reference [here](https://www.cs.virginia.edu/~evans/cs216/guides/x86.html))
-assembly codes of a x86 machine, where a function is called to proceed with the
-three input parameter values. 
+The codes written by using the high-level programming language for building the
+model are "translated" into the machine codes for the actual execution on the
+hardware. This process, in general, is called *"compiling"*; the aim of
+compiling is to represent the same information in the high-level codes into a
+low-level machine binary executables. For example, assuming an AI model is being
+trained iteratively in a program. When the for-loops are being executed to find
+the optimal parameter values for minimizing the loss, these commands are
+compiled into the "instructions" which are then sent to the CPU device for
+processing. The following shows example (see reference
+[here](https://www.cs.virginia.edu/~evans/cs216/guides/x86.html)) assembly codes
+of a x86 machine, where a function is called to proceed with the three input
+parameter values. 
 
 ```assembly
 push [var] ; Push last parameter first
