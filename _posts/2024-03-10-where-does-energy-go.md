@@ -280,11 +280,12 @@ the input signal passed on to the gate terminal. That is, if the input is "1",
 it is on; if it is "0", it is off. The "1-0" signal sequence is determined by
 the program, which is exactly the machine codes that run in the CPU or GPU.
 
-![An inverter circuit made of two MOSFET devices, PMOS and NMOS. The output is
-the inversion of the input, that is, if the input is "0" and then the output is
-"1"; if the input is "1" and then the output is "0". Inverter is the most
-fundamental component of the complex digital circuits and
-systems.](https://yueguoguo.github.io/images/inverter.png) 
+![Inverter](https://yueguoguo.github.io/images/inverter.png) 
+<font size="1">An inverter circuit made of two MOSFET devices, PMOS and NMOS.
+The output is the inversion of the input, that is, if the input is "0" and then
+the output is "1"; if the input is "1" and then the output is "0". Inverter is
+the most fundamental component of the complex digital circuits and
+systems.</font>
 
 Modern CPU or GPU devices have millions or billions of transistors. When a
 program is sent to CPU or GPU devices, the machine codes that eventually execute
