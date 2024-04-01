@@ -411,13 +411,13 @@ exacerbate the consequences of these problems.
 1.  Alexandra Sasha Luccioni, Yacine Jernite, and Emma Strubell, Power Hungry
     Processing: Watts Driving the Cost of AI Deployment?
 1.  Jesse Dodge, Taylor Prewitt, Remi Tachet des Combes, Erika Odmark, Roy
-    Schwartz, Emma Strubell, Alexandra Sasha Luccioni, Noah A Smith, Nicole DeCario,
-    and Will Buchanan. 2022. Measuring the carbon intensity of AI in cloud
-    instances. In Proceedings of the 2022 ACM Conference on Fairness,
+    Schwartz, Emma Strubell, Alexandra Sasha Luccioni, Noah A Smith, Nicole
+    DeCario, and Will Buchanan. 2022. Measuring the carbon intensity of AI in
+    cloud instances. In Proceedings of the 2022 ACM Conference on Fairness,
     Accountability, and Transparency. 1877–1894.
 1.  Alexandra Sasha Luccioni and Alex Hernandez-Garcia. 2023. Counting carbon: A
-    survey of factors influencing the emissions of machine learning. arXiv preprint
-    arXiv:2302.08476 (2023).
+    survey of factors influencing the emissions of machine learning. arXiv
+    preprint arXiv:2302.08476 (2023).
 1.  Alexandre Lacoste, Alexandra Luccioni, Victor Schmidt, and Thomas Dandres.
     Quantifying the carbon emissions of machine learning. arXiv preprint
     arXiv:1910.09700 (2019).
