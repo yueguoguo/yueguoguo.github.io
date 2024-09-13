@@ -50,6 +50,25 @@ Characteristics
   construct the strategy to decide how much money he will trade with for the
   stock. 
 
+
+To illustrate the data-centric decision making process, here's a mermaid
+diagram:
+
+{% mermaid %}
+graph TD
+    A[Collect Data] --> B[Develop Insights]
+    B --> C[Build Reusable Solution]
+    C --> D[Integrate into Business Process]
+    D --> E[Make Decision]
+    E --> F{Decision Outcome}
+    F -->|Positive| G[Implement]
+    F -->|Negative| H[Revise]
+    H --> A
+{% endmermaid %}
+
+This diagram shows the flow from data collection to decision-making, including
+the feedback loop for continuous improvement.
+
 ## AI-centric decision making process
 
 # Change management
