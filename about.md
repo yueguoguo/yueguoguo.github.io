@@ -6,8 +6,8 @@ tags: about
 
 <h2>About Le</h2>
 
-<p>Le is Machine Learning Architect at Standard Chartered Bank, where he builds scalable machine learning and artificial intelligence
-tools and platforms for solving financial business problems.</p> 
+<p>Le is leading the Data Science and AI team at AMD, where he builds scalable machine learning and artificial intelligence
+tools and platforms for AMD CPU and GPU products.</p> 
 
 <h2>Thinkloud</h2>
 
