@@ -18,6 +18,16 @@ categories: agentic system, artificial intelligence, software engineering
 
 ## SaaS
 
+* conventional SaaS system.
+* what is service as a software?
+* how to implement it?
+* what are the potential benefits?
+* how does it help democratizing AI to enterprise?
+
+## Implementation
+
+* How does it work?
+
 ## References
 
 - [Vim](https://www.vim.org/)
