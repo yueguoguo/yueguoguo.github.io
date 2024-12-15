@@ -7,13 +7,8 @@ categories: agentic system, artificial intelligence, software engineering
 ---
 
 <blockquote>
-  <p>
-   Theodore: Oh, what do I call you? Do you have a name? <br>
-   Samantha: Um… yes. Samantha. <br>
-   Theodore: Really? Where did you get that name from? <br>
-   Samantha: I gave it to myself actually. <br>
-  </p>
-  <footer><cite title="Her">"Her", the film</cite></footer>
+  <p>It’s our last chance to save people on Earth - if I can find some way to transmit the quantum data I’ll find in there, they might still make it</p>
+  <footer><cite title="Interstellar">from "Interstellar", said by TARS. The robot astronaut decided to risk itself to collect the quantum data from within the black hole, Gargantua.</cite></footer>
 </blockquote>
 
 ## Origin and progression
