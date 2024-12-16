@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      From Agent to "Service As A Software"
+title:      LLM, Agent, and "Service As A Software"
 date:       2024-11-31 00:00:00
 summary:    How service is revolutionalized by software
 categories: agentic system, artificial intelligence, software engineering
@@ -55,8 +55,8 @@ Let's consider the examples of gmail and CRM.
 
 ## Pattern
 
-Now we see that, **agents** are the core to the service-as-a-software system.
-Based on the definition by Russell and Norvig in [their
+Now that **agents** are the core to the service-as-a-software system. Based on
+the definition by Russell and Norvig in [their
 book](http://aima.cs.berkeley.edu/), an intelligent agent is *an agent that
 perceives its environment, takes actions autonomously in order to achieve goals,
 and may improve its performance with learning or acquiring knowledge*. With
@@ -64,9 +64,19 @@ Large-Language Model (LLM) today, the definition is more specific, the one
 usually referred to by researchers is the one given by Lilian Weng in her [blog
 post](https://lilianweng.github.io/posts/2023-06-23-agent/), *an agent is an
 LLM-based functional system consisting of four major components, planning,
-memory, tool use, and action*. 
+memory, tool use, and action*. There are quite some representative patterns
+derived from the fundamental one proposed by Lilian. These patterns focus on the
+improvement of the baseline implementation by leveraging the strategies of
+*reflection*, *reasoning*, *observation*, *planning*, etc. For example, in the
+classic *ReAct* pattern, the agent is designed to *reason* based on the
+observations and *act* correspondingly to accomplish the given tasks. 
+
+* give real-world example.
 
 ### Ubiquitous language
+
+* vertical problem
+* RAG and ubiquitous language
 
 ### Application scenarios
 
@@ -80,8 +90,6 @@ minimized*.
 * what will be the review process?
 * the ROI and risk management model.
 
-### Engineering perspective
-
 ## References
 
 - Software & Information Industry Association, "Software as a Service: Strategic
@@ -89,3 +97,21 @@ minimized*.
 - Sonya Huang, Pat Grady, and o1, "Generative AI’s Act o1 - The agentic
   reasoning era begins",
   [url](https://www.sequoiacap.com/article/generative-ais-act-o1/).
+
+## Citation
+
+Plain citation as
+
+> Zhang, Le. “LLM, Agent, and "Service As A Software”. Thinkloud. https://yueguoguo.github.io/posts/2024-11-31-service-as-a-software
+
+or Bibliography-like citation
+```
+@article{yueguoguo2024saas,
+  title   = "LLM, Agent, and "Service As A Software",
+  author  = "Zhang, Le",
+  journal = "yueguoguo.github.io",
+  year    = "2024",
+  month   = "Dec",
+  url     = "https://yueguoguo.github.io/posts/2024-11-31-service-as-a-software"
+}
+```
