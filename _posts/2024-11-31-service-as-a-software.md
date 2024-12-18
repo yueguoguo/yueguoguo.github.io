@@ -69,9 +69,61 @@ derived from the fundamental one proposed by Lilian. These patterns focus on the
 improvement of the baseline implementation by leveraging the strategies of
 *reflection*, *reasoning*, *observation*, *planning*, etc. For example, in the
 classic *ReAct* pattern, the agent is designed to *reason* based on the
-observations and *act* correspondingly to accomplish the given tasks. 
+observations and *act* correspondingly to accomplish the given tasks - the
+action space of an agent is augmented by the "reasoning" capability of it by
+using LLM. 
 
-* give real-world example.
+This design pattern accurately replicates how humans process information and
+adjust corresponding strategies for specific situations most of the time. As an
+example applied at the service-as-a-software layer, many real-world scenarios
+can reasonably leverage this ReAct-based architecture to build agent systems
+that are capable of delivering complete services. The following shows the
+sequence diagram of how a consumer finds the Apple remote for his need (see
+details in the [reference](#references)). 
+
+<html lang="en">
+   <head>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.1.0/mermaid.min.js"></script>
+    </head>
+	 
+<div class="mermaid">
+sequenceDiagram
+    Task-initiator->>Agent: `[Thought1]` I need to search Apple remote ...
+    Agent->>Agent: `[Act]` `Search` **Apple Rmeote**
+    Agent->>Agent: `[Observation]` **Apple Remote** is designed... to control **front row media center** program... 
+    Task-initiator->>Agent: `[Thought2]` I need to search **front row** next...
+    Agent->>Agent: `[Act]` `Search` **Front Row**
+    Agent->>Agent: `[Observation]` Found similar **front row (software)**
+    Task-initiator->>Agent: `[Thought3]` I need to search **front row (software)**
+    Agent->>Agent: `[Act]` `Search` **Front Row (software)**
+    Agent->>Agent: `[Observation]` **Front Row (software)** is discontinued
+    Task-initiator->>Agent: `[Thought4]` **Front row (software) is also controlled by keyboard function keys
+    Agent->>Agent: `[Act]` `Finish` 
+</div>
+</html>
+
+The `task-initiator` facilitates the whole process tha helps the agent to find
+the right product that meets the requirement, the *keyboard functional keys*.
+The diagram shows a collaborative process where the Task-initiator guides the
+Agent to search iteratively, starting with the “Apple Remote” and progressing to
+“Front Row” and its software. The Agent adapts based on observations, uncovering
+that the software is discontinued but supports keyboard controls, highlighting
+an iterative and adaptive search process. The *agentic reasoning with
+observation* is the key to the actions taken to achieve the goal step by step. 
+
+There are multiple different patterns. *Reasoning without observation (REWOO)*
+tries to merge the *observation* step into *action* of agents which further
+enhances the efficiency. *Plan-and-solve* tackles the problem with more
+uncertainties compared to the ones targeted by *ReAct*. *Reflexion* takes
+advantage of reinforcement learning to augment the planning efficiency for next
+steps. For further reading of them, see [references](#references).
+
+Overall, these design patterns enable better utilization of the advantages of
+LLMs and environmental resources when assigning and configuring tasks for
+agents. This targeted approach allows agents to respond effectively, achieving
+ideal performance in terms of accuracy and other metrics for the given tasks.
+This is also why LLM-based agents can serve as the foundation for service
+applications in the form of software.
 
 ### Ubiquitous language
 
@@ -97,6 +149,13 @@ minimized*.
 - Sonya Huang, Pat Grady, and o1, "Generative AI’s Act o1 - The agentic
   reasoning era begins",
   [url](https://www.sequoiacap.com/article/generative-ais-act-o1/).
+- Shunyu Yao, *et al*, `ReAct`: Synergizing Reasoning and Acting in Language
+  Models.
+- Binfeng Xu, *et al*, `ReWOO`: Decoupling Reasoning from Observations for
+  Efficient Augmented Language Models.
+- Noah Shinn, *et al*, Reflexion: Language Agents with Verbal Reinforcement Learning.
+- Lei Wang, *et al*, Plan-and-Solve Prompting: Improving Zero-Shot
+  Chain-of-Thought Reasoning by Large Language Models.
 
 ## Citation
 
