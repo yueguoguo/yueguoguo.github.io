@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      LLM, Agent, and "Service As A Software"
+title:      LLM, Agent, and "Service As A Software" - How does it scale?
 date:       2024-11-31 00:00:00
 summary:    How service is revolutionalized by software
 categories: agentic system, artificial intelligence, software engineering
@@ -89,7 +89,7 @@ details in the [reference](#references)).
 <div class="mermaid">
 sequenceDiagram
     Task-initiator->>Agent: `[Thought1]` I need to search Apple remote ...
-    Agent->>Agent: `[Act]` `Search` **Apple Rmeote**
+    Agent->>Agent: `[Act]` `Search` **Apple Remote**
     Agent->>Agent: `[Observation]` **Apple Remote** is designed... to control **front row media center** program... 
     Task-initiator->>Agent: `[Thought2]` I need to search **front row** next...
     Agent->>Agent: `[Act]` `Search` **Front Row**
@@ -111,7 +111,7 @@ that the software is discontinued but supports keyboard controls, highlighting
 an iterative and adaptive search process. The *agentic reasoning with
 observation* is the key to the actions taken to achieve the goal step by step. 
 
-There are multiple different patterns. *Reasoning without observation (REWOO)*
+There are multiple different patterns. *Reasoning without observation*
 tries to merge the *observation* step into *action* of agents which further
 enhances the efficiency. *Plan-and-solve* tackles the problem with more
 uncertainties compared to the ones targeted by *ReAct*. *Reflexion* takes
@@ -125,22 +125,65 @@ ideal performance in terms of accuracy and other metrics for the given tasks.
 This is also why LLM-based agents can serve as the foundation for service
 applications in the form of software.
 
-### Ubiquitous language
+## Principles
+
+### Never blur the deterministic and the probabilistic
+
+LLM-based agent system is a mix of deterministic and probabilistic system.
+Apparently, the characteristics that are associated with the LLM component in
+the agent system is probabilistic, e.g., reasoning, planning, etc. These
+functionalities essentially generate the outputs from the probabilistic LLM
+based on the observations on its training data. On the other hand, the functions
+like tooling may not be probabilistic. Due to this, LLM is used primarily in
+handling unstructured data like text, images, videos, etc.; recently,
+researchers demonstrated its capability on tabular data, too. In general, the
+LLM-based agent system is good at those problems that are *opaque* by nature
+such that, *the risk of making mistakes in the cascading decision-making process
+is minimized*. 
+
+Therefore, it is always advisable to make it clear in segmenting the task
+execution engines in an agent system depending on whether the task processing is
+probabilistic or deterministic. 
+
+> In an retail agent system, the LLM is asked to do an analysis on a
+> given input image and then describe what the product is possibly depicted in the
+> image. Let's say we follow a *ReAct* pattern to execute this workflow:
+
+* The LLM component in the agent will firstly *observe* the content of the image
+  with some prompt as inputs, too. This step is **probabilistic**, because the LLM may have some probabilities to give a wrong output, i.e., *hallucination*. 
+* Without loss of the generosity, assuming the second step is to find similar
+  products and then recommend to the users, and the objective is *to maximize
+  the chance of a purchase*. Underlying the hood, the agent will finish this
+  task by calling a *predictive model* that predicts the likelihood of the
+  purchase of the user with the structured information obtained from the image.
+  The execution of this step is deterministic, regardless of the accuracy of the
+  prediction model. 
+
+<html lang="en">
+   <head>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.1.0/mermaid.min.js"></script>
+    </head>
+	 
+<div class="mermaid">
+graph LR 
+  [User]-[Agent]
+</div>
+</html>
+
+### Completeness is crucial
+
+The success of a service-as-a-software entity is measured by the **completion*
+of the given task. This is very different from either a software-as-a-service,
+or a robotic-process-automation, for the reason being that the latter two by
+default do not guarantee the success of a task. For example, in the CRM
+software-as-a-service platform, it is the user's responsibility to generate the
+leads, manage a refund, etc. 
+
+### Make the interface ubiquitous
 
 * vertical problem
 * RAG and ubiquitous language
-
-### Application scenarios
-
-LLM is impressive in handling unstructured data; recently, researchers
-demonstrated its capability on tabular data, too. In general, the LLM-based
-agent system is good at those problems that are *opaque* by nature such that,
-*the risk of making mistakes in the cascading decision-making process is
-minimized*. 
-
-* benchmarking and comparison against human
-* what will be the review process?
-* the ROI and risk management model.
+* introduction of interference with humans
 
 ## References
 
@@ -149,6 +192,8 @@ minimized*.
 - Sonya Huang, Pat Grady, and o1, "Generative AI’s Act o1 - The agentic
   reasoning era begins",
   [url](https://www.sequoiacap.com/article/generative-ais-act-o1/).
+- Jason Wei, *et al*, Chain-of-Thought Prompting Elicits Reasoning in Large
+  Language Models.
 - Shunyu Yao, *et al*, `ReAct`: Synergizing Reasoning and Acting in Language
   Models.
 - Binfeng Xu, *et al*, `ReWOO`: Decoupling Reasoning from Observations for
@@ -156,12 +201,15 @@ minimized*.
 - Noah Shinn, *et al*, Reflexion: Language Agents with Verbal Reinforcement Learning.
 - Lei Wang, *et al*, Plan-and-Solve Prompting: Improving Zero-Shot
   Chain-of-Thought Reasoning by Large Language Models.
+- Sehoon Kim *et al*, An LLM Compiler for Parallel Function Calling.
+- Anthropic, Building effective agents.
 
 ## Citation
 
 Plain citation as
 
-> Zhang, Le. “LLM, Agent, and "Service As A Software”. Thinkloud. https://yueguoguo.github.io/posts/2024-11-31-service-as-a-software
+> Zhang, Le. LLM, Agent, and "Service As A Software - How does it scale”.
+> Thinkloud. https://yueguoguo.github.io/posts/2024-11-31-service-as-a-software
 
 or Bibliography-like citation
 ```
