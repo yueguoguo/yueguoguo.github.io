@@ -145,12 +145,13 @@ Therefore, it is always advisable to make it clear in segmenting the task
 execution engines in an agent system depending on whether the task processing is
 probabilistic or deterministic. 
 
-> In an retail agent system, the LLM is asked to do an analysis on a
-> given input image and then describe what the product is possibly depicted in the
-> image. Let's say we follow a *ReAct* pattern to execute this workflow:
+> In an retail agent system, the LLM is asked to do an analysis on a given input
+> image and then describe what the product is possibly depicted in the image.
+> Let's say we follow a *ReAct* pattern to execute this workflow:
 
 * The LLM component in the agent will firstly *observe* the content of the image
-  with some prompt as inputs, too. This step is **probabilistic**, because the LLM may have some probabilities to give a wrong output, i.e., *hallucination*. 
+  with some prompt as inputs, too. This step is **probabilistic**, because the
+  LLM may have some probabilities to give a wrong output, i.e., *hallucination*. 
 * Without loss of the generosity, assuming the second step is to find similar
   products and then recommend to the users, and the objective is *to maximize
   the chance of a purchase*. Underlying the hood, the agent will finish this
@@ -159,25 +160,105 @@ probabilistic or deterministic.
   The execution of this step is deterministic, regardless of the accuracy of the
   prediction model. 
 
+Simply speaking, *the agent-based service-as-a-software system shall take an
+input with a probabilistic process, but it shall also need at least one or more
+the deterministic outputs to streamline its workflow for consuming the delivery
+of the output - the workflow can be linear or non-linear, depending on the
+complexity of the service itself*. 
+
+### Completeness of a service is crucial
+
+The success of a service-as-a-software entity is measured by the **completion**
+of the given service, where *service* refers to *an objective that generates
+business, social, environmental, or other beyond-technical impact that can only
+be achieved by a well-structured process with involvement of human or machine
+intelligence*. This characteristics is very different from either a
+software-as-a-service, or a robotic-process-automation, for the reason being
+that the latter two by default do not guarantee the success of a service. For
+example, in a CRM software-as-a-service platform, it is the user's
+responsibility to complete the services like to generate the leads, manage a
+refund, etc. The platform merely provides a set of functionalities that the
+users can interact with to complete that service. Whether the service can be
+completed or not depends on many factors. Similarly, an LLM does not guarantee
+the completion of a service, either. Considering the use cases that an LLM can
+avail, i.e., chat completion (well this is apparently not the same "completion"
+we are talking about here), summarization, sentiment analysis, etc., it is not
+something that is linked to a *service* in a given business context. Even an
+agent does not necessarily guarantee the completion of a service. The agent
+itself still require configuration of its tool usage, strategy of orchestration,
+etc., before it can really tackle the given service with a desirable
+performance. Service-as-a-software completes a service. Actually a
+service-as-a-software system is already very close to an agent system. The only
+difference is that, the service-as-a-software system is designed,
+pre-configured, and set up to be *automated*, *reliable*, and *robust* by nature
+for completing a given service.
+
+The following examples possibly show the differences between LLM, agent, and
+service-as-a-software:
+
+* LLM: in this case, the completion is merely the chat with the LLM.
+
 <html lang="en">
    <head>
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.1.0/mermaid.min.js"></script>
     </head>
 	 
 <div class="mermaid">
-graph LR 
-  [User]-[Agent]
+sequenceDiagram
+    Task-initiator->>LLM: `[Thought1]` Find information of the product in the <image>.
+    LLM->>LLM: `[Observation]` Recognize the product on the image. 
+    LLM->>Task-initiator: `[Act]` Product name and information.
+    Task-initiator->>LLM: `[Completion]`
 </div>
 </html>
 
-### Completeness is crucial
+* Agent: to simplify, let's consider the `ReAct` pattern. And the agent is
+  designed to recommend products given the user inputs. 
 
-The success of a service-as-a-software entity is measured by the **completion*
-of the given task. This is very different from either a software-as-a-service,
-or a robotic-process-automation, for the reason being that the latter two by
-default do not guarantee the success of a task. For example, in the CRM
-software-as-a-service platform, it is the user's responsibility to generate the
-leads, manage a refund, etc. 
+<html lang="en">
+   <head>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.1.0/mermaid.min.js"></script>
+    </head>
+	 
+<div class="mermaid">
+sequenceDiagram
+    Task-initiator->>Agent: `[Thought1]` Find information of the product in the <image>.
+    Task-initiator->>Agent: `[Thought2]` I want to buy that product for kids.
+    Agent->>Agent: `[Observation]` Recognize the product on the image. 
+    Agent->>Agent: `[Act]` Search for similar products.
+    Agent->>Task-initiator: `[Act]` Return product information and the similar ones.
+    Task-initiator->>Agent: `[Completion]`
+</div>
+</html>
+
+* Service-as-a-software: the service based on the above agent system is defined
+  as a *product recommendation* system, that the business context is to maximize
+  the probability that the user will purchase the product from the service
+  provider, and the completion is measured by a successful conversion of the
+  purchase. The system does not always lead to a completion with the desirable
+  outcome, in this case, it is an `abortion`. But overall, the count of
+  completion shall be within expectation in a well-defined service-as-a-software
+  system. 
+
+<html lang="en">
+   <head>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.1.0/mermaid.min.js"></script>
+    </head>
+	 
+<div class="mermaid">
+sequenceDiagram
+    Task-initiator->>Service: `[Thought1]` Find information of the product in the <image>.
+    Task-initiator->>Service: `[Thought2]` I want to buy that product for kids.
+    Service->>Service: `[Observation]` Recognize the product on the image. 
+    Service->>Service: `[Act]` Search for similar products.
+    Service->>Task-initiator: `[Act]` Return product information and the similar ones.
+    alt is purchase
+        Task-initiator->>Service: `[Completion]`
+    else is no purchase
+        Task-initiator->>Service: `[Abortion]`
+    end
+</div>
+</html>
 
 ### Make the interface ubiquitous
 
@@ -198,7 +279,8 @@ leads, manage a refund, etc.
   Models.
 - Binfeng Xu, *et al*, `ReWOO`: Decoupling Reasoning from Observations for
   Efficient Augmented Language Models.
-- Noah Shinn, *et al*, Reflexion: Language Agents with Verbal Reinforcement Learning.
+- Noah Shinn, *et al*, Reflexion: Language Agents with Verbal Reinforcement
+  Learning.
 - Lei Wang, *et al*, Plan-and-Solve Prompting: Improving Zero-Shot
   Chain-of-Thought Reasoning by Large Language Models.
 - Sehoon Kim *et al*, An LLM Compiler for Parallel Function Calling.
