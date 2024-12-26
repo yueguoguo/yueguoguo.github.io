@@ -120,7 +120,6 @@ Service-as-a-Software:
 	 
 <div class="mermaid">
 sequenceDiagram
-    autonumber
     User->>LLM: Find product information on the image.
     LLM-->LLM: Recognize the product on the image. 
     LLM-->User: Product name and information.
@@ -144,7 +143,6 @@ sequenceDiagram
 	 
 <div class="mermaid">
 sequenceDiagram
-    autonumber
     User->>Agent: Buy a gift on the image for kids...
     Note over User,Agent: Parse user request to prompts.
     Agent->>LLM: Find product information on the image.
@@ -173,7 +171,6 @@ sequenceDiagram
 	 
 <div class="mermaid">
 sequenceDiagram
-    autonumber
     User->>Service: Buy a gift on the image for kids...
     Note over User,Service: Trigger agent process.
     Service->>Agent: Buy a gift on the image for kids...
@@ -280,7 +277,6 @@ finish the given task.
 	 
 <div class="mermaid">
 sequenceDiagram
-    autonumber
     User->>Service: Buy dining sets to supply for restaurant.
     Note over User,Service: Multi-agent process
     Service-->Service: Agent1 - Search for similar products.
