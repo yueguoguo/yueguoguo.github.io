@@ -115,7 +115,7 @@ Service-as-a-Software:
 
 <html lang="en">
   <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.0.0/mermaid.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js"></script>
   </head>
 	 
 <div class="mermaid">
@@ -138,7 +138,7 @@ sequenceDiagram
 
 <html lang="en">
    <head>
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.0.0/mermaid.min.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js"></script>
     </head>
 	 
 <div class="mermaid">
@@ -166,7 +166,7 @@ sequenceDiagram
 
 <html lang="en">
    <head>
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.0.0/mermaid.min.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js"></script>
     </head>
 	 
 <div class="mermaid">
@@ -272,7 +272,7 @@ finish the given task.
 
 <html lang="en">
    <head>
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.0.0/mermaid.min.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js"></script>
     </head>
 	 
 <div class="mermaid">
