@@ -120,7 +120,6 @@ Service-as-a-Software:
 	 
 <div class="mermaid">
 sequenceDiagram
-    autonumber
     User->>LLM: Find product information on the image.
     LLM-->LLM: Recognize the product on the image. 
     LLM-->User: Product name and information.
