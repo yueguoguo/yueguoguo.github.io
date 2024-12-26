@@ -115,11 +115,12 @@ Service-as-a-Software:
 
 <html lang="en">
   <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.0.0/mermaid.min.js"></script>
   </head>
 	 
 <div class="mermaid">
 sequenceDiagram
+    autonumber
     User->>LLM: Find product information on the image.
     LLM-->LLM: Recognize the product on the image. 
     LLM-->User: Product name and information.
