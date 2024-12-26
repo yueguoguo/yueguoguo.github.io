@@ -120,9 +120,10 @@ Service-as-a-Software:
 	 
 <div class="mermaid">
 sequenceDiagram
+    autonumber
     User->>LLM: Find product information on the image.
-    LLM->>LLM: Recognize the product on the image. 
-    LLM->>User: Product name and information.
+    LLM-->LLM: Recognize the product on the image. 
+    LLM-->User: Product name and information.
     User->>LLM: COMPLETION
 </div>
 </html>
@@ -143,15 +144,15 @@ sequenceDiagram
 	 
 <div class="mermaid">
 sequenceDiagram
+    autonumber
     User->>Agent: Buy a gift on the image for kids...
-    Note right of Agent: Parse user request to prompts.
+    Note over User,Agent: Parse user request to prompts.
     Agent->>LLM: Find product information on the image.
     Agent->>LLM: Want to buy that product for kids.
-    LLM->>LLM: Recognize the product on the image. 
-    LLM->>Agent: Product name and information.
-    Agent->>Agent: Search for similar products.
-    Note right of Agent: Use tool to find the needed.
-    Agent->>User: Return product information and the similar ones.
+    LLM-->LLM: Recognize the product on the image. 
+    LLM-->Agent: Product name and information.
+    Agent-->Agent: Search for similar products.
+    Agent-->User: Return product information and the similar ones.
     User->>Agent: COMPLETION
 </div>
 </html>
@@ -172,17 +173,17 @@ sequenceDiagram
 	 
 <div class="mermaid">
 sequenceDiagram
+    autonumber
     User->>Service: Buy a gift on the image for kids...
-    Note right of Service: Trigger agent process.
+    Note over User,Service: Trigger agent process.
     Service->>Agent: Buy a gift on the image for kids...
+    Note over Service,Agent: Parse user request to prompts.
     Agent->>LLM: Find product information on the image.
     Agent->>LLM: Want to buy that product for kids.
-    LLM->>LLM: Recognize the product on the image. 
-    LLM->>Agent: Product name and information.
-    Agent->>Agent: Search for similar products.
-    Note right of Agent: Use tool to find the needed.
-    Agent->>Service: Return product information and the similar ones.
-    Note right of Service: Check completion of service.
+    LLM-->LLM: Recognize the product on the image. 
+    LLM-->Agent: Product name and information.
+    Agent-->Agent: Search for similar products.
+    Agent-->Service: Return product information and the similar ones.
     alt is purchase
         User->>Service: COMPLETION
     else is no purchase
@@ -279,12 +280,14 @@ finish the given task.
 	 
 <div class="mermaid">
 sequenceDiagram
+    autonumber
     User->>Service: Buy dining sets to supply for restaurant.
-    Service->>Service: Agent1 - Search for similar products.
-    Service->>Service: Agent2 - Analyze sales strategy.
-    Service->>Service: Agent3 - Understand inventory status.
-    Service->>Service: Agent4 - Optimize logistics plan.
-    Service->>User: Return detailed sales information.
+    Note over User,Service: Multi-agent process
+    Service-->Service: Agent1 - Search for similar products.
+    Service-->Service: Agent2 - Analyze sales strategy.
+    Service-->Service: Agent3 - Understand inventory status.
+    Service-->Service: Agent4 - Optimize logistics plan.
+    Service-->User: Return detailed sales information.
     alt is purchase
         User->>Service: COMPLETION
     else is no purchase
@@ -385,10 +388,6 @@ which serves as the foundational layer of the Service-as-a-software system. The
 engineering-level considerations try to tackle the problems such as memory,
 storage, orchestration, etc. More readings about this can be found in
 [references](#references).
-
-![Agent stack](https://yueguoguo.github.io/images/agent_stack.png)<font size="1">The
-diagram shows the agent stack that is categorized based on agent
-hosting/serving, agent frameworks, and LLM models & storage.</font> 
 
 ## Conclusions
 
