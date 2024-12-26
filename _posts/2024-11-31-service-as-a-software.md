@@ -122,9 +122,9 @@ sequenceDiagram
 ```
 
 <html lang="en">
-   <head>
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.1.0/mermaid.min.js"></script>
-    </head>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js"></script>
+  </head>
 	 
 <div class="mermaid">
 sequenceDiagram
