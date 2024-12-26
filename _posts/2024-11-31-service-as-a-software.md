@@ -18,9 +18,8 @@ investment institutions like YC, tech companies, entrepreneurs, and academic
 researchers delving into the transformation power of generative artificial
 intelligence, the shift from the Software-as-a-Service model to Service-as-a
 Software could truly become the next generation's focal point from a business
-perspective.
-
-*Software-as-a-Service* was formally coined in 2001 in the [SIIA
+perspective. *Software-as-a-Service (SoftServ)* was formally coined in 2001 in
+the [SIIA
 report](https://pdfcoffee.com/16993-saas-strategic-backgrounder-pdf-free.html),
 and it got large-scale proliferation by the adoption of cloud-based services
 like *Gmail* to consumers and Salesforce *CRM system* to enterprises. [Gartner
@@ -36,44 +35,47 @@ many other details. The article also points out that the size of the service
 market (*trillions* of dollars) is much larger than that of the software market
 (*~300 billion dollars*).
 
-In the Software-as-a-Service scenario, *software* refers to the application and
+To make it easy to read, hereafter Software-as-a-Service is termed as
+**SoftServ** while Service-as-a-Software is termed as **ServSoft**.
+
+In the SoftServ scenario, *software* refers to the application and
 it is defined as functional endpoints for its users to achieve some tasks. Its
 business model is reflected in *service* where users pay the
-Software-as-a-Service provider via subscription. The prosperity of the
-Software-as-a-Service ecosystem is attributed to the development of cloud-based
+SoftServ provider via subscription. The prosperity of the
+SoftServ ecosystem is attributed to the development of cloud-based
 infrastructure in the last few decades. The cloud-based services are layered
 hierarchically, that is, *infrastructure*, *platform*, and *software* (there may
 be other layers existing but these three are the foundational ones), and hence,
-the Software-as-a-Service layer that is built on top of them is charged by the
-*usage* of any services at a lower layer. In the Service-as-a-Software scenario,
+the SoftServ layer that is built on top of them is charged by the
+*usage* of any services at a lower layer. In the ServSoft scenario,
 differently, *software* is meant to implement a holistic service that finishes a
 **service**, i.e., *service*. And the user pays for the completion of that
 **service** accomplished by the software. 
 
 Let's consider a few examples to illustrate the differences of
-Software-as-a-Service and Service-as-a-Software:
+SoftServ and ServSoft:
 
-* In the form of Software-as-a-Service, Gmail provides an application that helps
+* In the form of SoftServ, Gmail provides an application that helps
   people to receive, draft, send, and archive emails, with other users. In the
-  form of Service-as-a-Software, [a Gmail
+  form of ServSoft, [a Gmail
   agent](https://python.langchain.com/v0.1/docs/templates/openai-functions-agent-gmail/)
   can automatically read, search through, and respond to emails on behalf of the
   users. 
-* In the case of CRM, the vanilla CRM platform as a Software-as-a-Service
+* In the case of CRM, the vanilla CRM platform as a SoftServ
   provides comprehensive toolkits for salespersons to manage lead tracking,
   points of contact, marketing campaigns, etc. As an agentic version of it,
   called [AgentForce](https://www.salesforce.com/ap/agentforce/use-cases/),
   services like order status tracking for responding to user for maintaining
   user satisfaction can be automated and streamlined by agents. 
-* GitHub is essentially a Software-as-a-Service platform that provides
+* GitHub is essentially a SoftServ platform that provides
   functionalities for version control, code review, issue tracking, etc. In the
-  Service-as-a-Software scenario, a [GitHub
+  ServSoft scenario, a [GitHub
   Copilot](https://github.com/features/copilot) can automatically generate code
   snippets to develop an web application, finish the review code to achieve 100%
   test pass and >80% code coverage, and manage issues to categorize acccording
   to OKR, etc.
 
-According to Sequoia Capital, the success of Service-as-a-Software is measured
+According to Sequoia Capital, the success of ServSoft is measured
 per resolution of a task. How to understand this in a more detailed manner for
 adoption in an organization for generating impact? I try to approach the
 question from two major points of view: the *principles* and *patterns*, one for
@@ -83,14 +85,14 @@ strategic design and the other for tactical implementation.
 
 ### Completeness of a service is crucial
 
-The success of a Service-as-a-Software entity is measured by the **completion**
+The success of a ServSoft entity is measured by the **completion**
 of the given service, where *service* refers to *an objective that generates
 business, social, environmental, or other beyond-technical impact that can only
 be achieved by a well-structured process with involvement of human or machine
 intelligence*. This characteristic is very different from either a
-Software-as-a-Service, or a robotic-process-automation, for the reason being
+SoftServ, or a robotic-process-automation, for the reason being
 that the latter two by default do not guarantee the success of a service. For
-example, in a CRM Software-as-a-Service platform, it is the user's
+example, in a CRM SoftServ platform, it is the user's
 responsibility to complete the services like to generate the leads, manage a
 refund, etc. The platform merely provides a set of functionalities that the
 users can interact with to complete that service. Whether the service can be
@@ -102,14 +104,14 @@ something that is linked to a *service* in a given business context. Even an
 agent does not necessarily guarantee the completion of a service. The agent
 itself still requires configuration of its tool usage, strategy of
 orchestration, etc., before it can really tackle the given service with a
-desirable performance. Service-as-a-Software completes a service. Actually an
-agent system is already close to a Service-as-a-Software system. The only
-difference is that, the Service-as-a-Software system is designed,
+desirable performance. ServSoft completes a service. Actually an
+agent system is already close to a ServSoft system. The only
+difference is that, the ServSoft system is designed,
 pre-configured, and set up to be *automated*, *reliable*, and *robust* by nature
 for completing a specific service.
 
 The following examples possibly show the differences between LLM, agent, and
-Service-as-a-Software:
+ServSoft:
 
 * LLM: in this case, the completion is merely the chat with the LLM.
 
@@ -155,13 +157,13 @@ sequenceDiagram
 </div>
 </html>
 
-* Service-as-a-Software: the service based on the above agent system is defined
+* ServSoft: the service based on the above agent system is defined
   as a *product recommendation* system, that the business context is to maximize
   the probability that the user will purchase the product from the service
   provider, and the completion is measured by a successful conversion of the
   purchase. The system does not always lead to a completion with the desirable
   outcome, in this case, it is an `abortion`. But overall, the count of
-  completion shall be within expectation in a well-defined Service-as-a-Software
+  completion shall be within expectation in a well-defined ServSoft
   system. 
 
 <html lang="en">
@@ -204,7 +206,7 @@ such that, *the risk of making mistakes in the cascading decision-making process
 is minimized*. 
 
 The duality of probabilism and determinism is crucial in the design of the
-Service-as-a-Software whose implementation is a **software**. Regardless of the
+ServSoft whose implementation is a **software**. Regardless of the
 probabilistic nature of some of its components, when talking about its *data
 model*, *programmatic interface*, *execution flow*, etc., they are
 deterministic. For example, in a retail agent system, the LLM is asked to do an
@@ -218,14 +220,14 @@ with the outputs from the LLM, the system may redirect to the inventory
 management database to find the matches of the products together with their
 information. The products information may be used for the other operational
 activities like promotion information, logistics optimization, etc., before
-completing the service to the user. *The agent-based Service-as-a-Software
+completing the service to the user. *The agent-based ServSoft
 system shall take an input with a probabilistic process, but it shall also need
 at least one or more deterministic outputs to streamline its workflow for
 consuming the delivery of the output - the workflow can be linear or non-linear,
 depending on the complexity of the service itself*. The aims of having the
 deterministic outputs are multi-fold, it ensures the robustness of the software
 system, it avails proper governance, it allows calibration, and which to achieve
-among all of the benefits depends on the objective of the Service-as-a-Software
+among all of the benefits depends on the objective of the ServSoft
 system. 
 
 **NOTE** other than the determinism of the workflow, the software implementation
@@ -238,8 +240,8 @@ deterministic](https://en.wikipedia.org/wiki/Turing_machine).
 
 ### Ubiquity favors vertical adaptivity
 
-The Service-as-a-Software system shall be ubiquitous in its interface. In fact,
-it is quite hard to find an alternative to LLM for the Service-as-a-Software
+The ServSoft system shall be ubiquitous in its interface. In fact,
+it is quite hard to find an alternative to LLM for the ServSoft
 system implementation, partially because *LLM can be a generalist as well as a
 specialist*. For example, ChatGPT is a generalist, because it can help users
 plan trip itineraries, generate code snippets, etc.; it can help users find
@@ -248,13 +250,13 @@ corporate finance?* or *how is a ring oscillator used in testing the digital
 chip performance?*. Therefore, the agent system can be a vertical or horizontal
 one, depending on the target objective. 
 
-Service-as-a-Software is mostly useful when it is handling a **vertical**
+ServSoft is mostly useful when it is handling a **vertical**
 problem. Thinking about the definition in [the
 beginning](#origin-and-progression), a *service* is a contextualized set of tasks
 that achieve a business, societal, or environmental goal. And therefore, a vertical
 system is preferred for the benefits of *domain-specific optimization, resource
 efficiency, scalability and modularity, clear responsibility, usability, and
-ease of adoption.* To make the Service-as-a-Software system useful, the
+ease of adoption.* To make the ServSoft system useful, the
 domain-specific system design should be considered rigorously. In the earlier
 blog post, *ubiquitous language for domain-driven development*, I tried to argue
 that, ubiquity of the domain-specific system is crucial. And the ubiquitous
@@ -338,7 +340,7 @@ for the vertical system, where the domain knowledge is crucial, the auxiliary
 data components like similarity search base, knowledge base, knowledge graph,
 etc., together with the augmentation technique like RAG, improves the
 expressiveness of the vertical LLM. Thus the data used for building the LLM is
-crucial to the Service-as-a-Software system.
+crucial to the ServSoft system.
 
 As for the other components in the Service-as-a-software system, data plays the
 critical role as in the conventional data applications. More can be found in the
@@ -348,7 +350,7 @@ Systems](https://books.google.com.sg/books/about/Designing_Data_intensive_Applic
 
 ## Pattern
 
-Now that **agents** are the core of the Service-as-a-Software system. Based on
+Now that **agents** are the core of the ServSoft system. Based on
 the definition by Russell and Norvig in [their
 book](http://aima.cs.berkeley.edu/), an intelligent agent is *an agent that
 perceives its environment, takes actions autonomously in order to achieve goals,
@@ -366,7 +368,7 @@ on the observations and *act* correspondingly to accomplish the given tasks -
 the action space of an agent is augmented by the "reasoning" capability of it by
 using LLM. This design pattern accurately replicates how humans process
 information and adjust corresponding strategies for specific situations most of
-the time. As an example applied at the Service-as-a-Software layer, many
+the time. As an example applied at the ServSoft layer, many
 real-world scenarios can reasonably leverage this ReAct-based architecture to
 build agent systems that are capable of delivering complete services. There are
 multiple different patterns. *Reasoning without observation* tries to merge the
@@ -387,17 +389,17 @@ storage, orchestration, etc. More readings about this can be found in
 
 ## Conclusions
 
-In summary, the transition from "Software-as-a-Service" to
-"Service-as-a-Software" represents a significant shift in how services are
-delivered and consumed. While Software-as-a-Service focuses on providing
-functional endpoints for users to achieve tasks, Service-as-a-Software
+In summary, the transition from "SoftServ" to
+"ServSoft" represents a significant shift in how services are
+delivered and consumed. While SoftServ focuses on providing
+functional endpoints for users to achieve tasks, ServSoft
 emphasizes the completion of holistic tasks through intelligent agents. These
 agents leverage advanced AI techniques, such as LLMs, to autonomously perceive,
 plan, and act within their environments. The design patterns, such as ReAct,
 enable agents to reason and adapt, closely mimicking human problem-solving
 processes. The principles of completeness, the duality of probabilism and
 determinism, and vertical adaptivity are crucial for building robust and
-efficient Service-as-a-Software systems. By integrating domain-specific
+efficient ServSoft systems. By integrating domain-specific
 knowledge and ubiquitous language, these systems can achieve high performance
 and reliability, making them valuable for various real-world applications.
 
