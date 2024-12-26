@@ -113,14 +113,6 @@ Service-as-a-Software:
 
 * LLM: in this case, the completion is merely the chat with the LLM.
 
-```mermaid
-sequenceDiagram
-    User->>LLM: `[Thought1]` Find information of the product in the image.
-    LLM->>LLM: `[Observation]` Recognize the product on the image. 
-    LLM->>User: `[Act]` Product name and information.
-    User->>LLM: `[Completion]`
-```
-
 <html lang="en">
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js"></script>
@@ -128,10 +120,10 @@ sequenceDiagram
 	 
 <div class="mermaid">
 sequenceDiagram
-    User->>LLM: `[Thought1]` Find information of the product in the image.
-    LLM->>LLM: `[Observation]` Recognize the product on the image. 
-    LLM->>User: `[Act]` Product name and information.
-    User->>LLM: `[Completion]`
+    User->>LLM: Find product information on the image.
+    LLM->>LLM: Recognize the product on the image. 
+    LLM->>User: Product name and information.
+    User->>LLM: COMPLETION
 </div>
 </html>
 
@@ -141,7 +133,7 @@ sequenceDiagram
   prompt and the other information (e.g., the image of the product). The agent
   parses the input request to a set of prompts to the underlying `LLM` for
   generating the output; the output is then used for the other component of the
-  system, e.g., a recommender enginer, for generating the candidate products
+  system, e.g., a recommender engineer, for generating the candidate products
   that `User` looks for. 
 
 <html lang="en">
@@ -151,14 +143,16 @@ sequenceDiagram
 	 
 <div class="mermaid">
 sequenceDiagram
-    User->>Agent: `[Request]` I want to buy a gift on the image for the kids...
-    Agent->>LLM: `[Thought1]` Find information of the product in the image.
-    Agent->>LLM: `[Thought2]` I want to buy that product for kids.
-    LLM->>LLM: `[Observation]` Recognize the product on the image. 
-    LLM->>Agent: `[Act]` Product name and information.
-    Agent->>Agent: `[Act]` Search for similar products.
-    Agent->>User: `[Act]` Return product information and the similar ones.
-    User->>Agent: `[Completion]`
+    User->>Agent: Buy a gift on the image for kids...
+    Note right of Agent: Parse user request to prompts.
+    Agent->>LLM: Find product information on the image.
+    Agent->>LLM: Want to buy that product for kids.
+    LLM->>LLM: Recognize the product on the image. 
+    LLM->>Agent: Product name and information.
+    Agent->>Agent: Search for similar products.
+    Note right of Agent: Use tool to find the needed.
+    Agent->>User: Return product information and the similar ones.
+    User->>Agent: COMPLETION
 </div>
 </html>
 
@@ -178,18 +172,21 @@ sequenceDiagram
 	 
 <div class="mermaid">
 sequenceDiagram
-    User->>Service: `[Request]` I want to buy a gift on the image for the kids...
-    Service->>Agent: `[Request]` I want to buy a gift on the image for the kids...
-    Agent->>LLM: `[Thought1]` Find information of the product in the image.
-    Agent->>LLM: `[Thought2]` I want to buy that product for kids.
-    LLM->>LLM: `[Observation]` Recognize the product on the image. 
-    LLM->>Agent: `[Act]` Product name and information.
-    Agent->>Agent: `[Act]` Search for similar products.
-    Agent->>Service: `[Act]` Return product information and the similar ones.
+    User->>Service: Buy a gift on the image for kids...
+    Note right of Service: Trigger agent process.
+    Service->>Agent: Buy a gift on the image for kids...
+    Agent->>LLM: Find product information on the image.
+    Agent->>LLM: Want to buy that product for kids.
+    LLM->>LLM: Recognize the product on the image. 
+    LLM->>Agent: Product name and information.
+    Agent->>Agent: Search for similar products.
+    Note right of Agent: Use tool to find the needed.
+    Agent->>Service: Return product information and the similar ones.
+    Note right of Service: Check completion of service.
     alt is purchase
-        User->>Service: `[Completion]`
+        User->>Service: COMPLETION
     else is no purchase
-        User->>Service: `[Abortion]`
+        User->>Service: ABORTION
     end
 </div>
 </html>
@@ -271,7 +268,9 @@ details.*
 
 The following is a retail service process example that involves the
 domain-specific knowledge like sales strategy, inventory management, logistics
-optimization, etc. 
+optimization, etc. The service system involves [multiple
+agents](https://en.wikipedia.org/wiki/Multi-agent_system) to collaboratively
+finish the given task. 
 
 <html lang="en">
    <head>
@@ -280,16 +279,16 @@ optimization, etc.
 	 
 <div class="mermaid">
 sequenceDiagram
-    User->>Service: `[Request]` I want to buy dining table sets to supply my restaurant furniture.
-    Service->>Service: `[Act]` Search for similar products.
-    Service->>Service: `[Act]` Analyze sales strategy.
-    Service->>Service: `[Act]` Understand inventory status.
-    Service->>Service: `[Act]` Optimize logistics plan.
-    Service->>User: `[Act]` Return product information and the detailed sales information.
+    User->>Service: Buy dining sets to supply for restaurant.
+    Service->>Service: Agent1 - Search for similar products.
+    Service->>Service: Agent2 - Analyze sales strategy.
+    Service->>Service: Agent3 - Understand inventory status.
+    Service->>Service: Agent4 - Optimize logistics plan.
+    Service->>User: Return detailed sales information.
     alt is purchase
-        User->>Service: `[Completion]`
+        User->>Service: COMPLETION
     else is no purchase
-        User->>Service: `[Abortion]`
+        User->>Service: ABORTION
     end
 </div>
 </html>
@@ -366,63 +365,30 @@ strategies of *reflection*, *reasoning*, *observation*, *planning*, etc. For
 example, in the classic *ReAct* pattern, the agent is designed to *reason* based
 on the observations and *act* correspondingly to accomplish the given tasks -
 the action space of an agent is augmented by the "reasoning" capability of it by
-using LLM. 
+using LLM. This design pattern accurately replicates how humans process
+information and adjust corresponding strategies for specific situations most of
+the time. As an example applied at the Service-as-a-Software layer, many
+real-world scenarios can reasonably leverage this ReAct-based architecture to
+build agent systems that are capable of delivering complete services. There are
+multiple different patterns. *Reasoning without observation* tries to merge the
+*observation* step into *action* of agents which further enhances the
+efficiency. *Plan-and-solve* tackles the problem with more uncertainties
+compared to the ones targeted by *ReAct*. *Reflexion* takes advantage of
+reinforcement learning to augment the planning efficiency for next steps. For
+further reading of them, see [references](#references).
+
+On the other hand, the engineering implementation of the agent system has been
+well studied by the researchers, engineers, and practitioners. The corresponding
+concepts that have been widely adopted in the software development and machine
+learning engineering were transferred to the development of the agent, too,
+which serves as the foundational layer of the Service-as-a-software system. The
+engineering-level considerations try to tackle the problems such as memory,
+storage, orchestration, etc. More readings about this can be found in
+[references](#references).
 
 ![Agent stack](https://yueguoguo.github.io/images/agent_stack.png)<font size="1">The
 diagram shows the agent stack that is categorized based on agent
 hosting/serving, agent frameworks, and LLM models & storage.</font> 
-
-This design pattern accurately replicates how humans process information and
-adjust corresponding strategies for specific situations most of the time. As an
-example applied at the Service-as-a-Software layer, many real-world scenarios
-can reasonably leverage this ReAct-based architecture to build agent systems
-that are capable of delivering complete services. The following shows the
-sequence diagram of how a consumer finds the Apple remote for his need (see
-details in the [reference](#references)). 
-
-<html lang="en">
-   <head>
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.1.0/mermaid.min.js"></script>
-    </head>
-	 
-<div class="mermaid">
-sequenceDiagram
-    User->>Agent: `[Thought1]` I need to search Apple remote ...
-    Agent->>Agent: `[Act]` `Search` **Apple Remote**
-    Agent->>Agent: `[Observation]` **Apple Remote** is designed... to control **front row media center** program... 
-    User->>Agent: `[Thought2]` I need to search **front row** next...
-    Agent->>Agent: `[Act]` `Search` **Front Row**
-    Agent->>Agent: `[Observation]` Found similar **front row (software)**
-    User->>Agent: `[Thought3]` I need to search **front row (software)**
-    Agent->>Agent: `[Act]` `Search` **Front Row (software)**
-    Agent->>Agent: `[Observation]` **Front Row (software)** is discontinued
-    User->>Agent: `[Thought4]` **Front row (software) is also controlled by keyboard function keys
-    Agent->>Agent: `[Act]` `Finish` 
-</div>
-</html>
-
-The `User` facilitates the whole process that helps the agent to find
-the right product that meets the requirement, the *keyboard functional keys*.
-The diagram shows a collaborative process where the `User` guides the
-Agent to search iteratively, starting with the “Apple Remote” and progressing to
-“Front Row” and its software. The Agent adapts based on observations, uncovering
-that the software is discontinued but supports keyboard controls, highlighting
-an iterative and adaptive search process. The *agentic reasoning with
-observation* is the key to the actions taken to achieve the goal step by step. 
-
-There are multiple different patterns. *Reasoning without observation*
-tries to merge the *observation* step into *action* of agents which further
-enhances the efficiency. *Plan-and-solve* tackles the problem with more
-uncertainties compared to the ones targeted by *ReAct*. *Reflexion* takes
-advantage of reinforcement learning to augment the planning efficiency for next
-steps. For further reading of them, see [references](#references).
-
-Overall, these design patterns enable better utilization of the advantages of
-LLMs and environmental resources when assigning and configuring tasks for
-agents. This targeted approach allows agents to respond effectively, achieving
-ideal performance in terms of accuracy and other metrics for the given tasks.
-This is also why LLM-based agents can serve as the foundation for service
-applications in the form of software.
 
 ## Conclusions
 
