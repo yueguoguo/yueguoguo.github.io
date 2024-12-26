@@ -3,7 +3,6 @@ layout:     post
 title:      Uncover the subtle intricacies of Service-as-a-Software
 date:       2024-11-31 00:00:00
 summary:    How service is revolutionized by AI software
-categories: large language model, agent system, artificial intelligence, software engineering
 ---
 
 <blockquote>
@@ -16,7 +15,7 @@ categories: large language model, agent system, artificial intelligence, softwar
 In a video panel discussion, [YC predicts that Vertical AI makes ~100 times
 impact of Software-as-a-Service](https://youtu.be/ASABxNenD_U). With numerous
 investment institutions like YC, tech companies, entrepreneurs, and academic
-researchers delving into the transformative power of genenrative artificial
+researchers delving into the transformation power of generative artificial
 intelligence, the shift from the Software-as-a-Service model to Service-as-a
 Software could truly become the next generation's focal point from a business
 perspective.
@@ -113,6 +112,14 @@ The following examples possibly show the differences between LLM, agent, and
 Service-as-a-Software:
 
 * LLM: in this case, the completion is merely the chat with the LLM.
+
+```mermaid
+sequenceDiagram
+    User->>LLM: `[Thought1]` Find information of the product in the image.
+    LLM->>LLM: `[Observation]` Recognize the product on the image. 
+    LLM->>User: `[Act]` Product name and information.
+    User->>LLM: `[Completion]`
+```
 
 <html lang="en">
    <head>
@@ -481,6 +488,6 @@ or Bibliography-like citation
   journal = "yueguoguo.github.io",
   year    = "2024",
   month   = "Dec",
-  url     = "https://yueguoguo.github.io/posts/2024-11-31-Service-as-a-Software"
+  url     = "https://yueguoguo.github.io/2024/12/01/service-as-a-software/"
 }
 ```
