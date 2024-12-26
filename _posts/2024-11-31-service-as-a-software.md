@@ -18,7 +18,7 @@ investment institutions like YC, tech companies, entrepreneurs, and academic
 researchers delving into the transformation power of generative artificial
 intelligence, the shift from the Software-as-a-Service model to Service-as-a
 Software could truly become the next generation's focal point from a business
-perspective. *Software-as-a-Service (SoftServ)* was formally coined in 2001 in
+perspective. *Software-as-a-Service* was formally coined in 2001 in
 the [SIIA
 report](https://pdfcoffee.com/16993-saas-strategic-backgrounder-pdf-free.html),
 and it got large-scale proliferation by the adoption of cloud-based services
@@ -38,21 +38,20 @@ market (*trillions* of dollars) is much larger than that of the software market
 To make it easy to read, hereafter Software-as-a-Service is termed as
 **SoftServ** while Service-as-a-Software is termed as **ServSoft**.
 
-In the SoftServ scenario, *software* refers to the application and
-it is defined as functional endpoints for its users to achieve some tasks. Its
-business model is reflected in *service* where users pay the
-SoftServ provider via subscription. The prosperity of the
-SoftServ ecosystem is attributed to the development of cloud-based
-infrastructure in the last few decades. The cloud-based services are layered
-hierarchically, that is, *infrastructure*, *platform*, and *software* (there may
-be other layers existing but these three are the foundational ones), and hence,
-the SoftServ layer that is built on top of them is charged by the
-*usage* of any services at a lower layer. In the ServSoft scenario,
-differently, *software* is meant to implement a holistic service that finishes a
-**service**, i.e., *service*. And the user pays for the completion of that
-**service** accomplished by the software. 
+In the SoftServ scenario, *software* refers to the application and it is defined
+as functional endpoints for assisting users to finish tasks within a predefined
+scope. Its business model is reflected in the *service* part where users pay the
+SoftServ provider via subscription. The prosperity of the SoftServ ecosystem is
+attributed to the development of cloud-based infrastructure in the last few
+decades. The cloud-based services are layered hierarchically, that is,
+*infrastructure*, *platform*, and *software* (there may be other layers existing
+but these three are the foundational ones), and hence, the SoftServ layer that
+is built on top of them is charged by the *usage* of any services at a lower
+layer. In the ServSoft scenario, differently, *software* is meant to implement a
+system that helps users to accomplish a holistic end-to-end *service*. And the
+user pays for the completion of that *service* achieved by the software. 
 
-Let's consider a few examples to illustrate the differences of
+Let's consider a few real-world examples to illustrate the differences of
 SoftServ and ServSoft:
 
 * In the form of SoftServ, Gmail provides an application that helps
@@ -85,35 +84,41 @@ strategic design and the other for tactical implementation.
 
 ### Completeness of a service is crucial
 
-The success of a ServSoft entity is measured by the **completion**
-of the given service, where *service* refers to *an objective that generates
-business, social, environmental, or other beyond-technical impact that can only
-be achieved by a well-structured process with involvement of human or machine
-intelligence*. This characteristic is very different from either a
-SoftServ, or a robotic-process-automation, for the reason being
-that the latter two by default do not guarantee the success of a service. For
-example, in a CRM SoftServ platform, it is the user's
-responsibility to complete the services like to generate the leads, manage a
-refund, etc. The platform merely provides a set of functionalities that the
-users can interact with to complete that service. Whether the service can be
-completed or not depends on many factors. Similarly, an LLM does not guarantee
-the completion of a service, either. Considering the use cases that an LLM can
-avail, i.e., chat completion (well this is apparently not the same "completion"
-we are talking about here), summarization, sentiment analysis, etc., it is not
-something that is linked to a *service* in a given business context. Even an
-agent does not necessarily guarantee the completion of a service. The agent
-itself still requires configuration of its tool usage, strategy of
-orchestration, etc., before it can really tackle the given service with a
-desirable performance. ServSoft completes a service. Actually an
-agent system is already close to a ServSoft system. The only
-difference is that, the ServSoft system is designed,
-pre-configured, and set up to be *automated*, *reliable*, and *robust* by nature
-for completing a specific service.
+The success of a ServSoft system is measured by the **completion** of the given
+service, where *service* refers to *an objective that generates business,
+social, environmental, or other beyond-technical impact that can only be
+achieved by a well-structured process with involvement of human or machine
+intelligence*. This characteristic is very different from either a SoftServ, or
+a robotic-process-automation, for the reason being that the latter two by
+default do not guarantee the success of a service. For example, in a CRM
+SoftServ platform, it is the user's responsibility to complete the services like
+to generate the leads, manage a refund, etc. The platform merely provides a set
+of functionalities that the users can interact with to complete that service.
+Whether the service can be completed or not depends on many factors. 
 
-The following examples possibly show the differences between LLM, agent, and
-ServSoft:
+Sequoia Capital suggests the LLM-based ServSoft system. This is because of the
+fact that, the capability of the LLM-based system is proven to accomplish
+complex tasks that used to be only accomplishable by human labors. However,
+solely an LLM does not guarantee the completion of a service. Considering the
+use cases that an LLM can avail, i.e., chat completion (well this is apparently
+not the same "completion" we are talking about here), summarization, sentiment
+analysis, etc., it is not something that is linked to a *service* in a given
+business context. Even an LLM-based agent does not necessarily guarantee the
+completion of a service. The agent itself still requires configuration of its
+tool usage, strategy of orchestration, etc., before it can really tackle the
+given service with a desirable performance. Actually an agent system is already
+close to a ServSoft system. The only difference is that, the ServSoft system is
+designed, pre-configured, and set up to be *automated*, *reliable*, and *robust*
+by nature for completing a specific service.
 
-* LLM: in this case, the completion is merely the chat with the LLM.
+The following example possibly show the differences between LLM, agent, and
+ServSoft. It depicts a scenario when a user visits a online retailer to purchase
+some products, and the user interacts with the retailer online platform to find
+the relevant products that he interested in.
+
+* LLM: in this case, the *completion* applies only to the chat with the LLM.
+  Without loss of generosity, the example below assumes an LLM with
+  multi-modality. 
 
 <html lang="en">
   <head>
@@ -129,14 +134,16 @@ sequenceDiagram
 </div>
 </html>
 
-* Agent: to simplify, let's consider the `ReAct` pattern. And the agent is
-  designed to recommend products given the user inputs. The `User` sends a
-  *request* to the `Agent` for a product recommendation based on the input
-  prompt and the other information (e.g., the image of the product). The agent
-  parses the input request to a set of prompts to the underlying `LLM` for
-  generating the output; the output is then used for the other component of the
-  system, e.g., a recommender engineer, for generating the candidate products
-  that `User` looks for. 
+* Agent: the agent is designed to recommend products given the user inputs. The
+  `User` sends a *request* to the `Agent` for a product recommendation based on
+  the input prompt and the other information (e.g., the image of the product).
+  The agent parses the input request to a set of prompts to the underlying `LLM`
+  for generating the output; the output is then used for the other component of
+  the system, e.g., a recommender engineer, for generating the candidate
+  products that `User` looks for. Compared to the LLM-based scenario, the
+  agent-based system is close to *completing* the service that finds the
+  relevant products to the user, except for the fact that the user has not
+  indicated an acceptance of the *completion* or not. 
 
 <html lang="en">
    <head>
@@ -157,13 +164,16 @@ sequenceDiagram
 </div>
 </html>
 
-* ServSoft: the service based on the above agent system is defined
-  as a *product recommendation* system, that the business context is to maximize
-  the probability that the user will purchase the product from the service
-  provider, and the completion is measured by a successful conversion of the
-  purchase. The system does not always lead to a completion with the desirable
-  outcome, in this case, it is an `abortion`. But overall, the count of
-  completion shall be within expectation in a well-defined ServSoft
+* ServSoft: the service based on the above agent system is defined as a *product
+  recommendation* system, that the business context is to maximize the
+  probability that the user will purchase the product from the service provider,
+  and the completion is measured by a successful conversion of the purchase.
+  Hence, to the user, a *completion* of service is the end-to-end experience
+  that finds him the relevant products and gets him purchase the recommended
+  ones. **NOTE**, the system does not always lead to a completion with the
+  desirable outcome, i.e., *purchase* in this case; it can also be an `abortion`
+  when user eventually does not buy the recommended product. But overall, the
+  count of completion shall be within expectation in a well-defined ServSoft
   system. 
 
 <html lang="en">
@@ -200,13 +210,13 @@ functionalities essentially generate the outputs from the probabilistic LLM
 based on the observations on its training data. On the other hand, the functions
 like tooling may not be probabilistic. Due to this, LLM is used primarily in
 handling unstructured data like text, images, videos, etc.; recently,
-researchers demonstrated its capability on tabular data, too. In general, the
-LLM-based agent system is good at those problems that are *opaque* by nature
-such that, *the risk of making mistakes in the cascading decision-making process
-is minimized*. 
+researchers demonstrated [its capability on tabular
+data](https://arxiv.org/html/2402.17944v2), too. In general, the LLM-based agent
+system is good at those problems that are *opaque* by nature such that, *the
+risk of making mistakes in the cascading decision-making process is minimized*. 
 
 The duality of probabilism and determinism is crucial in the design of the
-ServSoft whose implementation is a **software**. Regardless of the
+ServSoft whose implementation is essentially a **software**. Regardless of the
 probabilistic nature of some of its components, when talking about its *data
 model*, *programmatic interface*, *execution flow*, etc., they are
 deterministic. For example, in a retail agent system, the LLM is asked to do an
@@ -220,15 +230,14 @@ with the outputs from the LLM, the system may redirect to the inventory
 management database to find the matches of the products together with their
 information. The products information may be used for the other operational
 activities like promotion information, logistics optimization, etc., before
-completing the service to the user. *The agent-based ServSoft
-system shall take an input with a probabilistic process, but it shall also need
-at least one or more deterministic outputs to streamline its workflow for
-consuming the delivery of the output - the workflow can be linear or non-linear,
-depending on the complexity of the service itself*. The aims of having the
-deterministic outputs are multi-fold, it ensures the robustness of the software
-system, it avails proper governance, it allows calibration, and which to achieve
-among all of the benefits depends on the objective of the ServSoft
-system. 
+completing the service to the user. *The agent-based ServSoft system shall take
+an input with a probabilistic process, but it shall also need at least one or
+more deterministic outputs to streamline its workflow for consuming the delivery
+of the output - the workflow can be linear or non-linear, depending on the
+complexity of the service itself*. The aims of having the deterministic outputs
+are multi-fold, it ensures the robustness of the software system, it avails
+proper governance, it allows calibration, and which to achieve among all of the
+benefits depends on the objective of the ServSoft system. 
 
 **NOTE** other than the determinism of the workflow, the software implementation
 of the service for some components shall be deterministic. Examples of such
@@ -240,31 +249,30 @@ deterministic](https://en.wikipedia.org/wiki/Turing_machine).
 
 ### Ubiquity favors vertical adaptivity
 
-The ServSoft system shall be ubiquitous in its interface. In fact,
-it is quite hard to find an alternative to LLM for the ServSoft
-system implementation, partially because *LLM can be a generalist as well as a
-specialist*. For example, ChatGPT is a generalist, because it can help users
-plan trip itineraries, generate code snippets, etc.; it can help users find
-answers to domain-specific questions like *what is the definition of RoRWA in
-corporate finance?* or *how is a ring oscillator used in testing the digital
-chip performance?*. Therefore, the agent system can be a vertical or horizontal
-one, depending on the target objective. 
+The ServSoft system shall be ubiquitous in its interface. In fact, it is quite
+hard to find an alternative to LLM for the ServSoft system implementation,
+partially because *LLM can be a generalist as well as a specialist*. For
+example, ChatGPT is a generalist, because it can help users plan trip
+itineraries, generate code snippets, etc.; it can help users find answers to
+domain-specific questions like *what is the definition of RoRWA in corporate
+finance?* or *how is a ring oscillator used in testing the digital chip
+performance?*. Therefore, the agent system can be a vertical or horizontal one,
+depending on the target objective. 
 
-ServSoft is mostly useful when it is handling a **vertical**
-problem. Thinking about the definition in [the
-beginning](#origin-and-progression), a *service* is a contextualized set of tasks
-that achieve a business, societal, or environmental goal. And therefore, a vertical
-system is preferred for the benefits of *domain-specific optimization, resource
-efficiency, scalability and modularity, clear responsibility, usability, and
-ease of adoption.* To make the ServSoft system useful, the
-domain-specific system design should be considered rigorously. In the earlier
-blog post, *ubiquitous language for domain-driven development*, I tried to argue
-that, ubiquity of the domain-specific system is crucial. And the ubiquitous
-language is the key to achieving the ubiquity. This is because the ubiquitous
-language is the language that has *expressivity of domain-specific traits,
-universal adaptivity across domains, understandability by people from
-different domain backgrounds, and clarity in defining technical implementation
-details.* 
+ServSoft is mostly useful when it is handling a **vertical** problem. Thinking
+about the definition in [the beginning](#origin-and-progression), a *service* is
+a contextualized set of tasks that achieve a business, societal, or
+environmental goal. And therefore, a vertical system is preferred for the
+benefits of *domain-specific optimization, resource efficiency, scalability and
+modularity, clear responsibility, usability, and ease of adoption.* To make the
+ServSoft system useful, the domain-specific system design should be considered
+rigorously. In the earlier blog post, *ubiquitous language for domain-driven
+development*, I tried to argue that, ubiquity of the domain-specific system is
+crucial. And the ubiquitous language is the key to achieving the ubiquity. This
+is because the ubiquitous language is the language that has *expressivity of
+domain-specific traits, universal adaptivity across domains, understandability
+by people from different domain backgrounds, and clarity in defining technical
+implementation details.* 
 
 The following is a retail service process example that involves the
 domain-specific knowledge like sales strategy, inventory management, logistics
@@ -311,7 +319,7 @@ one that is provided by the user,
   product retrieval model, APIs, etc. **This can be achieved by an LLM-based
   model in combination with the pre-defined data model (`user` data, `product`
   data, `product category` data, etc.) and API specifications.**
-* for the *retail merchant*, the inputs define the product catalog, basic
+* for the *retailer*, the inputs define the product catalog, basic
   information, supply-chain-related information, inventory status, etc. **This
   needs to be implemented by using LLM model, retrieval-augmented-generation
   component, prompting techniques (zero-shot, few-shot, chain-of-thought, etc.),
@@ -321,14 +329,14 @@ The ubiquitous language is the key to connect the different stakeholders. And in
 this case, it is the human language, but combined with the techniques that
 augment the expressivity for domain-specific concepts, and holistically, the
 service of the system is made completable. It is worth noting that, not all of
-the above is processed in a real-time manner in the servie-as-a-software system.
-They co-exist at different phases of the same system, and are harnessed by using
+the above is processed in a real-time manner in the ServSoft system. They
+co-exist at different phases of the same system, and are harnessed by using
 different approaches. 
 
 ### Data-centrism
 
-Data still matters in the Service-of-a-Software. A high-performing LLM-based
-system is definitely built on top of quality and scope of the data. In the first
+Data **still matters** in the ServSoft system. A high-performing LLM-based
+system is definitely built on top of quality and well-scoped data. In the first
 place, unlike traditional rule-based systems, LLMs learn patterns, context, and
 semantics from vast datasets, making their capabilities directly proportional to
 the richness and representativeness of the data. A data-centric approach ensures
@@ -342,8 +350,8 @@ etc., together with the augmentation technique like RAG, improves the
 expressiveness of the vertical LLM. Thus the data used for building the LLM is
 crucial to the ServSoft system.
 
-As for the other components in the Service-as-a-software system, data plays the
-critical role as in the conventional data applications. More can be found in the
+As for the other components in the ServSoft system, data plays the critical role
+as in the conventional data applications. More can be found in the
 [references](#references), particularly the book of [Designing Data-Intensive
 Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable
 Systems](https://books.google.com.sg/books/about/Designing_Data_intensive_Applications.html?id=BM7woQEACAAJ&redir_esc=y).
@@ -382,26 +390,25 @@ On the other hand, the engineering implementation of the agent system has been
 well studied by the researchers, engineers, and practitioners. The corresponding
 concepts that have been widely adopted in the software development and machine
 learning engineering were transferred to the development of the agent, too,
-which serves as the foundational layer of the Service-as-a-software system. The
+which serves as the foundational layer of the ServSoft system. The
 engineering-level considerations try to tackle the problems such as memory,
 storage, orchestration, etc. More readings about this can be found in
 [references](#references).
 
 ## Conclusions
 
-In summary, the transition from "SoftServ" to
-"ServSoft" represents a significant shift in how services are
-delivered and consumed. While SoftServ focuses on providing
-functional endpoints for users to achieve tasks, ServSoft
+In summary, the transition from "SoftServ" to "ServSoft" represents a
+significant shift in how services are delivered and consumed. While SoftServ
+focuses on providing functional endpoints for users to achieve tasks, ServSoft
 emphasizes the completion of holistic tasks through intelligent agents. These
 agents leverage advanced AI techniques, such as LLMs, to autonomously perceive,
 plan, and act within their environments. The design patterns, such as ReAct,
 enable agents to reason and adapt, closely mimicking human problem-solving
 processes. The principles of completeness, the duality of probabilism and
 determinism, and vertical adaptivity are crucial for building robust and
-efficient ServSoft systems. By integrating domain-specific
-knowledge and ubiquitous language, these systems can achieve high performance
-and reliability, making them valuable for various real-world applications.
+efficient ServSoft systems. By integrating domain-specific knowledge and
+ubiquitous language, these systems can achieve high performance and reliability,
+making them valuable for various real-world applications.
 
 ## References
 
@@ -441,7 +448,7 @@ Ubiquitous Computing with Large Language Models: A Tutorial, 2023
 
 Plain citation as
 
-`Zhang, Le. Uncover the subtle intricacies of Service-as-a-Software. Thinkloud. https://yueguoguo.github.io/posts/2024-11-31-Service-as-a-Software`
+Zhang, Le. Uncover the subtle intricacies of Service-as-a-Software. Thinkloud. https://yueguoguo.github.io/posts/2024-11-31-Service-as-a-Software
 
 or Bibliography-like citation
 ```
