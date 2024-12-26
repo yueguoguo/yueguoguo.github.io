@@ -1,9 +1,9 @@
 ---
 layout:     post
-title:      Paradigm Shift From "Software-as-a-Service" to "Service-as-a-Software"
+title:      Uncover the subtle intricacies of Service-as-a-Software
 date:       2024-11-31 00:00:00
-summary:    How service is revolutionized by software
-categories: agentic system, artificial intelligence, software engineering
+summary:    How service is revolutionized by AI software
+categories: large language model, agent system, artificial intelligence, software engineering
 ---
 
 <blockquote>
@@ -205,26 +205,18 @@ The duality of probabilism and determinism is crucial in the design of the
 Service-as-a-Software whose implementation is a **software**. Regardless of the
 probabilistic nature of some of its components, when talking about its *data
 model*, *programmatic interface*, *execution flow*, etc., they are
-deterministic. 
-
-Let's consider the following example:
-
-> In a retail agent system, the LLM is asked to do an analysis on a given input
-> image and then describe what the product is possibly depicted in the image.
-> Let's say we follow a *ReAct* pattern to execute this workflow:
-
-* The LLM component in the agent will firstly *observe* the content of the image
-  with some prompt as inputs, too. This step is **probabilistic**, because the
-  LLM may have some probabilities to give a wrong output, i.e., *hallucination*. 
-* Without loss of generality, assuming the second step is to find similar
-  products and then recommend to the users, and the objective is *to maximize
-  the chance of a purchase*. Underlying the hood, the agent will finish this
-  task by calling a *predictive model* that predicts the likelihood of the
-  purchase of the user with the structured information obtained from the image.
-  The execution of this step is deterministic, regardless of the accuracy of the
-  prediction model. 
-
-From the practitioner's point of view, *the agent-based Service-as-a-Software
+deterministic. For example, in a retail agent system, the LLM is asked to do an
+analysis on a given input image and then describe what the product is possibly
+depicted in the image. The LLM component in the agent will firstly *observe* the
+content of the image with some prompt as inputs, too. This step is
+**probabilistic**, because the LLM may have some probabilities to give a wrong
+output, i.e., *hallucination*. The follow-up steps that trigger the
+corresponding retail specific operations, however, will be **deterministic**:
+with the outputs from the LLM, the system may redirect to the inventory
+management database to find the matches of the products together with their
+information. The products information may be used for the other operational
+activities like promotion information, logistics optimization, etc., before
+completing the service to the user. *The agent-based Service-as-a-Software
 system shall take an input with a probabilistic process, but it shall also need
 at least one or more deterministic outputs to streamline its workflow for
 consuming the delivery of the output - the workflow can be linear or non-linear,
@@ -233,6 +225,14 @@ deterministic outputs are multi-fold, it ensures the robustness of the software
 system, it avails proper governance, it allows calibration, and which to achieve
 among all of the benefits depends on the objective of the Service-as-a-Software
 system. 
+
+**NOTE** other than the determinism of the workflow, the software implementation
+of the service for some components shall be deterministic. Examples of such
+include the data model that are used for representing the immutable and
+repeatable information, the API endpoints with the schema definition for the
+parameters, payloads, and response, etc., and this reflects the nature of the
+modern software system to be [Turing
+deterministic](https://en.wikipedia.org/wiki/Turing_machine). 
 
 ### Ubiquity favors vertical adaptivity
 
@@ -300,7 +300,7 @@ one that is provided by the user,
   simply implemented by using a pre-trained LLM model with multi-modal
   capability.** 
 * for the *developer*, the inputs is the prompts that define and implement the
-  service-specific data model, data tranformation pipeline, similarity-based
+  service-specific data model, data transformation pipeline, similarity-based
   product retrieval model, APIs, etc. **This can be achieved by an LLM-based
   model in combination with the pre-defined data model (`user` data, `product`
   data, `product category` data, etc.) and API specifications.**
@@ -313,10 +313,33 @@ one that is provided by the user,
 The ubiquitous language is the key to connect the different stakeholders. And in
 this case, it is the human language, but combined with the techniques that
 augment the expressivity for domain-specific concepts, and holistically, the
-service of the system is made completeable. It is worth noting that, not all of
+service of the system is made completable. It is worth noting that, not all of
 the above is processed in a real-time manner in the servie-as-a-software system.
 They co-exist at different phases of the same system, and are harnessed by using
 different approaches. 
+
+### Data-centrism
+
+Data still matters in the Service-of-a-Software. A high-performing LLM-based
+system is definitely built on top of quality and scope of the data. In the first
+place, unlike traditional rule-based systems, LLMs learn patterns, context, and
+semantics from vast datasets, making their capabilities directly proportional to
+the richness and representativeness of the data. A data-centric approach ensures
+that the training data is diverse, accurate, and aligned with the intended
+applications, reducing biases and enhancing generalization. Moreover, continuous
+refinement of data—such as curating domain-specific corpora or addressing
+gaps—enables LLMs to stay relevant and effective in evolving contexts. Secondly,
+for the vertical system, where the domain knowledge is crucial, the auxiliary
+data components like similarity search base, knowledge base, knowledge graph,
+etc., together with the augmentation technique like RAG, improves the
+expressiveness of the vertical LLM. Thus the data used for building the LLM is
+crucial to the Service-as-a-Software system.
+
+As for the other components in the Service-as-a-software system, data plays the
+critical role as in the conventional data applications. More can be found in the
+[references](#references), particularly the book of [Designing Data-Intensive
+Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable
+Systems](https://books.google.com.sg/books/about/Designing_Data_intensive_Applications.html?id=BM7woQEACAAJ&redir_esc=y).
 
 ## Pattern
 
@@ -338,7 +361,7 @@ on the observations and *act* correspondingly to accomplish the given tasks -
 the action space of an agent is augmented by the "reasoning" capability of it by
 using LLM. 
 
-![Agent stack](https://yueguoguo.github.io/images/agent_stack.jpg)<font size="1">The
+![Agent stack](https://yueguoguo.github.io/images/agent_stack.png)<font size="1">The
 diagram shows the agent stack that is categorized based on agent
 hosting/serving, agent frameworks, and LLM models & storage.</font> 
 
@@ -441,18 +464,19 @@ and reliability, making them valuable for various real-world applications.
   Multi-Agent Systems, AAAI, 2008
 - Haoyi Xiong *et al*, Natural Language based Context Modeling and Reasoning for
 Ubiquitous Computing with Large Language Models: A Tutorial, 2023
+- Martin Kleppmann, Designing Data-Intensive Applications: The Big Ideas Behind
+  Reliable, Scalable, and Maintainable Systems.
 
 ## Citation
 
 Plain citation as
 
-> Zhang, Le. From Software-as-a-Service to Service-as-a-sofware.
-> Thinkloud. https://yueguoguo.github.io/posts/2024-11-31-Service-as-a-Software
+`Zhang, Le. Uncover the subtle intricacies of Service-as-a-Software. Thinkloud. https://yueguoguo.github.io/posts/2024-11-31-Service-as-a-Software`
 
 or Bibliography-like citation
 ```
 @article{yueguoguo2024saas,
-  title   = "LLM, Agent, and "Service As A Software",
+  title   = "Uncover the subtle intricacies of Service-as-a-Software",
   author  = "Zhang, Le",
   journal = "yueguoguo.github.io",
   year    = "2024",
