@@ -366,9 +366,10 @@ as in the conventional data applications. More can be found in the
 Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable
 Systems](https://books.google.com.sg/books/about/Designing_Data_intensive_Applications.html?id=BM7woQEACAAJ&redir_esc=y).
 
-## Pattern
+### Choice of pattern 
 
-Now that **agents** are the core of the ServSoft system. Based on
+Now that **agents** are the core of the ServSoft system, implementing a quality ServSoft system relies heavily on the choice of design patterns of the agents. 
+Based on
 the definition by Russell and Norvig in [their
 book](http://aima.cs.berkeley.edu/), an intelligent agent is *an agent that
 perceives its environment, takes actions autonomously in order to achieve goals,
