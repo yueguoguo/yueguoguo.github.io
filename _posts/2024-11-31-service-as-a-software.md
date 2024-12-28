@@ -420,36 +420,36 @@ making them valuable for various real-world applications.
 
 ## References
 
-- Software & Information Industry Association, "Software as a Service: Strategic
+1.Software & Information Industry Association, "Software as a Service: Strategic
   Backgrounder February 2001".
-- Sonya Huang, Pat Grady, and o1, "Generative AI’s Act o1 - The agentic
+1.Sonya Huang, Pat Grady, and o1, "Generative AI’s Act o1 - The agentic
   reasoning era begins",
   [url](https://www.sequoiacap.com/article/generative-ais-act-o1/).
-- Shukang Yin, *et al*, A Survey on Multimodal Large Language Models, 2023.
-- Letta, The AI agents stack, 2024.
-- Jiahao Tian, *et al*, MMREC: LLM Based Multi-Modal Recommender System, 2024.
-- Jason Wei, *et al*, Chain-of-Thought Prompting Elicits Reasoning in Large
+1.Shukang Yin, *et al*, A Survey on Multimodal Large Language Models, 2023.
+1.Letta, The AI agents stack, 2024.
+1.Jiahao Tian, *et al*, MMREC: LLM Based Multi-Modal Recommender System, 2024.
+1.Jason Wei, *et al*, Chain-of-Thought Prompting Elicits Reasoning in Large
   Language Models. IEEE TPAMI, 2022.
-- Shunyu Yao, *et al*, `ReAct`: Synergizing Reasoning and Acting in Language
+1.Shunyu Yao, *et al*, `ReAct`: Synergizing Reasoning and Acting in Language
   Models. 2022.
-- Binfeng Xu, *et al*, `ReWOO`: Decoupling Reasoning from Observations for
+1.Binfeng Xu, *et al*, `ReWOO`: Decoupling Reasoning from Observations for
   Efficient Augmented Language Models. 2023.
-- Noah Shinn, *et al*, Reflexion: Language Agents with Verbal Reinforcement
+1.Noah Shinn, *et al*, Reflexion: Language Agents with Verbal Reinforcement
   Learning. 2023.
-- Lei Wang, *et al*, Plan-and-Solve Prompting: Improving Zero-Shot
+1.Lei Wang, *et al*, Plan-and-Solve Prompting: Improving Zero-Shot
   Chain-of-Thought Reasoning by Large Language Models. 2023.
-- Sehoon Kim *et al*, An LLM Compiler for Parallel Function Calling.
-- Anthropic, Building effective agents, 2023.
-- Akshay Paruchuri, *et al*, What Are the Odds? Language Models Are Capable of
+1.Sehoon Kim *et al*, An LLM Compiler for Parallel Function Calling.
+1.Anthropic, Building effective agents, 2023.
+1.Akshay Paruchuri, *et al*, What Are the Odds? Language Models Are Capable of
   Probabilistic Reasoning, EMNLP, 2024
-- Aliakbar Nafar, *et al*, Probabilistic Reasoning in Generative Large Language
+1.Aliakbar Nafar, *et al*, Probabilistic Reasoning in Generative Large Language
   Models, 2024
-- Le Zhang, Ubiquitous language for domain-driven development, Thinkloud, 2023.
-- Steven Okamoto, *et al*, The Impact of Vertical Specialization on Hierarchical
+1.Le Zhang, Ubiquitous language for domain-driven development, Thinkloud, 2023.
+1.Steven Okamoto, *et al*, The Impact of Vertical Specialization on Hierarchical
   Multi-Agent Systems, AAAI, 2008
-- Haoyi Xiong *et al*, Natural Language based Context Modeling and Reasoning for
-Ubiquitous Computing with Large Language Models: A Tutorial, 2023
-- Martin Kleppmann, Designing Data-Intensive Applications: The Big Ideas Behind
+1.Haoyi Xiong *et al*, Natural Language based Context Modeling and Reasoning for
+  Ubiquitous Computing with Large Language Models: A Tutorial, 2023
+1.Martin Kleppmann, Designing Data-Intensive Applications: The Big Ideas Behind
   Reliable, Scalable, and Maintainable Systems.
 
 ## Citation
