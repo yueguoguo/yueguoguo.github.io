@@ -192,8 +192,10 @@ sequenceDiagram
     autonumber
     User->>Service: Buy a gift on the image for kids...
     Service->>Agent: Trigger an agent process
-    Note over Service,Agent: Orchestrate agent process<br/>Parse user request to prompts. 
-    Agent-->User: Return products for kids.
+    Agent-->>Agent: Get product information.
+    Note over Agent: Use tool to find products as required.
+    Agent-->>Agent: Search similar products.
+    Agent-->>User: Return products for kids.
     alt is purchase
         User->>Service: COMPLETION
     else is no purchase
@@ -295,13 +297,13 @@ sequenceDiagram
     User->>Service: Buy dining sets to supply for restaurant.
     Note over User,Service: Multi-agent process
     Service->>Agents: Search for similar products.
-    par Service to Agents
+    par parallel agent processes
       Service->>Agents: Analyze sales strategy.
-    and Service to Agents
+    and parallel agent processes
       Service->>Agents: Understand inventory status.
     end
     Service->>Agents: Optimize logistics plan.
-    Service-->User: Return detailed sales information.
+    Agents-->>User: Return detailed sales information.
     alt is purchase
         User->>Service: COMPLETION
     else is no purchase
