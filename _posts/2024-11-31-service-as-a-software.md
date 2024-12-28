@@ -96,20 +96,22 @@ to generate the leads, manage a refund, etc. The platform merely provides a set
 of functionalities that the users can interact with to complete that service.
 Whether the service can be completed or not depends on many factors. 
 
-Sequoia Capital suggests the LLM-based ServSoft system. This is because of the
-fact that, the capability of the LLM-based system is proven to accomplish
-complex tasks that used to be only accomplishable by human labors. However,
-solely an LLM does not guarantee the completion of a service. Considering the
-use cases that an LLM can avail, i.e., chat completion (well this is apparently
-not the same "completion" we are talking about here), summarization, sentiment
-analysis, etc., it is not something that is linked to a *service* in a given
-business context. Even an LLM-based agent does not necessarily guarantee the
-completion of a service. The agent itself still requires configuration of its
-tool usage, strategy of orchestration, etc., before it can really tackle the
-given service with a desirable performance. Actually an agent system is already
-close to a ServSoft system. The only difference is that, the ServSoft system is
-designed, pre-configured, and set up to be *automated*, *reliable*, and *robust*
-by nature for completing a specific service.
+Sequoia Capital suggests a possible ServSoft system based on generative AI
+technologies. A ServSoft does not have to be implemented by GenAI though. LLM is
+the most viable choice for the GenAI module in a ServSoft system. This is
+because the capability of the LLM-based system is proven to accomplish complex
+tasks that used to be only accomplishable by human labors. However, solely an
+LLM does not guarantee the completion of a service. Considering the use cases
+that an LLM can avail, i.e., chat completion (well this is apparently not the
+same "completion" we are talking about here), summarization, sentiment analysis,
+etc., it is not something that is linked to a *service* in a given business
+context. Even an LLM-based agent does not necessarily guarantee the completion
+of a service. The agent itself still requires configuration of its tool usage,
+strategy of orchestration, etc., before it can really tackle the given service
+with a desirable performance. Actually an agent system is already close to a
+ServSoft system. The only difference is that, the ServSoft system is designed,
+pre-configured, and set up to be *automated*, *reliable*, and *robust* by nature
+for completing a specific service.
 
 The following example possibly show the differences between LLM, agent, and
 ServSoft. It depicts a scenario when a user visits a online retailer to purchase
@@ -128,6 +130,7 @@ the relevant products that he interested in.
 <div class="mermaid">
 sequenceDiagram
     User->>LLM: Find product information on the image.
+    Note over User,LLM: User provides prompt inputs.
     LLM-->LLM: Recognize the product on the image. 
     LLM-->User: Product name and information.
     User->>LLM: COMPLETION
@@ -278,7 +281,8 @@ The following is a retail service process example that involves the
 domain-specific knowledge like sales strategy, inventory management, logistics
 optimization, etc. The service system involves [multiple
 agents](https://en.wikipedia.org/wiki/Multi-agent_system) to collaboratively
-finish the given task. 
+finish the given task. **NOTE** more than one agents may co-exist in a ServSoft
+system, and an *orchestrator* facilitates the operations of them. 
 
 <html lang="en">
    <head>
@@ -289,10 +293,13 @@ finish the given task.
 sequenceDiagram
     User->>Service: Buy dining sets to supply for restaurant.
     Note over User,Service: Multi-agent process
-    Service-->Service: Agent1 - Search for similar products.
-    Service-->Service: Agent2 - Analyze sales strategy.
-    Service-->Service: Agent3 - Understand inventory status.
-    Service-->Service: Agent4 - Optimize logistics plan.
+    Service->>Agents: Search for similar products.
+    par Service to Agents
+      Service->>Service: Analyze sales strategy.
+    and Service to Agents
+      Service->>Service: Understand inventory status.
+    end
+    Service->>Agents: Optimize logistics plan.
     Service-->User: Return detailed sales information.
     alt is purchase
         User->>Service: COMPLETION
