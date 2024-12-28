@@ -178,8 +178,8 @@ sequenceDiagram
   that finds him the relevant products and gets him purchase the recommended
   ones. **NOTE**, the system does not always lead to a completion with the
   desirable outcome, i.e., *purchase* in this case; it can also be an `abortion`
-  when user eventually does not buy the recommended product. But overall, the
-  count of completion shall be within expectation in a well-defined ServSoft
+  when user eventually does not purchase the recommended product. But overall,
+  the count of completion shall be within expectation in a well-defined ServSoft
   system. 
 
 <html lang="en">
