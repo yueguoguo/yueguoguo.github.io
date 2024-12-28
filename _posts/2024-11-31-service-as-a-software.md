@@ -131,8 +131,8 @@ the relevant products that he interested in.
 sequenceDiagram
     User->>LLM: Find product information on the image.
     Note over User,LLM: User provides prompt inputs.
-    LLM-->LLM: Recognize the product on the image. 
-    LLM-->User: Get product information.
+    LLM-->>LLM: Recognize the product on the image. 
+    LLM-->>User: Get product information.
     User->>LLM: COMPLETION
 </div>
 </html>
@@ -160,10 +160,10 @@ sequenceDiagram
 sequenceDiagram
     User->>Agent: Buy a gift on the image for kids...
     Note over User,Agent: Parse user request to prompts.
-    Agent-->Agent: Get product information.
+    Agent-->>Agent: Get product information.
     Note over Agent: Use tool to find products as required.
-    Agent-->Agent: Search similar products.
-    Agent-->User: Return products for kids.
+    Agent-->>Agent: Search similar products.
+    Agent-->>User: Return products for kids.
     User->>Agent: COMPLETION
 </div>
 </html>
@@ -188,9 +188,8 @@ sequenceDiagram
 <div class="mermaid">
 sequenceDiagram
     User->>Service: Buy a gift on the image for kids...
-    Note over User,Service: Trigger agent process.
-    Service->>Agent: Buy a gift on the image for kids...
-    Note over Service,Agent: Parse user request to agent process.
+    Service->>Agent: Trigger an agent process
+    Note over Service,Agent: Orchestrate agent process</br>Parse user request to prompts. 
     Agent-->User: Return products for kids.
     alt is purchase
         User->>Service: COMPLETION
@@ -278,7 +277,9 @@ domain-specific knowledge like sales strategy, inventory management, logistics
 optimization, etc. The service system involves [multiple
 agents](https://en.wikipedia.org/wiki/Multi-agent_system) to collaboratively
 finish the given task. **NOTE** more than one agents may co-exist in a ServSoft
-system, and an *orchestrator* facilitates the operations of them. 
+system, and an *orchestrator* facilitates the operations of them. Some agent
+process can be processed in parallel, depending on whether there is any reliance
+or not. 
 
 <html lang="en">
    <head>
@@ -291,9 +292,9 @@ sequenceDiagram
     Note over User,Service: Multi-agent process
     Service->>Agents: Search for similar products.
     par Service to Agents
-      Service->>Service: Analyze sales strategy.
+      Service->>Agents: Analyze sales strategy.
     and Service to Agents
-      Service->>Service: Understand inventory status.
+      Service->>Agents: Understand inventory status.
     end
     Service->>Agents: Optimize logistics plan.
     Service-->User: Return detailed sales information.
