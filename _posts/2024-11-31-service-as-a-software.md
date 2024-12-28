@@ -132,7 +132,7 @@ sequenceDiagram
     User->>LLM: Find product information on the image.
     Note over User,LLM: User provides prompt inputs.
     LLM-->LLM: Recognize the product on the image. 
-    LLM-->User: Product name and information.
+    LLM-->User: Get product information.
     User->>LLM: COMPLETION
 </div>
 </html>
@@ -148,6 +148,9 @@ sequenceDiagram
   relevant products to the user, except for the fact that the user has not
   indicated an acceptance of the *completion* or not. 
 
+  To simplify the illustration, the prompt-LLM sequences are merged into the
+  agentic reasoning process where the product information is found. 
+
 <html lang="en">
    <head>
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js"></script>
@@ -157,12 +160,10 @@ sequenceDiagram
 sequenceDiagram
     User->>Agent: Buy a gift on the image for kids...
     Note over User,Agent: Parse user request to prompts.
-    Agent->>LLM: Find product information on the image.
-    Agent->>LLM: Want to buy that product for kids.
-    LLM-->LLM: Recognize the product on the image. 
-    LLM-->Agent: Product name and information.
-    Agent-->Agent: Search for similar products.
-    Agent-->User: Return product information and the similar ones.
+    Agent-->Agent: Get product information.
+    Note over Agent: Use tool to find products as required.
+    Agent-->Agent: Search similar products.
+    Agent-->User: Return products for kids.
     User->>Agent: COMPLETION
 </div>
 </html>
@@ -189,13 +190,8 @@ sequenceDiagram
     User->>Service: Buy a gift on the image for kids...
     Note over User,Service: Trigger agent process.
     Service->>Agent: Buy a gift on the image for kids...
-    Note over Service,Agent: Parse user request to prompts.
-    Agent->>LLM: Find product information on the image.
-    Agent->>LLM: Want to buy that product for kids.
-    LLM-->LLM: Recognize the product on the image. 
-    LLM-->Agent: Product name and information.
-    Agent-->Agent: Search for similar products.
-    Agent-->Service: Return product information and the similar ones.
+    Note over Service,Agent: Parse user request to agent process.
+    Agent-->User: Return products for kids.
     alt is purchase
         User->>Service: COMPLETION
     else is no purchase
