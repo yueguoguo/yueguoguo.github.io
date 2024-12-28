@@ -124,11 +124,12 @@ the relevant products that he interested in.
 
 <html lang="en">
   <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.0.0/mermaid.min.js"></script>
   </head>
 	 
 <div class="mermaid">
 sequenceDiagram
+    autonumber
     User->>LLM: Find product information on the image.
     Note over User,LLM: User provides prompt inputs.
     LLM-->>LLM: Recognize the product on the image. 
@@ -153,11 +154,12 @@ sequenceDiagram
 
 <html lang="en">
    <head>
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.0.0/mermaid.min.js"></script>
     </head>
 	 
 <div class="mermaid">
 sequenceDiagram
+    autonumber
     User->>Agent: Buy a gift on the image for kids...
     Note over User,Agent: Parse user request to prompts.
     Agent-->>Agent: Get product information.
@@ -182,14 +184,15 @@ sequenceDiagram
 
 <html lang="en">
    <head>
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.0.0/mermaid.min.js"></script>
     </head>
 	 
 <div class="mermaid">
 sequenceDiagram
+    autonumber
     User->>Service: Buy a gift on the image for kids...
     Service->>Agent: Trigger an agent process
-    Note over Service,Agent: Orchestrate agent process</br>Parse user request to prompts. 
+    Note over Service,Agent: Orchestrate agent process<br/>Parse user request to prompts. 
     Agent-->User: Return products for kids.
     alt is purchase
         User->>Service: COMPLETION
@@ -283,11 +286,12 @@ or not.
 
 <html lang="en">
    <head>
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.0.0/mermaid.min.js"></script>
     </head>
 	 
 <div class="mermaid">
 sequenceDiagram
+    autonumber
     User->>Service: Buy dining sets to supply for restaurant.
     Note over User,Service: Multi-agent process
     Service->>Agents: Search for similar products.
