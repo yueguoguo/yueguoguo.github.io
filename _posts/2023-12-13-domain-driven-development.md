@@ -3,7 +3,6 @@ layout:     post
 title:      Ubiquitous language for domain-driven development
 date:       2023-12-13 16:43:29
 summary:    Productionizing domain-specific and data-centric applications with efficiency
-categories: domain-driven development, software design, design pattern, artificial intelligence
 ---
 
 <blockquote>
@@ -369,3 +368,21 @@ whole process can be made much simpler than before.
 1.  Felipe de Freitas Batista, Develop the Ubiquitous Language, Domain Driven
     Design, April 2019. 
 1.  Ryan Zheng, Prompt Engineering — MetaPrompting, Sep 2023.
+
+## Citation
+
+Plain citation as
+
+Zhang, Le. Ubiquitous language for domain-driven development. Thinkloud. https://yueguoguo.github.io/2023/12/13/domain-driven-development/, 2024.
+
+or Bibliography-like citation
+```
+@article{yueguoguo2024ddd,
+  title   = "Ubiquitous language for domain-driven development",
+  author  = "Zhang, Le",
+  journal = "yueguoguo.github.io",
+  year    = "2023",
+  month   = "Dec",
+  url     = "https://yueguoguo.github.io/2023/12/13/domain-driven-development/"
+}
+```

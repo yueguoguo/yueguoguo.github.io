@@ -444,6 +444,8 @@ making them valuable for various real-world applications.
   Probabilistic Reasoning, EMNLP, 2024
 1.Aliakbar Nafar, *et al*, Probabilistic Reasoning in Generative Large Language
   Models, 2024
+1. Dongsheng Li, *et al*, Recommender Systems: Frontiers and Practices, Springer
+   Nature, 2024. 
 1.Le Zhang, Ubiquitous language for domain-driven development, Thinkloud, 2023.
 1.Steven Okamoto, *et al*, The Impact of Vertical Specialization on Hierarchical
   Multi-Agent Systems, AAAI, 2008
@@ -456,7 +458,7 @@ making them valuable for various real-world applications.
 
 Plain citation as
 
-Zhang, Le. Uncover the subtle intricacies of Service-as-a-Software. Thinkloud. https://yueguoguo.github.io/posts/2024-11-31-Service-as-a-Software
+Zhang, Le. Uncover the subtle intricacies of Service-as-a-Software. Thinkloud. https://yueguoguo.github.io/2024/12/01/service-as-a-software/, 2024.
 
 or Bibliography-like citation
 ```

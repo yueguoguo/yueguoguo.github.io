@@ -3,7 +3,6 @@ layout:     post
 title:      Where does the energy go?
 date:       2024-03-10 16:43:29
 summary:    Understanding energy consumption of AI models
-categories: artificial intelligence, computer architecture, sustainability, energy efficiency
 ---
 
 <blockquote>
@@ -428,3 +427,21 @@ exacerbate the consequences of these problems.
 1.  MLA. Rabaey, Jan. Digital Integrated Circuits : a Design Perspective.
     Englewood Cliffs, N.J. :Prentice Hall, 1996.
 1.  Kimberley Mok, The Rise Of Small Language Model, The News Stack, 2024.
+
+## Citation
+
+Plain citation as
+
+Zhang, Le. Where does the energy go - Understanding energy consumption of AI models. Thinkloud. https://yueguoguo.github.io/2024/03/10/where-does-energy-go/, 2024.
+
+or Bibliography-like citation
+```
+@article{yueguoguo2024energy,
+  title   = "Where does the energy go - Understanding energy consumption of AI models",
+  author  = "Zhang, Le",
+  journal = "yueguoguo.github.io",
+  year    = "2024",
+  month   = "Mar",
+  url     = "https://yueguoguo.github.io/2024/03/10/where-does-energy-go/"
+}
+```
