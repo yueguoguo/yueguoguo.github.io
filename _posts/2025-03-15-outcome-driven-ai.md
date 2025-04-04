@@ -6,7 +6,7 @@ summary:    Build useful AI software
 ---
 
 <blockquote>
-  <p>It’s our last chance to save people on Earth - if I can find some way to transmit the quantum data I’ll find in there, they might still make it</p>
+  <p>It's our last chance to save people on Earth - if I can find some way to transmit the quantum data I'll find in there, they might still make it</p>
   <footer><cite title="Interstellar">from "Interstellar", said by TARS. The robot astronaut decided to risk itself to collect the quantum data from within the black hole, Gargantua.</cite></footer>
 </blockquote>
 
@@ -14,14 +14,14 @@ summary:    Build useful AI software
 
 I recently spoke with a friend who works outside the tech industry. Unlike those
 deeply immersed in AI advancements, he evaluates the technology based on its
-practical impact. From his perspective, today’s AI falls short of
-expectations—not because it isn’t useful, but because it doesn’t create the kind
+practical impact. From his perspective, today's AI falls short of
+expectations—not because it isn't useful, but because it doesn't create the kind
 of transformative "aha" moments often portrayed in science fiction. He once
-subscribed to OpenAI’s services, finding them helpful for tasks like searching
+subscribed to OpenAI's services, finding them helpful for tasks like searching
 and summarization. However, he ultimately canceled his subscription, as he still
 had to invest significant effort to extract real value. This raises a
 fundamental question: Is AI truly unhelpful? In reality, it does provide value,
-but what’s missing is its ability to drive a meaningful *outcome*—a result that
+but what's missing is its ability to drive a meaningful *outcome*—a result that
 fulfills a specific personal or business need.  
 
 Most current AI systems lack the capability to deliver tangible, goal-oriented
@@ -34,32 +34,41 @@ sufficient. However, if they urgently need to move, success is defined by
 actually securing a rental with AI's assistance. The same principle applies to
 businesses. In retail, AI should not only recommend products but also influence
 purchasing decisions, driving revenue. In manufacturing, AI should optimize
-production pipelines, enhancing efficiency and quality. Ultimately, AI’s value
+production pipelines, enhancing efficiency and quality. Ultimately, AI's value
 lies not just in providing insights but in facilitating real-world outcomes that
 align with user objectives.  
 
 What is then the right process to build outcome-driven AI?
 
-## How to
+## A high-level theoretical framework
 
-Let's firstly go back to a few original definitions of AI. Alan Turing and John
-McCarthy emphasizes more on the "intelligence" part when they talked about how
-an AI machine is similar to human being; Marvin Minsky started to embody the
-problem solving skills in AI. And, as the follow-up progression, AI that is
-capable of solving problems got defined as an "AI agent". The goal-oriented
-taxanomy for AI then became even clearer than before. As an intelligent agent,
-according to the definitions by Peter Norvig and Stuart Russel, AI is expected
-to proactively pursue goals, make decisions, and take actions, for achieving a
-hollistically optimal goal. In fact, the proliferation of large language model
-(LLM) and LLM-based AI system, together with the incorporation of reinforcement
-learning, kind of implements the agentic AI defined by Norvig and Russel.
-Technically, the agent-based system is capable of processing the request with
-the knowledge that is distilled into a LLM that has be pretrained and/or fine
-tuned on the specific dataset, and then leverage the vector-based database and
-distributed computing platform to then retrieve any further information as
-needed and perform the inference to produce the responses according to the
-request; this process is iterative and closed-loop such that the system can
-search and take actions that maximize the total reward treated as the outcome. 
+Let's go back to an earlier period...
+
+The original definitions of AI evolved as researchers sought to clarify the
+concept of machine intelligence. Alan Turing and John McCarthy focused
+on AI's resemblance to human intelligence—how a machine could think and act like
+a human. Marvin Minsky expanded this view by emphasizing AI's
+problem-solving capabilities. As AI progressed, the notion of an *AI agent*
+emerged, marking a shift toward goal-oriented intelligence. This concept became
+even more explicit with the work of Stuart Russell and Peter Norvig, who
+defined AI as an *intelligent agent*—a system that proactively pursues goals,
+makes decisions, and takes actions to achieve an optimally holistic outcome
+[[Russell & Norvig, 2020](https://aima.cs.berkeley.edu/)].  
+
+The rise of *large language models (LLMs)* and LLM-based AI systems, combined
+with *reinforcement learning*, has effectively implemented the agentic AI
+paradigm described by Russell and Norvig. In practice, such systems process user
+requests by leveraging knowledge distilled into an LLM pretrained and/or
+fine-tuned on domain-specific datasets. Additionally, they integrate
+*vector-based databases* and *distributed computing platforms* to retrieve
+further information when necessary and perform inference to generate responses.
+This process operates iteratively in a closed-loop manner, allowing the system
+to refine its search, take actions, and maximize total reward—where reward
+serves as a proxy for achieving the desired outcome. [[Sutton & Barto,
+2018](https://www.andrew.cmu.edu/course/10-703/textbook/BartoSutton.pdf)].  
+
+A typical LLM-based agentic system is depicted as below.
+
 
 <html lang="en">
    <head>
@@ -67,39 +76,158 @@ search and take actions that maximize the total reward treated as the outcome.
     </head>
 	 
 <div class="mermaid">
-sequenceDiagram
-    autonumber
-    User->>Service: Buy dining sets to supply for restaurant.
-    Note over User,Service: Multi-agent process
-    Service->>Agents: Search for similar products.
-    par parallel agent processes
-      Service->>Agents: Analyze sales strategy.
-    and parallel agent processes
-      Service->>Agents: Understand inventory status.
+graph TB
+    subgraph "LLM-based Agent Architecture"
+        LLM((LLM Core))
+        
+        subgraph Memory
+            VM[Vector Memory]
+            CM[Context Memory]
+        end
+        
+        subgraph Planning
+            GT[Goal Tracking]
+            PS[Planning Scheduler]
+        end
+        
+        subgraph Tools
+            API[API Tools]
+            CALC[Calculator]
+            DB[Database Access]
+        end
+        
+        subgraph Actions
+            EX[Executor]
+            VAL[Validator]
+            MON[Monitor]
+        end
+
+        %% Core LLM connections
+        LLM <--> VM
+        LLM <--> CM
+        LLM <--> GT
+        LLM <--> PS
+        LLM <--> API
+        LLM <--> CALC
+        LLM <--> DB
+        LLM <--> EX
+        LLM <--> VAL
+        LLM <--> MON
+
+        %% Component relationships
+        VM <--> CM
+        GT <--> PS
+        API <--> EX
+        VAL <--> MON
+
+        classDef core fill:#ff9999,stroke:#ff0000,stroke-width:2px
+        classDef memory fill:#99ff99,stroke:#009900
+        classDef planning fill:#9999ff,stroke:#0000ff
+        classDef tools fill:#ffff99,stroke:#999900
+        classDef actions fill:#ff99ff,stroke:#990099
+
+        class LLM core
+        class VM,CM memory
+        class GT,PS planning
+        class API,CALC,DB tools
+        class EX,VAL,MON actions
     end
-    Service->>Agents: Optimize logistics plan.
-    Agents-->>User: Return detailed sales information.
-    alt is purchase
-        User->>Service: COMPLETION
-    else is no purchase
-        User->>Service: ABORTION
-    end
+
 </div>
 </html>
 
-#### Definition of outcome
+In the diagram above, the LLM serves as the *core* of the system, where its
+distilled knowledge guides other components like "planning" and "action" in
+making decisions to achieve the overall goal. The agent leverages various tools
+to accomplish this. For long-term memory requirements, it utilizes the database
+component. However, the LLM requires clear definitions or instructions from the
+user to understand what to achieve. Even in a chat completion setup, the LLM can
+only provide insights based on its pre-trained model weights. While augmenting
+with auxiliary knowledge (such as through retrieval augmented generation)
+provides additional context, it doesn't fundamentally alter the decision-making
+process. The *planning* component of the agentic system integrates with goal
+settings, but this raises a critical question: how can we identify 
+meaningful goals for AI? 
 
-#### Quantifiable outcome
+## Define appropriate outcome
 
-#### Chaining the goals through hierarchies of the AI system
+An AI-driven outcome should be *quantifiable*, *measurable*, *achievable*, and *traceable*. It must be directly linked
+to completing tasks that add tangible value. For those deploying AI systems, clearly defining the desired outcome before
+implementation is crucial. However, crafting an outcome that meets all these criteria is often a complex task.
 
-#### Evaluation
+Consider the example of running a restaurant. The owner may wish to use AI to recommend dishes from the menu to
+customers. The objective of this AI recommender is to *sell dishes that customers are likely to enjoy*. In this case, a
+suitable quantifiable outcome is the total number of dishes sold based on AI recommendations. This metric is both
+quantifiable and measurable.
+
+However, tracing the contribution of AI to revenue growth can be more challenging. To properly attribute sales to AI,
+the entire ordering system must be digitally managed in a way that distinguishes orders influenced by AI recommendations
+from those driven by other sources such as advertising or word of mouth. With such a system in place, the restaurant
+owner can clearly assess AI's impact on sales.
+
+The most difficult aspect remains *achievability*. It's inherently difficult to guarantee that the AI agent will lead to
+a sales increase, as AI operates on probabilistic principles. Typically, this uncertainty is addressed using aggregated
+metrics—such as average growth over several months—which smooth out fluctuations and provide a more stable measure of
+performance.
+
+To map this restaurant use case to an agentic AI system, a possible implementation might include the following
+components:
+
+- *LLM Core*: This serves as the foundation for general knowledge—covering topics like cuisine, recipes, nutrition—and
+  the restaurant’s unique characteristics.
+
+- *Memory*: Stores historical observations, including customer inquiries, order records, feedback, and reviews.
+
+- *Planning Module*: Analyzes customer interactions to infer intent, and decides whether to make dish recommendations.
+  Its goal is to maximize restaurant profits through effective engagement. This component plays a central role in tying
+  AI actions to quantifiable and measurable outcomes. It maintains outcome records and optimizes decisions using
+  available tools.
+
+- *Tooling*: Provides the planning module with utilities needed for decision-making. These may include recommender
+  algorithms, queries to retrieve customer and menu data, or API calls for accessing additional task-related
+  information.
+
+While this example focuses on a restaurant scenario, the principles apply broadly. In *finance*, for instance, the
+outcome of an AI agent supporting wealth management may be defined as achieving a measurable return by leveraging
+technical indicators and fundamental analysis. In *manufacturing*, an AI agent’s outcome might be an observable
+improvement in product quality over a defined period.
+
+Ultimately, regardless of the industry, the desired AI outcome should be clearly articulated by product designers or
+business owners. A well-defined outcome enables the development of AI systems that are purposeful, focused, and capable
+of delivering meaningful impact.
+
+## Chaining the goals through hierarchies of the AI system
+
+One may ask a question: now I have defined the outcome of an AI system that I am going to implement, how should I
+evaluate whether I am doing the right thing during the development phase? It is apparently that the modular components
+of the AI agent have their own evaluation methods that work within the scope of their functionalities. And to link them
+together to make sure that they work towards the overall objective is the key success factor here. 
+
+Let's go back to the restaurant AI example above to understand how it works for each component. 
+
+### Memory
+
+The memory component is usually implemented as RDB, graph or similarity-based vector search. 
+
+* engineering metrics: latency, failure rate, throughput, indexing speed, availability, cache hit-rate, etc.
+* performance metrics (this applies to search database or graph): shortest path found, precision@k, recall@k, mean average precision, NDCG, etc.
+
+These are indirectly linked to the overall outcome of the restaurant AI by impacting the customer experience (too slow),
+model accuracy due to search results, etc. 
+
+### Planning
+
+Planning is to understand the customer potential needs and plan for the actions to take to fulfill the needs.
+
+### Tool
+
+### Action
 
 ## References
 
 1. Software & Information Industry Association, "Software as a Service: Strategic
    Backgrounder February 2001".
-1. Sonya Huang, Pat Grady, and o1, "Generative AI’s Act o1 - The agentic
+1. Sonya Huang, Pat Grady, and o1, "Generative AI's Act o1 - The agentic
    reasoning era begins",
   [url](https://www.sequoiacap.com/article/generative-ais-act-o1/).
 1. Shukang Yin, *et al*, A Survey on Multimodal Large Language Models, 2023.
