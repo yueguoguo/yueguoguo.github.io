@@ -12,17 +12,18 @@ summary:    Build AI system that brings value
 
 ## Introduction
 
-I recently spoke with a friend who works outside the tech industry. Unlike those
-deeply immersed in AI advancements, he evaluates the technology based on its
-practical impact. From his perspective, today's AI falls short of
-expectations—not because it isn't useful, but because it doesn't create the kind
-of transformative "aha" moments often portrayed in science fiction. He once
-subscribed to OpenAI's services, finding them helpful for tasks like searching
-and summarization. However, he ultimately canceled his subscription, as he still
-had to invest significant effort to extract real value. This raises a
-fundamental question: Is AI truly unhelpful? In reality, it does provide value,
-but what's missing is its ability to drive a meaningful *outcome*—a result that
-fulfills a specific personal or business need.  
+One of the greatest sources of inspiration in my academic journey and career
+came from Prof. Lionel Ming-shuan Ni. I attended an academic conference long
+time back when I was a Ph.D. student, where Prof. Ni presented his work on
+leveraging data analytics to improve Hong Kong's traffic system. While I don’t
+remember the exact details of the project, one statement he made has stayed with
+me: "Research should be outcome-driven and deliver value." Though his statement
+was made in a specific context, it resonates broadly across various
+technological domains, including AI. With the widespread proliferation of AI
+technologies today, a fundamental question remains unanswered: Is the AI we have
+today truly helpful? While AI undoubtedly adds value, what is missing is its
+ability to drive a meaningful *outcome*—a result that addresses a specific
+personal or business need.
 
 Most current AI systems lack the capability to deliver tangible, goal-oriented
 results. The desired outcome varies depending on context. Take, for example, a
