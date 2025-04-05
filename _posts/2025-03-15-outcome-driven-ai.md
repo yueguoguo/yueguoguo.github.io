@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Outcome-driven AI
-date:       2025-03-15 00:00:00
+date:       2025-04-01 00:00:00
 summary:    Build AI system that brings value
 ---
 
