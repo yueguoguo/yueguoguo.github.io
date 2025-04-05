@@ -2,7 +2,7 @@
 layout:     post
 title:      Outcome-driven AI
 date:       2025-03-15 00:00:00
-summary:    Build useful AI software 
+summary:    Build AI system that brings value
 ---
 
 <blockquote>
@@ -151,59 +151,75 @@ meaningful goals for AI?
 
 ## Define appropriate outcome
 
-An AI-driven outcome should be *quantifiable*, *measurable*, *achievable*, and *traceable*. It must be directly linked
-to completing tasks that add tangible value. For those deploying AI systems, clearly defining the desired outcome before
-implementation is crucial. However, crafting an outcome that meets all these criteria is often a complex task.
+An AI-driven outcome should be *quantifiable*, *measurable*, *achievable*, and
+*traceable*. It must be directly linked to completing tasks that add tangible
+value. For those deploying AI systems, clearly defining the desired outcome
+before implementation is crucial. However, crafting an outcome that meets all
+these criteria is often a complex task.
 
-Consider the example of running a restaurant. The owner may wish to use AI to recommend dishes from the menu to
-customers. The objective of this AI recommender is to *sell dishes that customers are likely to enjoy*. In this case, a
-suitable quantifiable outcome is the total number of dishes sold based on AI recommendations. This metric is both
-quantifiable and measurable.
+Consider the example of running a restaurant. The owner may wish to use AI to
+recommend dishes from the menu to customers. The objective of this AI
+recommender is to *sell dishes that customers are likely to enjoy*. In this
+case, a suitable quantifiable outcome is the total number of dishes sold based
+on AI recommendations. This metric is both quantifiable and measurable.
 
-However, tracing the contribution of AI to revenue growth can be more challenging. To properly attribute sales to AI,
-the entire ordering system must be digitally managed in a way that distinguishes orders influenced by AI recommendations
-from those driven by other sources such as advertising or word of mouth. With such a system in place, the restaurant
-owner can clearly assess AI's impact on sales.
+However, tracing the contribution of AI to revenue growth can be more
+challenging. To properly attribute sales to AI, the entire ordering system must
+be digitally managed in a way that distinguishes orders influenced by AI
+recommendations from those driven by other sources such as advertising or word
+of mouth. With such a system in place, the restaurant owner can clearly assess
+AI's impact on sales.
 
-The most difficult aspect remains *achievability*. It's inherently difficult to guarantee that the AI agent will lead to
-a sales increase, as AI operates on probabilistic principles. Typically, this uncertainty is addressed using aggregated
-metrics—such as average growth over several months—which smooth out fluctuations and provide a more stable measure of
-performance.
+The most difficult aspect remains *achievability*. It's inherently difficult to
+guarantee that the AI agent will lead to a sales increase, as AI operates on
+probabilistic principles. Typically, this uncertainty is addressed using
+aggregated metrics—such as average growth over several months—which smooth out
+fluctuations and provide a more stable measure of performance.
 
-To map this restaurant use case to an agentic AI system, a possible implementation might include the following
-components:
+To map this restaurant use case to an agentic AI system, a possible
+implementation might include the following components:
 
-- *LLM Core*: This serves as the foundation for general knowledge—covering topics like cuisine, recipes, nutrition—and
-  the restaurant's unique characteristics.
+- *LLM Core*: This serves as the foundation for general knowledge—covering
+  topics like cuisine, recipes, nutrition—and the restaurant's unique
+  characteristics.
 
-- *Memory*: Stores historical observations, including customer inquiries, order records, feedback, and reviews.
+- *Memory*: Stores historical observations, including customer inquiries, order
+  records, feedback, and reviews.
 
-- *Planning Module*: Analyzes customer interactions to infer intent, and decides whether to make dish recommendations.
-  Its goal is to maximize restaurant profits through effective engagement. This component plays a central role in tying
-  AI actions to quantifiable and measurable outcomes. It maintains outcome records and optimizes decisions using
-  available tools.
+- *Planning Module*: Analyzes customer interactions to infer intent, and decides
+  whether to make dish recommendations. Its goal is to maximize restaurant
+  profits through effective engagement. This component plays a central role in
+  tying AI actions to quantifiable and measurable outcomes. It maintains outcome
+  records and optimizes decisions using available tools.
 
-- *Tooling*: Provides the planning module with utilities needed for decision-making. These may include recommender
-  algorithms, queries to retrieve customer and menu data, or API calls for accessing additional task-related
+- *Tooling*: Provides the planning module with utilities needed for
+  decision-making. These may include recommender algorithms, queries to retrieve
+  customer and menu data, or API calls for accessing additional task-related
   information.
 
-While this example focuses on a restaurant scenario, the principles apply broadly. In *finance*, for instance, the
-outcome of an AI agent supporting wealth management may be defined as achieving a measurable return by leveraging
-technical indicators and fundamental analysis. In *manufacturing*, an AI agent's outcome might be an observable
-improvement in product quality over a defined period.
+While this example focuses on a restaurant scenario, the principles apply
+broadly. In *finance*, for instance, the outcome of an AI agent supporting
+wealth management may be defined as achieving a measurable return by leveraging
+technical indicators and fundamental analysis. In *manufacturing*, an AI agent's
+outcome might be an observable improvement in product quality over a defined
+period.
 
-Ultimately, regardless of the industry, the desired AI outcome should be clearly articulated by product designers or
-business owners. A well-defined outcome enables the development of AI systems that are purposeful, focused, and capable
+Ultimately, regardless of the industry, the desired AI outcome should be clearly
+articulated by product designers or business owners. A well-defined outcome
+enables the development of AI systems that are purposeful, focused, and capable
 of delivering meaningful impact.
 
 ## "Chain-of-outcome"
 
-One may ask a question: now I have defined the outcome of an AI system that I am going to implement, how should I
-evaluate whether I am doing the right thing during the development phase? It is apparently that the modular components
-of the AI agent have their own evaluation methods that work within the scope of their functionalities. And to link them
-together to make sure that they work towards the overall objective is the key success factor here. 
+One may ask a question: now I have defined the outcome of an AI system that I am
+going to implement, how should I evaluate whether I am doing the right thing
+during the development phase? It is apparently that the modular components of
+the AI agent have their own evaluation methods that work within the scope of
+their functionalities. And to link them together to make sure that they work
+towards the overall objective is the key success factor here. 
 
-Let's go back to the restaurant AI example above to understand how it works for each component. 
+Let's go back to the restaurant AI example above to understand how it works for
+each component. 
 
 ### Memory
 
@@ -313,12 +329,110 @@ strategies. When integrating this module with other components of the AI system,
 such as the memory, LLM core, or tooling, the entire system should be optimized
 holistically to achieve the ultimate goal under the given constraints.
 
+### LLM
+
+LLMs often provide the prior knowledge to the AI system, with decisions made by
+referencing the responses produced by the LLM. The outcome of the system is
+closely linked to the underlying LLM component, in which the quality, relevance,
+and accuracy of the output generated by the LLM directly influence the system's
+success in achieving its goals. The knowledge of the core LLM can be both
+*generic* and *domain-specific*, especially with the use of techniques such as
+Retrieval-Augmented Generation (RAG). In the restaurant AI scenario, the LLM can
+answer general food-related questions from customers to engage them, while also
+providing restaurant-specific insights, such as signature dishes, today's
+available options, and chef recommendations, to enhance customer satisfaction.
+
+As the core model, the LLM does not directly contribute to revenue outcomes. The
+performance of the LLM is typically evaluated using metrics like perplexity,
+BLEU, and ROUGE, particularly when it functions as a chat completion module. For
+the outcome-driven AI system design, the accuracy of customer interactions with
+the LLM-based agent is considered the primary evaluation metric.
+
 ### Reusability of the pattern
 
-The outcome-driven design of the AI system is applicable to any use case. The
-same principles outlined earlier still apply, regardless of domain-specific
-requirements. Considering a different scenario in retail, the agentic system is
-composed of the same components, and thus, the same process of *chaining* the
+The pattern above demonstrates the special use case in restaurant but it can be
+scaled to other use cases. The following is the diagram that shows the generic
+architecture of how the outcome for each modular component of an AI system is
+*chained* to contribute to the ultimate outcome. 
+
+<html lang="en">
+   <head>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.0.0/mermaid.min.js"></script>
+    </head>
+	 
+<div class="mermaid">
+graph LR
+    subgraph Ultimate_Outcome[Ultimate Business Outcome]
+        BO[Measurable Business Goal<br/>e.g., Restaurant Revenue Growth]
+    end
+
+    subgraph Component_Outcomes[Component-Level Outcomes]
+        LO[LLM Core Outcomes]
+        MO[Memory Outcomes]
+        TO[Tool Outcomes]
+        PA[Planning & Action Outcomes]
+    end
+
+    subgraph LLM_Metrics[LLM Core]
+        LE1[Response Quality<br/>Perplexity/BLEU/ROUGE]
+        LE2[Domain Relevance<br/>Task-specific Accuracy]
+        LE3[Interaction Success<br/>Customer Satisfaction]
+    end
+
+    subgraph Memory_Metrics[Memory]
+        ME1[Engineering Metrics<br/>Latency/Throughput/Availability]
+        ME2[Performance Metrics<br/>Precision@k/Recall/NDCG]
+        ME3[Resource Efficiency<br/>Cache Hit Rate/Query Cost]
+    end
+
+    subgraph Tool_Metrics[Tool]
+        TE1[Tool Usage Effectiveness<br/>Tool-use-to-outcome Ratio]
+        TE2[Reliability & Robustness<br/>Error Rate/Uptime]
+        TE3[Integration Success<br/>API Response Quality]
+    end
+
+    subgraph Plan_Action_Metrics[Planning & Action]
+        PA1[Effectiveness<br/>Goal Completion Rate]
+        PA2[Resource Usage<br/>Time/Cost per Action]
+        PA3[Decision Quality<br/>Success Rate/ROI]
+    end
+
+    %% Connections showing outcome chain
+    LO --> BO
+    MO --> BO
+    TO --> BO
+    PA --> BO
+
+    %% Component metrics contributing to outcomes
+    LE1 --> LO
+    LE2 --> LO
+    LE3 --> LO
+
+    ME1 --> MO
+    ME2 --> MO
+    ME3 --> MO
+
+    TE1 --> TO
+    TE2 --> TO
+    TE3 --> TO
+
+    PA1 --> PA
+    PA2 --> PA
+    PA3 --> PA
+
+    %% Styling
+    classDef outcome fill:#f9f,stroke:#333,stroke-width:2px
+    classDef component fill:#bbf,stroke:#333,stroke-width:1px
+    classDef metrics fill:#dfd,stroke:#333,stroke-width:1px
+
+    class BO outcome
+    class LO,MO,TO,PA component
+    class LE1,LE2,LE3,ME1,ME2,ME3,TE1,TE2,TE3,PA1,PA2,PA3 metrics
+</div>
+</html>
+
+Considering a different scenario in retail, the agentic system is composed of
+the same components, and thus, the same process of chaining the
 outcome-oriented design specifications for each component is effective in
 achieving the goal defined by the retailer. To achieve a goal such as
 maintaining the optimal ROI from sales revenue against the cost of maintaining
@@ -331,7 +445,57 @@ directly or indirectly works toward the ultimate outcome.
 
 ## After thoughts...
 
+The "chain-of-outcome" approach I've outlined here emerged from my personal
+experience building AI systems in the past. It's not perfect, and implementing
+it comes with its own challenges. Sometimes the metrics we choose don't fully
+capture the nuances of real-world impact. Other times, the complexity of
+integrating multiple components while maintaining focus on the ultimate outcome
+can be overwhelming. But I've found that having this framework — this way of
+thinking about AI system design — helps teams stay aligned with their true
+objectives, the **outcomes** that add value to either individuals or
+organizations.
+
+Looking ahead, I believe the future of AI lies not in creating more powerful
+models, but in building systems that reliably deliver meaningful outcomes. As
+the field continues to evolve, perhaps we'll develop even better frameworks for
+ensuring AI systems create those "aha" moments. Until then, staying focused on
+measurable, meaningful outcomes seems like our best path forward.
+
 ## References
+
+1. Russell, Stuart and Norvig, Peter. Artificial Intelligence: A Modern
+   Approach. 4th Edition. Pearson, 2020. [url](https://aima.cs.berkeley.edu/)
+1. Sutton, Richard S. and Barto, Andrew G. Reinforcement Learning: An
+   Introduction. 2nd Edition. MIT Press, 2018.
+   [url](https://www.andrew.cmu.edu/course/10-703/textbook/BartoSutton.pdf)
+1. Kleppmann, Martin. Designing Data-Intensive Applications: The Big Ideas
+   Behind Reliable, Scalable, and Maintainable Systems. O'Reilly Media, 2017.
+   [url](https://dataintensive.net/)
+1. Abadi, Daniel, et al. Cloud Database Benchmarking: Big Data Meets Big
+   Infrastructure. ACM SIGMOD, 2019.
+   [url](https://dl.acm.org/doi/10.1145/3318464.3386134)
+1. Liu, Tie-Yan. Learning to Rank for Information Retrieval. Foundations and
+   Trends in Information Retrieval, 2009.
+   [url](https://doi.org/10.1561/1500000016):w
+   gg
+1. Manning, Christopher D., Raghavan, Prabhakar, and Schütze, Hinrich.
+   Introduction to Information Retrieval. Cambridge University Press, 2008.
+   [url](https://nlp.stanford.edu/IR-book/)
+1. Shen, Fumin, et al. Uplift Modeling for Cost-Sensitive Cross-Selling.
+   Information Fusion, 2020.
+   [url](https://doi.org/10.1016/j.inffus.2020.03.004)
+1. Russell, Stuart and Wefald, Eric. Do the Right Thing: Studies in Limited
+   Rationality. MIT Press, 1997.
+   [url](https://doi.org/10.1016/S0004-3702(97)00026-X)
+1. Zilberstein, Shlomo. Resource-Bounded Reasoning in Intelligent Systems. AI
+   Magazine, 2008.
+   [url](https://www.aaai.org/ojs/index.php/aimagazine/article/view/1174)
+1. Dietterich, Thomas G. Hierarchical Reinforcement Learning with the MAXQ
+   Value Function Decomposition. Artificial Intelligence, 1999.
+   [url](https://doi.org/10.1016/S0004-3702(99)00052-1)
+1. Browne, Cameron B., et al. A Survey of Monte Carlo Tree Search Methods. IEEE
+   Transactions on Computational Intelligence and AI in Games, 2012.
+   [url](https://doi.org/10.1109/TCIAIG.2012.2186810)
 
 ## Citation
 
