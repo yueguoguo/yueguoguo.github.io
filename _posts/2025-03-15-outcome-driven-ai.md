@@ -174,7 +174,7 @@ To map this restaurant use case to an agentic AI system, a possible implementati
 components:
 
 - *LLM Core*: This serves as the foundation for general knowledge—covering topics like cuisine, recipes, nutrition—and
-  the restaurant’s unique characteristics.
+  the restaurant's unique characteristics.
 
 - *Memory*: Stores historical observations, including customer inquiries, order records, feedback, and reviews.
 
@@ -189,7 +189,7 @@ components:
 
 While this example focuses on a restaurant scenario, the principles apply broadly. In *finance*, for instance, the
 outcome of an AI agent supporting wealth management may be defined as achieving a measurable return by leveraging
-technical indicators and fundamental analysis. In *manufacturing*, an AI agent’s outcome might be an observable
+technical indicators and fundamental analysis. In *manufacturing*, an AI agent's outcome might be an observable
 improvement in product quality over a defined period.
 
 Ultimately, regardless of the industry, the desired AI outcome should be clearly articulated by product designers or
@@ -209,55 +209,113 @@ Let's go back to the restaurant AI example above to understand how it works for 
 
 The memory component is usually implemented as RDB, graph or similarity-based vector search. 
 
-* engineering metrics: latency, failure rate, throughput, indexing speed, availability, cache hit-rate, etc.
-* performance metrics (this applies to search database or graph): shortest path found, precision@k, recall@k, mean average precision, NDCG, etc.
+* engineering metrics: latency, failure rate, throughput, indexing speed,
+  availability, cache hit-rate, etc. [[Kleppmann,
+  2017]](https://dataintensive.net/) [[Abadi et al.,
+  2019]](https://dl.acm.org/doi/10.1145/3318464.3386134)
+* performance metrics (this applies to search database or graph): shortest path
+  found, precision@k, recall@k, mean average precision, NDCG, etc. [[Liu,
+  2009]](https://doi.org/10.1561/1500000016) [[Manning et al.,
+  2008]](https://nlp.stanford.edu/IR-book/)
 
-These are indirectly linked to the overall outcome of the restaurant AI by impacting the customer experience (too slow),
-model accuracy due to search results, etc. 
-
-### Planning
-
-Planning is to understand the customer potential needs and plan for the actions to take to fulfill the needs.
+These metrics indirectly influence the restaurant AI's overall performance by
+affecting both customer experience and model accuracy. To evaluate the memory
+component's contribution to the desired outcome, we must first define the
+system's functional and non-functional requirements, particularly for database
+operations like front-end queries and similarity search. Consider a typical
+scenario: processing 100 orders per second, where each order involves
+approximately 10 LLM chat completions, 10-20 database queries per completion,
+and 5 additional I/O operations. By analyzing this workflow, we can establish
+concrete latency requirements for the database backbone. These requirements then
+serve as quantifiable metrics to assess how effectively the memory component
+supports the agent system's intended outcomes.
 
 ### Tool
 
-### Action
+*Tool, or functional calls*, in this context, refer to the deterministic
+capabilities of an AI system that assist the overall decision-making process
+aimed at achieving a desirable outcome. For example, querying a database to
+retrieve customer-related information—such as historical orders—can be
+encapsulated as a tool. The key metrics for evaluating the tool component are
+*reliability* and *robustness* over time. This is because the tool itself
+does not directly drive the outcome; rather, it provides critical inputs to the
+*LLM core* or the *planning and action components*, which then make
+decisions to optimize toward the goal.
+
+However, certain metrics can help establish a stronger connection between
+functional tool use and eventual outcomes. For instance, a tool in a restaurant
+AI system might perform data aggregation to analyze user ordering patterns. By
+interpreting these behavioral signals, the planning and action modules can
+*predict* outcomes that yield optimal gain. Yet, not every invocation of a
+tool is equally useful. For example, a *cold-start user*—one without any
+historical order data—would not benefit from such a tool.
+
+In this light, the *ratio between the number of tool uses* and the *number of
+completed tasks that achieve a predefined outcome* serves as a quantifiable and
+measurable metric to evaluate *tool effectiveness*. Analyzing this
+*tool-use-to-outcome ratio* helps guide the development of *outcome-oriented
+AI systems*, ensuring that tools contribute meaningfully to task success rather
+than adding unnecessary computational overhead.
+
+### Planning and action
+
+Planning and action are the hardest parts. This is due to the complexity of
+uncertainties in real-world problems that lead to the weak linkage between the
+pre-defined outcome and the dimensionality of decision-making options. In the
+restaurant AI, the planning and action component should be capable of predicting
+the preferences of the customer and then recommending the food accordingly. If
+the recommendation does not work, the AI should be able to revise its strategy
+and understand the "right things" to do to achieve the outcome at a later time,
+if not immediately.
+
+* Effectiveness of the plan and action, i.e., rate of successful completion.
+  This refers to how well the AI agent achieves the desired goals given its
+  planning and execution process. In the restaurant case, this may be measured
+  by the percentage of successful dish recommendations that result in a purchase
+  or increased customer satisfaction. To properly evaluate this, goal completion
+  rate (GCR), recommendation acceptance rate, and the return-on-action (revenue
+  or satisfaction gain per recommendation) can be tracked. Additionally, causal
+  attribution techniques, such as counterfactual inference or [uplift
+  modeling](https://doi.org/10.1016/j.inffus.2020.03.004), can be applied to
+  distinguish the specific contribution of the AI's decisions from other
+  influencing factors like advertising or prior user bias.
+
+* Cost (both time and money). The outcome cannot be achieved with unlimited
+  resources, so the upper bound of resource constraints must be considered. This
+  includes computational time, energy cost, and infrastructure usage. For
+  example, if the AI takes too long to compute a recommendation or frequently
+  uses expensive external APIs, its utility becomes questionable. Resource-aware
+  evaluation can include metrics like latency per action, average compute cost
+  per successful recommendation, and a utility-to-cost ratio. Reinforcement
+  learning agents can be trained with resource constraints in mind using
+  [cost-regularized reward
+  functions](https://doi.org/10.1016/S0004-3702(97)00026-X) or [resource-bounded
+  utility maximization
+  strategies](https://www.aaai.org/ojs/index.php/aimagazine/article/view/1174).
+
+Implementation-wise, given the uncertainties and complexities, simulation is
+usually needed. A world model that is learned by the agent helps to plan ahead
+by predicting the outcome of various strategies without executing them in the
+real environment. [Hierarchical reinforcement
+learning](https://doi.org/10.1016/S0004-3702(99)00052-1), which selects
+high-level goals and decomposes them into low-level execution plans, is
+effective for structured decision-making under complexity. For example, a
+high-level policy may decide whether to recommend food based on dietary
+preferences, while a low-level policy determines how to phrase the
+recommendation or which side dish to suggest. To further enhance decision
+planning, methods like [Monte Carlo Tree Search
+(MCTS)](https://doi.org/10.1109/TCIAIG.2012.2186810) can be applied to explore
+possible sequences of decisions before committing to an action, thereby
+simulating multiple future states in advance. In general, the design of planning
+and action components should align with the overall system's goal by
+incorporating the end outcomes into the decision-making policies and simulation
+strategies. When integrating this module with other components of the AI system,
+such as the memory, LLM core, or tooling, the entire system should be optimized
+holistically to achieve the ultimate goal under the given constraints.
+
+## After thoughts...
 
 ## References
-
-1. Software & Information Industry Association, "Software as a Service: Strategic
-   Backgrounder February 2001".
-1. Sonya Huang, Pat Grady, and o1, "Generative AI's Act o1 - The agentic
-   reasoning era begins",
-  [url](https://www.sequoiacap.com/article/generative-ais-act-o1/).
-1. Shukang Yin, *et al*, A Survey on Multimodal Large Language Models, 2023.
-1. Letta, The AI agents stack, 2024.
-1. Jiahao Tian, *et al*, MMREC: LLM Based Multi-Modal Recommender System, 2024.
-1. Jason Wei, *et al*, Chain-of-Thought Prompting Elicits Reasoning in Large
-   Language Models. IEEE TPAMI, 2022.
-1. Shunyu Yao, *et al*, `ReAct`: Synergizing Reasoning and Acting in Language
-   Models. 2022.
-1. Binfeng Xu, *et al*, `ReWOO`: Decoupling Reasoning from Observations for
-   Efficient Augmented Language Models. 2023.
-1. Noah Shinn, *et al*, Reflexion: Language Agents with Verbal Reinforcement
-   Learning. 2023.
-1. Lei Wang, *et al*, Plan-and-Solve Prompting: Improving Zero-Shot
-   Chain-of-Thought Reasoning by Large Language Models. 2023.
-1. Sehoon Kim *et al*, An LLM Compiler for Parallel Function Calling.
-1. Anthropic, Building effective agents, 2023.
-1. Akshay Paruchuri, *et al*, What Are the Odds? Language Models Are Capable of
-   Probabilistic Reasoning, EMNLP, 2024
-1. Aliakbar Nafar, *et al*, Probabilistic Reasoning in Generative Large Language
-   Models, 2024
-1. Dongsheng Li, *et al*, Recommender Systems: Frontiers and Practices, Springer
-   Nature, 2024. 
-1. Le Zhang, Ubiquitous language for domain-driven development, Thinkloud, 2023.
-1. Steven Okamoto, *et al*, The Impact of Vertical Specialization on Hierarchical
-   Multi-Agent Systems, AAAI, 2008
-1. Haoyi Xiong *et al*, Natural Language based Context Modeling and Reasoning for
-   Ubiquitous Computing with Large Language Models: A Tutorial, 2023
-1. Martin Kleppmann, Designing Data-Intensive Applications: The Big Ideas Behind
-   Reliable, Scalable, and Maintainable Systems.
 
 ## Citation
 
