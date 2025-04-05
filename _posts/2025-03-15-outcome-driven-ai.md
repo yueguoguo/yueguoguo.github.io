@@ -196,7 +196,7 @@ Ultimately, regardless of the industry, the desired AI outcome should be clearly
 business owners. A well-defined outcome enables the development of AI systems that are purposeful, focused, and capable
 of delivering meaningful impact.
 
-## Chaining the goals through hierarchies of the AI system
+## "Chain-of-outcome"
 
 One may ask a question: now I have defined the outcome of an AI system that I am going to implement, how should I
 evaluate whether I am doing the right thing during the development phase? It is apparently that the modular components
@@ -313,6 +313,22 @@ strategies. When integrating this module with other components of the AI system,
 such as the memory, LLM core, or tooling, the entire system should be optimized
 holistically to achieve the ultimate goal under the given constraints.
 
+### Reusability of the pattern
+
+The outcome-driven design of the AI system is applicable to any use case. The
+same principles outlined earlier still apply, regardless of domain-specific
+requirements. Considering a different scenario in retail, the agentic system is
+composed of the same components, and thus, the same process of *chaining* the
+outcome-oriented design specifications for each component is effective in
+achieving the goal defined by the retailer. To achieve a goal such as
+maintaining the optimal ROI from sales revenue against the cost of maintaining
+the warehouse, the AI may consist of one or more AI agents with LLM and other
+capabilities like demand forecasting, customer returns, logistics optimization,
+etc. Similarly, these agentic components can be further broken down into the
+modular parts of memory, tools, planning and action, and the LLM core. The
+outcome of the overall retail efficiency originates from each component that
+directly or indirectly works toward the ultimate outcome.
+
 ## After thoughts...
 
 ## References
@@ -321,16 +337,16 @@ holistically to achieve the ultimate goal under the given constraints.
 
 Plain citation as
 
-Zhang, Le. Uncover the subtle intricacies of Service-as-a-Software. Thinkloud. https://yueguoguo.github.io/2024/12/01/service-as-a-software/, 2024.
+Zhang, Le. Outcome-driven AI. Thinkloud. https://yueguoguo.github.io/2025/04/01/outcome-driven-ai/, 2025.
 
 or Bibliography-like citation
 ```
-@article{yueguoguo2024saas,
-  title   = "Uncover the subtle intricacies of Service-as-a-Software",
+@article{yueguoguo2025outcomedrivenai,
+  title   = "Outcome-driven AI",
   author  = "Zhang, Le",
   journal = "yueguoguo.github.io",
-  year    = "2024",
-  month   = "Dec",
-  url     = "https://yueguoguo.github.io/2024/12/01/service-as-a-software/"
+  year    = "2025",
+  month   = "Apr",
+  url     = "https://yueguoguo.github.io/2025/04/01/outcome-driven-ai/"
 }
 ```
