@@ -13,15 +13,15 @@ summary:    Aligning intelligence with purpose through outcome-driven design
 ## Introduction
 
 I attended an academic conference long time back when I was a Ph.D. student,
-where Prof. Ni presented his work on leveraging data analytics to improve Hong
-Kong's traffic system. While I don't remember the exact details of the project,
-one statement he made has stayed with me: "Research should be outcome-driven and
-deliver value." Though his statement was made in a specific context, it
-resonates broadly across various technological domains, including AI. With the
-widespread proliferation of AI technologies today, a fundamental question
-remains unanswered: Is the AI we have today truly helpful? While AI undoubtedly
-adds value, what is missing is its ability to drive a meaningful *outcome*—a
-result that addresses a specific personal or business need.
+where Prof. Lionel Ming-Shuan Ni presented his work on leveraging data analytics
+to improve Hong Kong's traffic system. While I don't remember the exact details
+of the project, one statement he made has stayed with me: "Research should be
+outcome-driven and deliver value." Though his statement was made in a specific
+context, it resonates broadly across various technological domains, including
+AI. With the widespread proliferation of AI technologies today, a fundamental
+question remains unanswered: Is the AI we have today truly helpful? While AI
+undoubtedly adds value, what is missing is its ability to drive a meaningful
+*outcome*—a result that addresses a specific personal or business need.
 
 Most current AI systems lack the capability to deliver tangible, goal-oriented
 results. The desired outcome varies depending on context. Take, for example, a
@@ -66,7 +66,7 @@ serves as a proxy for achieving the desired outcome. [[Sutton & Barto,
 
 A typical LLM-based agentic system is depicted as below [[Weng, 2023](https://lilianweng.github.io/posts/2023-06-23-agent/)].
 
-![LLM-based agent](../images/agent-overview.png)
+![LLM-based agent](https://yueguoguo.github.io/images/agent-overview.png)
 
 In the diagram above, the LLM serves as the *core* of the system, where its
 distilled knowledge guides other components like "planning" and "action" in
@@ -111,19 +111,19 @@ fluctuations and provide a more stable measure of performance.
 To map this restaurant use case to an agentic AI system, a possible
 implementation might include the following components:
 
-- *LLM Core*: This serves as the foundation for general knowledge—covering
+- **LLM Core**: This serves as the foundation for general knowledge—covering
   topics like cuisine, recipes, nutrition, etc.
 
-- *Memory*: Stores historical observations, including customer inquiries, order
+- **Memory**: Stores historical observations, including customer inquiries, order
   records, feedback, reviews, vectorized knowledge that augments the foundation model.
 
-- *Planning Module*: Analyzes customer interactions to infer intent, and decides
+- **Planning Module**: Analyzes customer interactions to infer intent, and decides
   whether to make dish recommendations. Its goal is to maximize restaurant
   profits through effective engagement. This component plays a central role in
   tying AI actions to quantifiable and measurable outcomes. It maintains outcome
   records and optimizes decisions using available tools.
 
-- *Tooling*: Provides the planning module with utilities needed for
+- **Tool**: Provides the planning module with utilities needed for
   decision-making. These may include recommender algorithms, queries to retrieve
   customer and menu data, or API calls for accessing additional task-related
   information.
