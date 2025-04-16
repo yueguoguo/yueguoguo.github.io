@@ -106,34 +106,12 @@ The most difficult aspect remains *achievability*. It's inherently difficult to
 guarantee that the AI agent will lead to a sales increase, as AI operates on
 probabilistic principles. Typically, this uncertainty is addressed using
 aggregated metrics—such as average growth over several months—which smooth out
-fluctuations and provide a more stable measure of performance.
-
-To map this restaurant use case to an agentic AI system, a possible
-implementation might include the following components:
-
-- **LLM Core**: This serves as the foundation for general knowledge—covering
-  topics like cuisine, recipes, nutrition, etc.
-
-- **Memory**: Stores historical observations, including customer inquiries, order
-  records, feedback, reviews, vectorized knowledge that augments the foundation model.
-
-- **Planning Module**: Analyzes customer interactions to infer intent, and decides
-  whether to make dish recommendations. Its goal is to maximize restaurant
-  profits through effective engagement. This component plays a central role in
-  tying AI actions to quantifiable and measurable outcomes. It maintains outcome
-  records and optimizes decisions using available tools.
-
-- **Tool**: Provides the planning module with utilities needed for
-  decision-making. These may include recommender algorithms, queries to retrieve
-  customer and menu data, or API calls for accessing additional task-related
-  information.
-
-While this example focuses on a restaurant scenario, the principles apply
-broadly. In *finance*, for instance, the outcome of an AI agent supporting
-wealth management may be defined as achieving a measurable return by leveraging
-technical indicators and fundamental analysis. In *manufacturing*, an AI agent's
-outcome might be an observable improvement in product quality over a defined
-period.
+fluctuations and provide a more stable measure of performance. While this
+example focuses on a restaurant scenario, the principles apply broadly. In
+*finance*, for instance, the outcome of an AI agent supporting wealth management
+may be defined as achieving a measurable return by leveraging technical
+indicators and fundamental analysis. In *manufacturing*, an AI agent's outcome
+might be an observable improvement in product quality over a defined period.
 
 Ultimately, regardless of the industry, the desired AI outcome should be clearly
 articulated by product designers or business owners. A well-defined outcome
@@ -148,9 +126,6 @@ during the development phase? It is apparently that the modular components of
 the AI agent have their own evaluation methods that work within the scope of
 their functionalities. And to link them together to make sure that they work
 towards the overall objective is the key success factor here. 
-
-Let's go back to the restaurant AI example above to understand how it works for
-each component. 
 
 ### Memory
 
@@ -177,14 +152,6 @@ does not directly drive the outcome; rather, it provides critical inputs to the
 *LLM core* or the *planning and action components*, which then make
 decisions to optimize toward the goal.
 
-However, certain metrics can help establish a stronger connection between
-functional tool use and eventual outcomes. For instance, a tool in a restaurant
-AI system might perform data aggregation to analyze user ordering patterns. By
-interpreting these behavioral signals, the planning and action modules can
-*predict* outcomes that yield optimal gain. Yet, not every invocation of a
-tool is equally useful. For example, a *cold-start user*—one without any
-historical order data—would not benefit from such a tool.
-
 In this light, the *ratio between the number of tool uses* and the *number of
 completed tasks that achieve a predefined outcome* serves as a quantifiable and
 measurable metric to evaluate *tool effectiveness*. Analyzing this
@@ -194,21 +161,12 @@ than adding unnecessary computational overhead.
 
 ### Planning and action
 
-Planning and action are the hardest parts. This is due to the complexity of
-uncertainties in real-world problems that lead to the weak linkage between the
-pre-defined outcome and the dimensionality of decision-making options. In the
-restaurant AI, the planning and action component should be capable of predicting
-the preferences of the customer and then recommending the food accordingly. If
-the recommendation does not work, the AI should be able to revise its strategy
-and understand the "right things" to do to achieve the outcome at a later time,
-if not immediately.
-
-Implementation-wise, given the uncertainties and complexities, simulation is
-usually needed. A world model that is learned by the agent helps to plan ahead
-by predicting the outcome of various strategies without executing them in the
-real environment. [Hierarchical reinforcement
-learning](https://doi.org/10.1016/S0004-3702(99)00052-1), which selects
-high-level goals and decomposes them into low-level execution plans, is
+Given the uncertainties and complexities, simulation is usually needed to
+evaluate the effectiveness of the planning and action component. A world model
+that is learned by the agent helps to plan ahead by predicting the outcome of
+various strategies without executing them in the real environment. [Hierarchical
+reinforcement learning](https://doi.org/10.1016/S0004-3702(99)00052-1), which
+selects high-level goals and decomposes them into low-level execution plans, is
 effective for structured decision-making under complexity. For example, a
 high-level policy may decide whether to recommend food based on dietary
 preferences, while a low-level policy determines how to phrase the
@@ -236,99 +194,72 @@ answer general food-related questions from customers to engage them, while also
 providing restaurant-specific insights, such as signature dishes, today's
 available options, and chef recommendations, to enhance customer satisfaction.
 
-### Reusability of the pattern
+## A generic pattern
 
 The following is the diagram that shows the generic architecture of how the
 *outcome* for each modular component of an AI system is *chained* to contribute
 to the ultimate goal. 
 
-<html lang="en">
-   <head>
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.0.0/mermaid.min.js"></script>
-    </head>
-	 
 <div class="mermaid">
 graph LR
-    subgraph Ultimate_Outcome[Ultimate Business Outcome]
-        BO[Measurable Business Goal<br/>e.g., Restaurant Revenue Growth]
+    subgraph Component1[Component 1 - LLM]
+        A1[Sub-component A1]
+        B1[Sub-component B1]
+        C1[Sub-component C1]
     end
 
-    subgraph Component_Outcomes[Component-Level Outcomes]
-        LO[LLM Core Outcomes]
-        MO[Memory Outcomes]
-        TO[Tool Outcomes]
-        PA[Planning & Action Outcomes]
+    subgraph Component2[Component 2 - Tool]
+        A2[Sub-component A2]
+        B2[Sub-component B2]
     end
 
-    subgraph LLM_Metrics[LLM Core]
-        LE1[Response Quality<br/>Perplexity/BLEU/ROUGE]
-        LE2[Domain Relevance<br/>Task-specific Accuracy]
-        LE3[Interaction Success<br/>Customer Satisfaction]
+    subgraph Component3[Component 3 - Memory]
+        A3[Sub-component A3]
     end
 
-    subgraph Memory_Metrics[Memory]
-        ME1[Engineering Metrics<br/>Latency/Throughput/Availability]
-        ME2[Performance Metrics<br/>Precision@k/Recall/NDCG]
-        ME3[Resource Efficiency<br/>Cache Hit Rate/Query Cost]
+    subgraph SubImpact[Sub-system Impact]
+        I[Intermediate Output]
     end
 
-    subgraph Tool_Metrics[Tool]
-        TE1[Tool Usage Effectiveness<br/>Tool-use-to-outcome Ratio]
-        TE2[Reliability & Robustness<br/>Error Rate/Uptime]
-        TE3[Integration Success<br/>API Response Quality]
+    subgraph Impact[System Impact]
+        F[Final Output]
     end
 
-    subgraph Plan_Action_Metrics[Planning & Action]
-        PA1[Effectiveness<br/>Goal Completion Rate]
-        PA2[Resource Usage<br/>Time/Cost per Action]
-        PA3[Decision Quality<br/>Success Rate/ROI]
-    end
+    %% Connections for Component 1
+    A1 -->|O11| B1
+    B1 -->|O12| C1
+    C1 -->|O13| F
 
-    %% Connections showing outcome chain
-    LO --> BO
-    MO --> BO
-    TO --> BO
-    PA --> BO
+    %% Connections for Component 2
+    A2 -->|O21| B2
 
-    %% Component metrics contributing to outcomes
-    LE1 --> LO
-    LE2 --> LO
-    LE3 --> LO
-
-    ME1 --> MO
-    ME2 --> MO
-    ME3 --> MO
-
-    TE1 --> TO
-    TE2 --> TO
-    TE3 --> TO
-
-    PA1 --> PA
-    PA2 --> PA
-    PA3 --> PA
+    %% Connections for Component 2 and 3
+    A3 -->|O31| I
+    B2 -->|O22| I
+    I --> |O32| F
 
     %% Styling
-    classDef outcome fill:#f9f,stroke:#333,stroke-width:2px
     classDef component fill:#bbf,stroke:#333,stroke-width:1px
-    classDef metrics fill:#dfd,stroke:#333,stroke-width:1px
+    classDef impact fill:#dfd,stroke:#333,stroke-width:2px
 
-    class BO outcome
-    class LO,MO,TO,PA component
-    class LE1,LE2,LE3,ME1,ME2,ME3,TE1,TE2,TE3,PA1,PA2,PA3 metrics
+    class A1,B1,C1,A2,B2,C2,A3 component
+    class F,I impact
 </div>
-</html>
 
-Considering a different scenario in retail, the agentic system is composed of
-the same components, and thus, the same process of chaining the
-outcome-oriented design specifications for each component is effective in
-achieving the goal defined by the retailer. To achieve a goal such as
-maintaining the optimal ROI from sales revenue against the cost of maintaining
-the warehouse, the AI may consist of one or more AI agents with LLM and other
-capabilities like demand forecasting, customer returns, logistics optimization,
-etc. Similarly, these agentic components can be further broken down into the
-modular parts of memory, tools, planning and action, and the LLM core. The
-outcome of the overall retail efficiency originates from each component that
-directly or indirectly works toward the ultimate outcome.
+The *sub-components* in a *Component* has its own evaluation metrics and
+outcome-driven design constraints. Example of such is that, a vector database
+that is chosen in the *tool* component should be able to meet the criteria of
+robustness, reliability, data integrity, etc. The outcome of each
+*sub-component* in a *Component* can be chained such that the outcome is
+*aggregated* towards the overall impact to the next stage. And, there might be
+aggregation of outcome from different chains of different *Component*s. For
+example, the database that is used in the tool component may also be used in the
+*memory* component. Then the performance or engineering metrics of the database,
+which is to evaluate the outcome of the database, is propagated to the
+intermediate output for both *tool* and *memory*. We know that the aggregation
+can be dependent on the way of how the different components work together. And
+this needs to be considered carefully in the design and specification of the AI
+system where the components and sub-components are chained by their outcome.
 
 ## After thoughts...
 
