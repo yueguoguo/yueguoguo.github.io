@@ -200,6 +200,10 @@ The following is the diagram that shows the generic architecture of how the
 *outcome* for each modular component of an AI system is *chained* to contribute
 to the ultimate goal. 
 
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.0.0/mermaid.min.js"></script>
+  </head>
 <div class="mermaid">
 graph LR
     subgraph Component1[Component 1 - LLM]
@@ -245,6 +249,7 @@ graph LR
     class A1,B1,C1,A2,B2,C2,A3 component
     class F,I impact
 </div>
+</html>
 
 The *sub-components* in a *Component* has its own evaluation metrics and
 outcome-driven design constraints. Example of such is that, a vector database
