@@ -125,9 +125,59 @@ going to implement, how should I evaluate whether I am doing the right thing
 during the development phase? It is apparently that the modular components of
 the AI agent have their own evaluation methods that work within the scope of
 their functionalities. And to link them together to make sure that they work
-towards the overall objective is the key success factor here. 
+towards the overall objective is the key success factor here. This follows the
+classic idea that *problems are resolved step by step where the best decisions
+are found one after another* [[Bellman Richard,
+1957](https://press.princeton.edu/books/paperback/9780691146683/dynamic-programming)]. 
 
-### Memory
+### Outcome aggregation
+
+The following question becomes, how does the outcome of the individual
+components aggregate together to impact the final outcome? There are multiple
+different ways of aggregating the outcome of the individual components in a
+system. 
+
+#### Additive
+
+Some outcomes of the sub-components can be aggregated at the system-level in an
+*additive* manner. The sub-components' outcome is treated as individual
+measurable and quantifiable *scores* that may represent the performance of a
+module. Adding the scores together generates the overall outcome. For example,
+*ensemble* of the results of multiple different learning-based models can be
+treated as a pattern to aggregate the outcome of individual models to the next
+stage where the outcome is the weighted sum or majority voting results.
+
+#### Multiplicative
+
+If the sub-components product individual and independent results from a given
+model, the overall outcome follows the joint probability of the individual
+probability of each sub-component. The outcome of such case is multiplicative.
+For example, in finance, risk models that consider multiple different scenarios
+follow this pattern.
+
+#### Rule-based
+
+Sometimes, the outcome of sub-components is bounded by the rules of the system.
+The simplest rule on a numeric outcome is, for instance, `max` and `min`
+function on the numeric outcome. These rule-based functions define the threshold
+to limit the outcome of sub-components, and thus impact the overall outcome of
+the system. 
+
+#### Pass-through
+
+In some of the serial execution or decision-making process, the outcome is
+passed through each components before it is output at the last stage. One of the
+AI systems is the hierarchical reinforcement learning, where the policies at
+each hierarchy is executed to interact with the environment for getting the best
+outcome, i.e., reward. And then the results are aggregated to the upper-level
+hierarchy until finally the outcome is generated. 
+
+### Chain-of-outcome in an AI agent system
+
+The aforementioned mechanism discussed above applies to the typical AI agent
+system that is built on top of an LLM.  
+
+#### Memory
 
 The memory component is usually implemented as RDB, graph or similarity-based
 vector search. To evaluate the memory component's contribution to the desired
@@ -135,68 +185,55 @@ outcome, we must first define the system's functional and non-functional
 requirements, particularly for database operations like front-end queries and
 similarity search. Consider a typical scenario: processing 100 orders per
 second, where each order involves approximately 10 LLM chat completions, 10-20
-database queries per completion, and 5 additional I/O operations. By analyzing
-this workflow, we can establish concrete latency requirements for the database
-backbone. These requirements then serve as quantifiable metrics to assess how
-effectively the memory component supports the agent system's intended outcomes.
+database queries per completion, and 5 additional I/O operations. This is
+usually called *system specification*, and the outcome of these specifications
+will be either *additive* or *multiplicative* to impact the final outcome of the
+system regarding the system performance [[Abadi, Daniel,
+2019](https://dl.acm.org/doi/10.1145/3318464.3386134)]. It is linear
+[[Kleppmann, Martin, 2017](https://dataintensive.net/)].
 
-### Tool
+#### Tool
 
 Tool, or functional calls, in this context, refer to the deterministic
 capabilities of an AI system that assist the overall decision-making process
-aimed at achieving a desirable outcome. For example, querying a database to
-retrieve customer-related information—such as historical orders—can be
-encapsulated as a tool. The key metrics for evaluating the tool component are
-*reliability* and *robustness* over time. This is because the tool itself
-does not directly drive the outcome; rather, it provides critical inputs to the
-*LLM core* or the *planning and action components*, which then make
-decisions to optimize toward the goal.
+aimed at achieving a desirable outcome. The *ratio between the number of tool
+uses* and the *number of completed tasks that achieve a predefined outcome*
+serves as a quantifiable and measurable metric to evaluate *tool effectiveness*.
+Analyzing this *tool-use-to-outcome ratio* helps guide the development
+of*outcome-oriented AI systems*, ensuring that tools contribute meaningfully to
+task success rather than adding unnecessary computational overhead. The outcome
+of tool is part of the policy or decision-making of an agent, and it may follow
+a *pass-through* scenario, where the outcome of a tool calling impacts the
+subsequent steps where the further actions are executed. 
 
-In this light, the *ratio between the number of tool uses* and the *number of
-completed tasks that achieve a predefined outcome* serves as a quantifiable and
-measurable metric to evaluate *tool effectiveness*. Analyzing this
-*tool-use-to-outcome ratio* helps guide the development of*outcome-oriented
-AI systems*, ensuring that tools contribute meaningfully to task success rather
-than adding unnecessary computational overhead.
+#### Planning and action
 
-### Planning and action
+In general, the design of planning and action components should align with the
+overall system's goal by incorporating the end outcomes into the decision-making
+policies and simulation strategies. When integrating this module with other
+components of the AI system, such as the memory, LLM core, or tooling, the
+entire system should be optimized holistically to achieve the ultimate goal
+under the given constraints. And depending on the design of the planning and
+action patter, it may be *additive*, *multiplicative*, *rule-based* or
+*pass-through*.
 
-Given the uncertainties and complexities, simulation is usually needed to
-evaluate the effectiveness of the planning and action component. A world model
-that is learned by the agent helps to plan ahead by predicting the outcome of
-various strategies without executing them in the real environment. [Hierarchical
-reinforcement learning](https://doi.org/10.1016/S0004-3702(99)00052-1), which
-selects high-level goals and decomposes them into low-level execution plans, is
-effective for structured decision-making under complexity. For example, a
-high-level policy may decide whether to recommend food based on dietary
-preferences, while a low-level policy determines how to phrase the
-recommendation or which side dish to suggest. To further enhance decision
-planning, methods like [Monte Carlo Tree Search
-(MCTS)](https://doi.org/10.1109/TCIAIG.2012.2186810) can be applied to explore
-possible sequences of decisions before committing to an action, thereby
-simulating multiple future states in advance. In general, the design of planning
-and action components should align with the overall system's goal by
-incorporating the end outcomes into the decision-making policies and simulation
-strategies. When integrating this module with other components of the AI system,
-such as the memory, LLM core, or tooling, the entire system should be optimized
-holistically to achieve the ultimate goal under the given constraints.
+#### LLM
 
-### LLM
+The outcome of the system is closely linked to the underlying LLM component, in
+which the quality, relevance, and accuracy of the output generated by the LLM
+directly influence the system's success in achieving its goals. The knowledge of
+the core LLM can be both *generic* and *domain-specific*, especially with the
+use of techniques such as Retrieval-Augmented Generation (RAG). The output of
+LLM is probabilistic. The outcome may not suit to the additive, multiplicative,
+or even rule-based aggregation pattern; it is usually a part of policy or action
+component, where the aggregation is *pass-throughs* in the sequence of actions.
+*Note* the same may apply to any learning-based models that produce
+probabilistic results. And sometimes, *rule-based* aggregation may apply to the
+outcome of these models.  
 
-LLMs often provide the prior knowledge to the AI system, with decisions made by
-referencing the responses produced by the LLM. The outcome of the system is
-closely linked to the underlying LLM component, in which the quality, relevance,
-and accuracy of the output generated by the LLM directly influence the system's
-success in achieving its goals. The knowledge of the core LLM can be both
-*generic* and *domain-specific*, especially with the use of techniques such as
-Retrieval-Augmented Generation (RAG). In the restaurant AI scenario, the LLM can
-answer general food-related questions from customers to engage them, while also
-providing restaurant-specific insights, such as signature dishes, today's
-available options, and chef recommendations, to enhance customer satisfaction.
+#### A possible pattern
 
-## A generic pattern
-
-The following is the diagram that shows the generic architecture of how the
+The following is the diagram that shows an illustrating architecture of how the
 *outcome* for each modular component of an AI system is *chained* to contribute
 to the ultimate goal. 
 
@@ -219,10 +256,11 @@ graph LR
 
     subgraph Component3[Component 3 - Memory]
         A3[Sub-component A3]
+        B3[Sub-component B3]
     end
 
-    subgraph SubImpact[Sub-system Impact]
-        I[Intermediate Output]
+    subgraph MemoryImpact[Memory Impact]
+        M[Memory Output]
     end
 
     subgraph Impact[System Impact]
@@ -230,56 +268,51 @@ graph LR
     end
 
     %% Connections for Component 1
-    A1 -->|O11| B1
-    B1 -->|O12| C1
-    C1 -->|O13| F
+    A1 -->|pass-through| B1
+    B1 -->|pass-through| C1
+    C1 -->|rule-based| F
 
     %% Connections for Component 2
-    A2 -->|O21| B2
+    A2 -->|pass-through| B2
+
+    A3 -->|additive| M
+    B3 -->|additive| M
 
     %% Connections for Component 2 and 3
-    A3 -->|O31| I
-    B2 -->|O22| I
-    I --> |O32| F
+    M -->|pass-through| F
+    B2 -->|pass-through| F
 
     %% Styling
     classDef component fill:#bbf,stroke:#333,stroke-width:1px
     classDef impact fill:#dfd,stroke:#333,stroke-width:2px
 
-    class A1,B1,C1,A2,B2,C2,A3 component
-    class F,I impact
+    class A1,B1,C1,A2,B2,C2,A3,B3 component
+    class F,M,I impact
 </div>
 </html>
 
 The *sub-components* in a *Component* has its own evaluation metrics and
 outcome-driven design constraints. Example of such is that, a vector database
-that is chosen in the *tool* component should be able to meet the criteria of
+that is chosen in the *memory* component should be able to meet the criteria of
 robustness, reliability, data integrity, etc. The outcome of each
 *sub-component* in a *Component* can be chained such that the outcome is
-*aggregated* towards the overall impact to the next stage. And, there might be
-aggregation of outcome from different chains of different *Component*s. For
-example, the database that is used in the tool component may also be used in the
-*memory* component. Then the performance or engineering metrics of the database,
-which is to evaluate the outcome of the database, is propagated to the
-intermediate output for both *tool* and *memory*. We know that the aggregation
-can be dependent on the way of how the different components work together. And
-this needs to be considered carefully in the design and specification of the AI
-system where the components and sub-components are chained by their outcome.
+*aggregated* towards the overall impact to the next stage. And given that this
+performance specifications are *deterministic* so they are **additive** or
+**multiplicative**. The *tool* component may have policies that execute actions
+based on the output of a probabilistic model, and that follows the aggregation
+pattern of **pass-through**. The outcome of *LLM* may be filtered so there can
+be **rule-based** process of the outcome.   
 
 ## After thoughts...
 
 Sometimes the metrics to cascade in the chain of outcome don't fully capture the
 nuances of real-world impact. Other times, the complexity of integrating
 multiple components while maintaining focus on the ultimate outcome can be
-overwhelming. But I've found that having this framework — this way of thinking
-about AI system design — helps teams stay aligned with their true objectives,
-the **outcomes** that add value to either individuals or organizations.
-
-Looking ahead, I believe the future of AI lies not in creating more powerful
-models, but in building systems that reliably deliver meaningful outcomes. As
-the field continues to evolve, perhaps we'll develop even better frameworks for
-ensuring AI systems create those "aha" moments. Until then, staying focused on
-measurable, meaningful outcomes seems like our best path forward.
+overwhelming. The ways of aggregation may get sophisticated along with the
+growth of complexity of the system itself. But in general, defining the
+appropriate outcome and analyzing the impact of the outcome of the
+sub-components of system would be always constructive to building useful AI
+system. 
 
 ## References
 
@@ -297,26 +330,13 @@ measurable, meaningful outcomes seems like our best path forward.
 1. Liu, Tie-Yan. Learning to Rank for Information Retrieval. Foundations and
    Trends in Information Retrieval, 2009.
    [url](https://doi.org/10.1561/1500000016)
-1. Manning, Christopher D., Raghavan, Prabhakar, and Schütze, Hinrich.
-   Introduction to Information Retrieval. Cambridge University Press, 2008.
-   [url](https://nlp.stanford.edu/IR-book/)
-1. Shen, Fumin, et al. Uplift Modeling for Cost-Sensitive Cross-Selling.
-   Information Fusion, 2020.
-   [url](https://doi.org/10.1016/j.inffus.2020.03.004)
 1. Russell, Stuart and Wefald, Eric. Do the Right Thing: Studies in Limited
    Rationality. MIT Press, 1997.
    [url](https://doi.org/10.1016/S0004-3702(97)00026-X)
-1. Zilberstein, Shlomo. Resource-Bounded Reasoning in Intelligent Systems. AI
-   Magazine, 2008.
-   [url](https://www.aaai.org/ojs/index.php/aimagazine/article/view/1174)
-1. Dietterich, Thomas G. Hierarchical Reinforcement Learning with the MAXQ
-   Value Function Decomposition. Artificial Intelligence, 1999.
-   [url](https://doi.org/10.1016/S0004-3702(99)00052-1)
-1. Browne, Cameron B., et al. A Survey of Monte Carlo Tree Search Methods. IEEE
-   Transactions on Computational Intelligence and AI in Games, 2012.
-   [url](https://doi.org/10.1109/TCIAIG.2012.2186810)
 1. Weng, Lilian. LLM-powered Autonomous Agents. Lil'Log, June 2023.
    [url](https://lilianweng.github.io/posts/2023-06-23-agent/)
+1. Bellman, Richard. Dynamic Programming. Princeton University Press, 1957.
+   [url](https://press.princeton.edu/books/paperback/9780691146683/dynamic-programming)
 
 ## Citation
 
