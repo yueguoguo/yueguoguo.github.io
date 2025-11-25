@@ -72,6 +72,8 @@ The incentive for us, respectively, are
 
 In this scenario, I think most of the parents would know the best strategy - use
 a timer. It does work and the thought process behind the approach is
+* *Make the objective of the problem specific* - determine an optimal solution
+  to the screen time for kids.
 * *Take the contextual information from both parties* - worries about health and
   joy of watching cartoon. 
 * *Find the incentives for both* - watch less cartoon and watch more cartoon.
@@ -80,13 +82,82 @@ a timer. It does work and the thought process behind the approach is
 * *Sometimes, handle the probabilistic exceptions with trade-offs* - watch time
   on birthday can be prolonged.
 
-Hence, alignment is never global or universal, it is **contextual** and situated
-in tasks, data, constraints, incentives, many possibly many other factors in the
-environment. 
+The same observations can be found in more sophisticated scenarios, say
+alignment on strategy in a corporation, than just the screen time control at
+home. In the company, there may be multiple parties involved in one single
+project, where the stakeholders may have different perspectives in terms of KPI,
+resource investment, timeline, focus area, and last but not least, incentives.
+It is like a *multi-agent* system where each of the agents tries to optimize its
+local objective within the global constraints. And in such case, it is even more
+challenging than the screen time case to find a universal alignment, and an
+endless endeavor for such alignment may lead to delay or opportunity loss for
+the entire organization. Actually, most of times, the global alignment is not
+needed, because the common interest of the company plays an overwhelming role in
+determining the gain of the cooperation, and anything that is not positively
+correlated to that gain is not necessarily helpful despite the local benefits.
+This is due to the so-called *bounded rationality* effect formalized by Hebert
+Simon - people choose the "satisfying" results other than the "optimal" one due
+to the limited context. Hence, alignment is never global or universal, it is
+**contextual** and situated in tasks, data, constraints, incentives, and
+possibly many other factors in the environment. 
 
-## Framework
+## Solution framework
+
+Finding the contextual alignment requires a *mechanism design* which define the
+structured operations which facilitate the system behavior in the desired manner
+despite the diversifying interests among different stakeholders in the system.
+Similar to the above example of *parent-kid dilemma*, the mechanism design can
+be formalized in several steps to align stakeholders partially without
+sacrificing the overall objective. 
+
+### Make the goal specific
+
+The starting point is actually where most people make mistakes. Setting a
+meaningful goal makes 50% of the success for the contextual alignment. However,
+setting a goal that does not convey the necessary information may kill the
+entire process. For example, thinking about a goal that is vague, purely
+qualitative, not informative, ambiguous, and difficult to understand by all of
+the stakeholders, it is challenging to proceed with any further alignment. So a
+good goal should be set properly, and this is based on the prerequisite that all
+of the stakeholders at least have the fundamental understanding of the global
+situation (**note** the awareness of the global situation is assumed to be the
+default knowledge basis of the stakeholders and it does not require any
+particular alignment).
+
+![Contextual alignment illustration](https://yueguoguo.github.io/images/contextual_alignment.jpg)
+<font size="1">An illustration of the solution framework to find the contextual alignment among different parties.</font>
+
+### Present everyone's context with transparency
+
+Context over here can be detailed into the aspects of incentives, risks,
+constraints, resources, time-aware objectives (short-term, mid-term, and
+long-term), etc., and the requirement for the further alignment is to present
+the context from each stakeholders with transparency. Strategically, the
+stakeholders may not always disclose the full-picture of their context or
+situation, so the degree of transparency for the context impact the quality of
+the alignment. In addition, there are weights of the different aspects for the
+context - for example, incentive may usually play the most vital role in the
+decision-making so it is weighed the highest. Risk, depends. Constraints, may
+vary across different parties. In general, the context presentation is key to
+the success of the alignment.
+
+### Find the intersection in the context.
+
+After the presentation of the context, it is to find the maximal intersections
+among the aspects 
+
+### Use probabilistic thinking, not perfectionism. 
+
+### Implement the interfaces with assumption for alignment.
 
 ## Thoughts
+
+With the contemporary LLM technologies, contextual alignment is not just about
+strategy, management, and governance. It can be engineered into the automated
+process, too. This is achieved by *context engineering* which is empowered by
+the techniques of retrieval augmented generation, model context protocol,
+agentic LLM application, etc., at the algorithm and software level, or ... at
+the hardware level. 
 
 ## References
 
