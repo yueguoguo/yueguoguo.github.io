@@ -10,9 +10,7 @@ summary:    Progress under shared constraints
   <footer><cite title="Marvin Minsky">Marvin Minsky</cite></footer>
 </blockquote>
 
-## Introduction
-
-### Background
+## Background
 
 Finding a perfect alignment of multiple parties to achieve something
 cooperatively is non-trivial. It might become particularly hard when resolving
@@ -46,7 +44,7 @@ achieve the goal, and sometimes, a bare minimum intersection of the common
 interests would boost the achievement, as long as these common interests can be
 at least proportionally projected onto the direction of the common goal. 
 
-### A parent-child dilemma
+## A parent-child dilemma
 
 An epic headache to all the parents is to find alignment with children on
 something that is viewed differently by adult and kid. For example, my wife or I
@@ -132,14 +130,14 @@ particular alignment).
 Context can be detailed into the aspects of incentives, risks, constraints,
 resources, time-aware objectives (short-term, mid-term, and long-term), etc.,
 and the requirement for the further alignment is to present the context from
-each stakeholders with transparency. Strategically, the stakeholders may not
-always disclose the full-picture of their context or situation, so the degree of
-transparency for the context impact the quality of the alignment. In addition,
-there are weights of the different aspects for the context - for example,
-incentive may usually play the most vital role in the decision-making so it is
-weighed the highest. Risk, depends. Constraints, may vary across different
-parties. In general, the context presentation is key to the success of the
-alignment.
+each stakeholders with transparency. Strategically, the stakeholders *may not
+always disclose the full-picture of their context or situation*, so the degree
+of transparency for the context impact the quality of the alignment. In
+addition, there are weights of the different aspects for the context - for
+example, incentive may usually play the most vital role in the decision-making
+so it is weighed the highest. Risk, depends. Constraints, may vary across
+different parties. In general, the context presentation is key to the success of
+the alignment.
 
 ### Find the intersection in the context.
 
@@ -170,11 +168,17 @@ instead of a perfect plan that addresses every single problem.
 If there is no standard interfaces, it would make the alignment hard to realize.
 The idea of achieving alignment through standardized interfaces rather than
 shared understanding appears independently across cognitive science, systems
-theory, organizational design, and software engineering. From Simon’s nearly
-decomposable systems, to Beer’s cybernetic contracts, to Minsky’s agent-based
-cognition and modern API-driven software architectures, the same pattern
-emerges: alignment scales only when interaction is constrained by explicit
-interfaces and assumptions.
+theory, organizational design, and software engineering. According to the
+well-known *Conway's Law*, the organizational characteristics determine the
+implementation of the system. That is to say, the interfaces need to be
+implemented in a way that work the best towards the optimization of the
+alignment process. From the software engineering's point of view, it requires
+the standardized data model, input, output, etc., to integrate the disconnected
+components with their local context. In the modern API-driven software
+architectures, the alignment scales only when interaction is constrained by
+explicit interfaces and assumptions - this is exactly what *context engineering*
+helps in the contemporary AI-enabled system, where the contextual artifacts are
+managed systematically for coordination. 
 
 ## Thoughts
 
@@ -184,20 +188,21 @@ that are involved to transparently share the context (i.e., constraints) by
 using the standardized protocol, with which the largest intersection can be
 found to achieve the common goal. Inspired by the rationality theory,
 multi-agent system, cognitive architecture, etc., the contextual alignment helps
-organization, family, and individual to navigate in the environment where the
-multi-party interactions are temporal, dynamic, and uncertain. Operating with
-harmony is not the key to accomplishing the goal - keeping a sustaining motion
-under the bounded optimality is what is sufficiently required. 
+organization, family (I am hopeful that my daughter understands what I am
+doing), and individual to navigate in the environment where the multi-party
+interactions are temporal, dynamic, and uncertain. Operating with harmony is not
+the key to accomplishing the goal - keeping a sustaining motion under the
+bounded optimality is what is sufficiently required. 
 
 ## References
 
-1.	Herbert A. Simon (1947). Administrative Behavior. Free Press.
-2.	Herbert A. Simon (1969). The Sciences of the Artificial. MIT Press.
-3.	Marvin Minsky (1986). The Society of Mind. Simon & Schuster.
-4.	Stafford Beer (1972). Brain of the Firm. Allen Lane.
-5.	Stafford Beer (1974). Designing Freedom. Wiley.
-6.	Melvin E. Conway (1968). “How Do Committees Invent?” Datamation, 14(4).
-7.	Daniel Kahneman (2011). Thinking, Fast and Slow. Farrar, Straus and Giroux.
+1. Herbert A. Simon (1947). Administrative Behavior. Free Press.
+3. Marvin Minsky (1986). The Society of Mind. Simon & Schuster.
+4. Stafford Beer (1974). Designing Freedom. Wiley.
+5. Melvin E. Conway (1968). “How Do Committees Invent?” Datamation, 14(4).
+6. Daniel Kahneman (2011). Thinking, Fast and Slow. Farrar, Straus and Giroux.
+7. Conway Melvin (1967). "Conway's Law". 
+8. LangChain (2025), "Context Engineering". 
 
 ## Citation
 
@@ -209,7 +214,7 @@ https://yueguoguo.github.io/2025/12/22/contextual-alignment, 2025
 or Bibliography-like citation
 
 ```
-@article{yueguoguo2025opsisallyouneed,
+@article{yueguoguo2025contextualalignment,
    title   = “Contextual Alignment”,
    author  = “Zhang, Le”,
    journal = “yueguoguo.github.io”,
