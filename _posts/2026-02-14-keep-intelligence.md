@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Keep Intelligence
+title:      Information Cocoon in the Era of Generative AI
 date:       2026-02-14 00:00:00
 summary:    The generative AI information cocoon is silent, reasonable, and profound
 ---
@@ -149,3 +149,41 @@ profound consequence is that what appears to be a constantly reinforced
 knowledge system may actually be filled with AI-generated inaccuracies or
 distortions. More troubling still, once this system forms, we may no longer know
 when to halt decisions based on such unverifiable knowledge.
+
+## References
+
+1. Cass R. Sunstein (2001). Republic.com. Princeton University Press.
+   https://press.princeton.edu/books/paperback/9780691070254/republiccom
+2. Aggarwal, Pranjal et al. (2023). GEO: Generative Engine Optimization.
+   https://arxiv.org/abs/2311.09735
+3. Jin, Mingyu et al. (2024). Large Language Models Are Better Reasoners with
+   Self-Verification.
+   https://www.ijcai.org/proceedings/2024/0444.pdf
+4. Fleming, Scott M. et al. (2024). Large language models reflect human-like
+   patterns of metacognition. Nature Communications 15, 10814.
+   https://www.nature.com/articles/s41467-024-54837-0
+5. World Health Organization (2024). Landscape analysis of large multimodal
+   models in health.
+   https://www.who.int/publications/i/item/9789240097749
+6. OpenAI (2023). GPT-4 Technical Report.
+   https://openai.com/index/gpt-4-research
+
+## Citation
+
+Plain citation as
+
+Zhang, Le. Information Cocoon in the Era of Generative AI. Thinkloud.
+https://yueguoguo.github.io/2026/02/14/keep-intelligence/, 2026
+
+or Bibliography-like citation
+
+```
+@article{yueguoguo2026informationcocoon,
+   title   = "Information Cocoon in the Era of Generative AI",
+   author  = "Zhang, Le",
+   journal = "yueguoguo.github.io",
+   year    = "2026",
+   month   = "Feb",
+   url     = "https://yueguoguo.github.io/2026/02/14/keep-intelligence/"
+}
+```
