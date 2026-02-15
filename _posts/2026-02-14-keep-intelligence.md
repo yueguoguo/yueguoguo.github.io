@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Information Cocoon in the Era of Generative AI
+title:      Information Cocoon
 date:       2026-02-14 00:00:00
 summary:    The generative AI information cocoon is silent, reasonable, and profound
 ---
@@ -160,11 +160,25 @@ when to halt decisions based on such unverifiable knowledge.
 
 ## Wrap-up
 
+No matter how we frame it, for a considerable period of time we will coexist
+with the generative AI. *And we might even evolve alongside it!* It will reshape
+how we think, how we work, and how we organize our daily lives. Some may live to
+see the arrival of true AGI. But for many of us who are grounded in the present,
+what must evolve first is our capacity for discernment. This discernment enables
+humans to rely on experience, accumulated knowledge, and structured reasoning to
+accomplish things that AI still cannot fully achieve. These may include
+professional activities such as a physician conducting a clinical consultation;
+the creation of written, visual, or musical works; or philosophical reflection
+on objective reality itself. Such practices are ways to step outside the
+“information cocoon.” They help us remain clear-minded, even under AI’s silent,
+apparently reasonable, and far-reaching influence, and they preserve the
+distinctly human capacities that prevent us from being replaced.
+
 After finishing this blog post, I opened Xiaohongshu. At the very top of my
 feed, unsurprisingly, was yet another discussion about how “vibe coding” is
-reshaping the future of humanity. I glanced back at the technical problems my
-colleagues and I have been struggling with over the past two weeks. Not a single
-one of those problems could be easily solved by vibe coding.
+reshaping the future of technical development. I glanced back at the problems my
+colleagues and I have been struggling with over the past two weeks. **Not a
+single one of those problems could be easily solved by vibe coding.**
 
 ## References
 
