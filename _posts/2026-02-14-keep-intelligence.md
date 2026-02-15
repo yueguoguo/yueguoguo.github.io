@@ -184,20 +184,10 @@ single one of those problems could be easily solved by vibe coding.**
 ## References
 
 1. Cass R. Sunstein (2001). Republic.com. Princeton University Press.
-   https://press.princeton.edu/books/paperback/9780691070254/republiccom
-2. Aggarwal, Pranjal et al. (2023). GEO: Generative Engine Optimization.
-   https://arxiv.org/abs/2311.09735
-3. Jin, Mingyu et al. (2024). Large Language Models Are Better Reasoners with
+1. Aggarwal, Pranjal et al. (2023). GEO: Generative Engine Optimization.
+1. Jin, Mingyu et al. (2024). Large Language Models Are Better Reasoners with
    Self-Verification.
-   https://www.ijcai.org/proceedings/2024/0444.pdf
-4. Fleming, Scott M. et al. (2024). Large language models reflect human-like
-   patterns of metacognition. Nature Communications 15, 10814.
-   https://www.nature.com/articles/s41467-024-54837-0
-5. World Health Organization (2024). Landscape analysis of large multimodal
-   models in health.
-   https://www.who.int/publications/i/item/9789240097749
-6. OpenAI (2023). GPT-4 Technical Report.
-   https://openai.com/index/gpt-4-research
+1. OpenAI (2023). GPT-4 Technical Report.
 
 ## Citation
 
