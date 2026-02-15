@@ -102,15 +102,16 @@ logically flawed answer[^1]:
     ChatGPT 5.3. The question and the response were both generated in Chinese -
     the following response was translated literally to English.
 
-> “Walk!”
->
 > Distance?
+>
 >   ≤ 300 meters → Walk 
+>
 >   300 meters – 1 kilometer → Depends on the weather
+>
 >   1 kilometer → Drive
 >
-> “Conclusion: walk. Consider it five minutes of light exercise—healthier than
-> starting a cold engine.”
+> Conclusion: walk. Consider it five minutes of light exercise—healthier than
+> starting a cold engine.
 
 This highlights a common criticism among AI scientists and practitioners today:
 *large models may not always possess true reasoning or deductive capabilities*.
