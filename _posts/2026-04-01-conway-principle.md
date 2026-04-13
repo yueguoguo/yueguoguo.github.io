@@ -90,6 +90,120 @@ Thus, reducing communication cost is not about eliminating uncertainty, but
 about constraining it. This is precisely what modern harnessing techniques and
 control frameworks aim to achieve.
 
+## What can we do
+
+<html lang="en">
+   <head>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.0.0/mermaid.min.js"></script>
+    </head>
+	 
+<div class="mermaid">
+flowchart LR
+
+    subgraph PROC["Procurement"]
+        PH[Humans]
+        PA[Agents]
+        PM[(Local Memory)]
+        subgraph PCP["Communication Control"]
+            PCTX[Context]
+            PINT[Interface]
+            PCTL[Handoff / Harness / Observability]
+        end
+        PH <--> PA
+        PA <--> PM
+        PA <--> PCP
+    end
+
+    subgraph SC["Supply Chain"]
+        SH[Humans]
+        SA[Agents]
+        SM[(Local Memory)]
+        subgraph SCP["Communication Control"]
+            SCTX[Context]
+            SINT[Interface]
+            SCTL[Handoff / Harness / Observability]
+        end
+        SH <--> SA
+        SA <--> SM
+        SA <--> SCP
+    end
+
+    subgraph RD["R&D"]
+        RH[Humans]
+        RA[Agents]
+        RM[(Local Memory)]
+        subgraph RCP["Communication Control"]
+            RCTX[Context]
+            RINT[Interface]
+            RCTL[Handoff / Harness / Observability]
+        end
+        RH <--> RA
+        RA <--> RM
+        RA <--> RCP
+    end
+
+    subgraph OPS["Operations"]
+        OH[Humans]
+        OA[Agents]
+        OM[(Local Memory)]
+        subgraph OCP["Communication Control"]
+            OCTX[Context]
+            OINT[Interface]
+            OCTL[Handoff / Harness / Observability]
+        end
+        OH <--> OA
+        OA <--> OM
+        OA <--> OCP
+    end
+
+    subgraph CS["Customer Service"]
+        CH[Humans]
+        CA[Agents]
+        CM[(Local Memory)]
+        subgraph CCP["Communication Control"]
+            CCTX[Context]
+            CINT[Interface]
+            CCTL[Handoff / Harness / Observability]
+        end
+        CH <--> CA
+        CA <--> CM
+        CA <--> CCP
+    end
+
+    %% Real collaboration paths
+    PCP <--> |Inventory Sync| SCP
+    RCP <--> |Change Propagation| OCP
+    SCP <--> |Execution Handoff| OCP
+    OCP <--> |Issue Feedback| CCP
+    CCP <--> |Demand Signal| PCP
+
+    %% Shared enterprise substrate
+    subgraph ENT["Shared Enterprise Substrate"]
+        TOOLS[(Enterprise Tools / APIs)]
+        LOG[(Event Log)]
+        MEM[(Shared Memory)]
+    end
+
+    PCP <--> TOOLS
+    SCP <--> TOOLS
+    RCP <--> TOOLS
+    OCP <--> TOOLS
+    CCP <--> TOOLS
+
+    PCP --> LOG
+    SCP --> LOG
+    RCP --> LOG
+    OCP --> LOG
+    CCP --> LOG
+
+    PCP <--> MEM
+    SCP <--> MEM
+    RCP <--> MEM
+    OCP <--> MEM
+    CCP <--> MEM
+</div>
+</html>
+
 ## Wrap-up
 
 For organizations seeking to effectively adopt AI agents, understanding Conway’s
