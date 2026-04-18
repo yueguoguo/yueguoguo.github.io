@@ -21,14 +21,17 @@ to accomplish tasks—an undeniably important step forward.
 However, as with any technological wave, rapid adoption often comes with a loss
 of perspective. Maintaining clarity becomes even more critical in enterprise
 digitalization, where the stakes are higher and the systems more complex.
-
 Collaboration between human-and-agent as well as between agents is widely seen
 as the next frontier. Tools like [minus](https://minus.im),
 [openclaw](https://openclaw.ai/),
 [hermes](https://hermes-agent.nousresearch.com/docs/) have already demonstrated
-how individuals can leverage agents to automate tasks. 
+how individuals can leverage agents to automate tasks. One representative
+approach is OPC, or role based orchestration. In this model, each agent is
+assigned a role, and its instructions are constructed based on that role’s
+responsibilities. Frameworks and services such as gstack, superpower, [lovable](https://lovable.dev/) and
+superhuman largely follow this idea, though most of these only demonstrated efficacy in coding-related tasks.
 
-However, once we move from single-agent capability to multi-agent collaboration,
+Once we move from single-agent capability to multi-agent collaboration in an organization with intensive human-to-human, human-to-agent, and agent-to-agent communications,
 a more fundamental question emerges:
 
 > Collaboration is, at its core, a problem of communication.
