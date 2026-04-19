@@ -21,34 +21,36 @@ to accomplish tasks—an undeniably important step forward.
 However, as with any technological wave, rapid adoption often comes with a loss
 of perspective. Maintaining clarity becomes even more critical in enterprise
 digitalization, where the stakes are higher and the systems more complex.
-
 Collaboration between human-and-agent as well as between agents is widely seen
 as the next frontier. Tools like [minus](https://minus.im),
 [openclaw](https://openclaw.ai/),
 [hermes](https://hermes-agent.nousresearch.com/docs/) have already demonstrated
-how individuals can leverage agents to automate tasks. 
-
-However, once we move from single-agent capability to multi-agent collaboration,
-a more fundamental question emerges:
+how individuals can leverage agents to automate tasks in an *OPC* model. In this
+model, each agent is assigned a role, and its instructions are constructed based
+on that role’s responsibilities. Once we move from single-agent capability to
+multi-agent collaboration in an organization with intensive human-to-human,
+human-to-agent, and agent-to-agent communications, a more fundamental question
+emerges:
 
 > Collaboration is, at its core, a problem of communication.
 
 And in enterprises, communication is never free-form. Instead, it is always
 constrained by organizational structure. This is precisely what [Conway’s
 Law](https://en.wikipedia.org/wiki/Conway%27s_law) captures: *communication
-paths are shaped by how organizations are structured.*
+paths are shaped by how organizations are structured.* Consider a typical
+enterprise with departments of **procurement**, **supply chain**, **R&D**, and
+**operations**, each forming distinct functional units. Procurement and supply
+chain, being closely related, tend to share systems and communication channels.
+In contrast, procurement and R&D, with weaker contextual overlap, often operate
+through entirely different systems. As a result, system architecture is
+fundamentally a projection of communication pathways, and organizational
+boundaries naturally become system boundaries. At a global level,
+inconsistencies are rarely caused by technical limitations, they are more often
+the result of communication costs. This becomes even more evident in the context
+of widespread agent adoption.
 
-Consider a typical enterprise with departments of **procurement**, **supply
-chain**, **R&D**, and **operations**, each forming distinct functional units.
-Procurement and supply chain, being closely related, tend to share systems and
-communication channels. In contrast, procurement and R&D, with weaker contextual
-overlap, often operate through entirely different systems.
-
-As a result, system architecture is fundamentally a projection of communication
-pathways, and organizational boundaries naturally become system boundaries. At a
-global level, inconsistencies are rarely caused by technical limitations, they
-are more often the result of communication costs. This becomes even more evident
-in the context of widespread agent adoption.
+The agent setup in enterprise should favor the fundamental Conway's Law, and
+this can be achieved in the following perspectives. 
 
 ## Communication Paths
 
@@ -56,24 +58,207 @@ The capability of modern AI agents is not only determined by model capacity, but
 also by the quantity and relevance of their context. When two teams share highly
 aligned context, communication becomes efficient, and systems built on top of
 that alignment tend to be reusable. In such environments, introducing agents is
-significantly easier—the communication pathways between agents, humans, and
-systems are already well-defined.
+significantly easier. This is because the communication pathways between agents,
+humans, and systems are already well-defined. Conversely, when teams lack shared
+context, deploying effective agent systems becomes difficult. The limitation is
+not the model itself, but the absence of a coherent communication structure.
 
-Conversely, when teams lack shared context, deploying effective agent systems
-becomes difficult. The limitation is not the model itself, but the absence of a
-coherent communication structure.
+<html lang="en">
+   <head>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.0.0/mermaid.min.js"></script>
+    </head>
+	 
+<div class="mermaid">
+flowchart TD 
+    %% ===== Wrong Pattern =====
+    subgraph WRONG["Wrong Pattern: Linear Agent Workflow"]
+        P[Planner Agent]
+        E[Executor Agent]
+        O[Output]
+
+        P --> E --> O
+    end
+
+    subgraph ORG["Actual Organizational Communication"]
+        A[Team A]
+        B[Team B]
+        C[Team C]
+        D[Team D]
+        E2[Team E]
+
+        A <--> B
+        A <--> C
+        B <--> D
+        C <--> D
+        C <--> E2
+        D <--> E2
+    end
+
+    A -. context .-> P
+    B -. context .-> P
+    C -. context .-> P
+    D -. context .-> P
+    E2 -. context .-> P
+
+    P -. incomplete context .-> E
+
+    %% ===== Styles =====
+    classDef org fill:#ffffff,stroke:#999,stroke-width:1px;
+    classDef agent fill:#eef6ff,stroke:#4a90e2,stroke-width:1.5px;
+    classDef memory fill:#f5f5f5,stroke:#888,stroke-width:1px;
+    classDef interface fill:#fff4e8,stroke:#f2994a,stroke-width:2px;
+    classDef context fill:#e8f5e9,stroke:#34a853,stroke-width:2px;
+
+    class A,B,C,D,E2 org;
+    class P,E,O agent;
+</div>
+<p>Wrong Pattern: the agentic workflow is linear without considering organizational communication paths.</p>
+<div class="mermaid">
+flowchart LR
+    %% ===== Correct Pattern =====
+    subgraph CORRECT["Correct Pattern: Agent Communication Aligned with Organization"]
+        A[Agent / Team A]
+        B[Agent / Team B]
+        C[Agent / Team C]
+        D[Agent / Team D]
+        E[Agent / Team E]
+        X[Decision]
+
+        A <--> B
+        A <--> C
+        B <--> D
+        C <--> D
+        C <--> E
+        D <--> E
+
+        B --> X
+        C --> X
+        D --> X
+    end
+
+    %% ===== Styles =====
+    classDef org fill:#ffffff,stroke:#999,stroke-width:1px;
+    classDef agent fill:#eef6ff,stroke:#4a90e2,stroke-width:1.5px;
+    classDef memory fill:#f5f5f5,stroke:#888,stroke-width:1px;
+    classDef interface fill:#fff4e8,stroke:#f2994a,stroke-width:2px;
+    classDef context fill:#e8f5e9,stroke:#34a853,stroke-width:2px;
+
+    class A,B,C,D,E org;
+    class X agent;
+</div>
+<p>Preferred Pattern: the communication paths are taken into account to orchestrate agentic workflow.</p>
+</html>
+
+For instance, most of the agentic system assumes the structure of *planner*,
+*executor*, *thinker*, etc., which forms a natural workflow to accomplish tasks.
+However, this communication path does not tally with many of the organizational
+module configuration - maybe planning is not just the job scope of one single
+department but a shared task across many - the plan-then-execute workflow would
+then fail. The single route of plan-to-execute is against the communication path
+of the organization, and correspondingly, there will be much overhead to
+communication the context to proceed with execution as the next step. 
 
 ## Organizational Boundaries
 
 Organizational boundaries manifest concretely through interfaces. For example, a
 procurement team may adopt a new system to manage inventory data. While this
 data is theoretically useful to the supply chain team, incompatibilities in data
-interfaces can prevent seamless collaboration, reducing overall efficiency.
+interfaces can prevent seamless collaboration, reducing overall efficiency. This
+issue persists in agent-driven systems. While agents can process unstructured
+data, they still rely on APIs, schemas, and data models to ensure reliable
+interaction. In other words, organizational boundaries do not disappear, they
+re-emerge as interface constraints.
 
-This issue persists in agent-driven systems. While agents can process
-unstructured data, they still rely on APIs, schemas, and data models to ensure
-reliable interaction. In other words, organizational boundaries do not
-disappear, they re-emerge as interface constraints.
+Keeping clear interfaces making agentic systems or sub-systems look similar to
+[*microservices*](https://en.wikipedia.org/wiki/Microservices). For a
+micro-service, the key components are the API, the localized memory, the
+resources to support the service runtime - these can be found in the setup of
+agentic system - the only thing is that the APIs are enhanced as
+[*MCP*](https://www.anthropic.com/news/model-context-protocol) and the database
+is enhanced as *context* or *memory*. However, similar to any human organization
+where *role-and-responsibility* (R&R) is key to successful collaboration.
+Defining the interface scope for these agentic systems is also vital to a
+successful operation. For example, inventory data management can be relevant to
+both the procurement team and the supply chain team. Maybe there is shared
+database, context, memory, and MCPs for both of the two teams, but there should
+be clearly boundary definition as either wrapper of API, or routing layer of
+MCP, to make sure that when surfacing different teams, there are still clear
+boundaries in the R&R.
+
+<html lang="en">
+   <head>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.0.0/mermaid.min.js"></script>
+    </head>
+	 
+<div class="mermaid">
+flowchart TD 
+    %% ===== Procurement Sub-system =====
+    subgraph PROC["Procurement Agentic Sub-system"]
+        PA[Procurement Agent]
+        PM[(Local Context / Memory)]
+        PAPI[Procurement MCP Interface]
+
+        PA <--> PM
+        PA --> PAPI
+    end
+
+    %% ===== Supply Chain Sub-system =====
+    subgraph SC["Supply Chain Agentic Sub-system"]
+        SA[Supply Chain Agent]
+        SM[(Local Context / Memory)]
+        SAPI[Supply Chain MCP Interface]
+
+        SA <--> SM
+        SA --> SAPI
+    end
+
+    %% ===== Shared Routing Layer =====
+    subgraph ROUTE["MCP Routing / Boundary Layer"]
+        R[MCP Router]
+    end
+
+    %% ===== Shared Data =====
+    DB[(Shared Inventory Context / Data)]
+
+    %% ===== Payload Definitions =====
+    PAPI --- PPayload["Procurement Payload
+    {
+      item_id
+      supplier_id
+      order_qty
+      unit_cost
+      lead_time_estimate
+      contract_terms
+    }"]
+
+    SAPI --- SPayload["Supply Chain Payload
+    {
+      item_id
+      available_stock
+      safety_stock
+      demand_forecast
+      transit_status
+      fulfillment_priority
+    }"]
+
+    %% ===== Connections =====
+    PAPI <--> R
+    SAPI <--> R
+    R <--> DB
+
+    %% ===== Styles =====
+    classDef org fill:#ffffff,stroke:#999,stroke-width:1px;
+    classDef agent fill:#eef6ff,stroke:#4a90e2,stroke-width:1.5px;
+    classDef memory fill:#f5f5f5,stroke:#888,stroke-width:1px;
+    classDef interface fill:#fff4e8,stroke:#f2994a,stroke-width:2px;
+    classDef context fill:#e8f5e9,stroke:#34a853,stroke-width:2px;
+
+    class PA,SA agent;
+    class PM,SM,DB memory;
+    class PAPI,SAPI,R interface;
+    class PROC,SC,ROUTE context;
+</div>
+</html>
 
 ## Communication Cost
 
@@ -86,8 +271,59 @@ the probabilistic nature of large language models makes perfect accuracy
 unattainable.
 
 Thus, reducing communication cost is not about eliminating uncertainty, but
-about constraining it. This is precisely what modern harnessing techniques and
-control frameworks aim to achieve.
+about constraining it. This is precisely what modern [*harnessing
+engineering*](https://openai.com/index/harness-engineering/) techniques and
+control frameworks aim to achieve. The prompt that is used for communicating
+among agents is structured as contract where the control framework is
+introduced. In such manner, the communication among agents become explicit,
+repeatable, and structured. That is, if the agent procurement team initiates a
+request to talk to the agent in the supply chain team regarding the inventory
+data related matters, the requests (or instantiated as prompts) will be through
+the checks against the *shared context* and *long-term memory* to guarantee that
+the requests are relevant with the minimal communication overhead. Meanwhile,
+the follow-up response or feedback from the supply chain team will help improve
+the context and memory shared across the two teams to make sure that the next
+round of communication is better constrained.
+
+<html lang="en">
+   <head>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.0.0/mermaid.min.js"></script>
+    </head>
+	 
+<div class="mermaid">
+flowchart TD
+    %% ===== Agents =====
+    P[Procurement Agent]
+    S[Supply Chain Agent]
+
+    %% ===== Shared Layer =====
+    subgraph SHARED["Shared Context & Memory"]
+        C[(Shared Context)]
+        M[(Long-term Memory)]
+    end
+
+    %% ===== Request Flow =====
+    P -->|Request / Prompt| C
+    C -->|Filtered / Relevant Context| S
+
+    %% ===== Feedback Loop =====
+    S -->|Response / Feedback| M
+    M -->|Updated Context| C
+    C -->|Improved Context| P
+
+    %% ===== Styles =====
+    classDef org fill:#ffffff,stroke:#999,stroke-width:1px;
+    classDef agent fill:#eef6ff,stroke:#4a90e2,stroke-width:1.5px;
+    classDef memory fill:#f5f5f5,stroke:#888,stroke-width:1px;
+    classDef interface fill:#fff4e8,stroke:#f2994a,stroke-width:2px;
+    classDef context fill:#e8f5e9,stroke:#34a853,stroke-width:2px;
+
+    class P,S agent;
+    class M memory;
+    class C context;
+    class SHARED org;
+</div>
+</html>
 
 ## What can we do
 
@@ -188,7 +424,7 @@ beginning*.
 
 1. Conway, M. (1968). How Do Committees Invent?
 1. Sussman, G. and Steele, G. (1975). Constraints and Communication in System Design.
-1. Brooks, F. (1975). The Mythical Man-Month
+1. Brooks, F. (1975). The Mythical Man-Month.
 
 ## Citation
 
