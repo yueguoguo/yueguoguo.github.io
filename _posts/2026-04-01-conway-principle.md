@@ -97,60 +97,7 @@ both the procurement team and the supply chain team. Maybe there is shared
 database, context, memory, and MCPs for both of the two teams, but there should
 be clearly boundary definition as either wrapper of API, or routing layer of
 MCP, to make sure that when surfacing different teams, there are still clear
-boundaries in the R&R.
-
-<html lang="en">
-   <head>
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.0.0/mermaid.min.js"></script>
-    </head>
-	 
-<div class="mermaid">
-flowchart LR
-
-    subgraph SHARED["Shared Inventory Context"]
-        I1[Item Master]
-        I2[Inventory Status]
-        I3[Supplier Reference]
-        I4[Event / Memory Log]
-    end
-
-    subgraph PROC["Procurement Domain"]
-        PA[Procurement Agent]
-        PMCP[Procurement MCP / API Wrapper]
-        PVIEW["Procurement View<br/>- supplier<br/>- lead time<br/>- contract terms<br/>- purchase action"]
-    end
-
-    subgraph SC["Supply Chain Domain"]
-        SA[Supply Chain Agent]
-        SMCP[Supply Chain MCP / API Wrapper]
-        SVIEW["Supply Chain View<br/>- stock level<br/>- demand signal<br/>- reorder risk<br/>- planning action"]
-    end
-
-    SHARED --> PMCP
-    SHARED --> SMCP
-
-    PMCP --> PVIEW
-    SMCP --> SVIEW
-
-    PA <--> PMCP
-    SA <--> SMCP
-
-    SA -.handoff request.-> PA
-
-    %% ===== Styles =====
-    classDef org fill:#ffffff,stroke:#999,stroke-width:1px;
-    classDef agent fill:#eef6ff,stroke:#4a90e2,stroke-width:1.5px;
-    classDef memory fill:#f5f5f5,stroke:#888,stroke-width:1px;
-    classDef interface fill:#fff4e8,stroke:#f2994a,stroke-width:2px;
-    classDef context fill:#e8f5e9,stroke:#34a853,stroke-width:2px;
-
-    class SHARED,PROC,SC org;
-    class PA,SA agent;
-    class I1,I2,I3,I4 memory;
-    class PMCP,SMCP interface;
-    class PVIEW,SVIEW org;
-</div>
-</html>
+boundaries in the R&R. 
 
 ## Communication Cost
 
