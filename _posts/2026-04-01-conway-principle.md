@@ -63,92 +63,6 @@ humans, and systems are already well-defined. Conversely, when teams lack shared
 context, deploying effective agent systems becomes difficult. The limitation is
 not the model itself, but the absence of a coherent communication structure.
 
-<html lang="en">
-   <head>
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.0.0/mermaid.min.js"></script>
-    </head>
-	 
-<div class="mermaid">
-flowchart TD 
-    %% ===== Wrong Pattern =====
-    subgraph WRONG["Wrong Pattern: Linear Agent Workflow"]
-        P[Planner Agent]
-        E[Executor Agent]
-        O[Output]
-
-        P --> E --> O
-    end
-
-    subgraph ORG["Actual Organizational Communication"]
-        A[Team A]
-        B[Team B]
-        C[Team C]
-        D[Team D]
-        E2[Team E]
-
-        A <--> B
-        A <--> C
-        B <--> D
-        C <--> D
-        C <--> E2
-        D <--> E2
-    end
-
-    A -. context .-> P
-    B -. context .-> P
-    C -. context .-> P
-    D -. context .-> P
-    E2 -. context .-> P
-
-    P -. incomplete context .-> E
-
-    %% ===== Styles =====
-    classDef org fill:#ffffff,stroke:#999,stroke-width:1px;
-    classDef agent fill:#eef6ff,stroke:#4a90e2,stroke-width:1.5px;
-    classDef memory fill:#f5f5f5,stroke:#888,stroke-width:1px;
-    classDef interface fill:#fff4e8,stroke:#f2994a,stroke-width:2px;
-    classDef context fill:#e8f5e9,stroke:#34a853,stroke-width:2px;
-
-    class A,B,C,D,E2 org;
-    class P,E,O agent;
-</div>
-<p>Wrong Pattern: the agentic workflow is linear without considering organizational communication paths.</p>
-<div class="mermaid">
-flowchart LR
-    %% ===== Correct Pattern =====
-    subgraph CORRECT["Correct Pattern: Agent Communication Aligned with Organization"]
-        A[Agent / Team A]
-        B[Agent / Team B]
-        C[Agent / Team C]
-        D[Agent / Team D]
-        E[Agent / Team E]
-        X[Decision]
-
-        A <--> B
-        A <--> C
-        B <--> D
-        C <--> D
-        C <--> E
-        D <--> E
-
-        B --> X
-        C --> X
-        D --> X
-    end
-
-    %% ===== Styles =====
-    classDef org fill:#ffffff,stroke:#999,stroke-width:1px;
-    classDef agent fill:#eef6ff,stroke:#4a90e2,stroke-width:1.5px;
-    classDef memory fill:#f5f5f5,stroke:#888,stroke-width:1px;
-    classDef interface fill:#fff4e8,stroke:#f2994a,stroke-width:2px;
-    classDef context fill:#e8f5e9,stroke:#34a853,stroke-width:2px;
-
-    class A,B,C,D,E org;
-    class X agent;
-</div>
-<p>Preferred Pattern: the communication paths are taken into account to orchestrate agentic workflow.</p>
-</html>
-
 For instance, most of the agentic system assumes the structure of *planner*,
 *executor*, *thinker*, etc., which forms a natural workflow to accomplish tasks.
 However, this communication path does not tally with many of the organizational
@@ -191,60 +105,37 @@ boundaries in the R&R.
     </head>
 	 
 <div class="mermaid">
-flowchart TD 
-    %% ===== Procurement Sub-system =====
-    subgraph PROC["Procurement Agentic Sub-system"]
+flowchart LR
+
+    subgraph SHARED["Shared Inventory Context"]
+        I1[Item Master]
+        I2[Inventory Status]
+        I3[Supplier Reference]
+        I4[Event / Memory Log]
+    end
+
+    subgraph PROC["Procurement Domain"]
         PA[Procurement Agent]
-        PM[(Local Context / Memory)]
-        PAPI[Procurement MCP Interface]
-
-        PA <--> PM
-        PA --> PAPI
+        PMCP[Procurement MCP / API Wrapper]
+        PVIEW["Procurement View<br/>- supplier<br/>- lead time<br/>- contract terms<br/>- purchase action"]
     end
 
-    %% ===== Supply Chain Sub-system =====
-    subgraph SC["Supply Chain Agentic Sub-system"]
+    subgraph SC["Supply Chain Domain"]
         SA[Supply Chain Agent]
-        SM[(Local Context / Memory)]
-        SAPI[Supply Chain MCP Interface]
-
-        SA <--> SM
-        SA --> SAPI
+        SMCP[Supply Chain MCP / API Wrapper]
+        SVIEW["Supply Chain View<br/>- stock level<br/>- demand signal<br/>- reorder risk<br/>- planning action"]
     end
 
-    %% ===== Shared Routing Layer =====
-    subgraph ROUTE["MCP Routing / Boundary Layer"]
-        R[MCP Router]
-    end
+    SHARED --> PMCP
+    SHARED --> SMCP
 
-    %% ===== Shared Data =====
-    DB[(Shared Inventory Context / Data)]
+    PMCP --> PVIEW
+    SMCP --> SVIEW
 
-    %% ===== Payload Definitions =====
-    PAPI --- PPayload["Procurement Payload
-    {
-      item_id
-      supplier_id
-      order_qty
-      unit_cost
-      lead_time_estimate
-      contract_terms
-    }"]
+    PA <--> PMCP
+    SA <--> SMCP
 
-    SAPI --- SPayload["Supply Chain Payload
-    {
-      item_id
-      available_stock
-      safety_stock
-      demand_forecast
-      transit_status
-      fulfillment_priority
-    }"]
-
-    %% ===== Connections =====
-    PAPI <--> R
-    SAPI <--> R
-    R <--> DB
+    SA -.handoff request.-> PA
 
     %% ===== Styles =====
     classDef org fill:#ffffff,stroke:#999,stroke-width:1px;
@@ -253,10 +144,11 @@ flowchart TD
     classDef interface fill:#fff4e8,stroke:#f2994a,stroke-width:2px;
     classDef context fill:#e8f5e9,stroke:#34a853,stroke-width:2px;
 
+    class SHARED,PROC,SC org;
     class PA,SA agent;
-    class PM,SM,DB memory;
-    class PAPI,SAPI,R interface;
-    class PROC,SC,ROUTE context;
+    class I1,I2,I3,I4 memory;
+    class PMCP,SMCP interface;
+    class PVIEW,SVIEW org;
 </div>
 </html>
 
@@ -368,7 +260,7 @@ flowchart TD
         SA <--> SM[(Local Memory)]
     end
 
-    SC1[[Shared Context]]
+    SC1[(Shared Context)]
 
     subgraph O["Operations"]
         OH[Humans] <--> OA[Agents]
@@ -376,7 +268,7 @@ flowchart TD
         OA <--> OM[(Local Memory)]
     end
 
-    SC2[[Shared Context]]
+    SC2[(Shared Context)]
 
     subgraph R["R&D"]
         RH[Humans] <--> RA[Agents]
@@ -399,7 +291,7 @@ flowchart TD
     classDef interface fill:#fff4e8,stroke:#f2994a,stroke-width:2px;
     classDef context fill:#e8f5e9,stroke:#34a853,stroke-width:2px;
 
-    %% Apply styles
+    class P,S,O,R org;
     class PH,SH,OH,RH org;
     class PA,SA,OA,RA agent;
     class PM,SM,OM,RM memory;
