@@ -72,6 +72,14 @@ then fail. The single route of plan-to-execute is against the communication path
 of the organization, and correspondingly, there will be much overhead to
 communication the context to proceed with execution as the next step. 
 
+The right approach is to architect the agentic systems with the role settings
+that maps the organizational communication paths. If the agentic system is meant
+for the collaboration between procurement and supply chain, then the agents
+should be designed to tackle the problems given the domain-specific
+instructions. That is, if the procurement agent just touched the inventory data,
+it can use the outcome to directly feed into the context of the supply chain
+agent. And this will not incur much overhead in communication.
+
 ## Organizational Boundaries
 
 Organizational boundaries manifest concretely through interfaces. For example, a
