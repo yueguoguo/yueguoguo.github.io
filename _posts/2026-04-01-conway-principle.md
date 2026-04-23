@@ -12,29 +12,35 @@ summary:    From organizational structure to communication structure
 
 ## Background
 
-In the first quarter of 2026, AI reached a true inflection point in its societal
-impact. Much of this momentum can be attributed to the continuous productization
-and narrative-building efforts by OpenAI and Anthropic. This combination has
-made AI significantly more accessible, enabling people to directly leverage it
-to accomplish tasks—an undeniably important step forward.
+In the first quarter of 2026, my social media feeds on LinkedIn, Twitter and
+XiaoHongShu are completely flooded by those around one single key word,
+**agent**. Much of this momentum can be attributed to the continuous
+productization and narrative-building efforts by OpenAI and Anthropic. This
+combination has made AI significantly more accessible, enabling people to
+directly leverage it to accomplish tasks, which is an undeniably important step
+forward.
 
 However, as with any technological wave, rapid adoption often comes with a loss
 of perspective. Maintaining clarity becomes even more critical in enterprise
-digitalization, where the stakes are higher and the systems more complex.
-Collaboration between human-and-agent as well as between agents is widely seen
-as the next frontier. Tools like [minus](https://minus.im),
-[openclaw](https://openclaw.ai/),
+digitalization, where the stakes are higher and the systems are more complex
+than individuals. Collaboration between human-and-agent as well as between
+agents is widely seen as the next frontier. Tools like
+[minus](https://minus.im), [openclaw](https://openclaw.ai/),
 [hermes](https://hermes-agent.nousresearch.com/docs/) have already demonstrated
-how individuals can leverage agents to automate tasks in an *OPC* model. In this
-model, each agent is assigned a role, and its instructions are constructed based
-on that role’s responsibilities. Once we move from single-agent capability to
-multi-agent collaboration in an organization with intensive human-to-human,
-human-to-agent, and agent-to-agent communications, a more fundamental question
-emerges:
+how individuals can leverage agents to automate tasks at scale. In such
+scenario, it has been demonstrated that a single agent or a multi-agent system
+can complete tasks automatically and collaboratively - each agent is assigned a
+role, and its instructions are constructed based on that role’s
+responsibilities. There are lots of studies and researches in the field
+attempting to find the best technological paradigm to make the multi-agent
+system work effectively in an enterprise set-up. The interesting part is, once
+we move from single-agent capability to multi-agent collaboration in an
+organization with intensive human-to-human, human-to-agent, and agent-to-agent
+communications, a fundamental question emerges:
 
 > Collaboration is, at its core, a problem of communication.
 
-And in enterprises, communication is never free-form. Instead, it is always
+In enterprises, communication is never free-form. Instead, it is always
 constrained by organizational structure. This is precisely what [Conway’s
 Law](https://en.wikipedia.org/wiki/Conway%27s_law) captures: *communication
 paths are shaped by how organizations are structured.* Consider a typical
@@ -55,27 +61,31 @@ this can be achieved in the following perspectives.
 ## Communication Paths
 
 The capability of modern AI agents is not only determined by model capacity, but
-also by the quantity and relevance of their context. When two teams share highly
-aligned context, communication becomes efficient, and systems built on top of
-that alignment tend to be reusable. In such environments, introducing agents is
-significantly easier. This is because the communication pathways between agents,
-humans, and systems are already well-defined. Conversely, when teams lack shared
-context, deploying effective agent systems becomes difficult. The limitation is
-not the model itself, but the absence of a coherent communication structure.
+also by *the quantity and relevance of their context*. When two teams share
+highly aligned context, communication becomes efficient, and systems built on
+top of that alignment tend to be reusable. In such environments, introducing
+multiple agents is significantly easier than those where context is diversified.
+This is because the communication pathways between agents, humans, and systems
+are already well-defined by the organization. The procurement team always check
+with supply chain team about inventory status whenever they place a new order;
+supply chain team will always rely on the procurement team for planning.
+Conversely, when teams lack shared context, deploying effective agent systems
+becomes difficult. The limitation is not the model itself, but the absence of a
+coherent communication structure.
 
-For instance, most of the agentic system assumes the structure of *planner*,
-*executor*, *thinker*, etc., which forms a natural workflow to accomplish tasks.
-However, this communication path does not tally with many of the organizational
-module configuration - maybe planning is not just the job scope of one single
+Most of the agentic system assumes the structure of *planner*, *executor*,
+*thinker*, etc., which forms a natural workflow to accomplish tasks. However,
+this communication path does not tally with many of the organizational module
+configuration - maybe planning is not just the job scope of one single
 department but a shared task across many - the plan-then-execute workflow would
 then fail. The single route of plan-to-execute is against the communication path
 of the organization, and correspondingly, there will be much overhead to
 communication the context to proceed with execution as the next step. 
 
-The right approach is to architect the agentic systems with the role settings
-that maps the organizational communication paths. If the agentic system is meant
-for the collaboration between procurement and supply chain, then the agents
-should be designed to tackle the problems given the domain-specific
+The right approach is to *architect the agentic systems with the role settings
+that maps the organizational communication paths*. If the agentic system is
+meant for the collaboration between procurement and supply chain, then the
+agents should be designed to tackle the problems given the domain-specific
 instructions. That is, if the procurement agent just touched the inventory data,
 it can use the outcome to directly feed into the context of the supply chain
 agent. And this will not incur much overhead in communication.
@@ -87,38 +97,40 @@ procurement team may adopt a new system to manage inventory data. While this
 data is theoretically useful to the supply chain team, incompatibilities in data
 interfaces can prevent seamless collaboration, reducing overall efficiency. This
 issue persists in agent-driven systems. While agents can process unstructured
-data, they still rely on APIs, schemas, and data models to ensure reliable
-interaction. In other words, organizational boundaries do not disappear, they
-re-emerge as interface constraints.
+data, they still rely on APIs, schemas, and data models, overall *harness*, to
+ensure reliable interaction. In other words, *organizational boundaries do not
+disappear, they re-emerge as interface constraints*.
 
-Keeping clear interfaces making agentic systems or sub-systems look similar to
+Keeping clear interfaces making agentic systems or sub-systems work
+effortlessly. In such sense, agent look similar to
 [*microservices*](https://en.wikipedia.org/wiki/Microservices). For a
-micro-service, the key components are the API, the localized memory, the
-resources to support the service runtime - these can be found in the setup of
-agentic system - the only thing is that the APIs are enhanced as
-[*MCP*](https://www.anthropic.com/news/model-context-protocol) and the database
-is enhanced as *context* or *memory*. However, similar to any human organization
-where *role-and-responsibility* (R&R) is key to successful collaboration.
-Defining the interface scope for these agentic systems is also vital to a
-successful operation. For example, inventory data management can be relevant to
-both the procurement team and the supply chain team. Maybe there is shared
-database, context, memory, and MCPs for both of the two teams, but there should
-be clearly boundary definition as either wrapper of API, or routing layer of
-MCP, to make sure that when surfacing different teams, there are still clear
-boundaries in the R&R. 
+microservice, the key components are **the API**, **the localized memory**,
+**the resources to support the service runtime**. And a similar setup can be
+found in the setup of agentic system - the only thing is that the APIs are
+enhanced as [*MCP*](https://www.anthropic.com/news/model-context-protocol) and
+the database is enhanced as *context* or *memory*, to favour the interaction
+through human languages. Like what is seen in human organization,
+*role-and-responsibility* (R&R) is key to successful collaboration among agents.
+Defining the interface scope for these agentic systems is vital to a successful
+operation. Going back to the real-world example, the inventory data management
+can be largely relevant to both the procurement team and the supply chain team.
+Maybe there is shared database, context, memory, and MCPs for both of the two
+teams, but there should be clearly boundary definition as either wrapper of API,
+or routing layer of MCP, to make sure that when surfacing different teams, there
+are still clear boundaries in the R&R. 
 
 ## Communication Cost
 
 All communication has a cost. For humans, this cost appears as meetings,
 fragmented documentation, and inconsistent understanding. For agents,
-communication is compressed into *tokens*. It transforms into computation and
-uncertainty. Ideally, we want minimal tokens to yield precise and reliable
-outputs, enabling consistent propagation across systems. In reality, however,
-the probabilistic nature of large language models makes perfect accuracy
-unattainable.
+communication is compressed into *tokens*, and the process is transformed into
+computation and uncertainty. Ideally, we want *minimal tokens to yield precise
+and reliable outputs, enabling consistent propagation across systems*. In
+reality, however, the probabilistic nature of large language models makes
+perfect accuracy unattainable.
 
 Thus, reducing communication cost is not about eliminating uncertainty, but
-about constraining it. This is precisely what modern [*harnessing
+about constraining it. This is what people have proposed in the [*harnessing
 engineering*](https://openai.com/index/harness-engineering/) techniques and
 control frameworks aim to achieve. The prompt that is used for communicating
 among agents is structured as contract where the control framework is
@@ -185,15 +197,6 @@ functions through standardized interfaces, and during this process, shared
 context provides both the communication pathways and the boundary conditions
 that enable efficient collaboration.
 
-As discussed earlier, shared context is the key enabler of smooth communication.
-However, in designing such systems, this shared context should not be expanded
-across the entire enterprise. Doing so would lead to [“context
-explosion"](https://developers.googleblog.com/architecting-efficient-context-aware-multi-agent-framework-for-production/),
-significantly increasing communication costs between agents—effectively a form
-of inverse Conway’s Law. Instead, shared context should be selectively
-established among functions with strong overlap and commonality, enabling
-efficient communication where it is actually needed.
-
 <html lang="en">
    <head>
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.0.0/mermaid.min.js"></script>
@@ -254,6 +257,15 @@ flowchart TD
     class SC1,SC2 context;
 </div>
 </html>
+
+As discussed earlier, shared context is the key enabler of smooth communication.
+However, in designing such systems, this shared context should not be expanded
+across the entire enterprise. Doing so would lead to [“context
+explosion"](https://developers.googleblog.com/architecting-efficient-context-aware-multi-agent-framework-for-production/),
+significantly increasing communication costs between agents—effectively a form
+of inverse Conway’s Law. Instead, shared context should be selectively
+established among functions with strong overlap and commonality, enabling
+efficient communication where it is actually needed.
 
 ## Wrap-up
 
