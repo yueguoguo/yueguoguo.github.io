@@ -290,17 +290,17 @@ beginning*.
 Plain citation as
 
 Zhang, Le. Conway's Law in the Age of AI Agent Systems. Thinkloud.
-https://yueguoguo.github.io/2026/04/01/conway-principle/, 2026
+https://yueguoguo.github.io/2026/04/01/conway-law/, 2026
 
 or Bibliography-like citation
 
 ```
-@article{yueguoguo2026conwayprinciple,
+@article{yueguoguo2026conwaylaw,
    title   = "Conway's Law in the Age of AI Agent Systems",
    author  = "Zhang, Le",
    journal = "yueguoguo.github.io",
    year    = "2026",
    month   = "Apr",
-   url     = "https://yueguoguo.github.io/2026/04/01/conway-principle/"
+   url     = "https://yueguoguo.github.io/2026/04/01/conway-law/"
 }
 ```
