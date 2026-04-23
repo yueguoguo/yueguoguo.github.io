@@ -208,13 +208,13 @@ flowchart TD
     %% ===== Nodes =====
     subgraph P["Procurement"]
         PH[Humans] <--> PA[Agents]
-        PA <--> PI{{Interface}}
+        PA <--> PI[Interface]
         PA <--> PM[(Local Memory)]
     end
 
     subgraph S["Supply Chain"]
         SH[Humans] <--> SA[Agents]
-        SA <--> SI{{Interface}}
+        SA <--> SI[Interface]
         SA <--> SM[(Local Memory)]
     end
 
@@ -222,7 +222,7 @@ flowchart TD
 
     subgraph O["Operations"]
         OH[Humans] <--> OA[Agents]
-        OA <--> OI{{Interface}}
+        OA <--> OI[Interface]
         OA <--> OM[(Local Memory)]
     end
 
@@ -230,7 +230,7 @@ flowchart TD
 
     subgraph R["R&D"]
         RH[Humans] <--> RA[Agents]
-        RA <--> RI{{Interface}}
+        RA <--> RI[Interface]
         RA <--> RM[(Local Memory)]
     end
 
