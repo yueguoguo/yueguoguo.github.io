@@ -130,59 +130,17 @@ reality, however, the probabilistic nature of large language models makes
 perfect accuracy unattainable.
 
 Thus, reducing communication cost is not about eliminating uncertainty, but
-about constraining it. This is what people have proposed in the [*harnessing
-engineering*](https://openai.com/index/harness-engineering/) techniques and
-control frameworks aim to achieve. The prompt that is used for communicating
-among agents is structured as contract where the control framework is
-introduced. In such manner, the communication among agents become explicit,
-repeatable, and structured. That is, if the agent procurement team initiates a
-request to talk to the agent in the supply chain team regarding the inventory
-data related matters, the requests (or instantiated as prompts) will be through
-the checks against the *shared context* and *long-term memory* to guarantee that
-the requests are relevant with the minimal communication overhead. Meanwhile,
-the follow-up response or feedback from the supply chain team will help improve
-the context and memory shared across the two teams to make sure that the next
-round of communication is better constrained.
-
-<html lang="en">
-   <head>
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.0.0/mermaid.min.js"></script>
-    </head>
-	 
-<div class="mermaid">
-flowchart TD
-    %% ===== Agents =====
-    P[Procurement Agent]
-    S[Supply Chain Agent]
-
-    %% ===== Shared Layer =====
-    subgraph SHARED["Shared Context & Memory"]
-        C[(Shared Context)]
-        M[(Long-term Memory)]
-    end
-
-    %% ===== Request Flow =====
-    P -->|Request / Prompt| C
-    C -->|Filtered / Relevant Context| S
-
-    %% ===== Feedback Loop =====
-    S -->|Response / Feedback| M
-    M -->|Updated Context| C
-    C -->|Improved Context| P
-
-    %% ===== Styles =====
-    classDef org fill:#ffffff,stroke:#999,stroke-width:1px;
-    classDef agent fill:#eef6ff,stroke:#4a90e2,stroke-width:1.5px;
-    classDef memory fill:#f5f5f5,stroke:#888,stroke-width:1px;
-    classDef interface fill:#fff4e8,stroke:#f2994a,stroke-width:2px;
-    classDef context fill:#e8f5e9,stroke:#34a853,stroke-width:2px;
-
-    class P,S agent;
-    class M memory;
-    class C context;
-    class SHARED org;
-</div>
-</html>
+about constraining it. The prompt that is used for communicating among agents is
+structured as contract where the control framework is introduced. In such
+manner, the communication among agents become explicit, repeatable, and
+structured. That is, if the agent procurement team initiates a request to talk
+to the agent in the supply chain team regarding the inventory data related
+matters, the requests (or instantiated as prompts) will be through the checks
+against the *shared context* and *long-term memory* to guarantee that the
+requests are relevant with the minimal communication overhead. Meanwhile, the
+follow-up response or feedback from the supply chain team will help improve the
+context and memory shared across the two teams to make sure that the next round
+of communication is better constrained.
 
 ## What can we do
 
